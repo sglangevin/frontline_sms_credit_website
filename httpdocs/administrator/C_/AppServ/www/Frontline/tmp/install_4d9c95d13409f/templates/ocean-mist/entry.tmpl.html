@@ -1,0 +1,64 @@
+<div class="blogsContainer entryContent entry">
+	<div class="entryTitle">
+		<small>
+		<span class="entryDate"><?php echo $entry['createdFormatted']; ?></span>
+		<?php
+		if($enablePrintLink){
+      		echo myGetPrintLink($entry['id'],myGetItemId());
+		}
+		echo '&nbsp;';
+        if($enablePdfLink){
+			echo myGetPDFLink($entry['id'],myGetItemId());
+	    }
+	    ?>
+	    </small>
+		<h2>
+			<a href="<?php echo $entry['permalink']; ?>" rel="bookmark" title="Permanent Link to <?php echo $entry['title']; ?>"><?php echo $entry['title']; ?></a>
+			<?php 
+			if ( $entry['created_by'] == $userId )
+			{
+				echo $entry['editLink'];
+			}
+			?>
+		</h2>
+	</div>
+	<div class="post">
+		<?php 
+		if ($entry['beforeContent'])
+		{ ?>
+		<div class="onBeforePrepareContent">
+			<?php echo $entry['beforeContent'];?>
+		</div>
+		<?php
+		}
+	    ?>
+	    <div class="entry-body">
+	    	<span style="float:right;"><?php echo $entry['avatar']; ?></span>
+	      <?php echo $entry['text']; ?>
+	      <div class="clear"></div>
+	    </div>
+	    <?php if ($entry['afterContent'])
+		{ ?>
+		<div class="onAfterPrepareContent">
+			<?php echo $entry['afterContent'];?>
+		</div>
+		<?php
+		}
+	    ?>
+	    <div class="entry-footer">
+			<div>
+				<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $entry['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $entry['author']; ?></a>
+				<?php
+					if( $categoryDisplay )
+					{
+				?>
+				<?php echo JText::sprintf('POSTED IN' , $entry['jcategory'] ); ?>
+				<?php
+					}
+				?>
+			</div>
+			<div><?php echo JText::sprintf('TAGGED IN' , $entry['categories'] ); ?></div>
+	    </div>
+	</div>
+	<?php echo $entry['comments'] ?>
+</div>

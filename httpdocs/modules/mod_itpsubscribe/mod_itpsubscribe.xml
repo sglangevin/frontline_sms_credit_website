@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+<name>ITPSubscribe</name>
+<author>Todor Iliev</author>
+<creationDate>January 2010</creationDate>
+<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
+<license>http://www.gnu.org/copyleft/gpl.html</license>
+<authorEmail>todor@itprism.com</authorEmail>
+<authorUrl>http://itprism.com</authorUrl>
+<version>1.4</version>
+<description>ITP_SUBSCRIBE_DESC</description>
+	<files>
+		<filename module="mod_itpsubscribe">mod_itpsubscribe.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<folder>images</folder>
+	</files>
+
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" size="100" label="MODULE_CSS_SUFFIX" description="MODULE_CSS_SUFFIX_DESC" />
+				
+		<param name="style" type="list" default="small" label="RSS_EMAIL_STYLES" description="RSS_EMAIL_STYLES_DESC" >
+		   <option value="small">Small</option>
+		   <option value="big1">Big1 - 64px</option>
+		   <option value="big2">Big2 - 62px</option>
+		   <option value="big3">Big3 - 48px</option>
+		   <option value="big4">Big4 - 60px</option>
+		   <option value="big5">Big5 - 48px</option>
+		   <option value="big6">Big6 - 48px</option>
+		   <option value="big7">Big7 - 48px</option>
+		   <option value="big8">Big8 - 48px</option>
+		   <option value="big9">Big9 - 60px</option>
+		   <option value="big10">Big10 - 60px</option>
+		   <option value="big11">Big11 - 64px</option>
+		   <option value="big12">Big12 - 60px</option>
+		   <option value="big13">Big13 - 64px</option>
+		   <option value="big14">Big14 - 46px</option>
+		   <option value="big15">Big15 - 48px</option>
+		   <option value="big16">Big16 - 64px</option>
+		   <option value="big17">Big17 - 64px</option>
+		   <option value="big18">Big18 - 50px</option>
+		</param>
+		
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		
+		<param name="show_rss" type="radio" default="1" label="SHOW_RSS" description="SHOW_RSS_DESC" >
+		   <option value="0">Hide</option>
+		   <option value="1">Show</option>
+		</param>
+		<param name="rss_title" type="text" default="Subscribe in a reader" size="100" label="RSS_TITLE" description="RSS_TITLE_DESC" />
+		<param name="rss_url" type="text" default="" size="100" label="RSS_LINK" description="RSS_LINK_DESC" />
+		
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+                
+        <param name="show_facebook" type="radio" default="1" label="SHOW_FACEBOOK" description="SHOW_FACEBOOK_DESC" >
+           <option value="0">Hide</option>
+           <option value="1">Show</option>
+        </param>
+        
+        <param name="facebook_title" type="text" default="Facebok page" size="100" label="FACEBOOK_TITLE" description="FACEBOOK_TITLE_DESC" />
+        <param name="facebook_url" type="text" default="" size="100" label="FACEBOOK_ADDRESS" description="FACEBOOK_ADDRESS_DESC" />
+				
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		
+		<param name="show_twitter" type="radio" default="1" label="SHOW_TWITTER" description="SHOW_TWITTER_DESC" >
+		   <option value="0">Hide</option>
+		   <option value="1">Show</option>
+		</param>
+		
+		<param name="twitter_title" type="text" default="Follow me" size="100" label="TWITTER_TITLE" description="TWITTER_TITLE_DESC" />
+		<param name="twitter_url" type="text" default="" size="100" label="TWITTER_URL" description="TWITTER_URL_DESC" />
+		
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+                
+        <param name="show_email" type="radio" default="1" label="SHOW_EMAIL" description="SHOW_EMAIL_DESC" >
+           <option value="0">Hide</option>
+           <option value="1">Show</option>
+        </param>
+        
+        <param name="email_title" type="text" default="Subscribe by E-Mail" size="100" label="EMAIL_TITLE" description="EMAIL_TITLE_DESC" />
+        <param name="email_url" type="text" default="" size="100" label="EMAIL_ADDRESS" description="EMAIL_ADDRESS_DESC" />
+        		
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+				
+		<param name="show_extra_twitter" type="radio" default="0" label="EXTRA_TWITTER" description="EXTRA_TWITTER_DESC" >
+		   <option value="0">Hide</option>
+		   <option value="1">Show</option>
+		</param>
+		
+		<param name="extra_twitter_title" type="text" default="Follow me" size="100" label="TWITTER_TITLE" description="TWITTER_TITLE_DESC" />
+		<param name="extra_twitter_url" type="text" default="" size="100" label="TWITTER_URL" description="TWITTER_URL_DESC" />
+		
+		<param name="extra_twitter_icon" type="list" default="twitter28.png" label="EXTRA_TWITTER_ICONS" description="EXTRA_TWITTER_ICONS_DESC" >
+			<option value="twitter01.png">Twitter 01</option>
+			<option value="twitter02.png">Twitter 02</option>
+			<option value="twitter03.png">Twitter 03</option>
+			<option value="twitter04.png">Twitter 04</option>
+			<option value="twitter05.png">Twitter 05</option>
+			<option value="twitter06.png">Twitter 06</option>
+			<option value="twitter07.png">Twitter 07</option>
+			<option value="twitter08.png">Twitter 08</option>
+			<option value="twitter09.png">Twitter 09</option>
+			<option value="twitter10.png">Twitter 10</option>
+			<option value="twitter11.png">Twitter 11</option>
+			<option value="twitter12.png">Twitter 12</option>
+			<option value="twitter13.png">Twitter 13</option>
+			<option value="twitter14.png">Twitter 14</option>
+			<option value="twitter15.png">Twitter 15</option>
+			<option value="twitter16.png">Twitter 16</option>
+			<option value="twitter17.png">Twitter 17</option>
+			<option value="twitter18.png">Twitter 18</option>
+			<option value="twitter19.png">Twitter 19</option>
+			<option value="twitter20.png">Twitter 20</option>
+			<option value="twitter21.png">Twitter 21</option>
+			<option value="twitter22.png">Twitter 22</option>
+			<option value="twitter23.png">Twitter 23</option>
+			<option value="twitter24.png">Twitter 24</option>
+			<option value="twitter25.png">Twitter 25</option>
+			<option value="twitter26.png">Twitter 26</option>
+			<option value="twitter27.png">Twitter 27</option>
+			<option value="twitter28.png">Twitter 28</option>
+			<option value="twitter29.png">Twitter 29</option>
+			<option value="twitter30.png">Twitter 30</option>
+			<option value="twitter31.png">Twitter 31</option>
+			<option value="twitter32.png">Twitter 32</option>
+			<option value="twitter33.png">Twitter 33</option>
+			<option value="twitter34.png">Twitter 34</option>
+			<option value="twitter35.png">Twitter 35</option>
+			<option value="twitter36.png">Twitter 36</option>
+			<option value="twitter37.png">Twitter 37</option>
+			<option value="twitter38.png">Twitter 38</option>
+			<option value="twitter39.png">Twitter 39</option>
+			<option value="twitter40.png">Twitter 40</option>
+			<option value="twitter41.png">Twitter 41</option>
+			<option value="twitter42.png">Twitter 42</option>
+			<option value="twitter43.png">Twitter 43</option>
+			<option value="twitter44.png">Twitter 44</option>
+			<option value="twitter45.png">Twitter 45</option>
+			<option value="twitter46.png">Twitter 46</option>
+			<option value="twitter47.png">Twitter 47</option>
+			<option value="twitter48.png">Twitter 48</option>
+			<option value="twitter49.png">Twitter 49</option>
+			<option value="twitter50.png">Twitter 50</option>
+			<option value="twitter51.png">Twitter 51</option>
+			<option value="twitter52.png">Twitter 52</option>
+			<option value="twitter53.png">Twitter 53</option>
+			<option value="twitter54.png">Twitter 54</option>
+			<option value="twitter55.png">Twitter 55</option>
+			<option value="twitter56.png">Twitter 56</option>
+			<option value="twitter57.png">Twitter 57</option>
+			<option value="twitter58.png">Twitter 58</option>
+			<option value="twitter59.png">Twitter 59</option>
+			<option value="twitter60.png">Twitter 60</option>
+			<option value="twitter61.png">Twitter 61</option>
+			<option value="twitter62.png">Twitter 62</option>
+			<option value="twitter63.png">Twitter 63</option>
+			<option value="twitter64.png">Twitter 64</option>
+			<option value="twitter65.png">Twitter 65</option>
+			<option value="twitter66.png">Twitter 66</option>
+			<option value="twitter67.png">Twitter 67</option>
+			<option value="twitter68.png">Twitter 68</option>
+			<option value="twitter69.png">Twitter 69</option>
+			<option value="twitter70.png">Twitter 70</option>
+			<option value="twitter71.png">Twitter 71</option>
+			<option value="twitter72.png">Twitter 72</option>
+			<option value="twitter73.png">Twitter 73</option>
+			<option value="twitter74.png">Twitter 74</option>
+			<option value="twitter75.png">Twitter 75</option>
+			<option value="twitter76.png">Twitter 76</option>
+			<option value="twitter77.png">Twitter 77</option>
+			<option value="twitter78.png">Twitter 78</option>
+			<option value="twitter79.png">Twitter 79</option>
+			<option value="twitter80.png">Twitter 80</option>
+			<option value="twitter81.png">Twitter 81</option>
+			<option value="twitter82.png">Twitter 82</option>
+			<option value="twitter83.png">Twitter 83</option>
+			<option value="twitter84.png">Twitter 84</option>
+			<option value="twitter85.gif">Twitter 85</option>
+			<option value="twitter86.gif">Twitter 86</option>
+			<option value="twitter87.gif">Twitter 87</option>
+			<option value="twitter88.gif">Twitter 88</option>
+			<option value="twitter89.gif">Twitter 89</option>
+			<option value="twitter90.gif">Twitter 90</option>
+			<option value="twitter91.gif">Twitter 91</option>
+			<option value="twitter92.png">Twitter 92</option>
+			<option value="twitter93.png">Twitter 93</option>
+			<option value="twitter94.png">Twitter 94</option>
+			<option value="twitter95.png">Twitter 95</option>
+			<option value="twitter96.png">Twitter 96</option>
+			<option value="twitter97.png">Twitter 97</option>
+			<option value="twitter98.jpg">Twitter 98</option>
+			<option value="twitter99.jpg">Twitter 99</option>
+			<option value="twitter100.png">Twitter 100</option>
+			<option value="twitter101.jpg">Twitter 101</option>
+			<option value="twitter102.png">Twitter 102</option>
+			<option value="twitter103.png">Twitter 103</option>
+			<option value="twitter104.png">Twitter 104</option>
+			<option value="twitter105.png">Twitter 105</option>
+			<option value="twitter106.png">Twitter 106</option>
+			<option value="twitter107.png">Twitter 107</option>
+			<option value="twitter108.png">Twitter 108</option>
+			<option value="twitter109.png">Twitter 109</option>
+			<option value="twitter110.png">Twitter 110</option>
+			<option value="twitter111.png">Twitter 111</option>
+			<option value="twitter112.png">Twitter 112</option>
+			<option value="twitter113.png">Twitter 113</option>
+			<option value="twitter114.png">Twitter 114</option>
+			<option value="twitter115.png">Twitter 115</option>
+			<option value="twitter116.png">Twitter 116</option>
+			<option value="twitter117.png">Twitter 117</option>
+			<option value="twitter118.png">Twitter 118</option>
+			<option value="twitter119.png">Twitter 119</option>
+            <option value="twitter120.png">Twitter 120</option>
+            <option value="twitter121.png">Twitter 121</option>
+            <option value="twitter122.png">Twitter 122</option>
+            <option value="twitter123.png">Twitter 123</option>
+            <option value="twitter124.png">Twitter 124</option>
+            <option value="twitter125.png">Twitter 125</option>
+            <option value="twitter126.png">Twitter 126</option>
+            <option value="twitter127.png">Twitter 127</option>
+            <option value="twitter128.png">Twitter 128</option>
+            <option value="twitter129.png">Twitter 129</option>
+            <option value="twitter130.png">Twitter 130</option>
+            <option value="twitter131.png">Twitter 131</option>
+            <option value="twitter132.png">Twitter 132</option>
+            <option value="twitter133.png">Twitter 133</option>
+            <option value="twitter134.png">Twitter 134</option>
+            <option value="twitter135.png">Twitter 135</option>
+            <option value="twitter136.png">Twitter 136</option>
+            <option value="twitter137.png">Twitter 137</option>
+            <option value="twitter138.png">Twitter 138</option>
+            <option value="twitter139.png">Twitter 139</option>
+            <option value="twitter140.png">Twitter 140</option>
+            <option value="twitter141.png">Twitter 141</option>
+            <option value="twitter142.png">Twitter 142</option>
+            <option value="twitter143.png">Twitter 143</option>
+            <option value="twitter144.png">Twitter 144</option>
+            <option value="twitter145.png">Twitter 145</option>
+            <option value="twitter146.png">Twitter 146</option>
+            <option value="twitter147.png">Twitter 147</option>
+            <option value="twitter148.png">Twitter 148</option>
+            <option value="twitter149.png">Twitter 149</option>
+            <option value="twitter150.png">Twitter 150</option>
+            <option value="twitter151.png">Twitter 151</option>
+            <option value="twitter152.png">Twitter 152</option>
+            <option value="twitter153.png">Twitter 153</option>
+            <option value="twitter154.png">Twitter 154</option>
+            <option value="twitter155.png">Twitter 155</option>
+		</param>
+    
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+                
+        <param name="mail_form" type="radio" default="0" label="ITP_MAIL_FORM" description="ITP_MAIL_FORM_DESC" >
+           <option value="0">Hide</option>
+           <option value="1">Show</option>
+        </param>
+        <param name="feedburner_uri" size="100" type="text" default="" label="ITP_FEEDBURNER_URI" description="ITP_FEEDBURNER_URI_DESC" />
+        <param name="feedburner_style" size="100" type="text" default="border:1px solid #ccc;padding:3px;text-align:center;" label="ITP_FEEDBURNER_STYLE" description="ITP_FEEDBURNER_STYLE_DESC" />
+        <param name="feedburner_iw" size="100" type="text" default="140" label="ITP_FEEDBURNER_IW" description="ITP_FEEDBURNER_IW_DESC" />
+        <param name="feedburner_bn" size="100" type="text" default="Subscribe" label="ITP_FEEDBURNER_BN" description="ITP_FEEDBURNER_BN_DESC" />
+        <param name="feedburner_l" size="100" type="list" default="en_US" label="ITP_LANGUAGE" description="ITP_LANGUAGE_DESC">
+            <option value="en_US">English</option>
+            <option value="es_ES">Español</option>
+            <option value="fr_FR">Français</option>
+            <option value="de_DE">Deutsch</option>
+            <option value="pt_BR">Português</option>
+            <option value="ru_RU">русский язык</option>
+        </param>
+        <param name="header_text" type="textarea" rows="3" cols="40" default="" label="ITP_FEEDBURNER_HT" description="ITP_FEEDBURNER_HT_DESC" />
+	</params>
+
+    <params group="advanced">
+        <param name="cache" type="list" default="0" label="CACHING" description="CACHING_DESC">
+            <option value="1">Use global</option>
+            <option value="0">No caching</option>
+        </param>
+        <param name="cache_time" type="text" default="900" label="CACHING_TIME" description="CACHING_TIME_DESC" />
+    </params>
+	
+	<languages>
+        <language tag="en-GB">en-GB.mod_itpsubscribe.ini</language>
+    </languages>    
+</install>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>JX Share Link</name>
+	<author>Olle Johansson</author>
+	<creationDate>2008-10-02</creationDate>
+	<copyright>(C) 2008 JX Development</copyright>
+	<license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL v2</license>
+	<authorEmail>Olle@Johansson.com</authorEmail>
+	<authorUrl>www.jxdevelopment.com</authorUrl>
+	<version>1.1.0</version>
+    <description><![CDATA[
+	<p>JX Share Link allows you to add a drop-down box with share links for several different social bookmarking sites.</p>
+	<p>Icons are from the <a href="http://www.openshareicons.com/">Open Share Icon Project</a> and the <a href="http://shareicons.com/">Share Icon Project</a>.</p>
+	]]></description>
+	<files>
+		<filename plugin="jxsharelink">jxsharelink.php</filename>
+		<filename plugin="jxsharelink">jxsharelink.txt</filename>
+		<filename plugin="jxsharelink">jxsharelink/index.html</filename>
+		<filename plugin="jxsharelink">jxsharelink/license.txt</filename>
+		<filename plugin="jxsharelink">jxsharelink/jxsharelink.js</filename>
+		<filename plugin="jxsharelink">jxsharelink/jxsharelink.css</filename>
+		<filename plugin="jxsharelink">jxsharelink/elements/index.html</filename>
+		<filename plugin="jxsharelink">jxsharelink/elements/multilist.php</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/index.html</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshare-icon-12.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshare-icon-16.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshare-icon-32.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshare-icon-64.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshare-icon-128.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshareicon-dark-16.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/openshareicon-dark-128.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/addtoany_openshare_120_16.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/addtoany_openshare_256_24.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-10x10.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-12x12.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-16x16.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-24x24.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-32x32.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-64x64.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shareicons/share-icon-128x128.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/index.html</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/bookmark.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/google.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/delicious.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/digg.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/yahoo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/facebook.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/myspace.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/pownce.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/blinklist.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/blogmarks.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/reddit.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/spurl.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/magnolia.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/fark.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/furl.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/newsvine.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/stumbleupon.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/technorati.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/diigo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/mrwong.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/folkd.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/smarking.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/propeller.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/slashdot.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/simpy.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/ask.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/squidoo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/sphinn.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/indianpad.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/dzone.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/startaid.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/kaboodle.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/faves.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/bumpzee.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/swik.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/shoutwire.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/thisnext.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/netvouz.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/plugim.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/wists.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/connotea.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/dotnetkicks.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/fleck.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/ppnow.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/haohaoreport.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/jumptags.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/netrocket.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/mixx.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/chipmark.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/niftyclip.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/hatena.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/drecom.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/myshare.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/hemidemi.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/joltmark.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/rootace.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/oneview.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/linksilo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/readster.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/newsider.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/bookmarkscc.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/newskick.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/yigg.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/linkarena.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/webnews.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/kledy.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/favit.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/favoriten.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/seekxl.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/bonitrust.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/pusha.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/oknotizie.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/segnalo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/chattait.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/nujij.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/ekudos.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/geenredactie.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/wykop.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/gwar.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/blogter.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/linkter.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/internetmedia.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/scoopeo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/rec6.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/yahoobookmarks.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/linkagogo.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/myaol.png</filename>
+		<filename plugin="jxsharelink">jxsharelink/images/msnlive.png</filename>
+	</files>
+	<params addpath="/plugins/content/jxsharelink/elements">
+		<param type="spacer" default="&lt;b&gt;Display Options&lt;/b&gt;" />
+		<param name="shareicon" type="imagelist" default="openshare-icon-32" label="Share Icon" description="Select a share icon to display next to the share links." directory="plugins/content/jxsharelink/images/shareicons" filter="*.png" stripext="1" />
+		<param name="placement" type="list" default="listafter" label="Placement" description="Placement of the Share Icon and how to show the list. The buttonheading placement is template dependant.">
+			<option value="listbefore">List Before Content</option>
+			<option value="listafter">List After Content</option>
+			<option value="float_left">List Float Left</option>
+			<option value="float_right">List Float Right</option>
+			<option value="dropdownbefore">Drop-down Before Content</option>
+			<option value="dropdownafter">Drop-down After Content</option>
+			<option value="buttonheading">Drop-down In Buttonheading</option>
+		</param>
+		<param name="openlink" type="list" default="blank" label="Open Link" description="How to open the link.">
+			<option value="popup">Popup Window</option>
+			<option value="current">Current Window</option>
+			<option value="blank">New Window</option>
+		</param>
+		<param name="excludedarticles" type="text" default="" size="50" label="Excluded Articles" description="List of article ID's that the Share Icon shouldn't be displayed on. Separated by comma." />
+		<param type="spacer" default="&lt;b&gt;Drop-down Menu Options&lt;/b&gt;" />
+		<param name="mode" type="list" default="vertical" label="Transition" description="If using drop-down, whether to slide the menu in horizontally or vertically.">
+			<option value="vertical">Vertical</option>
+			<option value="horizontal">Horizontal</option>
+		</param>
+		<param name="effect" type="list" default="bounce" size="3" label="Effect" description="Which effect to use to slide open the drop-down menu.">
+			<option value="bounce">Bounce</option>
+			<option value="elastic">Elastic</option>
+			<option value="expo">Expo</option>
+			<option value="linear">Linear</option>
+			<option value="back">Back</option>
+			<option value="sine">Sineousidal</option>
+			<option value="circ">Circular</option>
+			<option value="quad">Quad</option>
+			<option value="cubic">Cubic</option>
+			<option value="quart">Quart</option>
+			<option value="quint">Quint</option>
+		</param>
+		<param type="spacer" default="&lt;b&gt;Share Site Options&lt;/b&gt;" />
+		<param name="usedsites" type="multilist" size="10" default="Bookmark|Google|Yahoo MyWeb|Del.icio.us|Digg|Facebook|Myspace|Reddit|Ma.gnolia|Technorati|Stumble Upon" label="Used Sites" description="Select all sites that should be used in the listing.">
+			<option value="Bookmark">Bookmark Page</option>
+			<option value="">-- Popular --</option>
+			<option value="Google">Google</option>
+			<option value="Yahoo MyWeb">Yahoo MyWeb</option>
+			<option value="Del.icio.us">Del.icio.us</option>
+			<option value="Digg">Digg</option>
+			<option value="Facebook">Facebook</option>
+			<option value="Myspace">Myspace</option>
+			<option value="Reddit">Reddit</option>
+			<option value="Ma.gnolia">Ma.gnolia</option>
+			<option value="Technorati">Technorati</option>
+			<option value="Stumble Upon">Stumble Upon</option>
+			<option value="">-- General --</option>
+			<option value="Pownce">Pownce</option>
+			<option value="Blogmarks">Blogmarks</option>
+			<option value="Blinklist">Blinklist</option>
+			<option value="Spurl">Spurl</option>
+			<option value="Furl">Furl</option>
+			<option value="Fark">Fark</option>
+			<option value="Newsvine">Newsvine</option>
+			<option value="Diigo">Diigo</option>
+			<option value="Mister Wong">Mister Wong</option>
+			<option value="folkd">folkd</option>
+			<option value="Smarking">Smarking</option>
+			<option value="Propeller">Propeller</option>
+			<option value="Slashdot">Slashdot</option>
+			<option value="Simpy">Simpy</option>
+			<option value="Ask">Ask</option>
+			<option value="Squidoo">Squidoo</option>
+			<option value="Sphinn">Sphinn</option>
+			<option value="IndianPad">IndianPad</option>
+			<option value="DZone">DZone</option>
+			<option value="StartAid">StartAid</option>
+			<option value="Kaboodle">Kaboodle</option>
+			<option value="Faves">Faves</option>
+			<option value="Bumpzee">Bumpzee</option>
+			<option value="SWiK">SWiK</option>
+			<option value="Shoutwire">Shoutwire</option>
+			<option value="ThisNext">ThisNext</option>
+			<option value="Netvouz">Netvouz</option>
+			<option value="PlugIM">PlugIM</option>
+			<option value="Wists">Wists</option>
+			<option value="Connotea">Connotea</option>
+			<option value="Dotnetkicks">Dotnetkicks</option>
+			<option value="Fleck">Fleck</option>
+			<option value="ppnow">ppnow</option>
+			<option value="HaoHaoReport">HaoHaoReport</option>
+			<option value="Jumptags">Jumptags</option>
+			<option value="netRocket">netRocket</option>
+			<option value="Mixx">Mixx</option>
+			<option value="Chipmark">Chipmark</option>
+			<option value="Yahoo Bookmarks">Yahoo Bookmarks</option>
+			<option value="Link-a-Gogo">Link-a-Gogo</option>
+			<option value="myAOL">myAOL</option>
+			<option value="MSN Live">MSN Live</option>
+			<option value="">-- Aian Sites --</option>
+			<option value="Nifty Clip">Nifty Clip</option>
+			<option value="Hatena">Hatena</option>
+			<option value="Drecom">Drecom</option>
+			<option value="MyShare">MyShare</option>
+			<option value="HEMiDEMi">HEMiDEMi</option>
+			<option value="JoltMark">JoltMark</option>
+			<option value="RootAce">RootAce</option>
+			<option value="">-- German --</option>
+			<option value="Oneview">Oneview</option>
+			<option value="Linksilo">Linksilo</option>
+			<option value="Readster">Readster</option>
+			<option value="Newsider">Newsider</option>
+			<option value="Bookmarks.cc">Bookmarks.cc</option>
+			<option value="Newskick">Newskick</option>
+			<option value="Yigg">Yigg</option>
+			<option value="Linkarena">Linkarena</option>
+			<option value="Webnews">Webnews</option>
+			<option value="Kledy">Kledy</option>
+			<option value="Favit">Favit</option>
+			<option value="Favoriten">Favoriten</option>
+			<option value="Seek XL">Seek XL</option>
+			<option value="BoniTrust">BoniTrust</option>
+			<option value="">-- Swedish --</option>
+			<option value="Pusha">Pusha</option>
+			<option value="">-- Other European --</option>
+			<option value="OkNotizie">OkNotizie</option>
+			<option value="Segnalo">Segnalo</option>
+			<option value="Chatta.it">Chatta.it</option>
+			<option value="Nujij">Nujij</option>
+			<option value="Ekudos">Ekudos</option>
+			<option value="GeenRedactie">GeenRedactie</option>
+			<option value="Wykop">Wykop</option>
+			<option value="Gwar">Gwar</option>
+			<option value="Blogter">Blogter</option>
+			<option value="Linkter">Linkter</option>
+			<option value="InterNetMedia">InterNetMedia</option>
+			<option value="Scoopeo">Scoopeo</option>
+			<option value="Rec6">Rec6</option>
+		</param>
+		<param name="addedsites" type="textarea" default="" label="Added Sites" description="List all sites to be added to the list." rows="10" cols="50" />
+	</params>
+	<languages>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_content_jxsharelink.ini</language>
+	   <language tag="sv-SE">language/sv-SE/sv-SE.plg_content_jxsharelink.ini</language>
+	</languages>
+</install>

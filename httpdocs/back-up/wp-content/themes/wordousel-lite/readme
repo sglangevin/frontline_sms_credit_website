@@ -1,0 +1,82 @@
+Theme Name: Wordousel Lite
+Theme URI: http://armeda.com/
+Description: Custom theme by Dre Armeda
+Version: 1.2
+Author: Andres "Dre" Armeda September 2009
+Author URI: http://armeda.com/
+Tags: carousel, jQuery, wordpress, xhtml, css, 2 column
+
+Dre Armeda
+
+http://armeda
+info@armeda.com
+
+
+Twitter: @dremeda 
+
+RT The post if you like the free theme :)
+
+
+
+
+INITIAL
+
+1. Install WordPress
+
+2. Upload Wordousel Lite to your theme directory
+
+3. Login to WP Admin Panel and enable theme
+
+
+STATIC HOME
+
+1. Once logged in go to Settings>Reading and enable static home
+
+2. Front Page = Home | Post Page = Blog
+
+
+Permalinks
+
+1. Go to Settings>Permalinks and use Custom Structure= /%postname%/
+	(This requires .htaccess permissions to do. It is not required for everything to work, just a recommendation)
+
+
+CAROUSEL
+
+1. Create new category ( I use Featured ). Once created get category theme ID by rolling over the category name on the categories page
+
+2. open home_template and navigate to carousel area. It has been commented. find code <?php query_posts('showposts=4&cat=5'); ?> and replace cat=withyourcategoryID
+
+3. Please read the rest of the comments on home_template, it explains the basics to getting the carousel working
+
+4. Create a new post and ensure it is added to the category you created.
+
+5. In the post create a new custom field naming it Thumbs and add the url to an image. Make sure the image is 413px � 212px
+
+6. Save and Publish post. It should now appear in the carousel
+
+7. Repeat this for as many posts as you define in the carousel
+
+
+NESTED COMMENTS
+
+1. This theme includes nested comments capability. Ensure to try it out by turning this on in wp-admin / Settings / Discussions
+
+
+--------------------------------------------
+
+
+This is fully adjustable and customizable. Add or remove carousel panels as you please. Also feel free to play with the styling.
+
+The CSS, XHTML and design is released under GPL: http://www.opensource.org/licenses/gpl-license.php
+
+
+For custom themes, design, and WordPress consulting please contact me at info@armeda.com 
+
+I am releasing a premium version of Wordousel this month, stay tuned to http://armeda.com for that.
+
+
+
+--------------------------------------------
+
+I would also enjoy seeing your designs, please shoot over a link to info@armeda.com

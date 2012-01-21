@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/plugin-install.dtd">
+<install type="plugin" group="system" version="1.5">
+	<name>System - Modalizer</name>
+	<description>PLG_SYSTEM_MODALIZER_DESC</description>
+	<version>2.3.2</version>
+	<creationDate>March 2011</creationDate>
+	<author>NoNumber! (Peter van Westen)</author>
+	<authorEmail>peter@nonumber.nl</authorEmail>
+	<authorUrl>http://www.nonumber.nl</authorUrl>
+	<copyright>Copyright © 2011 NoNumber! All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<!-- Files -->
+	<files>
+		<filename plugin="modalizer">modalizer</filename>
+		<folder>modalizer</folder>
+	</files>
+
+	<!-- Parameters -->
+	<params addpath="/plugins/system/nonumberelements/elements">
+		<param name="@loadlanguage" type="loadlanguage" extension="plg_system_modalizer" />
+		<param name="@license" type="license" extension="MODALIZER" />
+		<param name="@version" type="version" extension="MODALIZER" xml="/plugins/system/modalizer.xml" />
+		<param name="@title" type="title"
+			label="MODALIZER"
+			description="MODALIZER_DESC"
+			xml="/plugins/system/modalizer.xml"
+			image="/plugins/system/modalizer/images/logo.png"
+			image_w="60" image_h="80"
+			url="http://www.nonumber.nl/modalizer"
+			help_url="http://www.nonumber.nl/modalizer" />
+
+		<param name="modal_type" type="radiolist" default="colorbox" label="MDL_MODAL_TYPE" description="MDL_MODAL_TYPE_DESC">
+			<option value="core">Joomla! Core (SqueezeBox)</option>
+			<option value="colorbox">ColorBox 1.3.16</option>
+			<option value="fancybox">FancyBox 1.3.4</option>
+			<option value="lytebox">LyteBox 3.22</option>
+			<option value="shadowbox">ShadowBox 3.0.3</option>
+		</param>
+
+		<!-- Modal Types -->
+		<param name="@title" type="title" start="1" />
+			<!-- SqueezeBox -->
+			<param name="@toggler" type="toggler" param="modal_type" value="core" />
+				<param name="@title" type="title" nostyle="1" label="MDL_SQUEEZEBOX" />
+				<param name="@title" type="title" nostyle="1" description="MDL_MOOTOOLS_FRAMEWORK_DESC" />
+			<param name="@toggler" type="toggler" />
+
+			<!-- ColorBox -->
+			<param name="@toggler" type="toggler" param="modal_type" value="colorbox" />
+				<param name="@title" type="title" nostyle="1" label="MDL_COLORBOX" />
+				<param name="@title" type="title" nostyle="1" description="MDL_JQUERY_FRAMEWORK_DESC" />
+				<param name="modal_colorbox_style" type="folderlist" directory="plugins/system/modalizer/modals/colorbox/" filter="style" hide_none="1" hide_default="1" default="style1" label="MDL_STYLE" description="MDL_STYLE_DESC" />
+			<param name="@toggler" type="toggler" />
+
+			<!-- FancyBox -->
+			<param name="@toggler" type="toggler" param="modal_type" value="fancybox" />
+				<param name="@title" type="title" nostyle="1" label="MDL_FANCYBOX" />
+				<param name="@title" type="title" nostyle="1" description="MDL_JQUERY_FRAMEWORK_DESC" />
+				<param name="modal_fancybox_titlepos" type="radio" default="" label="MDL_TITLE_POSITION" description="MDL_TITLE_POSITION_DESC">
+					<option value="none">None</option>
+					<option value="">MDL_OUTSIDE</option>
+					<option value="inside">MDL_INSIDE</option>
+					<option value="over">MDL_OVER</option>
+				</param>
+				<param name="modal_fancybox_transition" type="radio" default="" label="MDL_ANIMATION" description="MDL_ANIMATION_DESC">
+					<option value="none">None</option>
+					<option value="">MDL_FADE</option>
+					<option value="elastic">MDL_ELASTIC</option>
+				</param>
+				<param name="modal_fancybox_border" type="text" size="5" default="20" label="MDL_OUTER_BORDER" description="MDL_OUTER_BORDER_PX_DESC" />
+			<param name="@toggler" type="toggler" />
+
+			<!-- LyteBox -->
+			<param name="@toggler" type="toggler" param="modal_type" value="lytebox" />
+				<param name="@title" type="title" nostyle="1" label="MDL_LYTEBOX" />
+				<param name="modal_lytebox_transition" type="radio" default="1" label="MDL_ANIMATION" description="MDL_ANIMATION_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="modal_lytebox_border" type="radio" default="1" label="MDL_OUTER_BORDER" description="MDL_OUTER_BORDER_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+			<param name="@toggler" type="toggler" />
+
+			<!-- ShadowBox -->
+			<param name="@toggler" type="toggler" param="modal_type" value="shadowbox" />
+				<param name="@title" type="title" nostyle="1" label="MDL_SHADOWBOX" />
+				<param name="modal_shadowbox_transition" type="radiolist" default="" label="MDL_ANIMATION" description="MDL_ANIMATION_DESC">
+					<option value="none">None</option>
+					<option value="">MDL_SYNC</option>
+					<option value="wh">MDL_WIDTH_FIRST_THEN_HEIGHT</option>
+					<option value="hw">MDL_HEIGHT_FIRST_THEN_WIDTH</option>
+				</param>
+			<param name="@toggler" type="toggler" />
+		<param name="@title" type="title" end="1" />
+
+		<!-- Open in Iframe -->
+		<param name="@title" type="title" start="1" />
+			<param name="@toggler" type="toggler" param="modal_type" value="core,colorbox,fancybox" />
+				<param name="modal_iframe" type="radio" default="1" label="MDL_OPEN_IN_IFRAME" description="MDL_OPEN_IN_IFRAME_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+			<param name="@toggler" type="toggler" />
+			<param name="@toggler" type="toggler" param="modal_type|modal_iframe" value="lytebox,shadowbox|1" />
+				<param name="modal_tmpl_links" type="radio" default="1" label="MDL_CONVERT_LINKS_INSIDE_WINDOW" description="MDL_CONVERT_LINKS_INSIDE_WINDOW_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+			<param name="@toggler" type="toggler" />
+		<param name="@title" type="title" end="1" />
+
+		<!-- Auto Group -->
+		<param name="@toggler" type="toggler" param="modal_type" value="colorbox,fancybox,lytebox,shadowbox" />
+			<param name="@title" type="title" start="1" />
+				<param name="modal_group" type="radio" default="1" label="MDL_AUTO_GROUP" description="MDL_AUTO_GROUP_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="modal_group" value="1" />
+					<param name="modal_group_filetypes" type="text" size="40" default="gif,jpg,jpeg,png,bmp" label="MDL_GROUP_FILETYPES" description="MDL_GROUP_FILETYPES_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+		<param name="@toggler" type="toggler" />
+
+		<!-- Default Window Sizes -->
+		<param name="@title" type="title" start="1" label="MDL_DEFAULT_WINDOW_SIZES" />
+			<!-- Default -->
+			<param name="@title" type="title" start="1" />
+				<param name="modal_size" type="radio" default="0" label="Default" description="MDL_DEFAULT_WINDOW_SIZE_DESC">
+					<option value="0">MDL_AUTO</option>
+					<option value="1">MDL_CUSTOM</option>
+				</param>
+				<param name="@toggler" type="toggler" param="modal_size" value="1" />
+					<param name="@toggler" type="toggler" param="modal_type" value="colorbox,fancybox" />
+						<param name="modal_width" type="text" size="10" default="80%" label="MDL_WIDTH" description="MDL_WIDTH_DESC" />
+						<param name="modal_height" type="text" size="10" default="80%" label="MDL_HEIGHT" description="MDL_HEIGHT_DESC" />
+					<param name="@toggler" type="toggler" />
+					<param name="@toggler" type="toggler" param="modal_type" value="core,lytebox,shadowbox" />
+						<param name="modal_width_px" type="text" size="10" default="400" label="MDL_WIDTH_PX" description="MDL_WIDTH_PX_DESC" />
+						<param name="modal_height_px" type="text" size="10" default="400" label="MDL_HEIGHT_PX" description="MDL_HEIGHT_PX_DESC" />
+					<param name="@toggler" type="toggler" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- External Sites -->
+			<param name="@title" type="title" start="1" />
+				<param name="modal_ext_size" type="radio" default="2" label="MDL_EXTERNAL_SITES" description="MDL_DEFAULT_WINDOW_SIZE_DESC">
+					<option value="0">MDL_AUTO</option>
+					<option value="1">MDL_CUSTOM</option>
+					<option value="2">Use Default</option>
+				</param>
+				<param name="@toggler" type="toggler" param="modal_ext_size" value="1" />
+					<param name="@toggler" type="toggler" param="modal_type" value="colorbox,fancybox" />
+						<param name="modal_ext_width" type="text" size="10" default="80%" label="MDL_WIDTH" description="MDL_WIDTH_DESC" />
+						<param name="modal_ext_height" type="text" size="10" default="80%" label="MDL_HEIGHT" description="MDL_HEIGHT_DESC" />
+					<param name="@toggler" type="toggler" />
+					<param name="@toggler" type="toggler" param="modal_type" value="core,lytebox,shadowbox" />
+						<param name="modal_ext_width_px" type="text" size="10" default="400" label="MDL_WIDTH_PX" description="MDL_WIDTH_PX_DESC" />
+						<param name="modal_ext_height_px" type="text" size="10" default="400" label="MDL_HEIGHT_PX" description="MDL_HEIGHT_PX_DESC" />
+					<param name="@toggler" type="toggler" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- Images -->
+			<param name="@title" type="title" start="1" />
+				<param name="@toggler" type="toggler" param="modal_type" value="core,colorbox,fancybox,lytebox" />
+					<param name="@modal_img_size" type="radio" default="0" label="MDL_IMAGES" description="MDL_AUTO_DESC">
+						<option value="0">MDL_AUTO</option>
+					</param>
+				<param name="@toggler" type="toggler" />
+				<param name="@toggler" type="toggler" param="modal_type" value="shadowbox" />
+					<param name="modal_img_size" type="radio" default="2" label="MDL_IMAGES" description="MDL_DEFAULT_WINDOW_SIZE_DESC">
+						<option value="0">MDL_AUTO</option>
+						<option value="1">MDL_CUSTOM</option>
+						<option value="2">Use Default</option>
+					</param>
+					<param name="@toggler" type="toggler" param="modal_img_size" value="1" />
+						<param name="modal_img_width_px" type="text" size="10" default="400" label="MDL_WIDTH_PX" description="MDL_WIDTH_PX_DESC" />
+						<param name="modal_img_height_px" type="text" size="10" default="400" label="MDL_HEIGHT_PX" description="MDL_HEIGHT_PX_DESC" />
+					<param name="@toggler" type="toggler" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+		<param name="@title" type="title" end="1" />
+
+		<!-- Activator Settings -->
+		<param name="@slide" type="slide" label="MDL_ACTIVATOR_SETTINGS" description="MDL_ACTIVATOR_SETTINGS_DESC" />
+			<!-- By Classnames -->
+			<param name="@title" type="title" start="1" label="MDL_BY_CLASSNAMES" description="MDL_BY_CLASSNAMES_DESC" />
+				<param name="enable_classnames" type="radio" default="1" label="Enable">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="enable_classnames" value="1" />
+					<param name="classnames" type="text" size="40" default="modal,modalizer" label="MDL_CLASSNAMES" description="MDL_CLASSNAMES_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- By Filetypes -->
+			<param name="@title" type="title" start="1" label="MDL_BY_FILETYPES" description="MDL_BY_FILETYPES_DESC" />
+				<param name="enable_filetypes" type="radio" default="0" label="Enable">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="enable_filetypes" value="1" />
+					<param name="filetypes" type="text" size="40" default="gif,jpg,jpeg,png,bmp,pdf" label="MDL_FILETYPES" description="MDL_FILETYPES_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- By URLs -->
+			<param name="@title" type="title" start="1" label="MDL_BY_URLS" description="MDL_BY_URLS_DESC" />
+				<param name="enable_urls" type="radio" default="0" label="Enable">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="enable_urls" value="1" />
+					<param name="@title" type="title" description="NN_URL_PARTS_DESC" />
+					<param name="urls" type="textareaplus" texttype="regex" width="300" default="" resize="1" label="NN_URL_PARTS" description="NN_URL_PARTS_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- By Target -->
+			<param name="@title" type="title" start="1" label="MDL_BY_TARGET" description="MDL_BY_TARGET_DESC" />
+				<param name="enable_target" type="radio" default="0" label="Enable">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="enable_target" value="1" />
+					<param name="target_internal" type="radio" default="1" label="MDL_ENABLE_INTERNAL" description="MDL_ENABLE_INTERNAL_DESC">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</param>
+					<param name="target_external" type="radio" default="0" label="MDL_ENABLE_EXTERNAL" description="MDL_ENABLE_EXTERNAL_DESC">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</param>
+					<param name="target_disablefiletypes" type="text" size="40" default="" label="MDL_DISABLE_ON_FILETYPES" description="MDL_DISABLE_ON_FILETYPES_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+			<!-- By Syntax -->
+			<param name="@title" type="title" start="1" label="MDL_BY_SYNTAX" description="MDL_BY_SYNTAX_DESC" />
+				<param name="enable_syntax" type="radio" default="1" label="Enable">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+				<param name="@toggler" type="toggler" param="enable_syntax" value="1" />
+					<param name="syntax" type="text" size="20" default="modal" label="MDL_SYNTAX_WORD" description="MDL_SYNTAX_WORD_DESC" />
+				<param name="@toggler" type="toggler" />
+			<param name="@title" type="title" end="1" />
+
+		<!-- Advanced Settings -->
+		<param name="@slide" type="slide" label="MDL_ADVANCED_SETTINGS" />
+			<param name="tmpl" type="text" default="component" label="MDL_SUB_TEMPLATE" description="MDL_SUB_TEMPLATE_DESC" />
+
+			<param name="@toggler" type="toggler" param="modal_type" value="colorbox,fancybox" />
+				<param name="load_jquery" type="radio" default="1" label="MDL_LOAD_JQUERY_SCRIPT" description="MDL_LOAD_JQUERY_SCRIPT_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</param>
+			<param name="@toggler" type="toggler" />
+
+			<param name="disable_components" type="components" default="" admin="0" show_content="1" label="MDL_DISABLE_ON_COMPONENTS" description="MDL_DISABLE_ON_COMPONENTS_DESC" />
+	</params>
+</install>

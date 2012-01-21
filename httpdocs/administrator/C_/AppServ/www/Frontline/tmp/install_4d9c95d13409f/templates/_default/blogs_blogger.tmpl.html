@@ -1,0 +1,49 @@
+<?php
+/**
+ * @package		My Blog
+ * @copyright (C) 2008 by Slashes & Dots Sdn Bhd - All rights reserved!
+ * @license http://www.azrul.com Copyrighted Commercial Software
+ */
+defined('_JEXEC') or die('Restricted access');
+
+$blog	=& $blogs[0];
+?>
+<div class="blogList" style="float: left; margin-bottom: 20px;">
+	<div class="avatar_container" style="float: left; width: <?php echo $avatarWidth;?>px;"><?php echo $blog->avatar; ?></div>
+	<div style="padding-left: <?php echo $avatarLeftPadding; ?>px;">
+		<div class="blogTitle">
+			<strong><a href="<?php echo $blog->blogLink;?>"><?php echo JText::sprintf('BLOGGERS BLOG' ,( $useFullName =="1"? $blog->name : $blog->username) );?></a></strong>
+		</div>
+		<div class="updated">
+			<span title="<?php echo JText::_('BLOG LAST UPDATED TITLE');?>"><?php echo $blog->last_updated;?></span>
+		</div>
+		<div class="blogDesc">
+			<?php echo stripslashes($blog->description);?>
+		</div>
+		<div class="blogStats">
+			<img class="numEntries_image" alt="" src="<?php echo MY_COM_LIVE . '/images/table_multiple.png';?>" />
+				<?php echo JText::sprintf( 'NUMBER OF BLOG ENTRIES' , $blog->numEntries ); ?>
+				<br />
+				<img class="numEntries_image" alt="" src="<?php echo MY_COM_LIVE . '/templates/_default/images/tagcloud.png';?>" />
+				<?php
+					if ($categories)
+					{
+						foreach ($categories as $category)
+						{
+				?>
+							<a href="<?php echo JRoute::_('index.php?option=com_myblog&blogger=' . $blog->username . '&task=tag&category=' . urlencode( $category->name ) . '&Itemid=' . $Itemid);?>"><?php echo $category->name; ?></a>
+				<?php
+						}
+					}
+					else
+					{
+				?>
+					<em><?php echo JText::_('BLOG UNTAGGED');?></em>
+				<?php
+					}
+				?>
+		</div>
+	</div>
+</div>
+<div style="clear:both;"></div>
+

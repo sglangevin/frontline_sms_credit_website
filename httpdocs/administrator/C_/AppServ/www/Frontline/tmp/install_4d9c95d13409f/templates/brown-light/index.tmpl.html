@@ -1,0 +1,90 @@
+<?php
+if ($entry and count($entry) != 0)
+{
+	foreach ($entry as $e)
+	{
+?>
+<div class="entryContent">
+    <div class="entry">
+    	<table class="entryTitle"  cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="categoryCell">
+					<?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?>
+				</td>
+				<td class="my-dateCell">
+					<span class="post-date"><?php echo $e['createdFormatted']; ?></span>
+				</td>
+				<?php
+					if ($e['avatar'] != "")
+					{
+				?>
+				<td class="my-avatarCell" rowspan="2">
+					<div class="userAvatar">
+					<?php echo $e['avatar']; ?>
+					</div>
+				</td>
+				<?php
+					}
+				?>	
+			</tr>
+			<tr>
+				<td class="my-titleCell" colspan="<?php if ($e['comments']!="") echo "1"; 
+														else echo "2";
+												?>">
+					<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $e['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $e['author']; ?></a>
+					<?php
+						if( $categoryDisplay )
+						{
+					?>
+					<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+					<?php
+						}
+					?>
+					<div><a href="<?php echo $e['permalink']; ?>"><?php echo $e['title']; ?></a></div>
+				</td>
+				<?php
+					if ($e['comments']!="") // if comments enabled
+					{
+						?>
+						<td class="commentsCell">
+							<?php echo '<a href="'.$e['permalink'].'#comments">'.$e['comments'] .'</a>'; ?>
+						</td>
+						<?php
+					}
+				?>
+				
+			</tr>
+		</table>
+		<?php
+        	if (isset($e['beforeContent']))
+			{ ?>
+			<div class="onBeforePrepareContent">
+				<?php echo $e['beforeContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+        <div class="entry-body"> 
+			<?php echo $e['text']; ?> 
+			<div class="clear"></div>
+		</div>
+        <?php if (isset($e['afterContent']))
+			{ ?>
+			<div class="onAfterPrepareContent">
+				<?php echo $e['afterContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+		<div class="entry-footer">
+			<?php if ($e['readmore']=="1")
+			{ ?>
+			<a href="<?php echo $e['permalink']; ?><?php echo $showAnchor; ?>"><?php echo JText::_('READMORE');?></a>
+			<?php } ?>
+		</div>
+    </div>
+</div>
+<?php
+		}
+	}
+?>

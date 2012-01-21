@@ -1,0 +1,101 @@
+{xmt_id}.xmt hr{
+	height:1px;
+	width:100%;
+	color:#000000;
+}
+
+{xmt_id}.xmt .header_48{
+	height:48px;
+	line-height:48px;
+	vertical-align:middle
+}
+
+{xmt_id}.xmt .text_18{	
+	font-size:18px
+}
+
+{xmt_id}.xmt .img_left{
+	float:left;
+	margin:0 5px 0 0;
+	border:none
+}
+
+{xmt_id}.xmt_list{
+	padding:0px;	
+	margin:0px;
+	border:1px solid blue
+}
+
+{xmt_id}.xmt ul{
+	padding:0;	
+	margin:0;
+	line-height:150%;
+	list-style:none;
+}
+
+{xmt_id}.xmt ul li.tweet_list{
+	font:inherit;
+	text-indent:0;
+	background: none;
+	padding:0;	
+	margin:0;
+	display:block;
+	white-space: normal; 
+	word-wrap: break-word;
+	color:inherit
+}
+
+{xmt_id}.xmt .tweet_date_gray{
+	font:inherit;
+	color:gray;
+	font-style:italic;
+}
+
+{xmt_id}.xmt .tweet_date_black{
+	font:inherit;
+	color:#000000;
+	font-style:italic
+}
+
+{xmt_id}.xmt .tweet_date_white{
+	font:inherit;
+	color:#ffffff;
+	font-style:italic
+}
+
+{xmt_id}.xmt .tweet_date_red{
+	font:inherit;
+	color:#ff0000;
+	font-style:italic
+}
+
+{xmt_id}.xmt ul li.tweet_list:before{
+	content:""
+}
+
+{xmt_id}.xmt .tweet_avatar{
+	float:left;
+	padding:4px 3px 3px 0;
+	width:48px;
+	height:48px;
+	border:none;
+	display:block
+}
+
+{xmt_id}.xmt .credit{
+	font-size:10px;
+	text-align:right;
+}
+
+{xmt_id}.xmt .credit a{
+	text-decoration:none;
+	font-size:10px
+}
+
+{xmt_id}.xmt .credit a:hover{
+	text-decoration:underline;
+}
+
+{xmt_id}.xmt .clear{
+	clear:both !important; 
+}

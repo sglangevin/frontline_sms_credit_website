@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <name>Category Edit Form</name>
+  <params group="category-item-layout" addpath="/administrator/components/com_k2/elements">
+    <param name=" " type="header" default="Layout template" label="" description="" />
+    <param name="theme" type="template" default="default" label="Select a template" />
+    <param name=" " type="header" default="Layout grid" label="" description="" />
+    <param name="num_leading_items" type="text" size="4" default="2" label="Leading count" description="Number of items to display as Leading." />
+    <param name="num_leading_columns" type="text" size="4" default="1" label="Columns for leading" description="" />
+    <param name="leadingImgSize" type="list" default="Large" label="Image size for leading items" description="You can override the global dimensions for each size by adjusting the related setting in the 'Item image options' pane below.">
+      <option value="XSmall">XSmall</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="XLarge">XLarge</option>
+      <option value="none">-- No image --</option>
+    </param>
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="num_primary_items" type="text" size="4" default="4" label="Primary count" description="Number of items to display as Primary." />
+    <param name="num_primary_columns" type="text" size="4" default="2" label="Columns for primary" description="" />
+    <param name="primaryImgSize" type="list" default="Medium" label="Image size for primary items" description="You can override the global dimensions for each size by adjusting the related setting in the 'Item image options' pane below.">
+      <option value="XSmall">XSmall</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="XLarge">XLarge</option>
+      <option value="none">-- No image --</option>
+    </param>
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="num_secondary_items" type="text" size="4" default="4" label="Secondary count" description="Number of items to display as Secondary." />
+    <param name="num_secondary_columns" type="text" size="4" default="1" label="Columns for secondary" description="" />
+    <param name="secondaryImgSize" type="list" default="Small" label="Image size for secondary items" description="You can override the global dimensions for each size by adjusting the related setting in the 'Item image options' pane below.">
+      <option value="XSmall">XSmall</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="XLarge">XLarge</option>
+      <option value="none">-- No image --</option>
+    </param>
+    <param name="@spacer" type="spacer" default="" label="" description="" />
+    <param name="num_links" type="text" size="4" default="4" label="Links count" description="Number of items to display as Links." />
+    <param name="num_links_columns" type="text" size="4" default="1" label="Columns for links" description="" />
+    <param name="linksImgSize" type="list" default="XSmall" label="Image size for link items" description="You can override the global dimensions for each size by adjusting the related setting in the 'Item image options' pane below.">
+      <option value="XSmall">XSmall</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="XLarge">XLarge</option>
+      <option value="none">-- No image --</option>
+    </param>
+    <param name=" " type="header" default="Other layout options" label="" description="" />
+    <param name="catCatalogMode" type="list" default="0" label="Catalog mode" description="If you select 'yes' then only the items directly belonging to this category will be retrieved. If you select 'no' then items from all sub-categories will be retrieved. Setting this option to 'no' is ideal for news/portal/magazine/blog layouts.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param name="catFeaturedItems" type="list" default="1" label="Featured items" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+      <option value="2">Show only featured items</option>
+    </param>
+    <param name="catOrdering" type="list" default="" label="Item ordering" description="">
+      <option value="">Default</option>
+      <option value="date">Oldest first</option>
+      <option value="rdate">Most recent first</option>
+      <option value="alpha">Title Alphabetical</option>
+      <option value="ralpha">Title Reverse-Alphabetical</option>
+      <option value="order">Ordering</option>
+	  <option value="rorder">Ordering Reverse</option>
+	  <option value="hits">Most popular</option>
+	  <option value="best">Highest rated</option>
+	  <option value="rand">Random ordering</option>
+    </param>
+    <param name="catPagination" type="list" default="2" label="Pagination" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+      <option value="2">Auto</option>
+    </param>
+    <param name="catPaginationResults" type="radio" default="1" label="Pagination results" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+  </params>
+  <params group="category-view-options" addpath="/administrator/components/com_k2/elements">
+    <param name="catTitle" type="radio" default="1" label="Title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catTitleItemCounter" type="radio" default="1" label="Item counter (next to title)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catDescription" type="radio" default="1" label="Description" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catImage" type="radio" default="1" label="Image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catFeedLink" type="radio" default="1" label="RSS feed icon" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+	<param name="feedLink" type="radio" default="1" label="RSS feed link" description="">
+        <option value="0">Disable</option>
+		<option value="1">Enable</option>
+	</param>
+    <param name=" " type="header" default="Sub-category handling" label="" description="" />
+    <param name="subCategories" type="radio" default="1" label="Sub-category blocks" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="subCatColumns" type="text" default="2" size="4" label="Columns" description="" />
+    <param name="subCatOrdering" type="list" default="" label="Sub-category ordering" description="">
+      <option value="">Default (By ID Ascending)</option>
+      <option value="reversedefault">Reverse Default (By ID Descending)</option>
+      <option value="alpha">Title Alphabetical</option>
+      <option value="ralpha">Title Reverse-Alphabetical</option>
+      <option value="order">Ordering</option>
+    </param>
+    <param name="subCatTitle" type="radio" default="1" label="Sub-category title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="subCatTitleItemCounter" type="radio" default="1" label="Item counter (next to sub-category title)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="subCatDescription" type="radio" default="1" label="Sub-category description" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="subCatImage" type="radio" default="1" label="Sub-category image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+  </params>
+  <params group="item-image-options" addpath="/administrator/components/com_k2/elements">
+    <param name="itemImageXS" type="text" default="" label="XSmall image width (in px)" size="4" description="If no value is entered, the related setting from the component's global parameters will be retrieved." />
+    <param name="itemImageS" type="text" default="" label="Small image width (in px)" size="4" description="If no value is entered, the related setting from the component's global parameters will be retrieved." />
+    <param name="itemImageM" type="text" default="" label="Medium image width (in px)" size="4" description="If no value is entered, the related setting from the component's global parameters will be retrieved." />
+    <param name="itemImageL" type="text" default="" label="Large image width (in px)" size="4" description="If no value is entered, the related setting from the component's global parameters will be retrieved." />
+    <param name="itemImageXL" type="text" default="" label="XLarge image width (in px)" size="4" description="If no value is entered, the related setting from the component's global parameters will be retrieved." />
+  </params>
+  <params group="item-view-options-listings" addpath="/administrator/components/com_k2/elements">
+    <param name="catItemTitle" type="radio" default="1" label="Title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemTitleLinked" type="radio" default="1" label="Link on title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemFeaturedNotice" type="radio" default="0" label="Featured notice (next to title)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemAuthor" type="radio" default="1" label="Author" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemDateCreated" type="radio" default="1" label="Item created date and time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemRating" type="radio" default="0" label="Rating (voting)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemImage" type="radio" default="1" label="Image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemIntroText" type="radio" default="1" label="Introtext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemIntroTextWordLimit" type="text" default="" size="4" label="Introtext word limit" description="If this option is enabled, all HTML tags in the introtext will be cleaned up to make sure the site markup will not break." />
+    <param name="catItemExtraFields" type="radio" default="0" label="Extra fields" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemHits" type="radio" default="0" label="Hits" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemCategory" type="radio" default="1" label="Category" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemTags" type="radio" default="1" label="Tags" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemAttachments" type="radio" default="0" label="Attachments" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemAttachmentsCounter" type="radio" default="0" label="Attachments counter" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemVideo" type="radio" default="0" label="Video" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+ 	<param name="catItemVideoWidth" type="text" default="" size="4" label="Video width" description="" />
+	<param name="catItemVideoHeight" type="text" default="" size="4" label="Video height" description="" />
+    <param name="catItemVideoAutoPlay" type="radio" default="0" label="Video autoplay" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param name="catItemImageGallery" type="radio" default="0" label="Image gallery" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemDateModified" type="radio" default="0" label="Item modified date and time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemReadMore" type="radio" default="1" label="Read more... link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="catItemCommentsAnchor" type="radio" default="1" label="Anchor link (with comments counter) to item's comment form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name=" " type="header" default="Advanced" label="" description="" />
+    <param name="catItemK2Plugins" type="radio" default="1" label="Enable K2 plugins" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+  </params>
+  <params group="item-view-options" addpath="/administrator/components/com_k2/elements">
+    <param name="itemDateCreated" type="radio" default="1" label="Item created date and time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemTitle" type="radio" default="1" label="Title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemFeaturedNotice" type="radio" default="1" label="Featured notice (next to title)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthor" type="radio" default="1" label="Author" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemFontResizer" type="radio" default="1" label="Font resizer" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemPrintButton" type="radio" default="1" label="Print button" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemEmailButton" type="radio" default="1" label="E-mail button" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemSocialButton" type="radio" default="1" label="Social button like ShareThis, AddThis etc." description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemVideoAnchor" type="radio" default="1" label="Anchor link to video" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemImageGalleryAnchor" type="radio" default="1" label="Anchor link to image gallery" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemCommentsAnchor" type="radio" default="1" label="Anchor link (with comments counter) to comment form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemRating" type="radio" default="1" label="Rating (voting)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemImage" type="radio" default="1" label="Image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemImgSize" type="list" default="Large" label="Image size" description="">
+      <option value="XSmall">XSmall</option>
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="XLarge">XLarge</option>
+    </param>
+    <param name="itemImageMainCaption" type="radio" default="1" label="Image caption" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemImageMainCredits" type="radio" default="1" label="Image credits" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemIntroText" type="radio" default="1" label="Introtext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemFullText" type="radio" default="1" label="Fulltext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemExtraFields" type="radio" default="1" label="Extra fields" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemDateModified" type="radio" default="1" label="Item modified date and time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemHits" type="radio" default="1" label="Hits (page views)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemTwitterLink" type="radio" default="1" label="Tweet this link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemCategory" type="radio" default="1" label="Category" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemTags" type="radio" default="1" label="Tags" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemShareLinks" type="radio" default="1" label="Share (social) links" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAttachments" type="radio" default="1" label="Attachments" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAttachmentsCounter" type="radio" default="1" label="Attachments counter" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemRelated" type="radio" default="1" label="Related items (by tag)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemRelatedLimit" type="text" default="5" size="4" label="Related items limit" description="" />
+    <param name="itemVideo" type="radio" default="1" label="Video" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+ 	<param name="itemVideoWidth" type="text" default="" size="4" label="Video width" description="" />
+	<param name="itemVideoHeight" type="text" default="" size="4" label="Video height" description="" />
+    <param name="itemVideoAutoPlay" type="radio" default="0" label="Video autoplay" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param name="itemVideoCaption" type="radio" default="1" label="Video caption" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemVideoCredits" type="radio" default="1" label="Video credits" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemImageGallery" type="radio" default="1" label="Image gallery" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemNavigation" type="radio" default="1" label="Item navigation" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemComments" type="radio" default="1" label="Comments" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name=" " type="header" default="Author options" label="" description="" />
+    <param name="itemAuthorBlock" type="radio" default="1" label="Display extended author info" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorImage" type="radio" default="1" label="Author image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorDescription" type="radio" default="1" label="Author description" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorURL" type="radio" default="1" label="Author URL" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorEmail" type="radio" default="0" label="Author e-mail" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorLatest" type="radio" default="1" label="Latest items from author" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemAuthorLatestLimit" type="text" default="5" size="4" label="Limit for latest items from author" description="" />
+    <param name=" " type="header" default="Advanced" label="" description="" />
+    <param name="itemK2Plugins" type="radio" default="1" label="Enable K2 plugins" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+  </params>
+</form>

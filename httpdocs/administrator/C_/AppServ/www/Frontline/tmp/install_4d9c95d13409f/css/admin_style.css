@@ -1,0 +1,295 @@
+/* 8/30/2006 1:59:02 PM */
+
+.titleConfig{
+	padding: 3px;
+}
+
+#mainAdminContent h1{
+	font-family: verdana;
+	text-decoration: underline;
+}
+
+table.mytable{
+	/*border: 1px solid #A0A29F;*/
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 13px;
+}
+table.mytable th, .mylabel {
+	font-family: "Times New Roman", Times, serif;
+	color: #000000;
+	background: #f0f0f0;
+	border-bottom:1px solid #999999;
+	border-top:1px solid #E7E7E7;
+	background-repeat: repeat-x;
+	padding: 4px;
+	height: 30px;
+	vertical-align: middle;
+}
+table.mytable tr {
+	text-indent: 0px;
+	background-color: #F8F8F8;
+}
+table.mytable th{
+	text-indent: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	height: 30px;
+	vertical-align: middle;
+}
+
+table.mytable td{
+	height: 26px;
+	padding: 2px 4px;
+	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #DFDFD0;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-size: 11px;
+	vertical-align: middle;
+	text-indent: 0px;
+}
+
+table.mytable .row1{
+	background-color: #FFFFFF;
+}
+
+.tinyaction {
+	color: #0C3C62;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #3366CC;
+	cursor:pointer;
+}
+
+div.comment{
+	padding-top: 4px;
+	padding-bottom: 8px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999999;
+}
+
+div.comment-info{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.CommonTextButtonBig, .CommonTextButtonSmall
+{
+	display: -moz-inline-box;
+	margin: 1px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+	border-top-color: #cccccc;
+	border-left-color: #cccccc;
+	background-color: #eeeeee;
+	color: #333333;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 120%;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.CommonTextButtonSmall{
+	padding: 2px 3px 3px 2px;
+	font-size: 100%;
+	text-align: center;
+}
+
+input.CommonTextButtonBig {
+	text-align: left;
+	font-size: 150%;
+	font-weight: bold;
+	color: #000000;
+}
+
+input.CommonTextButtonSmall {
+	text-align: left;
+}
+
+a.CommonTextButtonSmall {
+	cursor:pointer;
+}
+
+input.CommonTextButtonSmall:hover, 
+input.CommonTextButtonSmall:active, 
+input.CommonTextButtonSmall:focus,
+input.CommonTextButtonBig:hover, 
+input.CommonTextButtonBig:active, 
+input.CommonTextButtonBig:focus {
+	background-color: #FFFFFF;
+	cursor:text;
+}
+.CommonTextButtonBig:hover, .CommonTextButtonSmall:hover{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+	border-top-color: #cccccc;
+	border-left-color: #cccccc;
+	text-decoration: none;
+	color: #333333;
+	background-color: #dddddd;
+	cursor:pointer;
+	cursor: hand; /* for IE 5 and below */
+}
+
+.adminbody {
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 13px;
+}
+
+div.centermain {
+	padding: 0px;
+}
+
+div#sideNav{
+	width:170px;
+}
+
+div.sideNavTitle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+	background: #f0f0f0;
+	border-bottom:1px solid #999999;
+	border-top:1px solid #E7E7E7;
+	text-indent: 4px;
+	line-height:24px;
+	padding-top:4px;
+	<!--[if IE 6]>
+	padding-top:8px;
+	padding-bottom:8px;
+	<![endif]-->
+    height:24px;            /* This is part of*/
+    voice-family: "\"}\""; /* Tantek hack    */
+    voice-family:inherit;  /* as is following*/
+}
+div.sideNavTitle img {
+	padding-right: 10px;
+}
+div.sideNavContent{
+	padding-right: 4px;
+	padding-left: 4px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+div.sideNavItem{
+	line-height:20px;
+	padding-top:2px;
+	<!--[if IE 6]>
+	padding-top:4px;
+	padding-bottom:4px;
+	<![endif]-->
+    height:20px;            /* This is part of*/
+    voice-family: "\"}\""; /* Tantek hack    */
+    voice-family:inherit;  /* as is following*/
+}
+
+.loading {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;font-weight: bold;color: #000000;background-color: #FFFF99;padding: 4px 16px;
+    position: absolute;	top: 0px; right: 0px;	
+}
+
+#popupWindowHandle{
+	height:18px;
+	background-color:#604A3C;
+}
+
+/* Hack main css */
+div.centermain {
+/*
+background-image: url(../../administrator/components/com_jomcomment/images/bg.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -16px;
+	*/
+}
+
+.tabs-nav li {
+	font-family:Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px;
+	background-position:0px 3px;
+	background-repeat:no-repeat;
+	line-height:15px;
+	margin-bottom:2px;
+	margin-top:2px;
+	padding-left:10px;
+	line-height:20px;
+	padding-bottom:4px;
+	padding-top:2px;
+}
+
+ul {
+list-style-type:none;
+margin:0pt;
+padding:0pt;
+}
+
+table.titleTable{
+	margin: 5px;
+}
+
+/* Main admin div */
+div#mainAdminContent h1 {
+color:black;
+font-family:'Cambria',Georgia,'Times New Roman',Times,serif;
+}
+
+/* Error notice for back end */
+.errornotice{
+	color: red;
+	font-size: 10px;
+	margin-left: 3px;
+}
+
+.editlink a, .editlink a:hover, .editslug a, .editslug a:hover{
+	background: url(../../../administrator/components/com_myblog/images/edit_tag.gif) no-repeat;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 3px 16px;
+}
+
+.saveTag{
+	background: url(../../../administrator/components/com_myblog/images/save_tag.gif) no-repeat;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 3px 20px;
+}
+
+.cancelSaveTag{
+	background: url(../../../administrator/components/com_myblog/images/close_tag.gif) no-repeat;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 3px 20px;
+}
+
+.defaultTag {
+	background: url(../../../administrator/components/com_myblog/images/selected.gif) no-repeat;
+	display: block;
+	height: 16px;
+	width: 16px;
+	margin:3px 3px 2px 0px;
+	outline-style:none;
+	text-indent:-9999px;
+}
+
+.notDefaultTag {
+	background: url(../../../administrator/components/com_myblog/images/unselected.gif) no-repeat;
+	display: block;
+	height: 16px;
+	width: 16px;
+	margin:3px 3px 2px 0px;
+	outline-style:none;
+	text-indent:-9999px;
+}

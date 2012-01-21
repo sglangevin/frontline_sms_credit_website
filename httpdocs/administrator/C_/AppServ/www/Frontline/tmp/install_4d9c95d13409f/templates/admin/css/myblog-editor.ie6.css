@@ -1,0 +1,101 @@
+#container #top-col {
+	overflow: hidden;
+	height: 31px;
+}
+#container #main-col {
+	padding-top: 20px;	
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div {
+	width: 50px;
+	margin: 0;
+	text-align: center;
+}
+#container #top-col #buttonSave {
+	width: 60px;
+}
+#container #top-col #buttonSave #button {
+	padding: 0 7px;
+	width: 100%;
+	text-align: center;
+}
+#container #top-col #title-container {
+	width: 810px;
+	float: left;
+	background: transparent url(../images/editor/title-bg.gif) no-repeat 0 0;
+	height: 31px;
+	margin-right: 10px;
+}
+#container #top-col #title-container #mainTitle {
+	height: 31px;
+	margin: 0;
+}
+#container #top-col #title-container #mainTitle inputbox {
+	height: 31px;
+}
+#container #top-col #title-container #title {
+	height: 31px;
+	line-height: 30px;
+	padding: 0 10px;
+	background: none;
+	border: none;
+	margin: 0;
+	width: 780px;
+}
+#container #main-col #editor-middle-inner {
+	padding-bottom: 5px;
+}
+#container #main-col #mainContent {
+	margin: 2px 0;
+	padding: 0 0 0 5px;
+	width: 98%;
+}
+#container #main-col #fulltext {
+	width: 98%;
+}
+#container #main-col #mainContent .mceEditor {
+	margin: 0;
+	padding: 0;
+}
+#container #main-col #editor-top #editor-top-middle #permalink-container {
+	height: 36px;
+	line-height: 30px;
+}
+#container #main-col #editor-top {
+	margin-top: -17px;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div {
+	background: transparent;
+	display: block;
+	height: 36px;
+	float: right;
+	line-height: 36px;
+	margin: 0;
+	text-decoration: none;
+	color: #a0b0ba;
+	outline-style: none;
+	width: 72px;
+	cursor: pointer;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor #rtf {
+	width: 72px;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor #plain {
+	width: 80px;
+}
+body div#save-overlay
+{
+	filter: alpha(opacity = 60);
+	position: absolute;
+	height: 800px;
+	width: 100%;
+	zoom: 1;
+	float: left;
+	display: block;
+	z-index: 1100;
+}
+body div#save-loading {
+	z-index: 1101;
+}
+select {
+	z-index: 0;
+}

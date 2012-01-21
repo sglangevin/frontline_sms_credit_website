@@ -1,0 +1,338 @@
+@import url('reset.css');
+@import url('title.css');
+
+#container {
+	padding: 10px;
+	background: #e4e9ec;
+	width: auto;
+	margin: 0 auto;
+}
+#container #main-col {
+	overflow: hidden;
+	float: left;
+	width: 630px;
+	display: block;
+}
+#container #right-col {
+	float: right;
+	width: 245px;
+	overflow: hidden;
+	padding: 10px 0 0;
+	font-size: 11px;
+}
+#container #right-col #editor-tools dt {
+	line-height: 20px;
+	height: 20px;
+	cursor: pointer;
+	border-bottom: solid 1px #becdd6;
+	color: #62737d;
+	background: transparent url(../images/expand-collapse.gif) no-repeat 100% 0;
+}
+#container #right-col #editor-tools dt.active {
+	color: #4f5d65;
+	background: transparent url(../images/expand-collapse.gif) no-repeat 100% 100%;
+	border-bottom: solid 1px #9eadb6;
+	cursor: default;
+	font-weight: bold;
+}
+#container #right-col #editor-tools dd {
+	padding: 10px 0 0;
+	overflow: hidden;
+	display: none;
+}
+#container #right-col #editor-tools dd legend {
+	color: #690;
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0 0 10px;
+	letter-spacing: -1px;
+}
+#container #right-col #editor-tools #cal-button {
+	background: transparent url(../icons/Calendar_16x16.png) no-repeat 0 2px;
+	border: 0;
+	text-indent: -9999px;
+	outline-style: none;
+	display: block;
+	height: 20px;
+	width: 20px;
+	float: left; 
+	margin-left: 5px;
+}
+#container #right-col #editor-tools #addtag-button,
+#container #right-col #editor-tools #addvideo-button {
+	border: 0;
+	text-indent: -9999px;
+	outline-style: none;
+	display: block;
+	height: 20px;
+	width: 20px;
+	float: left;
+	margin-left: 5px;
+}
+#container #right-col #editor-tools #addvideo-button {
+	background: transparent url(../icons/embed.gif) no-repeat 0 2px;
+}
+#container #right-col #editor-tools #addtag-button {
+	background: transparent url(../icons/Add_16x16.png) no-repeat 0 2px;
+}
+/*
+#container #right-col #editor-tools dd div.fileinputs1 {
+	position: relative;
+	background: transparent url(../icons/Search_16x16.png) no-repeat 160px 0;
+}
+
+#container #right-col #editor-tools dd div.fakefile1 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+#container #right-col #editor-tools dd input.file1 {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+	width: 80%;
+	padding: 2px;
+	border: solid 1px #80939e;	
+}
+*/
+
+
+
+#container #right-col #editor-tools dd img#searchIcon {
+	cursor: pointer;
+	margin-top: -7px;
+}
+#container #right-col .minitab {
+	height: 19px;
+	border-bottom: solid 1px #62737d;
+	margin: 0 0 5px;
+}
+#container #right-col .minitab a {
+	font-size: 10px;
+	color: #62737d;
+	text-decoration: none;
+	height: 19px;
+	line-height: 19px;
+	padding: 3px 6px;
+}
+#container #right-col .minitab a.bold {
+	background: #62737d;
+	color: #fff;
+}
+#container .links {
+	text-decoration: none;
+	color: #f00;
+}
+#container #permalink-caption,
+#container #permalink-input {
+	height: 20px; 
+	position: relative;
+	width: 480px;
+}
+#container #permalink-caption {
+	overflow: hidden;
+}
+#container #permalink-input {
+	display: none;
+}
+#container #permalink-data {
+	line-height: 20px;
+	color: #666;
+	overflow: hidden;
+	width: 480px;
+}
+
+
+/* BBCODE Buttons */
+#container #mainContent .mceToolbarTop .rawButtons {
+	line-height: 15px;
+	padding: 2px 5px;
+	background: transparent url(../images/editor/bb-bg.gif) repeat-x 0 0;
+	border: solid 1px #ccd1d9;
+	cursor: pointer;
+	margin: 0 2px 0 0;
+}
+#container #mainContent .mceToolbarTop .rawButtons:focus {
+	outline-style: none;
+}
+
+#container .label {
+	margin: 0 0 3px;
+}
+#container .inputbox {
+	border: solid 1px #b1bfcd;
+	padding: 2px;
+}
+#container .clr {
+	clear: both;
+}
+
+
+#container #main-col #editor-top {
+	width: 100%;
+	background: none;
+	margin: 0;
+}
+#container #main-col #editor-top #editor-top-middle {
+	background: none;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor {
+	width: 160px;
+	float: right;
+	height: 36px;
+	text-align: right;
+	font-size: 10px;
+	padding: 0 5px 0 0;
+	background: transparent url(../images/editor/editor-bg-top.gif) no-repeat 100% -36px;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div {
+	background: transparent;
+	display: block;
+	height: 36px;
+	float: right;
+	line-height: 36px;
+	margin: 0 0 0 0;
+	text-decoration: none;
+	color: #a0b0ba;
+	outline-style: none;
+	width: auto;
+	cursor: pointer;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div span {
+	background: transparent;
+	padding: 0 10px;
+	display: block;
+	height: 36px;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div.active {
+	background: transparent url(../images/editor/editor-toggle.gif) no-repeat 0 0;
+	color: #62737d;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor div.active span {
+	background: transparent url(../images/editor/editor-toggle.gif) no-repeat 100% 100%;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor #rtf {
+	width: 72px;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-editor #plain {
+	width: 80px;
+}
+#container #main-col #editor-middle {
+	background: #fff url(../images/editor/editor-bottom-left.gif) no-repeat bottom left;
+}
+#container #main-col #editor-middle-inner {
+	background: transparent url(../images/editor/editor-bottom-right.gif) no-repeat bottom right;
+	padding: 1px 10px 5px;
+}
+#container #main-col #mainContent {
+	background: transparent;
+	margin: 2px;
+	padding: 0;
+}
+#container #main-col #editor-top #editor-top-middle #permalink-container {
+	position: relative;
+	line-height: 30px;
+	font-size: 11px;
+	width: 100%;
+	border-bottom: solid 1px #d1d6d9;
+}
+#container #main-col #editor-top #editor-top-middle #toggle-container {
+	clear: both;
+	display: block;
+	height: 36px;
+	background: transparent url(../images/editor/editor-bg-top.gif) no-repeat 0 0;
+}
+
+#container #main-col #editor-top #editor-top-middle #permalink-edit,
+#container #main-col #editor-top #editor-top-middle #permalink-save {
+	font-size: 10px;
+	color: #f00;
+	font-weight: bold;
+	cursor: pointer;
+	float: right;
+	width: 45px;
+	padding-top: 0;
+}
+#container #main-col #editor-top #editor-top-middle #permalink {
+	width: 480px;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	padding: 1px 3px;
+	font-size: 12px;
+}
+
+
+/* TinyMCE */
+body #container .mceToolbarTop,
+body #container .mceEditor {
+	background: none;
+}
+body #container .mceEditorIframe {
+	margin-top: 5px;
+}
+body #container .mceSelectList {
+	border: solid 1px #ccc;
+	display: inline;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px !important;
+	font-weight: normal;
+	height: 20px;
+	margin-top: 1px;
+	padding: 0;
+}
+body #save-overlay-container
+{
+	display: none;
+}
+
+body #save-loading
+{
+	height: 60px;
+	left: 200px;
+	width: 250px;
+	background: #FFF;
+	padding:20px 0 20px 20px;
+	position:absolute;
+	text-align:center;
+	top: 0px;
+	left: 0px;
+	z-index:30;
+	border: 2px solid #000;
+}
+
+body div#save-overlay
+{
+	background: #000; 
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.60;
+	filter: alpha(opacity = 60);
+	z-index: 20;
+	top: 0;
+	left: 0;
+}
+
+body span#save-loading-animation
+{
+	width: 220px;
+	height: 19px;
+	position: relative;
+	margin-top: 5px;
+	float: left;
+	top: 0px;
+	background: transparent url(../images/loader.gif) no-repeat;
+}
+
+body span#save-loading-message
+{
+	font-family: verdana;
+	font-size: 10px;
+}

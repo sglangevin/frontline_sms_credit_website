@@ -1,0 +1,32 @@
+#container #top-col #title-container #title {
+	margin-top: -2px;
+}
+#container #right-col .minitab a {
+	font-size: 10px;
+	color: #62737d;
+	text-decoration: none;
+	height: 19px;
+	line-height: 19px;
+	padding: 3px 6px;
+}
+#container #top-col {
+	margin: 0 10px 0 0;
+}
+#container #top-col #buttonSave {
+	margin-right: 10px;
+}
+#container #top-col #buttonSave #button {
+	padding: 0 5px;
+	text-align: center;
+}
+body div#save-overlay
+{
+	background: #000; 
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	filter: alpha(opacity = 60);
+	z-index: 20;
+	top: 0;
+	left: 0;
+}

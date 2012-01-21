@@ -1,0 +1,240 @@
+/**
+ * @version		$Id: k2.css 538 2010-08-04 13:08:29Z lefteris.kavadas $
+ * @package		K2
+ * @author		JoomlaWorks http://www.joomlaworks.gr
+ * @copyright	Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.
+ * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
+/* Common */
+a:active,a:focus {outline:0;}
+.clr {clear:both;height:0;line-height:0;border:none;float:none;background:none;padding:0;margin:0;}
+hr.sep {line-height:0;height:0;border:none;border-bottom:1px dotted #ccc;padding:0;margin:4px 0;}
+
+.k2Center {text-align:center;}
+.k2Left {text-align:left;}
+.k2Right {text-align:right;}
+.k2Date {white-space:nowrap;text-align:center;}
+.k2Order {white-space:nowrap;text-align:right;}
+	.k2Order span {}
+	.k2OrderBox {text-align:center;}
+.k2NoWrap {white-space:nowrap;}
+.k2TitleBox {width:320px;}
+.k2ListItemDisabled {cursor:pointer;color:#0B55C4;} /* used in popup lists */
+
+/* -------------- Admin Common -------------- */
+input.fileUpload {border:1px solid #c0c0c0;} /* file uploads */
+a#imagethumb {}
+a#galleryPreview {display:block;}
+img.k2AdminImage {border:4px solid #ddd;margin:10px 0;padding:0;display:block;}
+span.k2Notice {cursor:pointer;font-weight:bold;text-decoration:underline;}
+
+/* Filters on listings */
+table.k2AdminTableFilters {width:100%;}
+	table.k2AdminTableFilters tr td.k2AdminTableFiltersSearch {white-space:nowrap;}
+	table.k2AdminTableFilters tr td.k2AdminTableFiltersSelects {text-align:right;}
+	table.k2AdminTableFilters tr td.k2AdminTableFiltersSelects select {margin:1px 0 1px 4px;}
+
+div#k2ToggleSidebarContainer {text-align:right;clear:both;}
+	a#k2ToggleSidebar {-moz-border-radius:4px;-webkit-border-radius:4px;border:1px solid #ccc;background:#f6f6f6 url(../images/editforms/Size-Horz.png) no-repeat;padding:2px 4px 1px 20px;text-decoration:none;}
+	a#k2ToggleSidebar:hover {background:#eee url(../images/editforms/Size-Horz.png) no-repeat;}
+
+table.adminFormK2Container {width:100%;}
+table.adminFormK2Container tr td {vertical-align:top;}
+
+	table.adminFormK2 {}
+	table.adminFormK2 tr td {vertical-align:top;}
+	table.adminFormK2 tr td label {font-weight:bold;}
+	
+	#adminFormK2Sidebar {vertical-align:top;width:300px;padding-left:6px;}
+	#adminFormK2Sidebar table.sidebarDetails {border:1px dashed #ccc;padding:0;margin:7px 0 10px 0;width:100%;}
+	#adminFormK2Sidebar table.sidebarDetails tr td {padding:1px 2px;}
+
+/* Header */
+.icon-48-k2 {background:url(../images/K2logo.gif) no-repeat 0 50%;}
+.header {color:#222!important;font-size:24px !important;padding-left:120px!important;}
+
+/* Footer */
+#k2AdminFooter {text-align:center;margin-top:20px;}
+
+
+
+/* -------------- View Styling -------------- */
+
+/* Admin - Dashboard */
+#cpanel.k2AdminCpanel {float:left;width:52%;}
+#k2AdminStats {float:right;width:47%;}
+#k2AdminStats dl.tabs dt.closed {border:1px solid #ccc;}
+#k2AdminStats dl.tabs dt.open {background:#fff;border:1px solid #ccc;border-bottom:1px solid #fff;}
+#k2AdminStats table.adminlist {width:100%;}
+
+/* Admin - Items */
+div#admContainer {width:100%;}
+div#admContainer .admLeft {float:left;width:74%;}
+div#admContainer .admRight {float:right;width:24%;padding-top:29px;}
+div#admContainer .cleaner {clear:both;}
+
+/* Admin - Item */
+table.adminFormK2 tr td input#title,
+table.adminFormK2 tr td input#alias {width:99%;font-size:14px;}
+table.adminFormK2 tr td label {line-height:18px;vertical-align:middle;}
+
+/* Admin - Item - Free tagging */
+ul.tags {background:#fff;border:1px solid #c0c0c0;padding:0;cursor:text;min-width:320px;width:99%;margin:0;padding:0;}
+ul.tags li {-moz-border-radius:4px;-webkit-border-radius:4px;float:left;background:#C7DA76;border:1px solid #ccc;list-style:none;padding:2px;margin:1px;}
+ul.tags li input {border:none;padding-top:2px;margin:1px;background:none;}
+ul.tags li input:focus {background:none;}
+ul.tags li input.tagsLoading {background:url(../images/system/loader.gif) no-repeat 50% 50%;}
+ul.tags li.clr {clear:both;height:0;line-height:0;border:none;float:none;background:none;padding:0;margin:0;}
+ul.tags li.tagAdd {border:none;padding:0;background:none;}
+ul.tags li.tagAdd input {border:none;}
+
+span.k2Note {display:block;padding:4px 0 0 0;font-style:italic;color:#777;}
+
+ul.tags li.addedTag {}
+span.tagRemove {font-size:11px;font-family:"Lucida Grande";color:#555;padding-left:4px;cursor:pointer;}
+
+ul.autocompleter-choices {position:absolute;margin:0;padding:0;list-style:none;border:1px solid #eee;background-color:white;border-right-color:#ddd;border-bottom-color:#ddd;text-align:left;sans-serif;z-index:50;}
+ul.autocompleter-choices li {position:relative;padding:.1em 1.5em .1em 1em;cursor:pointer;font-weight:normal;font-size:1em;}
+ul.autocompleter-choices li.autocompleter-selected {background-color:#444;color:#fff;}
+ul.autocompleter-choices span.autocompleter-queried {font-weight:bold;}
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {color:#9FCFFF;}
+
+/* Admin - Item - Selection based tagging */
+#tagsLog {float:left;padding-left:4px;font-weight:bold;line-height:16px;vertical-align:middle;}
+#tagsLog.tagsLoading {background:url(../images/system/loader.gif) no-repeat 50% 50%;margin-left:4px;padding:0;width:16px;height:16px;display:block;float:left;}
+
+table#tagLists {width:100%;}
+table#tagLists tr td span {display:block;font-weight:bold;}
+table#tagLists tr td#tagListsLeft {width:40%;}
+table#tagLists tr td#tagListsLeft select {width:99%;height:106px;}
+table#tagLists tr td#tagListsButtons {vertical-align:middle;width:20%;}
+table#tagLists tr td#tagListsButtons input {width:99%;}
+table#tagLists tr td#tagListsRight {width:40%;}
+table#tagLists tr td#tagListsRight select {width:99%;height:106px;}
+
+.itemPlugins {margin-top:20px;}
+.k2ItemFormEditor {clear:both;position:relative;padding:24px 4px 8px 4px;margin:0 0 16px 0;background:#e0e0e0 url(../images/system/boxTopBackground.png) repeat-x top;-moz-border-radius:4px;-webkit-border-radius:4px;border:1px solid #ccc;}
+span.k2ItemFormEditorTitle {font-family:Georgia, "Times New Roman", Times, serif;font-size:13px;color:#222;position:absolute;top:8px;right:8px;/*display:block;text-align:right;*/}
+
+#editor-xtd-buttons {margin:0;padding:0 0 0 4px;}
+#editor-xtd-buttons div.button2-left {margin:0 4px 0 0;padding:0;float:left;}
+#editor-xtd-buttons div.button2-left div.image,
+#editor-xtd-buttons div.button2-left div.readmore {margin:0;padding:0;}
+div.dummyHeight {height:28px;background:#F0F0EE;background:#F0F0EE;border:1px solid #ccc;border-top:0;padding:4px;margin-top:-10px;}
+
+/* Extra Fields - Textarea with WYSIWYG - Remove outline */
+.nicEdit-main {outline:0;}
+
+table#item_video_content tr td div.panel {width:480px;}
+dl.tabs dt.closed {border:1px solid #ccc;}
+dl.tabs dt.open {background:#fff !important;border:1px solid #ccc;border-bottom:1px solid #fff !important;}
+
+.itemAttachments {margin-bottom:15px;}
+.itemAttachments a {border:1px solid silver;font-size:10px;padding:2px;background-color:#f0f0f0;color:#000;}
+.itemAttachments a:hover {text-decoration:none;}
+#itemAttachments {margin-top:15px;padding-top:10px;}
+#itemAttachments label {margin-right:10px;font-weight:bold;width:170px;float:left;clear:left;}
+#itemAttachments input {margin-right:10px;margin-bottom:10px;}
+#itemAttachments input.linkTitle {width:200px;}
+#itemAttachments textarea {width:200px;}
+td.k2ItemFormDateField {white-space:nowrap;}
+td.k2ItemFormDateField input {}
+td.k2ItemFormDateField img.calendar {vertical-align:bottom;margin-left:2px;}
+#extraFieldsContainer table tr td label {padding:0 4px 0 0;margin:0;font-weight:bold;}
+#extraFieldsContainer table tr td input,#extraFieldsContainer table tr td select {margin:0 8px 0 0;}
+
+/* Admin - Item - Video Browser */
+form.fileBrowserForm { padding:0 4px;}
+div#fileBrowserFolderPath a#fileBrowserFolderPathUp {display:block;float:left;width:24px;height:24px;background:url(../images/system/go-up.png) no-repeat;}
+div#fileBrowserFolderPath a#fileBrowserFolderPathUp span {display:none;}
+div#fileBrowserFolderPath input {margin-left:4px;height:22px;font-size:12px;vertical-align:middle;width:90%;overflow:hidden;}
+div#fileBrowserFolders {margin-top:16px;}
+
+/* Admin - Item - Extra fields editor */
+.k2ExtraFieldEditor { width:400px; height:172px;}
+
+/* Admin - Categories */
+
+/* Admin - Tags */
+
+/* Admin - Comments */
+td#k2Comment {}
+	div.commentText {}
+	div.commentToolbar {padding-top:4px;}
+		a.editComment {}
+		a.saveComment {display:none;}
+		a.closeComment {display:none;padding-left:4px;margin-left:4px;border-left:1px solid #aaa;}
+	div.commentToolbar span.k2CommentsLog {display:block;float:right;font-weight:bold;}
+	div.commentToolbar span.k2CommentsLoader {background:url(../images/system/loader.gif) no-repeat 0 50%;padding-left:24px;}
+
+/* Admin - Users */
+
+/* Admin - User groups */
+
+/* Admin - Extra fields */
+#exFieldsTypesDiv {}
+#exFieldsTypesDiv label {margin:4px;font-weight:bold;width:80px;float:left;clear:left;display:block;}
+#exFieldsTypesDiv input,#exFieldsTypesDiv textarea,#exFieldsTypesDiv select {margin:4px 4px 4px 0;}
+#exFieldsTypesDiv span {color:#555;font-style:italic;}
+#exFieldsTypesDiv span.notice {color:#333;font-style:normal;}
+div#groupContainer {display:inline;margin-left:16px;}
+div#groupContainer span {font-weight:bold;}
+
+/* Admin - Extra field groups */
+
+/* Admin - Information */
+table#k2InfoPage {}
+table#k2InfoPage tr td {width:50%;vertical-align:top;}
+
+
+
+/* --- Frontend - Edit --- */
+
+/* TO CHECK
+body.contentpane .k2Frontend table#item_video_content tr td div.panel {height:90px;}
+*/
+div.k2Frontend {width:auto;padding:8px;margin:0;}
+div.k2Frontend td.key {width:auto !important;}
+div.k2Frontend h3,
+div.k2Frontend legend {font-size:11px;font-family:Arial, Helvetica, sans-serif;}
+
+div.k2Frontend table.toolbar {display:block;float:right;border-collapse:separate;}
+div.k2Frontend table.toolbar td {border:none;}
+
+#k2FrontendEditToolbar {text-align:left;padding:8px;}
+#k2FrontendEditToolbar h2 {width:auto;margin-top:0;line-height:40px;}
+
+div.k2Frontend table.adminFormK2 {border-collapse:collapse;}
+div.k2Frontend table.adminFormK2 tr td {border:none;}
+
+/* Comment editing list */
+td.k2FrontendPublishIcons img {width:16px;height:16px;}
+
+
+/* ----------------------- SimpleTabs ----------------------- */
+div.simpleTabs {clear:both;padding:10px 0;}
+ul.simpleTabsNavigation {margin:0 10px;padding:0;text-align:left;white-space:nowrap;}
+ul.simpleTabsNavigation li {list-style:none;display:inline;margin:0;padding:0;}
+
+ul.simpleTabsNavigation li a {border:1px solid #E0E0E0;padding:3px 6px;background-color:#F0F0F0;font-size:14px;text-decoration:none;font-family:Georgia, "Times New Roman", Times, serif;color:#666;}
+ul.simpleTabsNavigation li a:hover {text-decoration:none;background-color:#F6F6F6;font-family:Georgia, "Times New Roman", Times, serif;}
+ul.simpleTabsNavigation li a.current {background-color:#fff;color:#222;border-bottom:1px solid #fff;}
+
+div.simpleTabsContent {border:1px solid #E0E0E0;padding:8px;margin-top:3px;display:none;}
+div.simpleTabsContent.currentTab {display:block;}
+
+/* Custom tab icons */
+ul.simpleTabsNavigation li a {padding-left:24px;background-repeat:no-repeat;background-position:4px 3px;}
+ul.simpleTabsNavigation li#tabContent a {background-image:url(../images/editforms/Write2.png);}
+ul.simpleTabsNavigation li#tabImage a {background-image:url(../images/editforms/Picture.png);}
+ul.simpleTabsNavigation li#tabImageGallery a {background-image:url(../images/editforms/Photo.png);}
+ul.simpleTabsNavigation li#tabVideo a {background-image:url(../images/editforms/Movie.png);}
+ul.simpleTabsNavigation li#tabExtraFields a {background-image:url(../images/editforms/Puzzle.png);}
+ul.simpleTabsNavigation li#tabAttachments a {background-image:url(../images/editforms/Attach.png);}
+ul.simpleTabsNavigation li#tabPlugins a {background-image:url(../images/editforms/Gear.png);}
+
+/* Tabs in the frontend */
+div.k2Frontend div.simpleTabsContent {margin-top:3px;}
+
+/* End */

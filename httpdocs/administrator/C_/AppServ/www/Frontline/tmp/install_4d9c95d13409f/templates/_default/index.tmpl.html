@@ -1,0 +1,78 @@
+<!-- Blog Entries Start -->
+<div id="myBlog-content">
+<?php
+if ($entry and is_array($entry) and count($entry) != 0)
+{
+	foreach ($entry as $e)
+	{
+?>
+	<!-- Entry -->
+	<div class="postSummary" id="post-<?php echo $e['id']; ?>">
+		<!-- Post Top Summary -->
+		<div class="postSummary-top">
+			<h2><a href="<?php echo $e['permalink']; ?>"><?php echo $e['title']; ?></a></h2>
+			<p>
+				<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $e['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $e['author']; ?></a>
+				<?php
+					if( $categoryDisplay )
+					{
+				?>
+				<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+				<?php
+					}
+				?>
+				<span class="post-date"><?php echo JText::sprintf('POSTED ON', $e['createdFormatted']); ?></span>
+				<div><?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?></div>
+				
+			</p>
+			<?php
+				if(!empty($e['avatar']))
+				{
+			?>
+			<div class="userAvatar">
+				<?php echo $e['avatar']; ?>
+			</div>			
+			<?php
+				}
+			?>
+		</div>
+		<!-- Post Teaser Text -->
+		<div class="postSummary-teaser">
+			<?php echo $e['text']; ?>
+			<!-- Post Footer -->						
+			<p class="postSummary-footer">
+			<?php
+				if ($e['comments']!="")
+				{
+			?>
+				<a href="<?php echo $e['permalink']; ?>#comments" class="postSummary-comments"><?php echo $e['comments']; ?></a>
+			<?php
+				}
+			?>
+
+			<?php
+				// IF NEED READMORE
+				if ($e['readmore']=="1")
+				{
+			?>
+			    <a href="<?php echo $e['permalink']; ?><?php echo $showAnchor; ?>" class="postSummary-readmore"><?php echo JText::_('READMORE');?></a>
+			<?php
+				}
+			?>
+			</p>
+		</div>
+		<!-- Post Divider -->
+		<hr class="postEntry-divider" />
+	</div>
+	<div class="clear"></div>
+<?php
+	}
+}
+else
+{
+?>
+	<div><?php echo JText::_('NO BLOG ENTRY CREATED');?></div>
+<?php
+}
+?>
+</div>

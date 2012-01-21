@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+  <name>blog</name>
+  <creationDate>April 2009</creationDate>
+  <author>Aneesh S</author>
+  <authorEmail>aneesh@aarthikaindia.com</authorEmail>
+  <authorUrl>http://www.aarthikaindia.com</authorUrl>
+  <copyright>(C) 2009 All rights reserved.</copyright>
+  <license>GNU/GPL</license>
+   <version>1.5.1 Beta</version>
+   <description>
+    <![CDATA[<p>Simple Blog Component</p>]]>
+   </description>
+<!----> 
+
+  <install>
+    <sql folder="admin/sql">
+      <file driver="mysql" charset="utf8">install.blog.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql  folder="admin/sql">
+      <file driver="mysql" charset="utf8">uninstall.blog.sql</file>
+    </sql>
+  </uninstall>
+
+
+  <files folder="component">
+    <filename>index.html</filename>
+	<filename>controller.php</filename>
+	<filename>blog.php</filename>
+   <filename>style.css</filename>
+   <filename>router.php</filename>
+   
+   <filename>Images/blogimages/index.html</filename>
+   <filename>Images/blogger/index.html</filename>
+   <filename>Images/blogger/no_photo_small.gif</filename>
+	
+   <filename>Images/icons/index.html</filename>
+   <filename>Images/icons/spacer.gif</filename>
+	
+	
+   <filename>Images/icons/smartblog.png</filename>
+   <filename>Images/icons/mypost.png</filename>
+   <filename>Images/icons/add_comment.gif</filename>
+    <filename>Images/icons/comment_bg.jpg</filename>
+   <filename>Images/icons/comments.gif</filename>
+   <filename>Images/icons/comments.jpg</filename>
+   <filename>Images/icons/delete.gif</filename>
+   <filename>Images/icons/doublearrowsnav.gif</filename>
+   <filename>Images/icons/favorite.gif</filename>
+   <filename>Images/icons/hits.gif</filename>
+    
+   <filename>Images/icons/myaccount.png</filename>
+   <filename>Images/icons/add_post.png</filename>
+   <filename>Images/icons/readmore.png</filename>
+   <filename>Images/icons/publish_r.png</filename>
+   <filename>Images/icons/publish_g.png</filename>
+   
+   
+	<filename>models/addpost.php</filename>
+	<filename>models/blog.php</filename>
+	<filename>models/comments.php</filename>
+	<filename>models/index.html</filename>
+	<filename>models/myposts.php</filename>
+	<filename>models/blogger.php</filename>
+
+	<filename>views/index.html</filename>
+	
+	<filename>views/addpost/index.html</filename>
+	<filename>views/addpost/view.html.php</filename>
+		<filename>views/addpost/tmpl/index.html</filename>
+		<filename>views/addpost/tmpl/default.php</filename>
+		<filename>views/addpost/tmpl/default.xml</filename>
+	
+	<filename>views/blog/index.html</filename>
+	<filename>views/blog/view.html.php</filename>
+		<filename>views/blog/tmpl/index.html</filename>
+		<filename>views/blog/tmpl/default.php</filename>
+   
+	<filename>views/comments/index.html</filename>
+	<filename>views/comments/view.html.php</filename>
+		<filename>views/comments/tmpl/index.html</filename>
+		<filename>views/comments/tmpl/default.php</filename>
+	
+	
+	<filename>views/blogger/index.html</filename>
+	<filename>views/blogger/view.html.php</filename>
+		<filename>views/blogger/tmpl/index.html</filename>
+		<filename>views/blogger/tmpl/default.php</filename>
+	
+	<filename>views/myposts/index.html</filename>
+	<filename>views/myposts/view.html.php</filename>
+		<filename>views/myposts/tmpl/index.html</filename>
+		<filename>views/myposts/tmpl/default.php</filename>
+		<filename>views/myposts/tmpl/myaccount.php</filename>
+ 		
+  </files>
+  <administration>
+  <menu>Blog</menu>
+	<files folder="admin">
+		<filename>index.html</filename>
+		<filename>admin.blog.php</filename>
+		
+		<filename>controllers/index.html</filename>
+		<filename>controllers/blog.php</filename>
+		<filename>controllers/comments.php</filename>
+		<filename>controllers/myaccount.php</filename>
+		
+		<filename>tables/addpost.php</filename>
+		<filename>tables/comments.php</filename>
+		<filename>tables/index.html</filename>
+		<filename>tables/myposts.php</filename>
+		
+		<filename>views/index.html</filename>
+		<filename>views/blog.php</filename>
+		<filename>views/comments.php</filename>
+		<filename>views/myaccount.php</filename>
+ 	</files>
+	
+	<files folder="admin/sql">
+    <!-- database script -->
+      <filename>install.blog.sql</filename>
+      <filename>uninstall.blog.sql</filename>
+    </files>
+
+   </administration>
+ </install>

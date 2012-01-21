@@ -1,0 +1,16 @@
+
+div.trendysocialshare {
+		width:auto;
+		margin: 2px 2px 2px 0px;
+		padding:2px 2px 2px 0px;
+		border: none;
+	}
+
+div.socialshare_tweet,
+div.socialshare_fb,
+div.socialshare_gbuzz,
+div.socialshare_ybuzz,
+div.socialshare_digg{
+	padding-right: 5px;
+	border: none;
+	}

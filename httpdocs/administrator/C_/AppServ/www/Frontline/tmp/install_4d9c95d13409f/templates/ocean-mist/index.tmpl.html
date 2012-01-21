@@ -1,0 +1,65 @@
+<div class="blogsContainer">
+<?php
+if ($entry and count($entry) != 0)
+{
+	foreach ($entry as $e)
+	{
+?>
+<div class="entryContent entry">
+	<div class="entryTitle">
+		<small><?php echo $e['createdFormatted']; ?></small>
+		<h2><a href="<?php echo $e['permalink']; ?>" rel="bookmark" title="Permanent Link to <?php echo $e['title']; ?>"><?php echo $e['title']; ?></a></h2>
+	</div>
+	<div class="post">
+		<?php
+        	if ( isset( $e['beforeContent']) )
+			{ ?>
+			<div class="onBeforePrepareContent">
+				<?php echo $e['beforeContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+	    <div class="entry-body">
+	    <span style="float:right;padding-right:5px;"><?php echo $e['avatar']; ?></span>
+	      <?php echo $e['text']; ?>
+		  <div class="clear"></div><br/>
+		  <?php //READMORE???
+			  if ($e['readmore']=="1")
+			  { ?>
+			  	<ul class="buttons">
+			   <li><a href="<?php echo $e['permalink']; ?>" rel="bookmark" title="Permanent Link to <?php $e['title']; ?>"><?php echo JText::_('READMORE');?></a></li>
+			  </ul>
+			  <?php }
+		  ?> 
+	    </div>
+	    <?php if ( isset( $e['afterContent']) )
+			{ ?>
+			<div class="onAfterPrepareContent">
+				<?php echo $e['afterContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+	    <div class="entry-footer">
+			<div>
+				<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $e['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $e['author']; ?></a>
+				<?php
+					if( $categoryDisplay )
+					{
+				?>
+				<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+				<?php
+					}
+				?>
+			</div>
+			<div><?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?></div>
+			<div><?php echo '<a href="'.$e['permalink'].'#comments">'.$e['comments'] .'</a>'; ?></div>
+	    </div>
+	</div>
+</div>
+<?php
+		}
+	}
+?>
+</div>

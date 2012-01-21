@@ -1,0 +1,83 @@
+<div class="blogsContainer">
+<?php
+if ($entry and count($entry) != 0)
+{
+	foreach ($entry as $e)
+	{
+		$date = strtotime($e['created']);
+		$day = strftime("%d", $date);
+		$month = strftime("%b", $date);
+		$date_display = strftime("%d ", $date) . strftime("%b, ", $date) . strftime("%Y", $date) ;
+		$date_display = i8n_date($date_display);
+?>
+<div class="entryContent entry">
+	<acronym class="published" title="<?php echo $date_display; ?>">
+		<span class="pub-month"><?php echo $month; ?></span>
+		<span class="pub-date"><?php echo $day; ?></span>
+	</acronym>
+    <!-- START TITLE -->
+    <h2>
+		<a href="<?php echo $e['permalink']; ?>" rel="bookmark" title="<?php echo $e['title']; ?>">
+			<?php echo $e['title']; ?>
+		</a>
+    </h2>
+    <!-- END TITLE -->
+
+	<!-- START DETAILS -->
+	<span style="float:right;padding-right:5px;"><?php echo $e['avatar']; ?></span>
+	<small>
+	<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $e['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $e['author']; ?></a>
+	<?php
+		if( $categoryDisplay )
+		{
+	?>
+	<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+	<?php
+		}
+	?>
+	| 
+	<?php echo '<a href="'.$e['permalink'].'#comments">'.$e['comments'] .'</a>' ?>
+	</small>
+	<div><?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?></div>
+	<!-- END DETAILS -->
+	<!-- START POST CONTENT -->
+	<?php
+		if(isset($e['beforeContent']))
+		{
+	?>
+		<div class="onBeforePrepareContent">
+			<?php echo $e['beforeContent'];?>
+		</div>
+	<?php
+		}
+	?>
+	<div class="entry-body">
+		<?php echo $e['text']; ?>
+		<div class="clear"></div>
+    </div>
+	<?php
+		if(isset($e['afterContent']))
+		{
+	?>
+		<div class="onAfterPrepareContent">
+			<?php echo $e['afterContent'];?>
+		</div>
+	<?php
+		}
+	?>
+    <!-- END POST CONTENT -->
+	<?php
+		// IF NEED READMORE
+		if ($e['readmore']=="1")
+		{
+	?>
+		<a href="<?php echo $e['permalink']; ?><?php echo $showAnchor; ?>" class="postSummary-readmore"><?php echo JText::_('READMORE');?></a>
+	<?php
+		}
+	?>
+	</div>
+<?php
+	}
+}
+?>
+</div>

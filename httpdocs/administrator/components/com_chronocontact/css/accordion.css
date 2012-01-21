@@ -1,0 +1,13 @@
+.toggler {
+	color: #222;
+	margin: 0;
+	padding: 7px 15px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #f5f5f5;
+	border-left: 1px solid #f5f5f5;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: 'Andale Mono', sans-serif;
+}

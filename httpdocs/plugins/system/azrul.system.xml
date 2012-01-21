@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="plugin" group="system">
+	<name>Azrul System Mambot For Joomla</name>
+	<author>Azrul</author>
+	<creationDate>26 March 2009</creationDate>
+	<copyright>(C) 2008 PocketCraft Software Sbdn. Bhd. All rights reserved.</copyright>
+	<license>GNU / Open Source</license>
+	<authorEmail>support@azrul.com</authorEmail>
+	<authorUrl>www.azrul.com</authorUrl>
+	<version>2.8</version>
+	<description><![CDATA[
+	System Mambots for Joomla, Azrul.com
+	]]></description>
+	<files>
+		<filename plugin="azrul.system">azrul.system.php</filename>
+		<folder>pc_includes</folder>
+	</files>
+	<params>
+		<param name="compress" type="list" default="1" label="Compress JavaScript" description="Do you want to compress the JavaScript?. Reduce bandwidth use by half.">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+	</params>
+</install>

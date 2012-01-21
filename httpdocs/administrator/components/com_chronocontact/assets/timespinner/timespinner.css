@@ -1,0 +1,31 @@
+input.timespinner {
+	text-align:center;
+	font-weight:bold;
+	background:url(timespinner-time.png);
+	border:0px;
+	float:left;
+	height:20px;
+	margin-right:6px;
+	width:60px;	
+}
+button.timespinner_plus,
+button.timespinner_minus {
+	cursor:pointer;
+	border:0px;
+	height:20px;
+	width:20px;
+	margin:0px;
+	padding:0px;
+}
+button.timespinner_plus {
+	background:url(timespinner-plus.png);	
+}
+button.timespinner_minus {
+	background:url(timespinner-minus.png);
+}
+button.timespinner_plus:hover,
+button.timespinner_plus.active,
+button.timespinner_minus:hover,
+button.timespinner_minus.active {
+	background-position:0 20px;
+}

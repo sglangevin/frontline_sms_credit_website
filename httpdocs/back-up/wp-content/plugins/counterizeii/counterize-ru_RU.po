@@ -1,0 +1,336 @@
+# translation of counterize-ru_RU.po to
+# Ivan Bobrov <ibobrik@gmail.com>, 2007.
+# translation of counterize-de_DE.po to
+msgid ""
+msgstr ""
+"Project-Id-Version: counterize-ru_RU\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-07-06 22:11+0300\n"
+"Last-Translator: Ivan Bobrov <ibobrik@gmail.com>\n"
+"Language-Team:  <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\Dokumente und Einstellungen\\sforkmann\\Desktop\\counterize\\\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: counterize.php:294
+msgid "Page"
+msgstr "Страница"
+
+#: counterize.php:310
+#: counterize.php:1017
+msgid "Referer"
+msgstr "Пересыльщик"
+
+#: counterize.php:330
+msgid "Keyword"
+msgstr "Ключевое слово"
+
+#: counterize.php:344
+#: counterize.php:363
+#: counterize.php:382
+msgid "unknown"
+msgstr "неизвестно"
+
+#: counterize.php:349
+#: counterize.php:368
+#: counterize.php:1018
+msgid "UserAgent"
+msgstr "Браузер"
+
+#: counterize.php:387
+msgid "Operating System"
+msgstr "Операционная система"
+
+#: counterize.php:824
+msgid "<strong>Need help?</strong> Go to <a href=\"http://www.navision-blog.de/counterize\">the Counterize II Homepage</a> and search the Blog of the <a href=\"http://www.navision-blog.de\">.NET / Navision - Group Halle</a> - others may have had the same question or problem as you..."
+msgstr "<strong>Необходима помощь?</strong> Направляйтесь на <a href=\"http://www.navision-blog.de/counterize\">домашнюю страницу Counterize II</a> и ищите по блогу <a href=\"http://www.navision-blog.de\">.NET / Navision - Group Halle</a> - другие могут иметь такие же проблемы и вопросы, как у вас..."
+
+#: counterize.php:834
+msgid "Statistics recorded with <a href=\"http://www.navision-blog.de/counterize\" title=\"Counterize II - Statistics-plugin for Wordpress by Steffen Forkmann\">Counterize II</a>"
+msgstr "Статистика записана с помощью <a href=\"http://www.navision-blog.de/counterize\" title=\"Counterize II - Statistics-plugin for Wordpress by Steffen Forkmann\">Counterize II</a>"
+
+#: counterize.php:857
+msgid "Amount"
+msgstr "Количество"
+
+#: counterize.php:858
+msgid "Graph / %"
+msgstr "График / %"
+
+#: counterize.php:994
+msgid "Latest entries"
+msgstr "Последние элементы"
+
+#: counterize.php:1010
+msgid "Reset Filters"
+msgstr "Обнулить фильтры"
+
+#: counterize.php:1013
+msgid "ID"
+msgstr "ID"
+
+#: counterize.php:1014
+msgid "IP"
+msgstr "IP"
+
+#: counterize.php:1015
+msgid "Timestamp"
+msgstr "Дата/Время"
+
+#: counterize.php:1016
+msgid "URl"
+msgstr "URL"
+
+#: counterize.php:1019
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+#: counterize.php:1020
+msgid "Kill"
+msgstr "Уничтожить"
+
+#: counterize.php:1077
+msgid "There's no data in the database - You can't see stats until you have data."
+msgstr "В базе статистики нет данных, вы не можете просматривать статистику."
+
+#: counterize.php:1082
+msgid "Hit Counter"
+msgstr "Количество посещений"
+
+#: counterize.php:1086
+msgid "Total hits: "
+msgstr "Всего посещений: "
+
+#: counterize.php:1089
+msgid "Hits from unique IPs: "
+msgstr "Уникальных посещений: "
+
+#: counterize.php:1092
+msgid "Total hits, today: "
+msgstr "Всего посещений сегодня: "
+
+#: counterize.php:1095
+msgid "Hits from unique IPs, today: "
+msgstr "Уникальных посещений сегодня: "
+
+#: counterize.php:1098
+msgid "Hits, the last 7 days: "
+msgstr "Посещений за последнюю неделю: "
+
+#: counterize.php:1101
+msgid "Unique hits, the last 7 days: "
+msgstr "Уникальных посещений за последнюю неделю: "
+
+#: counterize.php:1124
+msgid "Visits based on day of month"
+msgstr "Посещения по дням месяца"
+
+#: counterize.php:1129
+#: counterize.php:1139
+#: counterize.php:1150
+msgid "Day"
+msgstr "День"
+
+#: counterize.php:1134
+msgid "Visits based on day of month (only this month)"
+msgstr "Посещения по дням месяца (текущий месяц)"
+
+#: counterize.php:1145
+msgid "Visits based on day of week"
+msgstr "Посещения по дням недели"
+
+#: counterize.php:1155
+msgid "Visits based on month"
+msgstr "Посещения по месяцам"
+
+#: counterize.php:1160
+msgid "Month"
+msgstr "Месяц"
+
+#: counterize.php:1165
+msgid "Visits based on hour of day"
+msgstr "Посещения по часам суток"
+
+#: counterize.php:1170
+msgid "Hour"
+msgstr "Час"
+
+#: counterize.php:1175
+msgid "Most visited pages "
+msgstr "Самые популярные страницы "
+
+#: counterize.php:1184
+msgid "Most visited IPs "
+msgstr "Самые активные IP "
+
+#: counterize.php:1191
+msgid "Most seen referers "
+msgstr "Самые активные пересыльщики "
+
+#: counterize.php:1196
+msgid "Most used browsers "
+msgstr "Самые популярные браузеры "
+
+#: counterize.php:1201
+msgid "Most used browsers versions "
+msgstr "Самые популярные версии барузеров "
+
+#: counterize.php:1206
+msgid "Most used operating systems "
+msgstr "Самые популярные операционные системы "
+
+#: counterize.php:1211
+msgid "Most searched keywords "
+msgstr "Самые популярные ключевые слова "
+
+#: counterize.php:1222
+msgid "Are you sure that you want to delete this entry?"
+msgstr "Вы действительно хотите удалить этот элемент?"
+
+#: counterize.php:1234
+msgid "Deleting entry "
+msgstr "Удаление элемента "
+
+#: counterize.php:1267
+msgid "Counterize II"
+msgstr "Counterize II"
+
+#: counterize_admin.php:15
+#: counterize_admin.php:27
+#: counterize_admin.php:95
+msgid " is not a valid number!"
+msgstr " не является корректным числом!"
+
+#: counterize_admin.php:52
+msgid "Database flushed!"
+msgstr "База данных обнулена!"
+
+#: counterize_admin.php:52
+msgid "records deleted)"
+msgstr "записей удалено)"
+
+#: counterize_admin.php:66
+msgid " is not a valid string!"
+msgstr " не является корректной строкой!"
+
+#: counterize_admin.php:76
+msgid "Excluded users saved. Current number of excluded users: "
+msgstr "Исключенные пользователи сохранены. На данный момент пользователей исключено: "
+
+#: counterize_admin.php:109
+msgid "Counterize configuration - Version "
+msgstr "Конфигурация Counterize - версия "
+
+#: counterize_admin.php:113
+msgid "Amount of rows to show in history"
+msgstr "Всего строк в истории"
+
+#: counterize_admin.php:114
+msgid "to view all"
+msgstr "для просмотра всех"
+
+#: counterize_admin.php:119
+#: counterize_admin.php:130
+#: counterize_admin.php:178
+#: counterize_admin.php:189
+#: counterize_admin.php:209
+#: counterize_admin.php:240
+msgid "Save settings"
+msgstr "Сохранить настройки"
+
+#: counterize_admin.php:125
+msgid "Rows to show in 'top xx' bars"
+msgstr "Строк для показа в 'Самые xx' пунктах"
+
+#: counterize_admin.php:136
+msgid "Enable/disable logging of <a href=\"http://en.wikipedia.org/wiki/Internet_bot\">bots</a>"
+msgstr "Включить/отключить запись информации о <a href=\"http://ru.wikipedia.org/wiki/Робот_(программа)\">ботах</a>"
+
+#: counterize_admin.php:142
+msgid "Disable bot-logging"
+msgstr "Включить"
+
+#: counterize_admin.php:144
+msgid "Enable bot-logging"
+msgstr "Отключить"
+
+#: counterize_admin.php:152
+msgid "Flush the Counterize Database"
+msgstr "Очистить базу данных Counterize"
+
+#: counterize_admin.php:154
+msgid "(This means deleting all records and all stats!)"
+msgstr "(Это подразумевает удаление всех записей и всей статистики!)"
+
+#: counterize_admin.php:161
+msgid "Empty database!"
+msgstr "Пустая база данных!"
+
+#: counterize_admin.php:167
+msgid "Whois-Server"
+msgstr "Сервер Whois"
+
+#: counterize_admin.php:169
+msgid "Samples"
+msgstr "Примеры"
+
+#: counterize_admin.php:184
+msgid "Maximum width for labels"
+msgstr "Максимальная ширина меток"
+
+#: counterize_admin.php:197
+msgid "Counterize excludelist"
+msgstr "Список исключений"
+
+#: counterize_admin.php:202
+msgid "IP's to exclude"
+msgstr "IP адреса для исключения"
+
+#: counterize_admin.php:203
+msgid "(Enter IP's seperated with space)"
+msgstr "(Введите IP адреса, разделенные пробелом)"
+
+#: counterize_admin.php:219
+msgid "Select users that may not be counted:"
+msgstr "Не включать пользователей:"
+
+#: counterize_admin.php:220
+msgid "(Use Ctrl-key for selecting multiple entries)"
+msgstr "(Используйте клавишу Ctrl для выбора нескольких элементов)"
+
+#: counterize_dashboard.php:15
+msgid "Counterize II Status"
+msgstr "Статус Counterize II"
+
+#: counterize_dashboard.php:16
+msgid "Total: "
+msgstr "Всего: "
+
+#: counterize_dashboard.php:16
+#: counterize_dashboard.php:17
+msgid "hits and "
+msgstr "посещений, среди них "
+
+#: counterize_dashboard.php:16
+#: counterize_dashboard.php:17
+msgid " unique."
+msgstr " уникальных."
+
+#: counterize_dashboard.php:17
+msgid "Today: "
+msgstr "Сегодня: "
+
+#: counterize_dashboard.php:18
+msgid "Currently: "
+msgstr "Сейчас: "
+
+#: counterize_dashboard.php:18
+msgid " users online."
+msgstr " пользователей online."
+

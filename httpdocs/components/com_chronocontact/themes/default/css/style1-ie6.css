@@ -1,0 +1,82 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*body, ul, form, div, input, select { margin:0px; padding:0px;}*/
+
+div#form_element {
+behavior: url(hoverie.htc);
+}
+
+
+/*-----------Form Styles--------------*/
+
+.form_item {
+ /*border:1px #CCCCCC solid;*/
+ display:block;
+ padding:15px!important;
+
+}
+
+.form_element {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	float: left;
+	margin-left:30px;
+	margin-top:8px;
+	margin-bottom:8px;
+	width:85%;
+}
+
+.form_element label {
+	/*width:150px;*/
+	padding:0px 10px 0px 0px;
+	display: block;
+	float: left;
+	line-height: 22px;
+	vertical-align: middle;
+}
+.form_element .check_label {
+	/*width:150px;*/
+	padding:0px 10px 0px 0px;
+	float:none;
+	display:inline;
+	line-height: 22px;
+	vertical-align: middle;
+}
+.form_element .radio_label {
+	/*width:150px;*/
+	padding:0px 10px 0px 0px;
+	float:none;
+	display:inline;
+	line-height: 22px;
+	vertical-align: middle;
+}
+
+.form_element select, .form_element input {
+	/*width:150px;*/
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	
+}
+
+.delete_icon { float:right; /*border-left:1px #CCCCCC solid; padding:10px;*/}
+
+.delete_icon1 { float:right; border-left:1px #CCCCCC solid; border-bottom:1px #CCCCCC solid; padding:10px;}
+
+.button { text-align:center; border:none; margin-top:10px; }
+
+.no_delete { border:none;}
+
+.cf_button1 {
+	width:70px!important;
+	height:20px!important;
+}
+
+
+
+.radio { width:20px!important;}
+
+.float_left { float:left;}
+.cfclear { clear:both; font-size:0px; line-height:0px;}
+
+/*.width1 { width: auto;}*/

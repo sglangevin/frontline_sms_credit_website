@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Categories">
+		<message>
+			<![CDATA[Displays a list of items from one or more categories.]]>
+		</message>
+	</layout>
+	<state>
+		<name>Categories</name>
+		<description>Displays a list of items from one or more categories.</description>
+		<params addpath="/administrator/components/com_k2/elements">
+			<param name="" type="header" default="Select one or more categories" label="" description=""/>
+			<param name="categories" type="category" default="" label="Select categories" description="If you select multiple categories, you can adjust additional parameters below. If you select only one category, then K2 will fetch the options as defined in that specific category's options (in K2 >> Categories)."/>
+			<param name="catCatalogMode" type="list" default="0" label="Fetch items from children categories" description="If you select 'no' then only the items directly belonging to this category will be retrieved. If you select 'yes' then items from all sub-categories will be retrieved. Setting this option to 'yes' is ideal for news/portal/magazine/blog layouts.">
+				<option value="1">No</option>
+				<option value="0">Yes</option>
+			</param>
+			<param name="" type="header" default="Layout options for multiple category selection" label="" description=""/>
+			<param name="theme" type="template" default="default" label="Select a template"/>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="num_leading_items" type="text" size="4" default="2" label="Leading count" description="Number of items to display as Leading."/>
+			<param name="num_leading_columns" type="text" size="4" default="1" label="Columns for leading" description=""/>
+			<param name="leadingImgSize" type="list" default="Large" label="Image size for leading items" description="The dimensions for each image size are defined inside K2's global parameters.">
+				<option value="XSmall">XSmall</option>
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+				<option value="XLarge">XLarge</option>
+				<option value="">-- No image --</option>
+			</param>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="num_primary_items" type="text" size="4" default="4" label="Primary count" description="Number of items to display as Primary."/>
+			<param name="num_primary_columns" type="text" size="4" default="2" label="Columns for primary" description=""/>
+			<param name="primaryImgSize" type="list" default="Medium" label="Image size for primary items" description="The dimensions for each image size are defined inside K2's global parameters.">
+				<option value="XSmall">XSmall</option>
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+				<option value="XLarge">XLarge</option>
+				<option value="">-- No image --</option>
+			</param>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="num_secondary_items" type="text" size="4" default="4" label="Secondary count" description="Number of items to display as Secondary."/>
+			<param name="num_secondary_columns" type="text" size="4" default="1" label="Columns for secondary" description=""/>
+			<param name="secondaryImgSize" type="list" default="Small" label="Image size for secondary items" description="The dimensions for each image size are defined inside K2's global parameters.">
+				<option value="XSmall">XSmall</option>
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+				<option value="XLarge">XLarge</option>
+				<option value="">-- No image --</option>
+			</param>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="num_links" type="text" size="4" default="4" label="Links count" description="Number of items to display as Links."/>
+			<param name="num_links_columns" type="text" size="4" default="1" label="Columns for links" description=""/>
+			<param name="linksImgSize" type="list" default="XSmall" label="Image size for link items" description="The dimensions for each image size are defined inside K2's global parameters.">
+				<option value="XSmall">XSmall</option>
+				<option value="Small">Small</option>
+				<option value="Medium">Medium</option>
+				<option value="Large">Large</option>
+				<option value="XLarge">XLarge</option>
+				<option value="">-- No image --</option>
+			</param>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="catFeaturedItems" type="list" default="1" label="Featured items" description="">
+				<option value="0">Hide</option>
+				<option value="1">Show</option>
+				<option value="2">Show only featured items</option>
+			</param>
+			<param name="catOrdering" type="list" default="" label="Item ordering" description="">
+				<option value="">Default</option>
+				<option value="date">Oldest first</option>
+				<option value="rdate">Most recent first</option>
+				<option value="alpha">Title Alphabetical</option>
+				<option value="ralpha">Title Reverse-Alphabetical</option>
+				<option value="order">Ordering</option>
+				<option value="rorder">Ordering Reverse</option>
+				<option value="hits">Most popular</option>
+				<option value="best">Highest rated</option>
+				<option value="rand">Random ordering</option>
+			</param>
+			<param name="catPagination" type="list" default="2" label="Pagination" description="">
+				<option value="0">Hide</option>
+				<option value="1">Show</option>
+				<option value="2">Auto</option>
+			</param>
+			<param name="catPaginationResults" type="radio" default="1" label="Pagination results" description="">
+				<option value="0">Hide</option>
+				<option value="1">Show</option>
+			</param>
+			<param name="@spacer" type="spacer" default="" label="" description=""/>
+			<param name="catFeedLink" type="radio" default="1" label="RSS feed icon" description="">
+				<option value="0">Hide</option>
+				<option value="1">Show</option>
+			</param>
+			<param name="feedLink" type="radio" default="1" label="RSS feed link" description="">
+				<option value="0">Disable</option>
+				<option value="1">Enable</option>
+			</param>
+		</params>
+		<url>
+			<param name="task" type="hidden" default=""/><param name="id" type="hidden" default=""/>
+		</url>
+	</state>
+</metadata>

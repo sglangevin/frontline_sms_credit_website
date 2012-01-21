@@ -1,0 +1,118 @@
+/* CSS Document */
+.table_row_title{
+	background-color:#538eba;
+	color:#FFFFFF;
+	font-weight:bold;
+
+}
+.table_row_first{
+	background-color:#FFFFFF;
+}
+.table_row_second{
+	background-color:#f5fbff;
+}	
+.clsFloatLeft{
+	float:left;
+}
+.clsFloatRight{
+	float:right;
+}
+.clsClearBoth{
+	clear:both;
+}
+#clsTopMenuBg{
+	padding:2px;
+	background-color:#E0E0E0;
+}
+#clsTopMenuBg a:link, #clsTopMenuBg a:hover, #clsTopMenuBg a:visited, #clsTopMenuBg a:active {
+	font-size:11px;
+	font-weight:bold;
+	color:#333333;
+}
+
+#clsTableTdPadd{
+	padding-top:6px;
+	padding-bottom:6px;
+}
+#clsDivMarginTop10{
+	margin-top:10px;
+} 
+#divBlogDetails{
+	font-size:11px;
+	text-align:right;
+	background-color:#F9F9F9;
+	border:1px dashed #999999;
+	padding:3px;
+	margin:5px 0px 5px 0px;
+}
+.clsTDBorderTop{
+	border-top:1px dashed #CCCCCC;
+	margin:10px 0px 10px 0px;
+}
+.clsLinkedBlog{
+	height:48px;
+ 	background-image:url(Images/icons/smartblog.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+	padding-left:50px;
+}
+.clsLinkedBlog_title{
+  	text-align:left;
+	padding-top:15px;
+	padding-left:2px;
+	color:#4A4A4A;
+	font-size:25px;
+	font-weight:bold;
+}
+
+.clsImgPad{
+	padding:6px 5px 0px 0px;
+}
+.clsImgPadLeft{
+	padding-left:5px;
+}
+.clsPostTitle{
+	font-weight:bold;
+	font-size:18px;
+	padding-top:5px;
+}
+.clsPostTitle a:link, .clsPostTitle a:hover, .clsPostTitle a:visited, .clsPostTitle a:active {
+	font-weight:bold;
+	font-size:18px;
+	text-decoration:none;
+	color:#333333;
+}
+.clsCommentTitle{
+	font-weight:bold;
+	margin-top:5px;
+}
+.clsBGCommentTop{
+	margin-top:5px;
+	background-image:url(Images/icons/comment_bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	height:35px;
+	font-size:18px;
+	font-weight:bold;
+}
+#clsBloggerTitle{
+	background-image:url(Images/icons/spacer.gif);
+	background-repeat:no-repeat;
+	background-position:top left;
+ 	background-color:#F4F4F4;
+ 	padding:5px;
+ 	text-align:left;
+	font-size:22px;
+	font-weight:bold;
+}
+#clsBloggerDesc{
+  	text-align:right;
+	font-size:12px;
+	font-weight:bold;
+}
+#clsBloggerLogDet{
+	font-size:11px;
+	text-align:right;
+	font-weight:normal;
+	line-height:12px;
+}

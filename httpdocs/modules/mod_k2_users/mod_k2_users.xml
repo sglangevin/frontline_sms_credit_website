@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+  <name>K2 Users</name>
+  <author>JoomlaWorks</author>
+  <creationDate>September 23rd, 2010</creationDate>
+  <copyright>Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.</copyright>
+  <authorEmail>contact@joomlaworks.gr</authorEmail>
+  <authorUrl>www.joomlaworks.gr</authorUrl>
+  <version>2.4.1</version>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <description>K2 Users</description>
+  <files>
+    <filename module="mod_k2_users">mod_k2_users.php</filename>
+    <filename>helper.php</filename>
+    <folder>tmpl</folder>
+  </files>
+  <params addpath="/administrator/components/com_k2/elements/">
+    <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+    <param name="getTemplate" type="moduletemplate" modulename="mod_k2_users" default="Default" label="Select sub-template" description="This module utilizes on-the-fly MVC template overrides. What this means is that you can create a new sub-template folder for this module within your Joomla! template's /html/mod_k2_users/ folder. The module will then pickup the new sub-template auto-magically, without you editing any XML file or doing any other non-designer work!" />
+    <param name="source" type="list" default="0" label="Source" description="">
+      <option value="filter">Retrieve users using filters</option>
+      <option value="specific">Retrieve specific users</option>
+    </param>
+    <param name="" type="header" default="Retrieve users using filters" label="" description="" />
+    <param name="filter" type="list" default="1" label="Fetch users" description="">
+			<option value="0">By K2 user group</option>
+			<option value="1">With most items</option>
+			<option value="2">With most popular items</option>
+			<option value="3">With most commented items</option>
+    </param>
+		<param name="K2UserGroup" type="sql" default="" label="Select a K2 User group" query="SELECT id AS value, name AS K2UserGroup FROM #__k2_user_groups" />
+    <param name="ordering" type="list" default="1" label="Ordering" description="">
+      <option value="alpha">Alphabetical</option>
+      <option value="recent">Most recent item</option>
+	  	<option value="random">Random</option>
+    </param>
+		<param name="limit" type="text" default="4" size="4" label="Limit" description=""/>
+		<param name="" type="header" default="Retrieve specific users" label="" description="" />
+		<param name="userIDs" type="userslatest" default="" label="Selected users (sort with drag &amp; drop)" description="Drag users one by one to re-order the list. Click the remove icon to remove a user from the list." />
+  	<param name="" type="header" default="Display options" label="" description="" />
+    <param name="userName" type="radio" default="1" label="Name" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userAvatar" type="radio" default="1" label="User avatar" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userAvatarWidthSelect" type="list" default="custom" label="User avatar width" description="">
+      <option value="inherit">Inherit from component parameters</option>
+      <option value="custom">Use custom width</option>
+    </param>
+    <param name="userAvatarWidth" type="text" default="50" size="4" label="Custom width for user avatar (in px)" description="" />
+    <param name="userDescription" type="radio" default="1" label="User description" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userDescriptionWordLimit" type="text" default="" size="4" label="Word limit for user description" description="" />
+    <param name="userURL" type="radio" default="1" label="URL" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userEmail" type="radio" default="0" label="E-mail" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userFeed" type="radio" default="1" label="RSS feed icon" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="userItemCount" type="text" default="1" size="4" label="Item count" description=""/>
+  </params>
+  <params group="advanced">
+    <param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+      <option value="1">Use global</option>
+      <option value="0">No caching</option>
+    </param>
+    <param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+  </params>
+</install>

@@ -1,0 +1,31 @@
+#myBlog-wrap #myBlog-head {
+	padding-top: 20px;
+	overflow: hidden;
+}
+#myBlog-wrap #myBlog-toolbar {
+	bottom: 10px;
+}
+#myBlog-wrap #myBlog-toolbar li {
+	display: block;
+}
+#myBlog-wrap #myBlog-toolbar li a {
+	display: block;
+}
+#myBlog-wrap #myBlog-toolbar li a span {
+	padding: 3px 5px;
+}
+#myBlog-wrap #myBlog-toolbar li#toolbarWrite {
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+#myBlog-wrap #myBlog-toolbar li#toolbarWrite a {
+	background-position: 7px 5px;
+}
+#myBlog-wrap #myBlog-toolbar li#toolbarWrite a span {
+	text-indent: 0;
+	display: block;
+	width: 0;
+	padding: 0 0 3px;
+	cursor: pointer;
+}

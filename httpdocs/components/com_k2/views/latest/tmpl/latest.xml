@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <layout title="Latest items from (one or more) users or categories">
+    <message>
+      <![CDATA[Create a menu item linking to a grid page with the latest items from specific users or categories in K2.]]>
+    </message>
+  </layout>
+  <state>
+    <name>Latest items from (one or more) users or categories</name>
+    <description>Create a menu item linking to a grid page with the latest items from specific categories or users in K2.</description>
+    <params addPath="/administrator/components/com_k2/elements">
+    	<param name="" type="header" default="Content Source" label="" description="" />
+      <param name="source" type="list" default="0" label="Choose content source" description="Please select whether to retrieve content from K2 users or categories.">
+        <option value="0">Users</option>
+        <option value="1">Categories</option>
+      </param>
+      <param name="latestItemsCols" type="text" default="2" size="4" label="Number of columns" />
+      <param name="latestItemsLimit" type="text" default="3" size="4" label="Maximum number of items per user or category" />
+      <param name="latestItemsDisplayEffect" type="list" default="all" label="Item view options (set below) effect..." description="">
+        <option value="first">...effect the first item only, subsequent items display title only</option>
+        <option value="all">...all fetched items</option>
+      </param>
+      <param name="" type="header" default="User settings" label="" description="" />
+      <param name="userIDs" type="userslatest" default="" label="Selected users (sort with drag &amp; drop)" description="Drag users one by one to re-order the list. Click the remove icon to remove a user from the list." />
+      <param name="userName" type="radio" default="1" label="Name" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="userImage" type="radio" default="1" label="Image (avatar)" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="userDescription" type="radio" default="1" label="Description" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="userURL" type="radio" default="1" label="URL" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="userEmail" type="radio" default="1" label="E-mail" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="userFeed" type="radio" default="1" label="RSS feed icon" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="" type="header" default="Category settings" label="" description="" />
+      <param name="categoryIDs" type="categorieslatest" default="" label="Selected categories (sort with drag &amp; drop)" description="Drag categories one by one to re-order the list. Click the remove icon to remove a category from the list." />
+      <param name="categoryTitle" type="radio" default="1" label="Title" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="categoryDescription" type="radio" default="1" label="Description" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="categoryImage" type="radio" default="1" label="Image" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="categoryFeed" type="radio" default="1" label="RSS feed icon" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="" type="header" default="Item view options (common for user or category source)" label="" description="" />
+      <param name="latestItemTitle" type="radio" default="1" label="Title" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemTitleLinked" type="radio" default="1" label="Link on title" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemDateCreated" type="radio" default="1" label="Item created date and time" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemImage" type="radio" default="1" label="Image" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+	    <param name="latestItemImageSize" type="list" default="Medium" label="Image size" description="">
+	      <option value="XSmall">XSmall</option>
+	      <option value="Small">Small</option>
+	      <option value="Medium">Medium</option>
+	      <option value="Large">Large</option>
+	      <option value="XLarge">XLarge</option>
+	    </param>
+	    <param name="latestItemVideo" type="radio" default="1" label="Video" description="">
+	      <option value="0">Hide</option>
+	      <option value="1">Show</option>
+	    </param>
+	 	<param name="latestItemVideoWidth" type="text" default="" size="4" label="Video width" description="" />
+		<param name="latestItemVideoHeight" type="text" default="" size="4" label="Video height" description="" />
+	    <param name="latestItemVideoAutoPlay" type="radio" default="0" label="Video autoplay" description="">
+	      <option value="0">No</option>
+	      <option value="1">Yes</option>
+	    </param>
+      <param name="latestItemIntroText" type="radio" default="1" label="Introtext" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemCategory" type="radio" default="1" label="Category" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemTags" type="radio" default="1" label="Tags" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemReadMore" type="radio" default="1" label="Read more... link" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="latestItemCommentsAnchor" type="radio" default="0" label="Anchor link (with comments counter) to item's comment form" description="">
+        <option value="0">Hide</option>
+        <option value="1">Show</option>
+      </param>
+      <param name="" type="header" default="Advanced" label="" description="" />
+	  <param name="feedLink" type="radio" default="1" label="RSS feed link" description="">
+        <option value="0">Disable</option>
+		<option value="1">Enable</option>
+	  </param>
+      <param name="latestItemK2Plugins" type="radio" default="0" label="Enable K2 plugins" description="">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </param>
+    </params>
+  </state>
+</metadata>

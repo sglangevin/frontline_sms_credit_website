@@ -1,0 +1,68 @@
+.jxshare_posbox {
+	position: absolute;
+	float: none;
+}
+
+.jxshare_box {
+	width: 138px;
+	border: thin solid black;
+	padding: 4px;
+	background: white;
+	text-align: center;
+	display: block;
+	visibility: hidden;
+}
+
+.jxshare_image {
+	padding: 2px;
+}
+
+.jxshare_link {
+	border: 0px;
+}
+
+.jxshare_button {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.jxshare_flat {
+	margin: 5px;
+}
+
+.jxfloat_left {
+	float: left;
+	width: 22px;
+	margin-right: 10px;
+}
+
+.jxfloat_right {
+	float: right;
+	width: 22px;
+	margin-left: 10px;
+}
+
+.jxfloat_left .jxshare_button {
+	padding-bottom: 6px;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top: 0px;
+}
+
+.jxfloat_right .jxshare_button {
+	padding-bottom: 6px;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top: 0px;
+}
+
+.jxfloat_left .jxshare_image {
+	padding-bottom: 6px;
+}
+
+.jxfloat_right .jxshare_image {
+	padding-bottom: 6px;
+}

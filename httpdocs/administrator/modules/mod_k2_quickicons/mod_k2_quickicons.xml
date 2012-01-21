@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" client="administrator" method="upgrade" version="1.5.0" position="icon">
+  <name>K2 QuickIcons (admin)</name>
+  <author>JoomlaWorks</author>
+  <creationDate>September 23rd, 2010</creationDate>
+  <copyright>Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.</copyright>
+  <authorEmail>contact@joomlaworks.gr</authorEmail>
+  <authorUrl>www.joomlaworks.gr</authorUrl>
+  <version>2.4.1</version>
+	<description>K2 QuickIcons for use in the Joomla! Control Panel (dashboard) page.</description>
+	<files>
+		<filename module="mod_k2_quickicons">mod_k2_quickicons.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+  <params>
+    <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable). This allows individual module styling." />
+		<param name="modCSSStyling" type="list" default="1" label="Module default CSS" description="">
+			<option value="1">Enabled</option>
+			<option value="0">Disabled</option>
+		</param>
+		<param name="modLogo" type="list" default="1" label="Module logo" description="">
+			<option value="1">Show</option>
+			<option value="0">Hide</option>
+		</param>
+  </params>
+	<params group="advanced">
+		<param name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+			<option value="0">No caching</option>
+			<option value="1">Use global</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+</install>

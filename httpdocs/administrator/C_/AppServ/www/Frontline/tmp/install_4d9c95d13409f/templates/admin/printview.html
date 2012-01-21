@@ -1,0 +1,50 @@
+<?php
+$e = $entry;
+?>
+<style type="text/css">
+<!--
+h1{
+	font-size:150%;
+	line-height:150%;
+}
+
+body{
+	margin: 20px;
+}
+-->
+</style>
+<script type="text/javascript">
+if (document.addEventListener) {
+  document.addEventListener("DOMContentLoaded", window.print(), false);
+}
+
+// for Internet Explorer (using conditional comments)
+/*@cc_on @*/
+/*@if (@_win32)
+document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
+var script = document.getElementById("__ie_onload");
+script.onreadystatechange = function() {
+  if (this.readyState == "complete") {
+    window.print(); // call the onload handler
+  }
+};
+/*@end @*/
+
+</script>
+<h1><?php echo $e['title']; ?></h1>
+<hr/>
+<p>
+	<p>
+		<?php echo JText::_('POSTED BY'); ?>: <?php echo $e['author']; ?>
+		<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+		<span class="post-date">
+			<?php echo JText::sprintf('POSTED ON', $e['createdFormatted']); ?>
+		</span>
+  	</p>
+  	<div><?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?></div>
+</p>
+<p>
+<?php echo $e['text']; ?>
+</p>
+
+<hr />

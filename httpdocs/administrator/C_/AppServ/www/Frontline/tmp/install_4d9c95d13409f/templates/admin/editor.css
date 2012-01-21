@@ -1,0 +1,14 @@
+body, p, div {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+}
+
+br {
+	clear:both;
+}
+
+object{
+display:block;
+height:10px;
+background-color:#000000;
+}

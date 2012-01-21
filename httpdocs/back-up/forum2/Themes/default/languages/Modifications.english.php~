@@ -1,0 +1,12 @@
+<?php
+// Version: 1.1; Modifications
+
+
+/** start x-File Manager **/
+$txt['xfm']['view_files'] 		= 'View Files';
+$txt['file_manager'] = 'File manager';
+$txt['xfm']['manage_files'] 		= 'Manage Files';
+/** end x-File Manager **/
+
+
+?>

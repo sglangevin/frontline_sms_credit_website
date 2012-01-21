@@ -1,0 +1,30 @@
+﻿/*body, div, label, input, span, form, h3 { margin:0; padding:0}
+
+body { font-family:Arial, Helvetica, sans-serif;}*/
+
+#cf_cont1 { width:700px;}
+
+.cf_item { width:98%; padding:1%;}
+.cf_title { font-size:1.2em; color:#000; line-height:1.4em; font-weight:normal }
+.cf_fields { line-height:1.4em; overflow:hidden; width:100%; }
+.cf_inputtext { border:#333333 1px solid; padding:1px 2px; font-size:1em;  }
+.cf_leftLabel { font-size:0.9em; line-height:1.2em;  }
+.cf_botLabel { font-size:0.7em; line-height:1.2em; color:#888 }
+
+.cf_textarea { border:#333333 1px solid; padding:1px 2px; font-size:1em; width:95%; height:8em;}
+.cf_checkbox {  float:left; margin-right:3px; line-height:1em }
+.cf_chkboxLabel { font-size:1em; line-height:0.9em; float:left; margin-right:2%;}
+
+.cf_radio {  float:left; margin-right:3px; line-height:1em }
+.cf_radioLabel { font-size:1em; line-height:0.9em; float:left; margin-right:2%;}
+
+.cf_select { border:#333333 1px solid; padding:1px 2px; font-size:1em; }
+
+.cf_file { border:#333333 1px solid; padding:1px 2px; font-size:1em; }
+
+/*--Additional properties --*/
+.cf_left { float:left!important;}
+.cf_width2 { width:45%!important}
+
+.cf_margin1 { margin-right:5px;}
+.cf_block { clear:both; display:block; margin:5px 0; }

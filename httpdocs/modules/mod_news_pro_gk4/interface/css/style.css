@@ -1,0 +1,100 @@
+/**
+* CSS style
+* @package News Show Pro GK4
+* @Copyright (C) 2009-2010 Gavick.com
+* @ All rights reserved
+* @ Joomla! is Free Software
+* @ Released under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
+* @version $Revision: 4.0.0 $
+**/
+
+.nsp_main{ overflow:hidden; }
+.nsp_bottom_interface,
+.nsp_top_interface{ overflow:hidden; margin:5px 0; }
+.nsp_bottom_interface div,
+.nsp_top_interface div{ float:right; }
+	.nsp_bottom_interface .pagination,
+	.nsp_top_interface .pagination{ list-style-type:none; margin:0; padding:0; float:left; }
+	.nsp_bottom_interface .pagination li,
+	.nsp_top_interface .pagination li{ float:left; cursor:pointer; text-indent:-999em; width:16px; height:16px; background:#ddd; margin-right:2px; border-radius:2px 2px; -moz-border-radius:2px 2px; -webkit-border-radius:2px 2px; }
+	.nsp_bottom_interface .pagination li:hover,
+	.nsp_bottom_interface .pagination li.active,
+	.nsp_top_interface .pagination li:hover,
+	.nsp_top_interface .pagination li.active{ background:#444; }
+	.nsp_bottom_interface .prev,
+	.nsp_top_interface .prev{ background:#ddd; color:#444; padding:1px 3px; cursor:pointer; border-radius:2px 2px; -moz-border-radius:2px 2px; -webkit-border-radius:2px 2px; font-size:9px; float:left; margin:0 3px 0 0; }
+	.nsp_bottom_interface .prev:hover,
+	.nsp_top_interface .prev:hover{ background:#444; color:#ddd; }
+	.nsp_bottom_interface .next,
+	.nsp_top_interface .next{ background:#ddd; color:#444; padding:1px 3px; cursor:pointer; border-radius:2px 2px; -moz-border-radius:2px 2px; -webkit-border-radius:2px 2px; font-size:9px; float:left; }
+	.nsp_bottom_interface .next:hover,
+	.nsp_top_interface .next:hover{ background:#444; color:#ddd; }
+	.nsp_bottom_interface .counter,
+	.nsp_top_interface .counter{ background:#ddd; color:#444; padding:1px 3px; cursor:pointer; border-radius:2px 2px; -moz-border-radius:2px 2px; -webkit-border-radius:2px 2px; font-size:9px; float:left; margin:0 0 0 3px; }
+	.nsp_bottom_interface .counter span,
+	.nsp_top_interface .counter span{}
+	.nsp_bottom_interface .counter strong,
+	.nsp_top_interface .counter strong{}
+	
+.nsp_arts{ overflow:hidden; }
+.nsp_art{float:left;}
+.nsp_art div{padding:0 10px; overflow:hidden; } /* here you can put padding for your articles content */
+	.nsp_art h4.nsp_header{}
+		.nsp_art h4.nsp_header a{}
+		.nsp_art h4.nsp_header a:hover{}
+	.nsp_art img.nsp_image{}
+	.nsp_art p.nsp_text{float:none;}
+		.nsp_art p.nsp_text a{}
+		.nsp_art p.nsp_text a:hover{}
+	.nsp_art p.nsp_info{font-size:90%}
+		.nsp_art p.nsp_info a{}
+		.nsp_art p.nsp_info a:hover{}
+		
+	.nsp_art .tleft{ text-align:left; }
+	.nsp_art .tright{ text-align:right; }
+	.nsp_art .tcenter{ text-align:center; }
+	.nsp_art .tjustify{ text-align:justify; }
+	
+	.nsp_art .fleft{float:left;}
+	.nsp_art .fright{float:right;}
+	.nsp_art .fnone{ clear:both;width:100%;float:none; }
+	
+	.readon_class.left,
+	.readon_class.right,
+	.readon_class.center{clear:both;}
+	
+	.readon_class.left{float:left;}
+	.readon_class.right{float:right;}
+	.readon_class.center{display:inline;float:none;}
+	
+	.nsp_avatar{}
+
+.nsp_links{}
+.nsp_links ul{padding:0;margin:0;list-style-type:none;}
+.nsp_links ul li{}
+.nsp_links ul li:hover{}
+	.nsp_links ul li h4{}
+	.nsp_links ul li h4 a{}
+	.nsp_links ul li h4 a:hover{}
+	.nsp_links ul li p{}
+/* positioning */
+.nsp_arts.left{float:right;}
+.nsp_links_wrap.left{float:left;}
+.nsp_arts.right{float:left;}
+.nsp_links_wrap.right{float:right;}
+/* make element unvisible */
+.nsp_main .unvisible{ height:1px; left:-10000px; overflow:hidden; position:absolute; top:auto; width:1px; }
+/* font-size classes */
+.nsp_fs80{ font-size:80%; }
+.nsp_fs90{ font-size:90%; }
+.nsp_fs100{ font-size:100%; }
+.nsp_fs110{ font-size:110%; }
+.nsp_fs120{ font-size:120%; }
+.nsp_fs130{ font-size:130%; }
+.nsp_fs140{ font-size:140%; }
+.nsp_fs150{ font-size:150%; }
+.nsp_fs160{ font-size:160%; }
+.nsp_fs170{ font-size:170%; }
+.nsp_fs180{ font-size:180%; }
+.nsp_fs190{ font-size:190%; }
+.nsp_fs200{ font-size:200%; }

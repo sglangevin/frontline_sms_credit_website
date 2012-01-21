@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+	<name>Content - Trendy Social Share</name>
+	<author>RBO Team</author>
+	<creationDate>January 4th, 2011</creationDate>
+	<copyright>RBO Team and TDM @ 2010 - 2011 - Free Joomla Module</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>coretemplate@gmail.com</authorEmail>
+	<authorUrl>www.trademartes.com</authorUrl>
+	<version>1.1</version>
+	<description>TRENDYSOCIALSHARE</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_content_trendysocialshare.ini</language>
+	</languages>
+	<files>
+		<filename plugin="trendysocialshare">trendysocialshare.php</filename>
+		<filename>trendysocialshare/index.html</filename>
+		<filename>trendysocialshare/css/style.css</filename>
+		<filename>trendysocialshare/css/index.html</filename>
+	</files>
+    <params>
+		<param name="global_style" type="list" default="1" label="GLOBALSTYLE" description="GLOBALSTYLEDESC">
+			<option value="0">BELOWCONTENT</option>
+			<option value="1">ABOVECONTENT</option>
+             <option value="2">BOTHCONTENT</option>
+		</param>
+		<param name="ltr_rtl" type="list" default="0" label="DISPLAY_BT_AS" description="DISPLAY_BT_AS_DESC">
+			<option value="0">DISPLAY_LTR</option>
+			<option value="1">DISPLAY_RTL</option>
+		</param>
+		<param name="whereview" type="list" default="1" label="WHERETOSHOW" description="WHERETOSHOWDESC">
+			<option value="1">ALLVIEWS</option>
+			<option value="0">ONLYARTICLEVIEWS</option>
+		</param>
+		<param name="get_tweet" type="radio" default="0" label="TWITTER_BT" description="TWITTER_BT_DESC">
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</param>
+		<param name="get_digg" type="radio" default="0" label="DIGG_BT" description="DIGG_BT_DESC">
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</param>
+		<param name="get_ybuzz" type="radio" default="0" label="YBUZZ_BT" description="YBUZZ_BT_DESC">
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</param>
+		<param name="get_gbuzz" type="radio" default="0" label="GBUZZ_BT" description="GBUZZ_BT_DESC">
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</param>
+		<param name="get_facebook" type="radio" default="0" label="FACEBOOK_BT" description="FACEBOOK_BT_DESC">
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</param>
+		<param name="tweetuser" type="text" default="" label="TWITTERNAME" description="TWITTERNAMEDESC" />
+		<param name="tweetbuttonstyle" type="list" default="1" label="TWITTERSTYLE" description="TWITTERSTYLEDESC">
+			<option value="0">VERTICAL</option>
+			<option value="1">HORIZONTAL</option>
+			<option value="2">NONE</option>
+		</param>
+		<param name="digg_style" type="list" default="0" label="DIGG_STYLE" description="DIGG_STYLE_DESC">
+			<option value="0">COMPACT_BT</option>
+			<option value="1">MEDIUM_BT</option>
+			<option value="2">WIDE_BT</option>
+			<option value="3">ICON_BT</option>
+		</param>
+		<param name="ybuzz_style" type="list" default="7" label="YBUZZ_STYLE" description="YBUZZ_STYLEDESC">
+			<option value="0">YBUZZ_STYLE1</option>
+			<option value="1">YBUZZ_STYLE2</option>
+			<option value="2">YBUZZ_STYLE3</option>
+			<option value="3">YBUZZ_STYLE4</option>
+			<option value="4">YBUZZ_STYLE5</option>
+			<option value="5">YBUZZ_STYLE6</option>
+			<option value="6">YBUZZ_STYLE7</option>
+			<option value="7">YBUZZ_STYLE8</option>
+			<option value="8">YBUZZ_STYLE9</option>
+			<option value="9">YBUZZ_STYLE10</option>
+		</param>
+		<param name="gbuzz_style" type="list" default="3" label="GBUZZ_STYLE" description="GBUZZ_STYLEDESC">
+			<option value="0">GBUZZ_STYLE1</option>
+			<option value="1">GBUZZ_STYLE2</option>
+			<option value="2">GBUZZ_STYLE3</option>
+			<option value="3">GBUZZ_STYLE4</option>
+			<option value="4">GBUZZ_STYLE_LINK</option>
+		</param>
+		<param name="fb_layout" type="list" default="1" label="FACEBOOKLAYOUT" description="FACEBOOKLAYOUTDESC">
+			<option value="0">STANDARD</option>
+			<option value="1">BUTTOCOUNT</option>
+			<option value="2">BOXCOUNT</option>
+		</param>
+		<param name="fb_showface" type="radio" default="0" label="FACEBOOKFACE" description="FACEBOOKFACEDESC">
+			<option value="0">YES</option>
+			<option value="1">NO</option>
+		</param>
+		<param name="fb_action" type="radio" default="0" label="FACEBOOKACTION" description="FACEBOOKACTIONDESC">
+			<option value="0">LIKE</option>
+			<option value="1">RECOMMEND</option>
+		</param>
+		<param name="fb_colorscheme" type="radio" default="0" label="COLORSCHEM_FB_BUTTON" description="COLORSCHEM_FB_BUTTON_DESC">
+			<option value="0">LIGHT</option>
+			<option value="1">DARK</option>
+		</param>
+		<param name="fb_fontbutton" type="list" default="0" label="FONT_FB_BUTTON" description="FONT_FB_BUTTON_DESC">
+			<option value="0">Arial</option>
+			<option value="1">Lucida Grande</option>
+			<option value="2">Segoe ui</option>
+			<option value="3">Tahoma</option>
+			<option value="4">Trebuchet ms</option>
+			<option value="5">Verdana</option>
+		</param>
+		
+	</params>
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="CACHING" description="PARAMENABLECACHE">
+			<option value="1">GLOBAL</option>
+			<option value="0">NOCACHING</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="CACHETIME" description="CACHETIME_DESC" />
+	</params>
+</install>

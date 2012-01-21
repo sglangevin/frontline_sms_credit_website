@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>mod_bloglatestpost</name>
+	<author>Aneesh S</author>
+	<creationDate>March, 2009</creationDate>
+	<copyright>Copyright (C) 2005 - 2009 RainConcert. All rights reserved.</copyright>
+	<license>http://www.aarthikainida.com GNU/GPL</license>
+	<authorEmail>aneesh@aarthikaindia.com</authorEmail>
+	<authorUrl>www.aarthikaindia.com</authorUrl>
+	<version>1.5.0</version>
+	<description>Description : Blog Latest Post List</description>
+	<files>
+		<filename module="mod_bloglatestpost">mod_bloglatestpost.php</filename>
+		<filename module="mod_bloglatestpost">tmpl/default.php</filename>
+		<filename module="mod_bloglatestpost">tmpl/index.html</filename>
+		<filename module="mod_bloglatestpost">helper.php</filename>
+		<filename module="mod_bloglatestpost">index.html</filename>
+	</files>
+	<params>
+		<param name="limit" type="text" default="5" label="List limit" description="The number of items to display (default 5)" />
+		<param name="titlelength" type="text" default="5" label="Title Length" description="Post title Length" />
+		<param name="class_sfx" type="text" default="" label="Menu Class Suffix" description="Menu Class Suffix" />
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+	</params>
+  </install>

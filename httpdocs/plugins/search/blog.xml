@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="search">
+	<name>Search - Blog</name>
+	<author>Aneesh S</author>
+	<creationDate>March 2009</creationDate>
+	<copyright>Copyright (C) 2005 - 2008 aarthikaindia.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>aneesh@aarthikaindia.com</authorEmail>
+	<authorUrl>www.aarthikaindia.com</authorUrl>
+	<version>1.5</version>
+	<description>Allows Searching of Blog post and comments</description>
+	<files>
+		<filename plugin="blog">blog.php</filename>
+	</files>
+	<params>
+		<param name="search_limit" type="text" size="5" default="50" label="Search Limit" description="Number of Search items to return"/>
+	</params>
+</install>

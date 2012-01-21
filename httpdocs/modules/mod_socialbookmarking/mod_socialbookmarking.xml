@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.9">
+        <name>Super Social Bookmarking Module</name> 
+        <author>Nicholas Z. Cardot</author>
+        <creationDate>2009-03-29</creationDate>
+        <copyright>All rights reserved by Nicholas Z. Cardot 2009.</copyright> 
+        <license>GPL 2.0</license>
+        <authorEmail>holas84@gmail.com</authorEmail> 
+        <authorUrl>www.baptistmuse.com</authorUrl> 
+        <version>1.0.0</version> 
+        <description>Provides a sleek web 2.0 social bookmarking module for some of the most popular social bookmarking services.</description>
+        
+		<files>
+                <filename module="mod_socialbookmarking">mod_socialbookmarking.php</filename>
+                <filename>index.html</filename>
+				<filename>images/blinklist.png</filename>
+				<filename>images/delicious.png</filename>
+				<filename>images/digg.png</filename>
+				<filename>images/facebook.png</filename>
+				<filename>images/furl.png</filename>
+				<filename>images/google.png</filename>
+				<filename>images/magnolia.png</filename>
+				<filename>images/newsvine.png</filename>
+				<filename>images/reddit.png</filename>
+				<filename>images/stumbleupon.png</filename>
+				<filename>images/technorati.png</filename>
+				<filename>images/yahoo.png</filename>
+        </files>
+ 
+        <params>
+		        <param name="blinklist" type="radio" default="0" label="Blinklist" description="Display the Blinklist Button?" >
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>	 	
+				
+		        <param name="delicious" type="radio" default="0" label="Delicious" description="Display the Delicious Button?" >
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="digg" type="radio" default="0" label="Digg" description="Display the Digg Button?" >					
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="facebook" type="radio" default="0" label="Facebook" description="Display the Facebook Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="furl" type="radio" default="0" label="Furl" description="Display the Furl Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="google" type="radio" default="0" label="Google" description="Display the Google Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="magnolia" type="radio" default="0" label="Magnolia" description="Display the Magnolia Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="newsvine" type="radio" default="0" label="Newsvine" description="Display the Newsvine Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="reddit" type="radio" default="0" label="Reddit" description="Display the Reddit Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="stumbleupon" type="radio" default="0" label="Stumbleupon" description="Display the Stumbleupon Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="technorati" type="radio" default="0" label="Technorati" description="Display the Technorati Button?" >				
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		        <param name="yahoo" type="radio" default="0" label="Yahoo" description="Display the Yahoo Button?" >
+					<option value="0">Yes</option>
+					<option value="1">No</option>
+				</param>
+				
+		</params>
+</install>

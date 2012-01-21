@@ -1,0 +1,21 @@
+/**
+ * @version		$Id: style.css 478 2010-06-16 16:11:42Z joomlaworks $
+ * @package		K2
+ * @author		JoomlaWorks http://www.joomlaworks.gr
+ * @copyright	Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.
+ * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
+.clr {clear:both;height:0;line-height:0;display:block;float:none;}
+
+div#k2QuickIconsTitle {margin:16px 0 0 0;padding:0;/*background:url(../images/bg.jpg) repeat-x 0 50%;height:8px;*/position:relative;z-index:9;}
+div#k2QuickIconsTitle a {display:block;clear:both;float:none;background:#f9f9f9 url(../images/k2_logo_46x18.png) no-repeat 50% 50%;width:46px;height:18px;padding:2px 6px;margin:0 0 0 24px;border:1px solid #d5d5d5;border-bottom:1px solid #f9f9f9;}
+div#k2QuickIconsTitle a span {display:none;}
+
+#k2QuickIcons {clear:both;margin:-1px 0 8px 0;padding:8px 0;border-top:1px solid #d5d5d5;position:relative;z-index:8;}
+#k2QuickIcons.k2NoLogo {margin:0 0 8px 0;padding:0;border:none;}
+#k2QuickIcons div.icon { text-align:center; margin-right:5px; float:left; margin-bottom:5px; }
+#k2QuickIcons div.icon a { display:block; float:left; border:1px solid #f0f0f0; height:97px; width:108px; color:#666; vertical-align:middle; text-decoration:none; }
+#k2QuickIcons div.icon a:hover { border-left:1px solid #eee; border-top:1px solid #eee; border-right:1px solid #ccc; border-bottom:1px solid #ccc; background:#f9f9f9; color:#0B55C4; }
+#k2QuickIcons img { padding:10px 0; margin:0 auto; }
+#k2QuickIcons span { display:block; text-align:center; }

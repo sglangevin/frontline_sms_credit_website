@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <layout title="Item">
+    <message>Create a menu item linking directly to an item in K2.</message>
+  </layout>
+  <state>
+    <name>Item</name>
+    <description>Create a menu item linking directly to an item in K2.</description>
+    <url addpath="/administrator/components/com_k2/elements">
+      <param name="id" type="item" default="" label="Select item" description="Select an item to link to directly." />
+    </url>
+    <params>
+    </params>
+  </state>
+</metadata>

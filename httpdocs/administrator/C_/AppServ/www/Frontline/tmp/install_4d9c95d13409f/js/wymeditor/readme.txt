@@ -1,0 +1,1 @@
+Put wymeditor folders here if you want to use wymeditor

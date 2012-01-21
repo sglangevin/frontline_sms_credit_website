@@ -1,0 +1,38 @@
+<form action="<?php echo $searchURL; ?>" method="POST">
+	<div id="myblogSearch">
+		<label><?php echo JText::_('SEARCH BLOG KEYWORDS'); ?></label>
+			<input class="inputbox myblogSearchInput" name="keyword" type="text" id="keyword" size="38" value="<?php echo $keyword; ?>" />
+		<label><?php echo JText::_('SEARCH BLOG BLOGGER'); ?></label>
+			<input class="inputbox myblogSearchInput" name="blogger" type="text" id="blogger" size="38" value="<?php echo $blogger;?>"/>
+		<label><?php echo JText::_('SEARCH BLOG TAG'); ?></label>
+			<input class="inputbox myblogSearchInput" name="tags" type="text" id="category" size="38" value="<?php echo $tags;?>" />
+		<input type="hidden" name="option" value="com_myblog" />
+		<input type="hidden" name="Itemid" value="<?php echo $Itemid; ?>" />
+		<div id="myblogSearchSubmit">
+			<input type="submit" value="Submit" value="_MB_SEARCH" id="submit" />
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+</form>
+<?php
+if($results)
+{
+?>
+<div class="searchresults">
+	<ul>
+	<?php foreach($results as $row) { ?>
+		<li>
+			<div>
+				<h4><a href="<?php echo $row->link; ?>"><?php echo $row->title; ?></a></h4>
+				<div><?php echo $row->text;?></div>
+				<div>
+					<span><?php echo JText::_('POSTED BY');?></span> <a href="<?php echo $row->userlink;?>"><?php echo $row->user;?></a> <span><?php echo JText::sprintf('POSTED ON' , $row->date );?></span>
+				</div>
+			</div>
+		</li>
+<?php } ?>
+	</ul>
+</div>
+<?php
+}
+?>

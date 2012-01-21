@@ -1,0 +1,613 @@
+/*
+Theme Name: Exciter
+Theme URI: http://www.tomstardust.com/wordpress-themes/exciter/
+Description: Handcoded Wordpress Theme, Simple and Clean for Accessibility Lovers by <a href="http://www.tomstardust.com">Tommaso Baldovino</a>. Version 1.31.
+Author: Tommaso Baldovino
+Author URI: http://www.tomstardust.com/
+Tags: white, green, light, fixed-width, sticky-post, threaded-comments
+Version: 1.31
+Released under <a href="http://www.opensource.org/licenses/gpl-license.php">GPL license</a>.
+*/
+
+/*------------------- Global Reset ------------------ */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, cite, code, em, img, q, small, strike, strong, sub, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* ---------------- General Styles --------------- */
+body {
+  background: url(images/header.png) repeat-x;
+	color: #333;
+	font-family: Verdana, Arial, sans-serif;
+}
+.skip, hr, .hidden{
+	position: absolute;
+	left: -9999px;
+}
+a:link, a:visited {
+	color: #170;
+	text-decoration: underline;
+}
+a:visited {
+	color: #2f8820;
+}
+a:hover, a:active {
+	color: #1aa800;
+	text-decoration: none;
+}
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+acronym, abbr, span.caps {
+	font-size: 90%;
+	letter-spacing: .07em;
+}
+acronym, abbr {
+	cursor: help;
+}
+blockquote {
+	background: #eee url(images/quote.gif) 5px 3px no-repeat;
+	color: #555;
+	margin: 0 15px 15px 15px;
+	padding: 10px 10px 1px 50px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;	
+}
+blockquote p{
+  margin-bottom: 9px;
+}
+cite {
+	font-style: normal;
+}
+h1, h2, h3, h4, h5, h6{
+	font: 260%/1.15 "Myriad Pro", Myriad, "Trebuchet MS", Verdana, sans-serif;
+}
+h1 {
+  margin: 30px 0 0;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+h1 a:link, h1 a:visited {
+	color: #666;
+	text-decoration: none;
+}
+h1 a:hover, h1 a:active{
+	color: #1aa800;
+}
+p.payoff{
+  padding: 10px 0 0 0;
+	margin: 0 0 50px 0;
+	color: #666;
+	font: 120% "Myriad Pro", Myriad, "Trebuchet MS", Verdana, sans-serif;
+	border-top: 1px solid #fff;
+}
+h2 {font-size: 185%;}
+h3 {font-size: 140%;}
+h4 {font-size: 130%;}
+h5 {font-size: 130%;}
+h6 {font-size: 130%;}
+
+ol#comments li p {
+	font-size: 100%;
+}
+p, li, .feedback {
+	font-size: 75%;
+}
+
+#container{
+	width: 610px;
+	margin: 0 auto;
+}
+
+/* Top Menu */
+#top-menu{
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+}
+#top-menu ul{
+	width: 500px;
+	overflow: hidden;
+}
+#top-menu ul li{
+	float: left;
+	display: inline;
+	font: 100% "Myriad Pro", Myriad, "Trebuchet MS", Verdana, sans-serif;	
+}
+#top-menu ul li a{
+	padding: 8px 15px;
+	display: block;
+	text-decoration: none;
+	line-height: 24px;
+	height: 24px;
+	float: left;
+}
+#top-menu ul li a{
+  border-right: 1px solid #0e5500;
+  border-left: 1px solid #47883b;
+  color: #fff;
+}
+#top-menu ul li a:hover, #top-menu ul li a:active{
+  background: url(images/header-on.png) repeat-x;
+	text-decoration: none;
+}
+#top-menu ul li.current_page_item a:link, #top-menu ul li.current_page_item a:visited{
+  background: url(images/header-on.png) 0 -40px repeat-x;
+}
+#top-menu ul li.home a{
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 18px;
+  background: url(images/header-home.png) no-repeat;
+}
+#top-menu ul li.home a:hover, #top-menu ul li.home a:active {
+  background: url(images/header-home.png) 0 -40px no-repeat;
+}
+#top-menu ul li.home_current_page_item a {
+  background: url(images/header-home.png) 0 -80px no-repeat;
+}
+
+#rss a{
+  display: block;
+  width: 99px; 
+  height: 26px;
+  text-indent: -999px;
+  overflow: hidden;
+  background: url(images/rss.png) no-repeat;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+#rss a:hover, #rss a:active{
+  background: url(images/rss.png) 0 -26px no-repeat;
+}
+
+/* -- Post Date -- */
+div.date p{
+	width: 45px;
+	height: 55px;
+	float: right;
+	display: inline;
+	margin: 0 0 0 10px;
+	text-align: center;
+	font-size: 60%;
+	color: #666;
+	overflow: hidden;
+}
+div.date span.month{
+	display: block;
+	font-size: 110%;
+}
+div.date span.day{
+  display: block;
+	font: normal 325% Georgia, "Times New Roman", Times, serif;
+	margin-top: -9px;
+}
+div.date p span.year{
+	display: block;
+	margin-top: -3px;
+}
+
+/* -- Post Titles - Meta Tags - Post Content -- */
+.storytitle {
+  margin-bottom: 5px;
+}
+.storytitle a:link, .storytitle a:visited{
+	color: #666;
+	text-decoration: none;
+}
+.storytitle a:hover, .storytitle a:active{
+	color: #1aa800;
+}
+.meta, .storycontent {
+  margin-bottom: 20px;
+}
+span.category {
+  padding: 5px 0 5px 35px;
+  background: url(images/category.jpg) 0 5px no-repeat;
+}
+.user {
+  padding: 5px 0 5px 25px;
+  margin-left: 25px;
+  background: url(images/author.jpg) no-repeat;
+}
+.tags {
+  padding: 5px 0 5px 25px;
+  background: url(images/tag.jpg) 0 5px no-repeat;
+  width: 400px;
+  font-size: 70%;
+}
+.feedback {
+  padding: 5px 30px 5px 0;
+  background: url(images/comment.jpg) top right no-repeat;
+	text-align: right;
+	float: right;
+	clear: both;
+	width: 100px;
+}
+.post, div.page{
+	margin-bottom: 35px;
+	padding-bottom: 70px;
+	background: url(images/separator.jpg) bottom center no-repeat;
+}
+.post h3, .post h4, .post h5, .post h6{
+	color: #666;
+	margin-bottom: 10px;
+}
+.post h4{
+	font-style: italic;
+}
+.post p, div.page p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.post ul, div.page ul{
+  margin-bottom: 15px;
+}
+.post ul li, div.page ul li{
+	padding: 5px 20px;
+	background: url(images/bullet_green_light.gif) 0 8px no-repeat;
+	list-style: none;
+	line-height: 1.6;
+}
+.post ol, div.page ol{
+	margin: 0 25px 15px;
+}
+.post ol li, div.page ol li{
+	padding: 5px 0;
+	line-height: 1.6;
+	list-style-type: decimal;
+}
+
+/* -- Sticky Posts & other content -- */
+.sticky h2 {
+  font-size: 250%;
+  margin-bottom: 8px;
+}
+.sticky .storytitle a{
+  padding: 1px 5px;
+}
+.sticky .storytitle a:link, .sticky .storytitle a:visited{
+	background-color: #170;
+	color: #fff;
+}
+.sticky .storytitle a:hover, .sticky .storytitle a:active{
+	background-color: #1aa800;
+	color: #fff;
+}
+
+div.archive h2, div.error h2 {
+  color: #666;
+  margin-bottom: 40px;
+}
+div.archive h3 {
+  font-size: 160%;
+}
+
+#content #searchform {
+  margin: 10px 0 30px;
+}
+div.page .column {
+  float: left; 
+  display: inline;
+  width: 290px;
+  margin-right: 10px;
+}
+.custom-archive {
+  background: transparent;
+}
+.custom-archive h2 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* -- Comments -- */
+h3#comments {
+  margin-bottom: 10px;
+}
+.comment-navigation {
+  display: block; 
+  clear: both;
+  text-align: center;
+  margin: 10px 0 20px;
+}
+#respond{
+  clear: both;
+}
+#respond p {
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+#respond h3 {
+  padding-left: 30px;
+  background: url(images/comment.jpg) 0 2px no-repeat;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+#commentform{
+  font-size: 13px;
+}
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #fff url(images/comment-gradient.png) repeat-x;
+	border: 1px solid #aaa;
+	padding: .2em;
+}
+#commentform textarea {
+	width: 95%;
+	height: 80px;
+}
+#commentform textarea:focus {
+  border: 1px solid #1aa800;
+}
+.commentlist {
+  clear: both;
+}
+.commentlist li {
+  list-style-type: decimal;
+  font-size: 11px;
+  margin-left: 25px;  
+}
+.commentlist li ul {
+	list-style-type: none;
+}
+.commentlist .children li, .commentlist .children .children .children li {
+  list-style-type:lower-latin;
+}
+.commentlist .children .children li, .commentlist .children .children .children .children li, .children div.comment-body ol li{
+  list-style-type:decimal;
+}
+body div.comment-body ul li{
+  list-style-type: disc;
+}
+.commentlist cite {
+	font: normal 17px "Trebuchet MS", Verdana, sans-serif;  
+}
+img.avatar {
+  margin: 10px 0 0 20px;
+  padding: 1px;
+  border: 1px solid #170;
+  float: right; 
+  display: inline;
+}
+.comment {
+  background: transparent url(images/comment-top.png) 40px 25px no-repeat;
+}
+.comment-body {
+	margin: 10px 80px 20px 0;
+	padding: 5px 10px;
+	line-height: 1.4;
+	background: #eee;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.comment-body p, .comment-body li, .comment-body blockquote, #respond p{
+  font-size: 13px;
+}
+.comment-body p {
+  margin-bottom: 10px;
+}
+.comment-body li {
+  padding: 0 0 10px;
+  margin-left: 20px;
+}
+.comment-body .reply {
+  background: transparent; 
+  text-align: right;
+}
+.cancel-comment-reply {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+/* -- Footer & Widgets -- */
+#footer{
+	clear: both;
+	background: #096000 url(images/footer.png) repeat-x;
+	color: #fff;
+	padding: 60px 0 10px;
+}
+#inner-footer {
+	width: 610px;
+	margin: 0 auto;
+}
+#footer .footerbar {
+  float: left;
+  display: inline; 
+  width: 290px;
+  margin-right: 30px;
+}
+#footer .second {
+  margin-right: 0;
+}
+#footer .credits {
+  padding: 30px 0;
+  clear: both;
+  text-align: right;
+	font-size: 11px;
+	background: url(images/ladybird.gif) center left no-repeat;
+}
+#footer h3, #footer label {
+	font: normal 22px "Myriad Pro", Myriad, "Trebuchet MS", Verdana, sans-serif;
+	padding: 0 0 3px 23px;
+	border-bottom: 1px solid #150;
+	background: url(images/footer-title.gif) 0 5px no-repeat;
+}
+#footer p{
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  font-size: 100%;
+}
+.widget {
+  margin-bottom: 20px;
+}
+.widget ul {
+  border-top: 1px solid #4eb337;
+}
+.widget ul ul {
+  border-top: none;
+  margin-top: 10px;
+}
+.widget ul li {
+  font-size: 100%;  
+  background: url(images/bullet_green_dark.gif) 0 7px no-repeat;  
+  border-bottom: 1px solid #4eb337;
+  padding: 5px 0 5px 20px;  
+  line-height: 1.6;
+}
+.widget ul ul li {
+  border-bottom: none;
+}
+.widget ul li a{
+  height: 1%;
+}
+.widget select {
+  margin-top: 10px;
+  width: 100%;
+}
+.textwidget{
+  border-top: 1px solid #4eb337;
+  padding: 10px 0;
+  line-height: 1.4;
+}
+#footer .widget ul li a:link, #footer .widget ul li a:visited{
+  text-decoration: none;
+  color: #af7;
+}
+#footer .widget ul li a:hover, #footer .widget ul li a:active {
+  color: #fff;
+} 
+#footer a:link, #footer a:visited{
+	color: #fff;
+	text-decoration: underline;
+}
+#footer a:hover, #footer a:active{
+	color: #ddd;
+	text-decoration: none;
+}
+#footer #top {
+  text-indent: -9999px;  
+  margin: 0 auto;
+	position: relative;
+	width: 610px;
+}
+#footer #top a {
+  width: 59px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: -38px;
+  right: 0;
+}
+#footer #top a {
+  background: url(images/skip-top.png) no-repeat;  
+}
+
+/* -- Widget Calendar -- */
+#wp-calendar {
+	border: none;
+	empty-cells: show;
+	font-size: 13px;
+	width: 100%;
+}
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+#wp-calendar a {
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+}
+#wp-calendar a:hover {
+	background: #170;
+	color: #fff;
+}
+#wp-calendar caption {
+	color: #fff;
+	font: normal italic "Myriad Pro", Myriad, "Trebuchet MS", Verdana, sans-serif;
+	margin: 5px 0;
+	text-align: left;
+}
+#wp-calendar td {
+	color: #999;
+	font: normal 100% Arial, Verdana, sans-serif;
+	letter-spacing: normal;
+	padding: 2px 0;
+	text-align: center;
+}
+#wp-calendar tbody td {
+  border: 1px solid #050;
+  border-top: 1px solid #170;
+}
+#wp-calendar #today {
+	background: #170;
+	color: #fff;
+}
+#wp-calendar th {
+	font-style: normal;
+	text-transform: capitalize;
+}
+
+/* -- Images & Caption Alignment -- */
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.alignleft {
+   float: left;
+   margin: 0 10px 5px 0;
+}
+.alignright {
+   float: right;
+   margin: 0 0 5px 10px;
+}
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+.wp-caption img {
+   border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+}
+.navigation {
+  display: block; 
+  clear: both;
+  text-align: center;
+  line-height: 1.4;
+}

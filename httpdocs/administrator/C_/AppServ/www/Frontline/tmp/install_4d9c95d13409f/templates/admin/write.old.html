@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><?php echo JText::_('DASHBOARD PAGE TITLE');?></title>
+<?php
+$myEditor = 'mce'; // 'mce' or 'wym'
+
+if($goGears)
+{
+?>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/gears_init.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/go_offline.js"></script>
+<?php
+}
+?>
+<link href="<?php echo MY_COM_LIVE; ?>/css/jquery.tooltip.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo rtrim( JURI::root() , '/' ); ?>/includes/js/calendar/calendar-mos.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo MY_COM_LIVE; ?>/css/autocomplete.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo rtrim( JURI::root() , '/' ); ?>/includes/js/calendar/calendar_mini.js"></script>
+<link href="<?php echo MY_COM_LIVE; ?>/css/mediabrowser.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo rtrim( JURI::root() , '/' ); ?>/includes/js/calendar/lang/calendar-en-GB.js"></script>
+<script type="text/javascript" src="<?php echo rtrim( JURI::root() , '/' ); ?>/includes/js/joomla.javascript.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/autocomplete.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/jquery.accordian.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/dialog.js"></script>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/dashboard.js"></script>
+<?php if($myEditor == 'mce') { ?>
+<?php 
+$tinyMCEPath =  rtrim( JURI::root() , '/' ) . '/plugins/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php';
+//$tinyMCEPath =  MY_COM_LIVE .'/js/tiny_mce/tiny_mce.js';
+?>
+<script type="text/javascript" src="<?php echo $tinyMCEPath; ?>"></script>
+<script type="text/javascript">
+	tinyMCE.init({
+		button_tile_map : true,
+		/* cleanup_serializer : 'xml', */
+		theme : "advanced",
+		/*mode : "specific_textareas",*/
+		mode : "none",
+		init_instance_callback: 'addReadmoreButton',
+		gecko_spellcheck: true,
+		document_base_url : "<?php echo rtrim( JURI::root() , '/' ); ?>/",
+		relative_urls : false,
+		remove_script_host : false,
+		save_callback : "TinyMCE_Save",
+		theme_advanced_path : true,
+		invalid_elements : "applet",
+		theme_advanced_toolbar_location : "top",
+		directionality: "ltr",
+		force_br_newlines : "false",
+		force_p_newlines : "true",
+		debug : false,
+		cleanup : true,
+		cleanup_on_startup : false,
+		safari_warning : false,
+		plugins : "advlink, advimage, paste , insertdatetime, flash",
+        paste_use_dialog : false,
+        paste_auto_cleanup_on_paste : true,
+        paste_convert_headers_to_strong : false,
+        paste_strip_class_attributes : "all",
+        paste_remove_spans : true,
+        paste_remove_styles : true,
+		theme_advanced_buttons1 : "/*formatselect*/,bold,underline,italic,strikethrough,separator,bullist,numlist,outdent,indent,separator,justifyleft,justifycenter,justifyright,separator,link,unlink,image,wp_more,separator,undo,redo,separator,removeformat,pasteword",
+		theme_advanced_buttons2 : "",
+		theme_advanced_buttons3 : "",
+		content_css : "<?php echo MY_COM_LIVE; ?>/css/editor.css",
+		plugin_insertdate_dateFormat : "%Y-%m-%d",
+		plugin_insertdate_timeFormat : "%H:%M:%S",
+		plugin_preview_width : "750",
+		plugin_preview_height : "550",
+		theme_advanced_statusbar_location : "bottom",
+		theme_advanced_resize_horizontal : false,
+		theme_advanced_resizing : false,
+		extended_valid_elements : "a[name|href|target|title|onclick], img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name], object[width|height], param[name,value]",
+		fullscreen_settings : {
+		theme_advanced_path_location : "top"
+		}
+	});
+	
+	function prepareContent()
+	{
+		base_url = tinyMCE.settings['document_base_url'];
+		
+		var content	= jQuery( '#fulltext' ).val();
+		var vHTML = content;
+
+		if (true == true)
+		{
+			// Replace the readmore <p> to just {readmore}
+			vHTML = tinyMCE.regexpReplace(content, '<p id=\"readmore\"[^>]*>(.*?)/images/readmoreline.gif"[^>]*></p>', '{readmore}','gi');
+		
+		    // String  target=\"_blank myblog_insert\" which are inserted when entry are added from
+		    // old entry seach function. The 'myblog_insert' is a cue to whic _blank to remove
+		    vHTML = tinyMCE.regexpReplace(vHTML, 'target="_blank myblog_insert"', '', 'gi');
+		    
+			vHTML = tinyMCE.regexpReplace(vHTML, 'href\s*=\s*"?'+base_url+'', 'href="', 'gi');
+			vHTML = tinyMCE.regexpReplace(vHTML, 'src\s*=\s*"?'+base_url+'', 'src="', 'gi');
+			vHTML = tinyMCE.regexpReplace(vHTML, 'mce_real_src\s*=\s*"?', '', 'gi');
+			vHTML = tinyMCE.regexpReplace(vHTML, 'mce_real_href\s*=\s*"?', '', 'gi');
+		}
+		return vHTML;
+	}
+	
+	var option_id = "";
+	function switch_option(opt_name){
+		if(opt_name != option_id){
+			$('#options').fadeOut('fast');
+			$(opt_name).fadeIn('fast');
+			option_id = opt_name;
+		} else {
+			$(option_id).fadeOut('fast');
+		}
+	}
+</script>
+<?php }  else if ($myEditor == 'wym') {?>
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/wymeditor/jquery.wymeditor.pack.js"></script>
+<?php } ?>
+<?php echo $jax_script; ?>
+<link href="<?php echo MY_COM_LIVE; ?>/css/dashboard.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="<?php echo MY_COM_LIVE; ?>/css/dashboard.IE.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript">
+var wym;
+
+function addReadmoreButton() {
+
+	var button	= '<a target="_self" class="mceButtonNormal" id="mceAddReadMore">';
+	button		+= '<img title="Add Readmore" src="<?php echo MY_COM_LIVE; ?>/images/readmore.gif"/></a>'
+	jQuery(button).insertBefore('.mceToolbarTop span br');
+
+	jQuery('#mceAddReadMore').click(function () { 
+		myblog.appendReadmore('<?php echo MY_COM_LIVE; ?>');
+    });
+}
+
+
+function ajaxFileUpload()
+{
+	var resize	= (jQuery('#autoResizeImage:input:checked').html()) == null ? '' : '&resize=1';
+	jQuery.ajaxFileUpload({
+			url: '<?php echo rtrim( JURI::root() , '/' ) . '/index.php?option=com_myblog&task=ajaxupload&no_html=1&tmpl=component'; ?>' + resize,
+			secureuri:false,
+			fileElementId:'fileToUpload',
+			dataType: 'json',
+			success: function (data, status){
+				//console.log(data);
+				
+				// Display the browsing tab.
+				myblog.showMinitab('#browseImages', 0);
+				if(typeof(data.error) != 'undefined'){
+					if(data.error != ''){
+						alert(data.error);
+					}else {
+						// Append image into tinymce textarea
+						alert(data.msg);
+ 						if(tinyMCE.getInstanceById('fulltext'))
+ 						{
+ 							var editor	= tinyMCE.getInstanceById('fulltext');
+ 							tinyMCE.execCommand('mceFocus',false, editor['editorId']);
+ 							tinyMCE.execCommand('mceInsertContent',false,'<img src="' + data.source + '" />');
+ 						}
+						
+					}
+				}
+			},
+			error: function (data, status, e){
+// 				var names = '';
+// 				
+// 				for(var name in e)
+// 					names += name + "\n";
+// 				
+// 				alert(names);
+// 				alert(e.description);
+			}
+		}
+	)
+	
+	return false;
+}
+
+function testTitle()
+{
+	if(jQuery('#title').val() == "" || jQuery('#title').val() == "<?php echo JText::_('BLOG TITLE');?>")
+	{
+		jQuery('#title').val('<?php echo JText::_('BLOG TITLE');?>').addClass('greyTitle');
+	}
+	else
+	{
+		jQuery('#title').removeClass('greyTitle');
+	}
+}
+
+function editorFocus()
+{
+	testTitle();
+	tinyMCE.execCommand('mceFocus', false, 'mce_editor_0');
+}
+
+function titleClick()
+{
+	if(jQuery('#title').val() == "<?php echo JText::_('BLOG TITLE');?>")
+	{
+		jQuery('#title').removeClass('greyTitle');
+		jQuery('#title').val('');
+	}
+}
+
+
+function cntWord()
+{
+	// Loop every 5 seconds and count the word in the text area
+	<?php if($myEditor == 'mce') { ?>
+	var y = tinyMCE.getContent();
+	<?php } else { ?>
+	var y = wym.xhtml();
+	<?php } ?>
+	
+	if(y){
+		var r = 0;
+		a=y.replace(/\s/g,' ');
+		a=a.replace(/[\<\>]/gi, "");
+		a=a.split(' ');
+		for (z=0; z<a.length; z++) {if (a[z].length > 0) r++;}
+			jQuery('#wordCount').html(r);
+	}
+	setTimeout('cntWord()', 1000);
+}
+
+function handleEnter(id, event)
+{
+	var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+
+	if (keyCode==13)
+	{
+		if (id =='searchposts')
+		{
+			jQuery('#searchResults').html('<img src="components/com_myblog/images/ajax_loader.gif" />');
+			jax.icall('myblog', 'myxSearchPosts', jQuery('#searchposts').val(), '1');
+			return false;
+		}
+		else if(id == 'newtag')
+		{
+			myblog.addTag(jQuery('#newtag').val());
+			return false;
+		}
+		else if(id == 'videoURL')
+		{
+		    jax.icall('myblog', 'myxSetVideoType', document.getElementById('videoURL').value, document.getElementById('videoWidth').value, document.getElementById('videoHeight').value);
+		    return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function validateForm( closeWindow )
+{
+	workIsDone = false;
+	
+	<?php if($myEditor == 'mce') { ?>
+	var tm_content = tinyMCE.getContent();
+	<?php } else { ?>
+	var tm_content = wym.xhtml();
+	<?php } ?>
+
+	if (tm_content)
+		jQuery('#fulltext').val(tm_content);
+	else
+		tm_content = jQuery('#fulltext').val();
+	
+	var error = false;
+	
+	if(jQuery('#title').val() == "" || jQuery('#title').val() == "<?php echo JText::_('BLOG TITLE');?>")
+	{
+		Obj    = document.createElement('div');
+		Obj.setAttribute("id", "azErrArrow");
+		Obj.style.cssText = "width:300px;position:absolute;top:40px;left:50px";
+		var html = '<div style="margin-left:8px;height:11px;background-image:url(<?php echo MY_COM_LIVE; ?>/images/arrow_top.gif);background-repeat:no-repeat;";></div>';
+		html += '<div style="width:300px;background-color:#F4F4F4;border:1px solid #EEE; padding:15px;text-align: left;font-size:10px" onclick="jQuery(\'#azErrArrow\').fadeOut(\'fast\', function(){jQuery(this).remove();});"><?php echo JText::_('DASHBOARD PLEASE ENTER A TITLE');?></div>';
+		
+		Obj.innerHTML = html;
+		document.body.appendChild(Obj);
+		return;
+	}
+	
+	if (!error)
+	{
+		//console.log( jax.getFormValues( 'formEdit') );
+		var close	= ( closeWindow ) ? '1' : '0';
+
+		// Prepare the fulltext
+		jQuery('#fulltext').val( prepareContent() );
+		jax.call('myblog','myxSaveBlog' , jax.getFormValues( 'formEdit' ) , close );
+	}
+}
+<?php if ($myEditor == 'mce') {?>
+function toggleEditor(id)
+{
+	if (!tinyMCE.getInstanceById(id))
+	{
+		jQuery('#mainContent div.mceToolbarTop').remove();
+
+		tinyMCE.execCommand('mceAddControl', false, id);
+		jQuery('.mceEditor').height(jQuery('.mceEditor').height() + 29);
+		jQuery('#fulltext').height(jQuery('#fulltext').height() + 29);
+		jQuery('.mceEditorIframe').height(jQuery('.mceEditorIframe').height() + 29);
+
+		// Begin replace the {readmore} tag //
+		var content			= tinyMCE.getContent();
+		content				= tinyMCE.regexpReplace(content, '{readmore}', '<p id="readmore"><img src="<?php echo MY_COM_LIVE; ?>/images/readmoreline.gif"></p>' , 'gi');		
+		tinyMCE.setContent(content);
+		// End replace the {readmore} tag //
+		
+		jQuery('#rtf').addClass('active');
+		jQuery('#plain').removeClass('active');
+	}
+	else
+	{
+		jQuery('#fulltext').height(jQuery('#fulltext').height() - 29);
+		
+		// Begin replace the read more image //
+		var content		= tinyMCE.getContent();
+		content			= tinyMCE.regexpReplace(content, '<p id=\"readmore\"[^>]*><img src="<?php echo MY_COM_LIVE;?>/images/readmoreline.gif"[^>]*></p>', '{readmore}','gi');
+		tinyMCE.setContent(content);
+		// End replace the read more image //
+		
+		var bold		= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<strong>\',\'</strong>\');return false;"><strong>b</strong></button>';
+		var underline	= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<u>\',\'</u>\');return false;"><u>u</u></button>';
+		var italic		= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<em>\',\'</em>\');return false;"><em>i</em></button>';
+		var strike		= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<strike>\',\'</strike>\');return false;"><strike>s</strike></button>';
+		var ul			= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<ul>\',\'</ul>\');return false;">ul</button>';
+		var ol			= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<ol>\',\'</ol>\');return false;">ol</button>';
+		var li			= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<li>\',\'</li>\');return false;">li</button>';
+		var bquote		= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<blockquote>\',\'</blockquote>\');return false;">b-quote</button>';
+		var code		= '<button class="rawButtons" onclick="javascript:myblog.encloseText(\'<code>\',\'</code>\');return false;">code</button>';
+		
+		tinyMCE.execCommand('mceCleanup');
+		tinyMCE.execCommand('mceRemoveControl', false, id);
+		
+		jQuery('#mainContent').prepend('<div class="mceToolbarTop">' + bold + underline + italic + strike + ul + ol + li + bquote + code + '</div>');
+		
+		jQuery('#rtf').removeClass('active');
+		jQuery('#plain').addClass('active');
+	}
+}
+<?php } ?>
+
+var yPos;
+jQuery().ready(function(){
+	// Initialize Google Gears
+	<?php if($goGears): ?>
+	gogear_init();
+	<?php endif; ?>
+	
+	jQuery('#newtag').autocomplete("<?php echo rtrim( JURI::root() , '/' );?>/index.php?option=com_myblog&no_html=1&task=ajaxtaglist&tmpl=component", {minChars:2, matchSubset:1, cacheLength:10, selectOnly:1 });
+	myblog.bindAddedTag();	
+	myblog.bindAssignTag();
+
+	<?php echo @$closeme; ?>
+	jQuery('#apDiv1').hide();
+	
+	//myblog.initTooltip();
+	<?php echo @$onload; ?>
+
+	if(typeof(parent.editWindowTitle) == 'function'){
+		parent.editWindowTitle('<?php echo @$message; ?>');
+	}
+	
+	// simple Accordion	
+	jQuery('#editor-tools').accordion();
+	var yPos = jQuery(window).height();
+	
+	// Set the height of the div structure, minus 34, the height of the title bar
+	yPos = yPos-jQuery('#header').height();
+	jQuery('#container').height(yPos);
+	// Set the height of the text area, minus extra 34 for the word count area
+	yPos = yPos-110;
+	jQuery.each(jQuery.browser, function(i, val) {
+	  if(i=="mozilla")
+	     yPos = yPos+38;
+	});
+	
+	jQuery('#sidebar1').height(yPos);
+	//jQuery('#mainContent').height(yPos);
+	
+	yPos = yPos + 66 - 90;
+	jQuery('#fulltext').height(yPos);
+	
+	<?php if ($myEditor == 'mce') {?>
+	setTimeout("jQuery('.mceEditorIframe').height(yPos);jQuery('.mceEditor').height(yPos);", 50);
+	setTimeout("tinyMCE.execCommand('mceAddControl', false, 'fulltext');",10);
+	<?php } else if ($myEditor == 'wym') {?>
+		jQuery('.wymeditor').wymeditor({
+			classesHtml:'',
+			containersHtml:'',
+			 postInit: function(wyme) {wym = wyme;}
+			});
+		jQuery('.wym_area_bottom').remove();
+		jQuery('.wym_skin_default .wym_iframe iframe').height(yPos - 50);
+	<?php }?>
+	
+	setTimeout('cntWord()', 1000);
+	testTitle();
+	
+	jQuery("#title").bind("focus", testTitle).bind("blur", editorFocus).bind("click", titleClick);
+});
+</script>
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixRtHdr #sidebar1 { width: 220px; }
+</style>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+
+.twoColFixRtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+
+<link href="<?php echo JURI::root(); ?>components/com_myblog/templates/admin/css/myblog-editor.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo JURI::root(); ?>components/com_myblog/templates/admin/css/myblog-editor.webkit.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 6]>
+<link href="<?php echo JURI::root(); ?>components/com_myblog/templates/admin/css/myblog-editor.ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body class="twoColFixRtHdr">
+<div id="apDiv1" class="error">
+	<div id="statusMessage"></div>
+<?php
+	foreach($validation_msg as $msg)
+	{
+		echo "<div class=\"error\">$msg</div>";
+	}
+?>
+<div align="right"onclick="jQuery('#apDiv1').slideToggle('fast');" style="font-size:11px; margin-bottom:-10px;font-weight:bold;cursor:pointer;">
+	<?php echo JText::_('DASHBOARD HIDE ERROR');?>&nbsp;
+</div>
+</div>
+<form name="formEdit"  id="formEdit" method="post" action=""  enctype="multipart/form-data">
+<!-- begin: #container -->
+<div id="container">
+	
+	<!-- begin: #top-col -->
+	<div id="top-col">
+		<div id="title-container">
+			<div id="mainTitle">
+				<input type="text" name="title" id="title" value="<?php echo $title; ?>" tabindex="1" class="inputbox" />
+			</div>
+		</div>
+		
+		<div id="buttonSave">
+			<input type="button" name="button" id="button" value="<?php echo JText::_('SAVE');?>" onclick="validateForm( true );return false;" />
+		</div>
+		<div class="clr"></div>
+	</div>
+	<!-- end: #top-col -->
+	
+	<!-- begin: #right-col -->
+	<div id="right-col">
+	
+	</div>
+	<!-- end: #right-col -->
+	
+	<!-- begin: #main-col -->
+	<div id="main-col">
+		
+		<div id="editor-top">
+
+			<div id="editor-top-middle">
+				
+				<div id="toggle-editor">
+					<a id="plain" class="" href="javascript:void(0);" onclick="toggleEditor('fulltext');"><span><?php echo JText::_('Plain Text'); ?></span></a>
+					<a id="rtf" class="active" href="javascript:void(0);" onclick="toggleEditor('fulltext');"><span><?php echo JText::_('Rich Text'); ?></span></a>
+				</div>
+				
+				<!--
+				<ul id="toggle">
+					<li id="rtf"><a href="#" onclick="toggleEditor('fulltext');"><span><?php echo JText::_('Plain Text'); ?></span></a></li>
+					<li id="plain" class="active" onclick="toggleEditor('fulltext');"><a href="#"><span><?php echo JText::_('Rich Text'); ?></span></a></li>
+				</ul>-->
+								<!--
+				<div id="permalink-container">
+					<div>
+						<table cellpadding="3" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td width="80" style="font-size: 11px;" valign="middle"><?php echo JText::_('Permalink'); ?>: </td>
+								<td valign="middle">
+									<div id="permalink-caption" style="height: 20px; position: relative;">
+										<span id="edit" onclick="myblog.togglePermalink();">[ <?php echo JText::_('edit'); ?> ]</span>
+										<?php echo $permalink; ?>
+									</div>
+									<div id="permalink-input" style="display: none; position: relative;">
+										<span id="save" onclick="myblog.togglePermalink();">[ <?php echo JText::_('save'); ?> ]</span>
+										<input id="permalink" name="permalink" value="<?php echo $permalink; ?>" class="inputbox" style="height: 20px;" />
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			-->
+
+		</div>
+		
+		<div id="mainContent">
+			<textarea name="fulltext" id="fulltext" class="wymeditor" cols="45" rows="5" mce_editable="true" style="width:100%;height:480px" tabindex="2"><?php echo $fulltext; ?></textarea>
+		</div>
+		
+		<div id="editor-bottom">
+			<div id="editor-bottom-left"></div>
+			<div id="editor-bottom-right"></div>
+			<div id="editor-bottom-middle"></div>
+			<div class="clr"></div>
+		</div>
+	</div>
+	<!-- end: #main-col -->
+</div>
+<!-- end: #container -->
+
+<!--
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2" id="header">
+
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%">
+			<input type="text" name="title" id="title" value="<?php echo $title; ?>" TABINDEX="1" />
+		</td>
+		<td align="right">
+			<input type="submit" name="button2" id="button2" value="<?php echo JText::_('SAVE BUTTON');?>" onClick="validateForm();return false;" onfocus="editorFocus();"/>
+		</td>
+        <td width="1" align="right">
+			<input type="button" name="button" id="button" value="<?php echo JText::_('SAVE AND CLOSE BUTTON');?>" onclick="validateForm( true );return false;"/>
+		</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <tr>
+    <td>
+    <div id="mainContent">
+		<textarea name="fulltext" id="fulltext" class="wymeditor" cols="45" rows="5" mce_editable="true" style="width:100%;height:480px" TABINDEX="2"><?php echo $fulltext; ?></textarea>
+	</div>
+	</td>
+    <td width="200" id="sidebar1" valign="top">
+	  <dl id="editor-tools" style="margin-top: -10px;">
+      <dt class="" dtid="0"><?php echo JText::_('DASHBOARD PUBLISHING OPTIONS');?></dt>
+      <dd style="overflow: hidden;margin-left:4px; height: 170px; display: none;">
+    	<div style="padding:4px;">
+          	<a href="javascript:void(0);" onclick="myblog.showMinitab(this, 0)"><?php echo JText::_('DASHBOARD GENERAL PUBLISHING OPTIONS');?></a>
+          	|
+			<a href="javascript:void(0);" onclick="myblog.showMinitab(this, 1)"><?php echo JText::_('DASHBOARD META PUBLISHING OPTIONS');?></a>
+        </div>
+
+		<div id="generalOption">
+			<p>
+			<?php
+				if($publishRights)
+				{
+			?>
+			<input name="state" type="radio" <?php if($state == 1) echo 'checked="checked"'; ?> value="1" /> <?php echo JText::_('DASHBOARD PUBLISH');?>
+			<input name="state" type="radio" <?php if($state != 1) echo 'checked="checked"'; ?>value="0" /> <?php echo JText::_('DASHBOARD UNPUBLISH');?>
+			<?php
+				}
+			?>
+			<p><?php echo JText::_('DASHBOARD PUBLISH DATE');?>:<br />
+				<input name="created" type="text" class="text" id="created" style="width:75%" value="<?php echo $date; ?>" size="16" />
+				<input name="reset" class="button" onclick="return showCalendar('created', 'y-mm-dd ');" value="..." type="reset" />
+			</p>
+			<p>
+				<?php echo JText::_('DASHBOARD SELECT CATEGORY');?> <br />
+				<?php echo myGetCategoryHtml($id); ?>
+			</p>
+        	</p>
+        </div>
+        <div id="metaOption" style="display: none;">
+        	<fieldset>
+        		<legend><?php echo JText::_('DASHBOARD META LEGEND');?></legend>
+        		<label><?php echo JText::_('DASHBOARD META KEYWORDS');?></label>
+        		<textarea cols="10" rows="2" name="metakey" id="metakey"><?php echo $metakey; ?></textarea>
+        		<label><?php echo JText::_('DASHBOARD META DESCRIPTION');?></label>
+        		<textarea cols="10" rows="1" name="metadesc" id="metadesc"><?php echo $metadesc; ?></textarea>
+        	</fieldset>
+        </div>
+      </dd>
+      <dt class="" dtid="1"><?php echo JText::_('DASHBOARD TAGS');?></dt>
+      <dd style="overflow: hidden; margin-left:4px; height: 230px; display: none;">
+    	<div style="padding:4px;">
+          	<a id="tagAssign" href="javascript:void(0);" onclick="myblog.showMinitab(this, 0)"><?php echo JText::_('DASHBOARD TAGS ASSIGN');?></a>
+          	|
+			<a href="javascript:void(0);" onclick="myblog.showMinitab(this, 1)"><?php echo JText::_('DASHBOARD TAGS BROWSE');?></a>
+        </div>
+
+        <div id="assignTags">
+		<p>
+			<?php
+				if($userCreateTag)
+				{
+			?>
+	        <?php echo JText::_('DASHBOARD ADD NEW TAG');?>
+	        <input name="newtag" id="newtag" type="text" class="text"  style="width:73%" onkeypress="return handleEnter(this.id,event);" autocomplete="off" />
+	        <a href="javascript:void(0);" onClick="myblog.addTag(jQuery('#newtag').val());"><?php echo JText::_('DASHBOARD ADD NEW TAG LINK');?></a>
+	        <span class="myInfo"><?php echo JText::_('DASHBOARD SEPARATE TAGS WITH COMMAS');?></span><br />
+			<?php } ?>
+	        <div id="tagList">
+	        	<fieldset id="tagListFieldSet">
+	        		<legend><?php echo JText::_('DASHBOARD SELECTED TAGS');?></legend>
+	        		<?php echo $tags; ?>
+	        	</fieldset>
+			</div>
+        </p>
+		</div>
+
+		<div id="browseTags" style="display: none;">
+	        <p>
+		        <div id="tagList" style="background-color:#FFFFFF; overflow:auto; width:93%; height:160px; border:#7f9db9 1px solid; padding:4px">
+		        	<?php echo myGetTagsSelectHtml($id); ?>
+		        </div>
+		        <span class="myInfo">
+		        	<?php echo JText::_('DASHBOARD BROWSE TAG TIPS');?>
+		        </span>
+	        </p>
+		</div>
+      </dd>
+<?php if($imageBrowser){ ?>
+      <dt class="" dtid="2"><?php echo JText::_('DASHBOARD IMAGES AND DOCUMENTS');?></dt>
+      <dd style="overflow: hidden;margin-left:4px; height: 240px; display: none;">
+    	<div style="padding:4px;">
+          	<a id="browseImages" href="javascript:void(0);" onclick="myblog.showMinitab(this, 0)"><?php echo JText::_('DASHBOARD IMAGE BROWSE');?></a>
+          	|
+			  <a href="javascript:void(0);" onclick="myblog.showMinitab(this, 1)"><?php echo JText::_('DASHBOARD IMAGE UPLOAD');?></a>
+        </div>
+
+       	  <div style="background-color:#FFFFFF; overflow:auto; width:93%; height:200px; border:#7f9db9 1px solid; padding:4px" id="mn_fileExplorer">
+		  	<div class="white-loading"><?php echo JText::_('AJAX LOADING TEXT');?></div>
+		  </div>
+          <div id="uplodaDiv" style="display:none">
+          	<fieldset>
+          		<legend><?php echo JText::_('DASHBOARD IMAGE UPLOAD');?></legend>
+                <input id="fileToUpload" class="text input" type="file" size="12" name="fileToUpload"/>
+				<button class="button" id="buttonUpload" onClick="return ajaxFileUpload();"><?php echo JText::_('DASHBOARD IMAGE UPLOAD');?></button>
+				<?php if($enableImageResize){ ?>
+				<p>
+                  <label>
+                  	<input type="checkbox" name="autoResizeImage" id="autoResizeImage" checked="true" />
+                  	<span><?php echo JText::_('DASHBOARD IMAGE UPLOAD AUTO RESIZE');?></span>
+				  </label>
+                </p>
+                <?php } ?>
+          	</fieldset>
+		  </div>
+      </dd>
+<?php
+	}
+?>
+      <dt class="selected" dtid="3"><?php echo JText::_('DASHBOARD SEARCH OLDER POSTS');?></dt>
+      <dd style="overflow: auto; margin-left:4px;display: block; height: 200px;">
+        <p>
+          <input class="searchbox text" type="text" name="searchposts" id="searchposts" onkeypress="return handleEnter(this.id,event);">
+          &nbsp;<img id="searchIcon" src="icons/Search_16x16.png" onclick="myblog.busyLoading('#searchResults', 'components/com_myblog/images/ajax_loader.gif');jax.icall('myblog', 'myxSearchPosts', document.getElementById('searchposts').value, '1');" align="absmiddle" /> <br/>
+			<div id="searchResults"><span style="color:grey;" style="margin-left: 0px;"><?php echo JText::_('DASHBOARD SEARCH TIPS');?></span></div>
+        </p>
+      </dd>
+<?php
+	if($videobot){
+?>
+      <dt class="selected" dtid="4"><?php echo JText::_('DASHBOARD EMBED VIDEOS');?></dt>
+      <dd style="overflow: hidden; margin-left:4px;display: block; height: 200px;">
+        <p>
+			<div id="videoBots">
+			    <?php echo JText::_('DASHBOARD EMBED VIDEO WIDTH');?>: <input type="text" id="videoWidth" size="3" value="100">
+				<?php echo JText::_('DASHBOARD EMBED VIDEO HEIGHT');?>: <input type="text" id="videoHeight" size="3" value="100"><br /><br />
+			    <?php echo JText::_('DASHBOARD EMBED VIDEO URL');?>: <input type="text" id="videoURL" name="videoURL" onkeypress="return handleEnter(this.id,event);"><img src="icons/Search_16x16.png" onClick="javascript:jax.icall('myblog', 'myxSetVideoType', document.getElementById('videoURL').value, document.getElementById('videoWidth').value, document.getElementById('videoHeight').value);"><br />
+			</div>
+			<span style="color: grey;"><?php echo JText::_('DASHBOARD EMBED VIDEO TIPS');?></span>
+        </p>
+      </dd>
+<?php
+	}
+
+?>
+      <dt class="selected" dtid="5"><?php echo JText::_('DASHBOARD TRACKBACK AND COMMENTS');?></dt>
+      <dd style="overflow: hidden; display: block; height: 200px;">
+<?php	if($jcDashboard){ ?>
+    	<div style="padding:4px;">
+          	<a href="javascript:void(0);" onclick="myblog.showMinitab(this, 0)"><?php echo JText::_('DASHBOARD TRACKBACKS');?></a>
+          	|
+			<a href="javascript:void(0);" onclick="myblog.showMinitab(this, 1)"><?php echo JText::_('DASHBOARD COMMENTS');?></a>
+        </div>
+<?php 	} ?>
+		<div id="trackbacks">
+			<p>
+				<fieldset>
+					<legend><?php echo JText::_('DASHBOARD TRACKBACKS');?></legend>
+					<label><?php echo JText::_('DASHBOARD TRACKBACKS URL');?>:</label>
+					<input type="text" name="trackbacks" value="<?php echo $trackbacks;?>" />
+					<span><?php echo JText::_('DASHBOARD TRACKBACKS TIPS');?></span>
+				</fieldset>
+			</p>
+        </div>
+<?php	if($jcDashboard){ ?>
+        <div id="comments" style="display: none;">
+        	<p>
+        	<fieldset>
+        		<legend><?php echo JText::_('DASHBOARD COMMENTS');?></legend>
+				<input name="jcState" type="radio" <?php if($jcState == 'enabled') echo 'checked="checked"'; ?> value="enabled" />
+				 <?php echo JText::_('DASHBOARD ENABLE COMMENTS');?><br />
+				<input name="jcState" type="radio" <?php if($jcState == 'disabled') echo 'checked="checked"'; ?>value="disabled" />
+				 <?php echo JText::_('DASHBOARD DISABLE COMMENTS');?><br />
+				<input name="jcState" type="radio" <?php if($jcState == 'default') echo 'checked="checked"'; ?> value="default" />
+				 <?php echo JText::_('DASHBOARD DEFAULT COMMENTS');?><br />
+	        	<div id="commentInfo" style="margin-left: 0px;"><span style="color:grey;"><?php echo JText::_('DASHBOARD COMMENTS TIPS');?></span></div>
+        	</fieldset>
+        	</p>
+        </div>
+<?php 	} ?>
+      </dd>
+    </dl>
+
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2" id="footer">
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td style="width:120px;"><div style="font-size: 11px;"><?php echo JText::_('DASHBOARD WORD COUNT');?>: <span id="wordCount">0</span></div></td>
+        <td width="50%">
+        	<div style="font-size: 11px;">
+				<span style="cursor: pointer; float: left; display: inline; line-height: 200%;" onclick="myblog.togglePermalink();"><?php echo JText::_('Permalink');?></span>
+				<span id="permalink-input" style="display: none;margin-left: 20px;float: left;">
+					<input id="permalink" name="permalink" value="<?php echo $permalink; ?>" size="40" />
+				</span>
+				<div style="clear: both;"></div>
+        	</div>
+		</td>
+        <td width="auto" align="right"><span id="azToggleEditor" style="cursor: pointer; font-size: 11px;" onclick="toggleEditor('fulltext');"><?php echo JText::_('DASHBOARD TOGGLE EDITOR');?></span></td>
+      </tr>
+    </table>
+
+	</td>
+  </tr>
+</table>
+</div>
+-->
+<!-- end #container -->
+
+<input name="saving" type="hidden" id="saving" value="yes" />
+<input name="closeme" type="hidden" id="closeme" value="0" />
+<input name="parent_url" type="hidden" id="parent_url" value="" />
+<input name="id" type="hidden" value="<?php echo $id; ?>" />
+</form>
+</body>
+</html>

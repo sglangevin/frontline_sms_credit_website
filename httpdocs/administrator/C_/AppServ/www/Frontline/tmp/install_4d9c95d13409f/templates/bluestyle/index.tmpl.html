@@ -1,0 +1,82 @@
+<?php
+	if ($entry and is_array($entry) and count($entry) != 0)
+	{
+		foreach ($entry as $e)
+		{
+			$date = strtotime($e['created']);
+			$month_day = strftime("%b ", $date) . strftime("%d", $date);
+			$year = strftime("%Y", $date);
+			$month_day = i8n_date($month_day);
+		?>
+
+<div class="entryContent">
+    <div class="entry">
+    	<table class="entryTitle">
+			<tr>
+				<td class="my-dateCell">
+					<div class="dateContainer">		
+						<div class="date">
+							<div class="month"><span><?php echo $month_day; ?></span></div>
+							<div class="year"><span><?php echo $year; ?></span></div>
+						</div>
+					</div>
+				</td>
+				<td class="my-titleCell">
+					<div class="entry-title">
+						<h3><a href="<?php echo $e['permalink']; ?>"><?php echo $e['title']; ?></a></h3>
+						<p><?php echo JText::_('POSTED BY'); ?> <a href="<?php echo $e['authorLink']; ?>"><?php echo $e['author']; ?></a> in <?php echo $e['categories']; ?></p>
+					</div>
+				</td>
+				
+				<?php if(!empty($e['avatar'])){ ?>
+				<td class="my-avatarCell">
+					<div class="userAvatar">
+					<?php echo $e['avatar']; ?>
+					</div>
+				</td>
+				<?php } ?>
+			</tr>
+		</table>
+		<?php
+        	if ($e['beforeContent'])
+			{ ?>
+			<div class="onBeforePrepareContent">
+				<?php echo $e['beforeContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+        <div class="entry-body"> 
+			<?php echo $e['text']; ?>
+			<div class="clear"></div> 
+		</div>
+        <?php if ($e['afterContent'])
+			{ ?>
+			<div class="onAfterPrepareContent">
+				<?php echo $e['afterContent'];?>
+			</div>
+			<?php
+			}
+		    ?>
+		<div class="entry-footer">
+			<?php
+				if ($e['comments']!="") // if comments enabled
+					echo '<div class="entry-comment"><a href="'.$e['permalink'].'#comments">'.$e['comments'] .'</a>';
+				else
+					echo '<div>';
+				if ($e['comments']!="" and $e['readmore']=="1")
+					 echo ' | ';
+			?>
+			<?php  // IF NEED READMORE
+			if ($e['readmore']=="1")
+			{ ?>
+			<a href="<?php echo $e['permalink']; ?><?php echo $showAnchor; ?>">_MB_READ_MORE...</a>
+			<?php } ?>
+			</div> 
+		</div>
+    </div>
+</div>
+<?php
+		}
+	}
+?>

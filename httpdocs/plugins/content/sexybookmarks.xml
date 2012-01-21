@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+    <name>Content - Sexy Bookmarks</name>
+    <author>Alex Hoentschel</author>
+    <creationDate>April 2009</creationDate>
+    <copyright>Copyright (C) 2008 - 2009 Alex Hoentschel. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>webmaster@astblog.de</authorEmail>
+    <authorUrl>www.astblog.de</authorUrl>
+    <version>1.1.0</version>
+    <description>Adds sexy styled social bookmarks menu to your Joomla articles or frontpage. This plugin is based on the Sexy Bookmarks Wordpress Plugin from Josh Jones</description>
+    <files>
+        <filename plugin="sexybookmarks">sexybookmarks.php</filename>
+        <filename>/sexybookmarks/sexy-sprite.png</filename>
+        <filename>/sexybookmarks/sexy-trans.png</filename>
+        <filename>/sexybookmarks/style.css</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_content_sexybookmarks.ini</language>
+        <language tag="de-DE">de-DE.plg_content_sexybookmarks.ini</language>
+    </languages>
+
+    <params>
+       <param type="spacer" default="SB Display Options" />
+       <param name="frontpage" type="radio" default="1" label="Display Sexy Bookmarks on Frontpage" description="Sexy Bookmarks should appear at your Frontpage">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="article" type="radio" default="1" label="Display Sexy Bookmarks on article pages" description="Sexy Bookmarks should appear on all single articles">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="blog" type="radio" default="1" label="Display Sexy Bookmarks on blog layout pages" description="Sexy Bookmarks should appear on all blog layout pages">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="manual" type="radio" default="0" label="Display only if manually defined" description="Sexy Bookmarks should ONLY appear on articles with manually inserted bookmark tag. Add {sexybookmark} including brackets to your content. This will deactivated frontpage, blog and article settings above">
+       	<option value="0">No</option>
+       	<option value="1">Yes</option>
+       </param>
+       <param name="include_cat" type="text" default="" label="Categories" description="Comma separated list of categories where the menu should appear. Leave it blank for all categories"/>
+       <param type="spacer" default="SB Bookmarks" />
+       <param name="add_css" type="radio" default="1" label="Add Default CSS File" description="Adds the default CSS File to the header">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="add_nofollow" type="radio" default="1" label="Add no-follow" description="Adds the no-follow tag to the links">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="open_in_newwindow" type="radio" default="0" label="Open links in new window?" description="Adds the _blank attribute to the links">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param type="spacer" default="Possible Bookmark Services" />
+       <param name="newsvine" type="radio" default="1" label="Linkedin" description="Check this box to include Newsvine in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="linkedin" type="radio" default="1" label="Newsvine" description="Check this box to include Linkedin in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="devmarks" type="radio" default="1" label="Devmarks" description="Check this box to include Devmarks in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="google" type="radio" default="1" label="Google Bookmarks" description="Check this box to include Google Bookmarks in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="scriptstyle" type="radio" default="1" label="Script &amp; Style" description="Check this box to include Script &amp; Style in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="twitter" type="radio" default="1" label="Twitter" description="Check this box to include Twitter in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="technorati" type="radio" default="1" label="Technorati" description="Check this box to include Technorati in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="stumpleupon" type="radio" default="1" label="Stumbleupon" description="Check this box to include Stumbleupon in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="reddit" type="radio" default="1" label="Reddit" description="Check this box to include Reddit in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="myspace" type="radio" default="1" label="MySpace" description="Check this box to include MySpace in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="mixx" type="radio" default="1" label="Mixx" description="Check this box to include Mixx in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="digg" type="radio" default="1" label="Digg" description="Check this box to include Digg in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="designfloat" type="radio" default="1" label="DesignFloat" description="Check this box to include DesignFloat in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="delicious" type="radio" default="1" label="Delicious" description="Check this box to include Delicious in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="blinklist" type="radio" default="1" label="Blinklist" description="Check this box to include Blinklist in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="facebook" type="radio" default="1" label="Facebook" description="Check this box to include Facebook in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="diigo" type="radio" default="1" label="Diigo" description="Check this box to include Diigo in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="misterwong" type="radio" default="1" label="Mister Wong" description="Check this box to include MisterWong in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="izeby" type="radio" default="1" label="Izeby" description="Check this box to include Izeby in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="tipd" type="radio" default="1" label="Tip'd" description="Check this box to include Tip'd in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="pfbuzz" type="radio" default="1" label="PFBuzz" description="Check this box to include PFBuzz in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="friendfeed" type="radio" default="1" label="FriendFeed" description="Check this box to include FriendFeed in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="blogmarks" type="radio" default="1" label="BlogMarks" description="Check this box to include BlogMarks in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="twittley" type="radio" default="1" label="Twittley" description="Check this box to include Twittley in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param name="fwisp" type="radio" default="1" label="Fwisp" description="Check this box to include Fwisp in your bookmarking menu">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>
+       <param type="spacer" default="Twitter" />
+       <param name="twittid" type="text" default="" label="Twitter-ID" description="Twitter-ID, necessary to use the Twitter option" size="10" />
+       <param name="url_service" type="list" default="tinyurl" label="Short Url Service" description="Choose your prefered short url service for use with Twitter">
+        <option value="tinyurl">Tinyurl</option>
+        <option value="is.gd">is.gd</option>
+        <option value="rims">Rims</option>
+        <option value="tinyarro">Tinyarro</option>
+       </param>
+       <param type="spacer" default="Twittley" />
+       <param name="twittcat" type="list" default="" label="Tweetly default content category:" description="Please define your default content category for Tweetly. Not necessary if you do not use Tweetly!">
+        <option value="Technology">Technology</option>
+        <option value="World &amp; Business">World &amp; Business</option>
+        <option value="Science">Science</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Lifestyle">Lifestyle</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Sports">Sports</option>
+        <option value="Offbeat">Offbeat</option>
+        <option value="Internet">Internet</option>
+       </param>
+       <param name="defaulttags" type="text" default="" label="Default Tweetly Tags" description="Enter a comma separated list of general tags which describe your site's posts as a whole" size="10" />
+
+       <param type="spacer" default="Style Options" />
+       <param name="bgimg" type="list" default="top" label="Which background image would you like to use?" description="There are two different types of background images. The care or sexy image.">
+        <option value="caring">Care - Image</option>
+        <option value="care-old">Old Care - Image</option>
+        <option value="love">Love - Image</option>
+        <option value="sexy">Sexy - Image</option>
+        <option value="wealth">Wealth - Image</option>
+        <option value="none">no Image</option>
+       </param>
+       <!--<param type="spacer" default="Look and Feel" />
+       <param name="autoexpand" type="radio" default="1" label="Animate-expand multi-lined bookmarks?" description="Shows only one line of the bookmarks. Auto expand on mouse-over. Requires Mootools in your template!">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+       </param>     -->
+       <param name="xtrastyle" type="textarea" default="
+       padding:25px 0 0 10px !important;
+       display:block !important;
+       clear:both !important;
+       /*the height of the icons (29px)*/
+       height:29px;" label="Extra Style" description="You can style the DIV that holds the menu here." rows="6" cols="30" />
+    </params>
+</install>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>News Pro GK4</name>
+	<creationDate>16/10/2010</creationDate>
+	<author>Gavick.com</author>
+	<copyright>(C) 2009-2010 Gavick.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>info@gavick.com</authorEmail>
+	<authorUrl>www.gavick.com</authorUrl>
+	<version>GK4 2.0</version>
+	<description>NSP_INFO</description>
+	<files>
+		<filename module="mod_news_pro_gk4">mod_news_pro_gk4.php</filename>
+		<filename module="mod_news_pro_gk4">helper.php</filename>
+		<filename module="mod_news_pro_gk4">index.html</filename>
+		<folder>admin/</folder>
+		<folder>cache/</folder>	
+		<folder>gk_classes/</folder>
+		<folder>interface/</folder>	            
+		<folder>tmpl/</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_news_pro_gk4.ini</language>
+	</languages>
+	
+	<params addPath="/modules/mod_news_pro_gk4/admin/elements">
+	
+	    <param type="spacer" default="BASIC_SETTINGS" />
+	    
+	        <param name="moduleclass_sfx" type="text" default="" label="MODCLASSSUFFIX" description="MODCLASSSUFFIX_DESC" />
+	        
+         	<param name="automatic_module_id" type="list" class="gk_switch" default="1" label="AUTOMATIC_MODULE_ID" description="AUTOMATIC_MODULE_ID_DESC">
+                    <option value="0">DISABLED</option>
+                    <option value="1">ENABLED</option>
+            </param>
+	        
+	        <param name="module_unique_id" type="text" default="newspro1" label="MODID" description="MODID_DESC" />
+	    
+	    	<param name="module_width" type="text" class="input-percents text_area" default="100" label="MODULE_WIDTH" description="MODULE_WIDTH_DESC" />
+	    	
+	    	<param name="module_font_size" type="list" default="100" label="MODULE_FONT_SIZE" description="MODULE_FONT_SIZE_DESC">
+                    <option value="80">80%</option>
+                    <option value="90">90%</option>
+                    <option value="100">100%</option>
+                    <option value="110">110%</option>
+                    <option value="120">120%</option>
+                    <option value="130">130%</option>
+                    <option value="140">140%</option>
+                    <option value="150">150%</option>
+                    <option value="160">160%</option>
+                    <option value="170">170%</option>
+                    <option value="180">180%</option>
+                    <option value="190">190%</option>
+                    <option value="200">200%</option>
+            </param>
+	    
+		<param type="spacer" default="DATA_SOURCE"  />
+		    
+     		<param name="data_source" type="list" default="com_sections" label="DATA_SOURCE" description="DATA_SOURCE_DESC">
+	            <option value="com_sections">COM_CONTENT_SECTIONS</option>
+	            <option value="com_categories">COM_CONTENT_CATEGORIES</option>
+	            <option value="com_articles">COM_CONTENT_ARTICLES</option>
+	            <option value="k2_categories">K2_CATEGORIES</option>
+	            <option value="k2_tags">K2_TAGS</option>
+                <option value="k2_articles">K2_ARTICLES</option>
+            </param>
+	        
+	        <param name="com_sections" type="multisections" default="" multiple="multiple" label="COM_SECTIONS" description="COM_SECTIONS_DESC" />
+	        
+        	<param name="com_categories" type="multicategories" default="" multiple="multiple" label="COM_CATEGORIES" description="COM_CATEGORIES_DESC" />
+        	
+        	<param name="com_articles" type="text" default="" label="COM_ARTICLES" size="5" description="COM_ARTICLES_DESC" />
+        	
+        	<param name="k2_categories" type="k2multicategories" default="" size="5" multiple="multiple" label="K2_CATEGORIES" description="K2_CATEGORIES_DESC" />
+        	
+        	<param name="k2_tags" type="k2tags" default="" size="5" label="K2_TAGS" description="K2_TAGS_DESC" />
+        	
+        	<param name="k2_articles" type="text" default="" size="5" label="K2_ARTICLES" description="K2_ARTICLES_DESC" />
+        	
+        	<param name="news_sort_value" type="list" default="created" label="NEWS_SORT_VALUE" description="NEWS_SORT_VALUE_DESC">
+                        <option value="created">DATE</option>
+                        <option value="title">TITLE</option>
+						<option value="ordering">ORDER</option>
+                        <option value="fordering">FRONTPAGE_ORDER</option>
+                        <option value="random">RANDOM</option>
+                        <option value="hits">HITS</option>
+      		</param>
+                
+            <param name="news_sort_order" type="list" default="DESC" label="NEWS_SORT_ORDER" description="NEWS_SORT_ORDER_DESC">
+                    <option value="ASC">ASC</option>
+                    <option value="DESC">DESC</option>
+            </param>
+            
+            <param name="news_since" type="calendar" default="" label="NEWS_SINCE" description="NEWS_SINCE_DESC" format="%Y-%m-%d 00:00:00" />    
+                
+            <param name="news_frontpage" type="list" default="1" class="gk_switch" label="FRONTPAGE_FEATURED" description="FRONTPAGE_FEATURED_DESC">
+                    <option value="0">DISABLED</option>
+                    <option value="1">ENABLED</option>
+            </param>
+              
+		  	<param name="unauthorized" type="list" default="0" class="gk_switch" label="UNAUTH" description="UNAUTH_DESC">
+            		<option value="0">DISABLED</option>
+                    <option value="1">ENABLED</option>
+            </param>
+                
+            <param name="only_frontpage" type="list" default="0" class="gk_switch" label="ONLYFRONTPAGE_ONLYFEATURED" description="ONLYFRONTPAGE_ONLYFEATURED_DESC">
+            		<option value="0">DISABLED</option>
+                    <option value="1">ENABLED</option>
+            </param>
+                
+            <param name="startposition" type="text" default="0" size="5" label="FIRST_NEWS" description="FIRST_NEWS_DESC"/>
+        	
+        	<param name="time_offset" type="list" default="0" label="TIME_OFFSET" description="TIME_OFFSET_DESC">
+            		<option value="-12">-12</option>
+            		<option value="-11">-11</option>
+            		<option value="-10">-10</option>
+            		<option value="-9">-9</option>
+            		<option value="-8">-8</option>
+            		<option value="-7">-7</option>
+            		<option value="-6">-6</option>
+            		<option value="-5">-5</option>
+            		<option value="-4">-4</option>
+            		<option value="-3">-3</option>
+            		<option value="-2">-2</option>
+            		<option value="-1">-1</option>
+                    <option value="0">0</option>
+            		<option value="1">+1</option>
+            		<option value="2">+2</option>
+            		<option value="3">+3</option>
+            		<option value="4">+4</option>
+            		<option value="5">+5</option>
+            		<option value="6">+6</option>
+            		<option value="7">+7</option>
+            		<option value="8">+8</option>
+            		<option value="9">+9</option>
+            		<option value="10">+10</option>
+            		<option value="11">+11</option>
+            		<option value="12">+12</option>
+            </param>
+        	
+			<param type="spacer" default="ARTICLE_LAYOUT" />   
+				
+			 	<param name="news_full_pages" type="text" default="3" size="5" label="NEWS_FULL_PAGES_AMOUNT" description="NEWS_FULL_PAGES_AMOUNT_DESC"/>
+            
+       			<param name="news_column" type="text" default="1" size="5" label="COLUMNS" description="COLUMNS_DESC"/>
+            
+            	<param name="news_rows" type="text" class="text_area last-in-group" default="1" size="5" label="ROWS" description="ROWS_DESC"/>
+				
+				<param name="art_padding" type="text" class="text_area last-in-group" default="2px 4px 2px 4px" label="ART_PADDING" description="ART_PADDING_DESC"/>
+				
+				<param name="news_content_header_pos" type="list" class="inputbox" default="left" label="HEAD_POS" description="">
+                        <option value="left">TLEFT</option>
+                        <option value="right">TRIGHT</option>
+                        <option value="center">TCENTER</option>
+                </param>
+                
+                <param name="news_content_header_float" type="list" class="inputbox float" default="none" label="HEAD_FLOAT" description="">
+                        <option value="none">FNONE</option>
+                        <option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                </param>
+                
+                <param name="news_header_link" type="list" class="gk_switch" default="1" label="HEAD_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="use_title_alias" type="list" class="gk_switch" default="0" label="TITLE_ALIAS" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="title_limit_type" class="short" type="radio" default="chars" label="TITLE_LIMIT_TYPE" description="">
+                        <option value="words">WORDS</option>
+                        <option value="chars">CHARS</option>
+                </param>
+                
+                <param name="title_limit" class="short last-in-group text-limit" type="text" default="40" size="5" label="TITLE_MAX_AMOUNT" description=""/>
+                
+                <param name="news_content_image_pos" type="list" default="left" label="IMAGE_POS" description="">
+                        <option value="left">TLEFT</option>
+                        <option value="right">TRIGHT</option>
+                        <option value="center">TCENTER</option>
+                </param>
+                
+                <param name="news_content_image_float" type="list" class="inputbox float" default="left" label="IMAGE_FLOAT" description="">
+                        <option value="none">FNONE</option>
+                        <option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                </param>
+                
+                <param name="news_image_link" type="list" class="gk_switch last-in-group" default="1" label="IMAGE_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_content_text_pos" type="list" default="left" label="TEXT_POS" description="">
+						<option value="left">TLEFT</option>
+                        <option value="right">TRIGHT</option>
+                        <option value="center">TCENTER</option>
+                        <option value="justify">TJUSTIFY</option>
+                </param>
+                
+                <param name="news_content_text_float" type="list" class="inputbox float" default="left" label="TEXT_FLOAT" description="">
+                        <option value="none">FNONE</option>
+                        <option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                </param>
+                
+                <param name="news_text_link" type="list" class="gk_switch" default="0" label="TEXT_LINK" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+    
+    			<param name="news_limit_type" class="short" type="radio" default="words" label="NEWS_LIMIT_TYPE" description="">
+                        <option value="words">WORDS</option>
+                        <option value="chars">CHARS</option>
+                </param>
+                
+                <param name="news_limit" class="short last-in-group text-limit" type="text" default="30" size="5" label="NEWS_MAX_AMOUNT" description=""/>
+                
+                <param name="news_content_info_pos" type="list" default="left" label="INFO_POS" description="">
+                        <option value="left">TLEFT</option>
+                        <option value="right">TRIGHT</option>
+                        <option value="center">TCENTER</option>
+                </param>
+                
+                <param name="news_content_info_float" type="list" class="inputbox float" default="left" label="INFO_FLOAT" description="">
+                        <option value="none">FNONE</option>
+                        <option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                </param>
+                
+                <param name="news_content_info2_pos" type="list" default="left" label="INFO2_POS" description="">
+                        <option value="left">TLEFT</option>
+                        <option value="right">TRIGHT</option>
+                        <option value="center">TCENTER</option>
+                </param>
+                
+                <param name="news_content_info2_float" type="list" class="inputbox float" default="left" label="INFO2_FLOAT" description="">
+                        <option value="none">FNONE</option>
+                        <option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                </param>
+                
+                <param name="info_format" type="text" default="%AUTHOR %COMMENTS %DATE %HITS %CATEGORY" size="65" label="INFO_FORMAT" description="INFO_FORMAT_DESC"/>
+                
+                <param name="info2_format" type="text" default="" size="65" label="INFO2_FORMAT" description="INFO2_FORMAT_DESC"/>
+                
+                <param name="category_link" type="list" class="gk_switch" default="1" label="CATEGORY_LINK" description="CATEGORY_LINK_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+   				<param name="date_format" type="text" default="%d %b %Y" size="10" label="DATE_FORMAT" description="DATE_FORMAT_DESC"/>   
+				
+				<param name="date_publish" type="list" default="0" label="DATEPUBLISH" description="DATEPUBLISH_DESC">
+                        <option value="0">DATE_CREATE</option>
+                        <option value="1">DATE_PUBLISH</option>
+                </param> 
+				   
+				<param name="username" type="list" class="inputbox" default="0" label="AUTHORNAME" description="">
+                        <option value="users.name">NAME</option>
+                        <option value="users.username">USERNAME</option>
+                        <option value="content.created_by_alias">ALIAS</option>
+                </param>  
+			    
+			    <param name="user_avatar" type="list" class="gk_switch" default="1" label="USER_AVATAR" description="USER_AVATAR_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="avatar_size" type="text" class="input-pixels text_area" default="16" label="AVATAR_SIZE" description="AVATAR_SIZE_DESC" />
+                
+                <param name="no_comments_text" type="list" class="gk_switch last-in-group" default="1" label="NO_COMMENTS_TEXT" description="NO_COMMENTS_TEXT_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+			    
+                <param name="news_header_order" type="list" default="1" label="HEAD_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </param>
+                
+                <param name="news_header_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_HEADER_ENABLED" description="NEWS_HEADER_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_image_order" type="list" default="2" label="IMAGE_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </param>
+
+                <param name="news_image_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_IMAGE_ENABLED" description="NEWS_IMAGE_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_text_order" type="list" default="3" label="TEXT_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </param>
+                
+                <param name="news_text_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_TEXT_ENABLED" description="NEWS_TEXT_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="news_info_order" type="list" default="4" label="INFO_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </param>
+                
+                <param name="news_info_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_INFO_ENABLED" description="NEWS_INFO_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+                <param name="news_info2_order" type="list" default="5" label="INFO2_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </param>
+                
+                <param name="news_info2_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_INFO2_ENABLED" description="NEWS_INFO2_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+            
+            	<param name="news_content_readmore_pos" type="list" default="right" label="MORE_POS" description="">
+						<option value="left">FLEFT</option>
+                        <option value="right">FRIGHT</option>
+                        <option value="after">AFTER</option>
+                </param>
+
+                <param name="news_readmore_enabled" type="list" class="gk_switch enabler" default="1" label="NEWS_READMORE_ENABLED" description="NEWS_READMORE_ENABLED_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+            
+       	    <param type="spacer" default="LINKS_LAYOUT"  />
+	    	
+	    		<param name="news_short_pages" type="text" default="3" size="5" label="NEWS_SHORT_PAGES_AMOUNT" description="NEWS_SHORT_PAGES_AMOUNT_DESC"/>
+            
+				<param name="links_amount" type="text" default="3" size="5" label="LINKSAMOUNT" description="LINKSAMOUNT_DESC"/>
+
+                <param name="links_columns_amount" type="text" default="1" size="5" label="LINKSCOLAMOUNT" description="LINKSCOLAMOUNT_DESC"/>
+	    	
+		    	<param name="links_margin" type="text" default="0 10px 0 10px" label="LINKS_MARGIN" description="LINKS_MARGIN_DESC" />
+		    	
+		    	<param name="links_position" type="list" default="bottom" label="LINKS_POSITION" description="LINKS_POSITION_DESC">
+		            <option value="bottom">BOTTOM</option>
+		            <option value="left">LEFT</option>
+		            <option value="right">RIGHT</option>
+	            </param>
+		    	
+		    	<param name="links_width" type="text" class="input-percents text_area" default="50" label="LINKS_WIDTH" description="LINKS_WIDTH_DESC" />
+		    	
+		    	<param name="show_list_description" type="list" class="gk_switch" default="1" label="LINKS_LIST_SHOW_DESCRIPTION" description="">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+		    	
+ 	    		<param name="list_title_limit_type" class="short" type="radio" default="chars" label="LIST_TITLE_LIMIT_TYPE" description="">
+                        <option value="words">WORDS</option>
+                        <option value="chars">CHARS</option>
+                </param>
+                
+                <param name="list_title_limit" class="short text-limit" type="text" default="20" size="5" label="LIST_TITLE_MAX_AMOUNT" description=""/>
+                
+                <param name="list_text_limit_type" class="short" type="radio" default="words" label="LIST_TEXT_LIMIT_TYPE" description="">
+                        <option value="words">WORDS</option>
+                        <option value="chars">CHARS</option>
+                </param>
+                
+                <param name="list_text_limit" class="short text-limit" type="text" default="30" size="5" label="LIST_TEXT_MAX_AMOUNT" description=""/>
+            <param type="spacer" default="THUMBNAILS" />
+                
+                <param name="create_thumbs" type="list" class="gk_switch" default="0" label="CREATE_THUMBS" description="CREATE_THUMBS_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+				
+				<param name="k2_thumbs" type="list" class="gk_switch" default="0" label="K2_THUMBS" description="K2_THUMBS_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+				
+				<param name="img_keep_aspect_ratio" type="list" class="gk_switch" default="0" label="IMAGE_KEEP_ASPECT_RATIO" description="IMAGE_KEEP_ASPECT_RATIO_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+				
+                <param name="img_width" type="text" default="160" size="5" class="input-pixels text_area" label="IMAGE_W" description="IMAGE_W_DESC"/>
+				
+				<param name="img_height" type="text" default="120" size="5" class="input-pixels text_area" label="IMAGE_H" description="IMAGE_H_DESC"/>
+				
+				<param name="img_margin" type="text" default="3px 5px 3px 5px" label="IMAGE_MARGIN" description="IMAGE_MARGIN_DESC"/>
+                
+                <param name="img_bg" type="text" default="#000" size="5" label="IMAGE_BG" description="IMAGE_BG_DESC"/>   
+
+				<param name="img_stretch" type="list" class="gk_switch" default="0" label="IMAGE_STRETCH" description="IMAGE_STRETCH_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+
+				<param name="img_quality" type="text"  class="input-percents text_area" default="95" size="5" label="IMAGE_QUALITY" description="IMAGE_QUALITY_DESC"/>   
+
+				<param name="cache_time" type="text" default="30" size="5" class="input-minutes text_area medium" label="CACHE_TIME" description="CACHE_TIME_DESC"/>   
+    
+                
+                
+            <param type="spacer" default="ADDITIONAL_SETTINGS" />    
+                
+          		<param name="top_interface_style" type="list" default="arrows" label="TOP_INTERFACE_STYLE" description="">
+	                <option value="none">NONE</option>
+	                <option value="arrows">ARROWS</option>
+	                <option value="pagination">PAGINATION</option>
+	                <option value="counter">COUNTER</option>
+					<option value="arrows_with_pagination">ARROWS_WITH_PAGINATION</option>
+	                <option value="arrows_with_counter">ARROWS_WITH_COUNTER</option>
+	            </param>
+
+	       		<param name="bottom_interface_style" type="list" default="arrows" label="BOTTOM_INTERFACE_STYLE" description="">
+	                <option value="none">NONE</option>
+	                <option value="arrows">ARROWS</option>
+	                <option value="pagination">PAGINATION</option>
+	                <option value="counter">COUNTER</option>
+					<option value="arrows_with_pagination">ARROWS_WITH_PAGINATION</option>
+	                <option value="arrows_with_counter">ARROWS_WITH_COUNTER</option>
+	            </param>
+	            
+	             <param name="autoanim" type="list" class="gk_switch" default="0" label="AUTOANIM" description="AUTOANIM_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>                
+                
+                <param name="hover_anim" type="list" class="gk_switch" default="0" label="HOVERANIM" description="HOVERANIM_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>  
+                
+                <param name="animation_speed" class="input-ms text_area medium" type="text" default="350" size="5" label="ANIMSPEED" description="ANIMSPEED_DESC"/>        
+                
+                <param name="animation_interval" class="input-ms text_area medium last-in-group" type="text" default="5000" size="5" label="ANIMINTERVAL" description="ANIMINTERVAL_DESC"/>   
+                
+                <param name="clean_xhtml" type="list" class="gk_switch" default="1" label="CLEANXHTML" description="CLEANXHTML_DESC">
+                        <option value="0">DISABLED</option>
+                        <option value="1">ENABLED</option>
+                </param>
+                
+                <param name="more_text_value" type="text" default="..." size="5" label="MORE_TEXT_VALUE" description="MORE_TEXT_VALUE_DESC"/>
+                
+               	<param name="parse_plugins" type="list" class="gk_switch" default="0" label="PARSE" description="PARSE_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param>    	
+            
+   				<param name="clean_plugins" type="list" class="gk_switch" default="0" label="CLEANPLUGINS" description="CLEANPLUGINS_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param> 
+                
+		 <param type="spacer" default="EXTERNAL_FILES" />   
+
+   				<param name="useCSS" type="list" class="gk_switch" default="1" label="USECSS" description="USECSS_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param> 
+            
+                <param name="use_mootools_12" type="list" class="gk_switch" default="0" label="USEMOO12" description="USEMOO12_DESC">
+						<option value="1">ENABLED</option>
+                        <option value="0">DISABLED</option>
+                </param> 
+            
+                <param name="useMoo" type="list" default="2" label="USEMOO" description="USEMOO_DESC">
+                        <option value="2">AUTOMATIC</option>
+						<option value="1">FORCEENABLED</option>
+                        <option value="0">FORCEDISABLED</option>
+                </param>
+                
+                <param name="useScript" type="list" default="2" label="USEJS" description="USEJS_DESC">
+                        <option value="2">AUTOMATIC</option>
+						<option value="1">FORCEENABLED</option>
+                        <option value="0">FORCEDISABLED</option>
+                </param> 	
+        	
+	</params>
+</install>

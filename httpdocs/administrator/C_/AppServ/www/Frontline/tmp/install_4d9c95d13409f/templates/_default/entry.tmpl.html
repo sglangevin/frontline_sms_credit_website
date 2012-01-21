@@ -1,0 +1,79 @@
+<?php
+$e = $entry;
+?>
+<!-- Entry -->
+<div class="postContent" id="post-<?php echo $e['id']; ?>">
+	<!-- Display onBeforeDisplayContent mambots -->
+	<?php
+		if(isset($entry['beforeContent']) && $entry['beforeContent'])
+		{
+			echo $entry['beforeContent'];
+		}
+	?>
+	<!-- End display -->
+	<!-- Post Top Summary -->
+	<div class="postContent-top">
+		<h2>
+			<a href="<?php echo $e['permalink']; ?>"><?php echo $e['title']; ?></a>
+			<?php
+				if($entry['created_by'] == $userId)
+				{
+					echo $entry['editLink'];
+				}
+			?>
+		</h2>
+		<p>
+			<?php echo JText::_('POSTED BY'); ?>: <a href="<?php echo $e['authorLink']; ?>" title="<?php echo JText::_('VIEW ALL POSTS BY');?>" class="author-link"><?php echo $e['author']; ?></a>
+			<?php
+				if( $categoryDisplay )
+				{
+			?>
+			<?php echo JText::sprintf('POSTED IN' , $e['jcategory'] ); ?>
+			<?php
+				}
+			?>
+			<span class="post-date">
+			<?php echo JText::sprintf('POSTED ON', $e['createdFormatted']); ?>
+			<?php
+				if($enablePrintLink)
+				{
+      				echo myGetPrintLink($entry['id'],myGetItemId());
+				}
+				echo '&nbsp;';
+        		
+				if($enablePdfLink)
+				{
+					echo myGetPDFLink($entry['id'],myGetItemId());
+	    		}
+	    	?>
+	    	</span>
+			<div><?php echo JText::sprintf('TAGGED IN' , $e['categories'] ); ?></div>
+	    </p>
+		<?php if(!empty($e['avatar'])){ ?>
+		<div class="userAvatar">
+			<?php echo $e['avatar']; ?>
+		</div>			
+		<?php } ?>
+	</div>
+	
+	<!-- Post Teaser Text -->
+	<div class="postContent-text">
+		<?php echo $e['text']; ?>
+		<!-- Post Footer -->						
+	</div>
+	<div class="clear"></div>
+	<div>
+    	<?php echo $entry['comments']; ?>
+    </div>
+	<!-- Display onAfterDisplayContent mambots -->
+	<?php
+		if(isset($entry['afterContent']) && $entry['afterContent']){
+			echo $entry['afterContent'];
+		}
+	?>
+	<!-- End display -->
+	<!-- Post Divider -->
+	<hr class="postEntry-divider" />
+	
+</div>
+<div class="clear"></div>

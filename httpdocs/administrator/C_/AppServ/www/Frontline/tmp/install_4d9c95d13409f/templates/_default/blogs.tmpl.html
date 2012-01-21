@@ -1,0 +1,28 @@
+<?php
+/**
+ * @package		My Blog
+ * @copyright (C) 2008 by Slashes & Dots Sdn Bhd - All rights reserved!
+ * @license http://www.azrul.com Copyrighted Commercial Software
+ */
+defined('_JEXEC') or die('Restricted access');
+?>
+<div>
+	<form action="<?php echo JRoute::_("index.php?option=com_myblog&task=blogs");?>" name="blogsForm" id="blogsForm" method="POST">
+	<?php echo JText::_('DISPLAY NUMBER OF BLOGGERS PER PAGE');?>
+	<select onchange="document.blogsForm.submit();" class="inputbox" name="limit">
+	<?php
+		for( $i = 5; $i < 30; $i += 5 )
+		{
+			$selected	= ( $i == $limit ? ' selected="selected"' : '' );
+	?>
+		<option value="<?php echo $i;?>"<?php echo $selected;?>><?php echo $i;?></option>
+	<?php
+		}
+	?>
+	</select>
+	</form>
+</div>
+
+<div style="margin-top: 20px;">
+<?php echo $bloggerHTML; ?>
+</div>

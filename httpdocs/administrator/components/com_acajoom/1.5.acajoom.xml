@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.5" type="component">
+	<name>Acajoom</name>
+	<creationDate>September 2008</creationDate>
+	<author>Acajoom Services</author>
+	<copyright>© 2006-2009 Acajoom Services. All Rights Reserved.</copyright>
+	<license>http://www.ijoobi.com/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=54</license>
+	<authorEmail>support@ijoobi.com</authorEmail>
+	<authorUrl>http://www.ijoobi.com</authorUrl>
+	<version>3.2.3</version>
+	<description>Acajoom News the ultimate mailing system for Joomla CMS.</description>
+	<files>
+		<filename>acajoom.php</filename>
+		<filename>acajoom.html.php</filename>
+		<filename>defines.php</filename>
+		<filename>sef_ext.php</filename>
+		<filename>router.php</filename>
+		<filename>index.html</filename>
+
+      	<filename>css/acajoom.css</filename>
+		<filename>css/index.html</filename>
+
+      	<filename>images/addedit.png</filename>
+      	<filename>images/delete_f2.png</filename>
+      	<filename>images/edit_f2.png</filename>
+      	<filename>images/folder_add_f2.png</filename>
+      	<filename>images/move_f2.png</filename>
+      	<filename>images/new_f2.png</filename>
+      	<filename>images/acajoom_cron.jpg</filename>
+		<filename>images/index.html</filename>
+
+
+
+    	<filename>templates/default/default.html</filename>
+
+      	<filename>templates/default/tpl0_abovefooter.jpg</filename>
+
+      	<filename>templates/default/tpl0_powered_by.gif</filename>
+
+      	<filename>templates/default/tpl0_spacer.gif</filename>
+
+      	<filename>templates/default/tpl0_top_header.jpg</filename>
+
+      	<filename>templates/default/tpl0_underban.jpg</filename>
+
+		<filename>templates/default/index.html</filename>
+
+		<filename>templates/index.html</filename>
+
+		<filename>upload/index.html</filename>
+	</files>
+
+	<install>
+		<queries>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_lists` (
+				  `id` int(10) NOT NULL auto_increment,
+				  `list_name` varchar(101) NOT NULL default '',
+				  `list_desc` text NOT NULL,
+				  `list_type` tinyint(2) NOT NULL default '0',
+				  `sendername` varchar(64) NOT NULL default '',
+				  `senderemail` varchar(64) NOT NULL default '',
+				  `bounceadres` varchar(64) NOT NULL default '',
+				  `layout` text NOT NULL,
+				  `template` int(9) NOT NULL default '0',
+				  `subscribemessage` text NOT NULL,
+				  `unsubscribemessage` text NOT NULL,
+				  `unsubscribesend` tinyint(1) NOT NULL default '1',
+				  `auto_add` tinyint(1) NOT NULL default '0',
+				  `user_choose` tinyint(1) NOT NULL default '0',
+				  `cat_id` int(10) NOT NULL default '0',
+				  `delay_min` int(2) NOT NULL default '0',
+				  `delay_max` int(2) NOT NULL default '7',
+				  `follow_up` int(10) NOT NULL default '0',
+				  `html` tinyint(1) NOT NULL default '1',
+				  `hidden` tinyint(1) NOT NULL default '0',
+				  `published` tinyint(1) NOT NULL default '0',
+				  `createdate` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `acc_level` int(2) NOT NULL default '0',
+				  `acc_id` int(11) NOT NULL default '29',
+				  `notification` tinyint(1) NOT NULL default '0',
+				  `owner` int(11) NOT NULL default '0',
+				  `footer` tinyint(1) NOT NULL default '1',
+				  `notify_id` int(10) NOT NULL default '0',
+				  `next_date` int(11) NOT NULL default 0,
+				  `start_date` DATE NOT NULL,
+				  `params` text ,
+				  PRIMARY KEY  (`id`),
+				  UNIQUE KEY `list_name` (`list_name`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_mailings` (
+				  `id` int(11) NOT NULL auto_increment,
+				  `list_id` int(10) NOT NULL default '0',
+				  `list_type` tinyint(2) NOT NULL default '0',
+				  `issue_nb` int(10) NOT NULL default '0',
+				  `subject` varchar(120) NOT NULL default '',
+				  `fromname` varchar(64) NOT NULL default '',
+				  `fromemail` varchar(64) NOT NULL default '',
+				  `frombounce` varchar(64) NOT NULL default '',
+				  `htmlcontent` longtext NOT NULL,
+				  `textonly` longtext NOT NULL,
+				  `attachments` text NOT NULL,
+				  `images` text NOT NULL,
+				  `send_date` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `delay` int(10) NOT NULL default '0',
+				  `visible` tinyint(1) NOT NULL default '1',
+				  `html` tinyint(1) NOT NULL default '1',
+				  `published` tinyint(1) NOT NULL default '0',
+				  `createdate` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `acc_level` int(2) NOT NULL default '0',
+				  `author_id` int(11) NOT NULL default '0',
+				  `params` text ,
+				  PRIMARY KEY  (`id`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_subscribers` (
+					`id` int(11) NOT NULL auto_increment,
+					`user_id` int(11) NOT NULL default '0',
+					`name` varchar(64) NOT NULL default '',
+					`email` varchar(100) NOT NULL default '',
+					`receive_html` tinyint(1) NOT NULL default '1',
+					`confirmed` tinyint(1) NOT NULL default '0',
+					`blacklist` tinyint(1) NOT NULL default '0',
+					`timezone` TIME NOT NULL default '0',
+					`language_iso` varchar(10) NOT NULL default 'eng',
+					`subscribe_date` datetime NOT NULL default '0000-00-00 00:00:00',
+					`params` text ,
+					PRIMARY KEY (`id`),
+					UNIQUE KEY `email` ( `email`),
+
+					INDEX `date` (`subscribe_date`),
+
+					INDEX `joomlauserid` (`user_id`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_queue` (
+				  `qid` int(11) NOT NULL auto_increment,
+				  `type` tinyint(2) NOT NULL default '0',
+				  `subscriber_id` int(11) NOT NULL default '0',
+				  `list_id` int(10) NOT NULL default '0',
+				  `mailing_id` int(11) NOT NULL default '0',
+				  `issue_nb` int(10) NOT NULL default '0',
+				  `send_date` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `suspend` tinyint(1) NOT NULL default '0',
+				  `delay` int(10) NOT NULL default '0',
+				  `acc_level` int(2) NOT NULL default '0',
+				  `published` tinyint(1) NOT NULL default '0',
+				  `params` text ,
+				  PRIMARY KEY  (`qid`),
+				  UNIQUE KEY `subscriber_id` ( `subscriber_id` ,`list_id` ,`mailing_id`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_xonfig` (
+					`akey` VARCHAR( 32 ) NOT NULL default '',
+					`text` VARCHAR( 254 ) NOT NULL default '',
+					`value` int(11) NOT NULL default '0',
+					PRIMARY KEY (`akey`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_stats_details` (
+				  `id` int(11) NOT NULL auto_increment,
+				  `mailing_id` int(11) NOT NULL default '0',
+				  `subscriber_id` int(11) NOT NULL default '0',
+				  `sentdate` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `html` tinyint(1) NOT NULL default '0',
+				  `read` tinyint(1) NOT NULL default '0',
+				  PRIMARY KEY (`id`),
+				  UNIQUE KEY `sub_mail` (`mailing_id`,`subscriber_id`)
+				) TYPE=MyISAM;
+			</query>
+			<query>
+				CREATE TABLE IF NOT EXISTS `#__acajoom_stats_global` (
+				  `mailing_id` int(11) NOT NULL default '0',
+				  `sentdate` datetime NOT NULL default '0000-00-00 00:00:00',
+				  `html_sent` int(11) NOT NULL default '0',
+				  `text_sent` int(11) NOT NULL default '0',
+				  `html_read` int(11) NOT NULL default '0',
+				  PRIMARY KEY (`mailing_id`)
+				) TYPE=MyISAM;
+			</query>
+		</queries>
+	</install>
+
+	<uninstall>
+	</uninstall>
+
+	<installfile>install.acajoom.php</installfile>
+	<uninstallfile>uninstall.acajoom.php</uninstallfile>
+
+	<administration>
+		<menu>Acajoom</menu>
+		<submenu>
+			<menu act="list">Lists</menu>
+			<menu act="subscribers">Subscribers</menu>
+			<menu act="mailing&amp;listype=1">Newsletters</menu>
+			<menu act="statistics">Statistics</menu>
+			<menu act="configuration">Configuration</menu>
+
+			<menu act="update">Import</menu>
+			<menu act="about">About</menu>
+		</submenu>
+		<files>
+			<filename>compa.php</filename>
+			<filename>admin.acajoom.php</filename>
+			<filename>admin.acajoom.html.php</filename>
+			<filename>config.acajoom.html.php</filename>
+			<filename>config.acajoom.php</filename>
+			<filename>guide.acajoom.php</filename>
+			<filename>lists.acajoom.html.php</filename>
+			<filename>lists.acajoom.php</filename>
+			<filename>mailings.acajoom.html.php</filename>
+			<filename>mailings.acajoom.php</filename>
+			<filename>subscribers.acajoom.html.php</filename>
+			<filename>subscribers.acajoom.php</filename>
+			<filename>toolbar.acajoom.html.php</filename>
+			<filename>toolbar.acajoom10.html.php</filename>
+			<filename>toolbar.acajoom15.html.php</filename>
+			<filename>toolbar.acajoom.php</filename>
+			<filename>update.acajoom.php</filename>
+			<filename>version.php</filename>
+			<filename>plugins/class.newsletter.php</filename>
+
+			<filename>classes/class.acajoom.php</filename>
+			<filename>classes/class.erro.php</filename>
+			<filename>classes/class.frontend.php</filename>
+			<filename>classes/class.jmail.php</filename>
+			<filename>classes/class.lists.php</filename>
+			<filename>classes/class.listype.php</filename>
+			<filename>classes/class.mailing.php</filename>
+			<filename>classes/class.module.php</filename>
+			<filename>classes/class.queue.php</filename>
+			<filename>classes/class.subscribers.php</filename>
+			<filename>classes/class.update.php</filename>
+			<filename>classes/class.xonfig.php</filename>
+			<filename>classes/class.xonfig15.php</filename>
+			<filename>classes/lib.upload.php</filename>
+			<filename>classes/multifile.js</filename>
+
+			<filename>classes/index.html</filename>
+			<filename>plugins/index.html</filename>
+
+   			<filename>language/brazilian.php</filename>
+   			<filename>language/danish.php</filename>
+   			<filename>language/dutch.php</filename>
+   			<filename>language/english.php</filename>
+	     	<filename>language/french.php</filename>
+	     	<filename>language/german.php</filename>
+	     	<filename>language/germani.php</filename>
+	     	<filename>language/hungarian.php</filename>
+	     	<filename>language/italian.php</filename>
+	     	<filename>language/norwegian.php</filename>
+	     	<filename>language/polish.php</filename>
+	     	<filename>language/portuguese.php</filename>
+	     	<filename>language/russian.php</filename>
+	     	<filename>language/spanish.php</filename>
+	     	<filename>language/swedish.php</filename>
+
+	     	<filename>language/simplified_chinese.php</filename>
+
+	     	<filename>language/traditional_chinese.php</filename>
+   			<filename>language/index.html</filename>
+
+			<filename>bots/acajoombot.php</filename>
+			<filename>bots/acajoombot.xml</filename>
+			<filename>bots/index.html</filename>
+
+			<filename>bots15/acajoombot.php</filename>
+			<filename>bots15/acajoombot.xml</filename>
+			<filename>bots15/index.html</filename>
+
+			<filename>modules/mod_acajoom.php</filename>
+			<filename>modules/mod_acajoom.xml</filename>
+			<filename>modules/index.html</filename>
+
+			<filename>cssadmin/acajoom.css</filename>
+			<filename>cssadmin/index.html</filename>
+
+			<filename>cbplugin/acajoom_cb.php</filename>
+			<filename>cbplugin/acajoom_cb.xml</filename>
+			<filename>cbplugin/index.html</filename>
+
+	    	<filename>templates/default/default.html</filename>
+	      	<filename>templates/default/tpl0_abovefooter.jpg</filename>
+	      	<filename>templates/default/tpl0_powered_by.gif</filename>
+	      	<filename>templates/default/tpl0_spacer.gif</filename>
+	      	<filename>templates/default/tpl0_top_header.jpg</filename>
+	      	<filename>templates/default/tpl0_underban.jpg</filename>
+			<filename>templates/default/index.html</filename>
+			<filename>templates/index.html</filename>
+
+			<filename>backup/index.html</filename>
+
+			<filename>index.html</filename>
+		</files>
+      <images>
+          <filename>images/acajoom_banner.png</filename>
+          <filename>images/acajoom_cron.jpg</filename>
+          <filename>images/acajoom_icon.png</filename>
+          <filename>images/acajoom_news.png</filename>
+          <filename>images/acajoom_plus.png</filename>
+          <filename>images/acajoom_pro.png</filename>
+          <filename>images/acajoom_slog_news.png</filename>
+          <filename>images/acajoom_slog_plus.png</filename>
+          <filename>images/acajoom_slog_pro.png</filename>
+          <filename>images/acajoom.jpg</filename>
+          <filename>images/button_cancel.png</filename>
+          <filename>images/button_cancel.gif</filename>
+          <filename>images/button_ok.png</filename>
+          <filename>images/cron.gif</filename>
+          <filename>images/dot.png</filename>
+          <filename>images/general.gif</filename>
+          <filename>images/jcron_small.png</filename>
+          <filename>images/none_back.gif</filename>
+          <filename>images/status_g.png</filename>
+          <filename>images/status_r.png</filename>
+          <filename>images/status_y.png</filename>
+          <filename>images/upgrade.gif</filename>
+          <filename>images/warning.png</filename>
+		  <filename>images/index.html</filename>
+     </images>
+	</administration>
+</install>

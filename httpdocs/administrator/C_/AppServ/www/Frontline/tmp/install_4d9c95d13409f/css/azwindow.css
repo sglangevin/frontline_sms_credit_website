@@ -1,0 +1,104 @@
+/* CSS Document */
+
+#azrulWindow {
+	width: 960px;
+	position: absolute;
+	z-index: 100;
+	background: transparent;
+}
+a#az_close_btn {
+	height: 30px;
+	width: 30px;
+	float: right;
+	text-indent: -9999px;
+	outline-style: none;
+	background-image: url(../images/trans/closebox.gif);
+	margin: 2px 0 0;
+}
+#az_tl, #az_tm, #az_tr, #az_ml, #az_mr, #az_bl, #az_bm, #az_br, #az_logo,
+a#az_close_btn {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+#az_logo {
+	width: 125px;
+	height: 26px;
+	margin: 2px 0 0 2px;
+	background-image: url(../images/trans/logo.gif);
+	float: left;
+}
+#az_tl {
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/trans/tl.png);
+	float: left;
+}
+#az_tm {
+	width: 920px;
+	background-image: url(../images/trans/tm.png);
+	float: left;
+	height: 20px;
+}
+#az_tr {
+	background-image: url(../images/trans/tr.png);
+	float: left;
+	width: 20px;
+	height: 20px;
+}
+#az_ml {
+	width: 20px;
+	background-image: url(../images/trans/lm.png);
+	float: left;
+	height: 560px;
+}
+#azrulWindowContentOuter {
+	float: left;
+	height: 560px;
+	overflow: hidden;
+}
+#azrulWindowContentTop {
+	height: 30px;
+	background: #333333;
+	border-bottom: solid 1px #999999;
+	float: left;
+}
+#azrulWindowContent {
+	background:	#E4E9EC;
+    height: 560px;
+	float: left;
+}
+#az_mr {
+	width: 20px;
+	background-image: url(../images/trans/rm.png);
+    height: 560px;
+	float: left;
+}
+#az_bl {
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/trans/bl.png);
+	float: left;
+}
+#az_bm {
+	background-image: url(../images/trans/bm.png);
+	float: left;
+	height: 20px;
+}
+#az_br {
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/trans/br.png);
+	float: left;
+}
+
+
+#azrulWindowContentOuter,
+#azrulWindowContentTop,
+#azrulWindowContent,
+#az_bm, #az_tm, #azrulContentFrame {
+	width: 920px;
+}
+#azrulContentFrame {
+	height: 530px;
+}

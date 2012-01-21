@@ -1,0 +1,87 @@
+/* CSS CALENDAR */
+#ncalendar table {padding:0px; width:180px;margin:0 auto}
+#ncalendar table th {padding:0px;font-size:1em;}
+#ncalendar table tr {padding:0px;}
+
+#ncalendar {
+	background:url(img/calendarbg.jpg) no-repeat left top;
+	width:205px;
+	height:180px;
+	padding: 0px;
+	font: normal 11px Arial, Verdana; color: #333;
+	opacity : 0;
+	cursor:  pointer;
+	position :  absolute;
+	z-index:1000;
+}
+#ncalendar div 
+{
+	display:block;
+	text-align: center;
+}
+#ncalendar .cf_calheader
+{
+	margin:10px auto 0px auto;
+	width: 185px;
+}
+#ncalendar .cf_calheader img
+{
+	margin: 0px 2px 0px 2px;
+	float: left;
+	clear: none;
+}
+#ncalendar .month
+{
+	font: bold 11px Arial, Verdana; color: #333; text-align: center;
+	padding: 2px 0px 0px 0px;
+	display: block;
+	float: left;
+	width: 110px;
+}
+#ncalendar table 
+{
+	margin: 5px auto 0px auto;
+	width: 180px;
+	border: 0px none;
+	clear: both;
+}
+#ncalendar table tr td
+{
+	padding: 2px;
+	height: 5px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+}
+img 
+{
+	cursor:pointer;
+}
+.dayselected {background:#f2f4f9;}
+.noday {background:#d9dce5; color:#c1c4cc;}
+.sunday {background:#fff;}
+.today 
+{
+}
+td.isToday
+{
+	background:#f8b04d;
+	color: #555; font-weight: bold;
+	border: 1px solid #fff;
+}
+#listYear {
+  position:absolute;
+  background:#F0F0F0;
+  border:1px solid #E0E0E0;
+  width:100px;
+  height:80px;
+  display:none;
+  opacity:0;
+  
+}
+#listYear li {
+  list-style:none;
+  cursor:pointer;
+  border-bottom:1px solid #E0E0E0;
+  padding:.2em;
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<!-- $Id: cbyvcomment.xml 19 2010-05-25 15:05:48Z yvolk $ -->
+<cbinstall version="1.0" type="plugin" group="user">
+	<name>CB yvComment</name>
+	<author>Yuri Volkov</author>
+	<creationDate>2010-05-19</creationDate>
+	<copyright>(c) 2007-2010 yvolk (Yuri Volkov), http://yurivolkov.com.
+		All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+		GNU/GPL version 2</license>
+	<authorEmail>yvolksoft@yurivolkov.com
+	</authorEmail>
+	<authorUrl>http://yurivolkov.com/Joomla/yvComment/index_en.html
+	</authorUrl>
+	<version>1.2</version>
+	<description>The plugin integrates Community Builder with yvComment Joomla!
+		extension version 1.25.0.
+		It provides two same 'Comments' user Tabs that show all Comments
+		written by the
+		user (may be used for Comments Type 1 and Type 2).
+		</description>
+	<files folder="">
+		<filename plugin="cbyvcomment">cbyvcomment.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<params>
+	</params>
+	<tabs>
+		<tab name="Comments" description="" class="getcbyvCommentsTab"
+			cbfields="0">
+			<params>
+				<param name="layout_name" type="list" default="default"
+					label="LAYOUT_NAME" description="LAYOUT_NAME_DESC">
+					<option value="0">LAYOUT_NAME_CUSTOM</option>
+					<option value="default">default</option>
+					<option value="layout002">LAYOUT_002</option>
+					<option value="layout003">LAYOUT_003</option>
+				</param>
+				<param name="layout_name_custom" type="text" default=""
+					label="LAYOUT_NAME_CUSTOM" description="" />
+				<param name="@spacer" type="spacer" default="" label=""
+					description="" />
+				<param name="count" type="text" default="" label="LIST_COUNT"
+					description="LIST_COUNT_DESC" />
+				<param name="orderby_pri" type="list" default="rdate" label="PRIMARY_ORDER"
+					description="PRIMARY_ORDER_DESC">
+					<option value="date">ORDER_OLDEST_FIRST</option>
+					<option value="rdate">ORDER_MOST_RECENT_FIRST</option>
+				</param>
+				<param name="moduleclass_sfx" type="text" default=""
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<param name="max_characters_list_row" type="text" size="6"
+					default="" label="MAX_CHARACTERS_LIST_ROW" description="MAX_CHARACTERS_LIST_ROW_DESC" />
+				<param name="@spacer" type="spacer" default="" label=""
+					description="" />
+				<param name="result_days" type="list" default="all" label="RESULT_DAYS"
+					description="RESULT_DAYS_DESC">
+					<option value="all">ALL_RESULTS</option>
+					<option value="1day">1_DAY</option>
+					<option value="7days">7_DAYS</option>
+					<option value="2weeks">2_WEEKS</option>
+					<option value="1month">1_MONTH</option>
+					<option value="3months">3_MONTHS</option>
+					<option value="6months">6_MONTHS</option>
+					<option value="1year">1_YEAR</option>
+				</param>
+				<param name="show_pagination" type="list" default="0" label="SHOW_PAGINATION" description="SHOW_PAGINATION_DESC">
+					<option value="0">HIDE</option>
+					<option value="1">SHOW</option>
+				</param>
+				<param name="comment_type_id" type="text" default=""
+					label="COMMENT_TYPE_ID" description="" />
+			</params>
+			<fields>
+			</fields>
+		</tab>
+		<tab name="Comments2" description="" class="getcbyvCommentsTab2"
+			cbfields="0">
+			<params>
+				<param name="layout_name" type="list" default="default"
+					label="LAYOUT_NAME" description="LAYOUT_NAME_DESC">
+					<option value="0">LAYOUT_NAME_CUSTOM</option>
+					<option value="default">default</option>
+					<option value="layout002">LAYOUT_002</option>
+					<option value="layout003">LAYOUT_003</option>
+				</param>
+				<param name="layout_name_custom" type="text" default=""
+					label="LAYOUT_NAME_CUSTOM" description="" />
+				<param name="@spacer" type="spacer" default="" label=""
+					description="" />
+				<param name="count" type="text" default="" label="LIST_COUNT"
+					description="LIST_COUNT_DESC" />
+				<param name="orderby_pri" type="list" default="rdate" label="PRIMARY_ORDER"
+					description="PRIMARY_ORDER_DESC">
+					<option value="date">ORDER_OLDEST_FIRST</option>
+					<option value="rdate">ORDER_MOST_RECENT_FIRST</option>
+				</param>
+				<param name="moduleclass_sfx" type="text" default=""
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<param name="max_characters_list_row" type="text" size="6"
+					default="" label="MAX_CHARACTERS_LIST_ROW" description="MAX_CHARACTERS_LIST_ROW_DESC" />
+				<param name="@spacer" type="spacer" default="" label=""
+					description="" />
+				<param name="result_days" type="list" default="all" label="RESULT_DAYS"
+					description="RESULT_DAYS_DESC">
+					<option value="all">ALL_RESULTS</option>
+					<option value="1day">1_DAY</option>
+					<option value="7days">7_DAYS</option>
+					<option value="2weeks">2_WEEKS</option>
+					<option value="1month">1_MONTH</option>
+					<option value="3months">3_MONTHS</option>
+					<option value="6months">6_MONTHS</option>
+					<option value="1year">1_YEAR</option>
+				</param>
+				<param name="show_pagination" type="list" default="0" label="SHOW_PAGINATION" description="SHOW_PAGINATION_DESC">
+					<option value="0">HIDE</option>
+					<option value="1">SHOW</option>
+				</param>
+				<param name="comment_type_id" type="text" default=""
+					label="COMMENT_TYPE_ID" description="" />
+			</params>
+			<fields>
+			</fields>
+		</tab>
+	</tabs>
+	<install>
+		<queries>
+		</queries>
+	</install>
+	<uninstall>
+		<queries>
+		</queries>
+	</uninstall>
+	<database>
+	</database>
+</cbinstall>

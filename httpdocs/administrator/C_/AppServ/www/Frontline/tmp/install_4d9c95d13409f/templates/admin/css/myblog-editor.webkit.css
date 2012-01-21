@@ -1,0 +1,12 @@
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+	#container #top-col #title-container #title {
+		margin: 0;
+	}
+	#container #main-col {
+		margin-right: 15px;
+	}
+	#container #right-col .minitab {
+		height: 18px;
+	}
+}

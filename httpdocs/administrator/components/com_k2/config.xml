@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <params addpath="/administrator/components/com_k2/elements">
+    <!-- ######################### CSS Settings ######################### -->
+    <param menu="hide" name="" type="header" default="CSS Settings" label="" description="" />
+    <param menu="hide" name="enable_css" type="radio" default="1" label="K2 default CSS" description="This option will load the built-in CSS styling that comes with K2 by default. If you are using a Joomla! template which supports K2 styles, you may have to disable this option to apply your Joomla! template's CSS styling to the K2 component and modules.">
+      <option value="0">Disable</option>
+      <option value="1">Enable</option>
+    </param>
+    <!-- ######################### Image Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Image Settings" label="" description="" />
+    <param menu="hide" name="imagesQuality" type="text" default="100" size="4" label="Quality (%) used when processing images" description="" />
+    <param menu="hide" name="itemImageXS" type="text" default="100" size="4" label="Item XSmall image width (in px)" description="" />
+    <param menu="hide" name="itemImageS" type="text" default="200" size="4" label="Item Small image width (in px)" description="" />
+    <param menu="hide" name="itemImageM" type="text" default="400" size="4" label="Item Medium image width (in px)" description="" />
+    <param menu="hide" name="itemImageL" type="text" default="600" size="4" label="Item Large image width (in px)" description="" />
+    <param menu="hide" name="itemImageXL" type="text" default="900" size="4" label="Item XLarge image width (in px)" description="" />
+    <param menu="hide" name="itemImageGeneric" type="text" default="300" size="4" label="Item generic image width (in px). Used in user pages as well as tag, search &amp; date listings." description="" />
+    <param menu="hide" name="catImageWidth" type="text" default="100" size="4" label="Category image width (in px)" description="" />
+    <param menu="hide" name="catImageDefault" type="radio" default="1" label="Placeholder image for category if none exists" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userImageWidth" type="text" default="100" size="4" label="User image (avatar) width (in px)" description="" />
+    <param menu="hide" name="userImageDefault" type="radio" default="1" label="Placeholder image for user if none exists" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="commenterImgWidth" type="text" default="48" size="4" label="Commenter image (avatar) width (in px)" description="" />
+    <!-- ######################### Layout and view options for user (blog/profile) pages ######################### -->
+    <param menu="hide" name="" type="header" default="Layout &amp; view options for user (author) pages" label="" description="" />
+    <param menu="hide" name="userName" type="radio" default="1" label="Name" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userImage" type="radio" default="1" label="Image (avatar)" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userDescription" type="radio" default="1" label="Description" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userURL" type="radio" default="1" label="URL" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userEmail" type="radio" default="0" label="E-mail" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userFeed" type="radio" default="1" label="RSS feed icon" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="userItemCount" type="text" default="10" size="4" label="Item count on user pages" description="" />
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="userItemTitle" type="radio" default="1" label="Item title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemTitleLinked" type="radio" default="1" label="Link on item title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemDateCreated" type="radio" default="1" label="Item created date &amp; time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemImage" type="radio" default="1" label="Item Image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemIntroText" type="radio" default="1" label="Item Introtext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemCategory" type="radio" default="1" label="Item category" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemTags" type="radio" default="1" label="Item tags" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemCommentsAnchor" type="radio" default="1" label="Anchor link (with comments counter) to item's comment form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="userItemReadMore" type="radio" default="1" label="Item read more... link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="userItemK2Plugins" type="radio" default="1" label="Enable K2 plugins" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <!-- ######################### Layout and view options for Search, Tag and Date listings ######################### -->
+    <param menu="hide" name="" type="header" default="Layout &amp; view options for Search, Tag &amp; Date listings" label="" description="" />
+    <param menu="hide" name="genericItemCount" type="text" default="10" size="4" label="Item count for Search, Tag &amp; Date listings" description="" />
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="genericItemTitle" type="radio" default="1" label="Item title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemTitleLinked" type="radio" default="1" label="Link on item title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemDateCreated" type="radio" default="1" label="Item created date &amp; time" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemImage" type="radio" default="1" label="Item Image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemIntroText" type="radio" default="1" label="Item Introtext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemCategory" type="radio" default="1" label="Item category" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemReadMore" type="radio" default="1" label="Item read more... link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="genericItemExtraFields" type="radio" default="0" label="Item extra fields" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+	<param menu="hide" name="tagOrdering" type="list" default="" label="Item ordering (Only for tag listings)" description="">
+		<option value="">Default</option>
+		<option value="date">Oldest first</option>
+		<option value="rdate">Most recent first</option>
+		<option value="alpha">Title Alphabetical</option>
+		<option value="ralpha">Title Reverse-Alphabetical</option>
+		<option value="order">Ordering</option>
+		<option value="rorder">Ordering Reverse</option>
+		<option value="hits">Most popular</option>
+		<option value="best">Highest rated</option>
+		<option value="rand">Random ordering</option>
+	</param>
+    <!-- ######################### Comments ######################### -->
+    <param menu="hide" name="" type="header" default="Comments" label="" description="" />
+    <param menu="hide" name="comments" type="list" default="1" label="Global setting for comments" description="">
+      <option value="0">Disabled</option>
+      <option value="1">Enabled for everyone</option>
+      <option value="2">Enabled for registered users only</option>
+    </param>
+    <param menu="hide" name="commentsOrdering" type="list" default="DESC" label="Ordering" description="">
+      <option value="DESC">Newest first</option>
+      <option value="ASC">Oldest first</option>
+    </param>
+    <param menu="hide" name="commentsLimit" type="text" size="4" default="10" label="Comments limit" description="" />
+    <param menu="hide" name="commentsFormPosition" type="list" default="below" label="Comments form position" description="">
+      <option value="above">Above comments</option>
+      <option value="below">Below comments</option>
+    </param>
+    <param menu="hide" name="commentsPublishing" type="radio" default="1" label="Enable comment auto-publishing" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="gravatar" type="radio" default="1" label="Enable Gravatar.com avatar lookup for non-registered commenters" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="recaptcha" type="radio" default="0" label="Enable reCaptcha" description="Enable the reCaptcha comments anti-spam service.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="recaptcha_public_key" type="text" default="" label="reCaptcha public key" description="" />
+    <param menu="hide" name="recaptcha_private_key" type="password" default="" label="reCaptcha private key" description="" />
+    <param menu="hide" name="recaptcha_theme" type="list" default="clean" label="reCAPTCHA Theme" description="Select the reCAPTCHA theme">
+      <option value="red">red</option>
+      <option value="white">white</option>
+      <option value="blackglass">blackglass</option>
+	  <option value="clean">clean</option>
+	  <option value="custom">custom</option>
+    </param>
+    <param menu="hide" name="commentsFormNotes" type="radio" default="1" label="Enable comment form notes" description="Use this option to enable some notes or legal text regarding commenting right before the comments form.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>  
+    <param menu="hide" name="commentsFormNotesText" type="textarea" default="Make sure you enter the (*) required information where indicated.&lt;br /&gt;Basic HTML code is allowed." label="Comment form notes (HTML allowed)" description="" rows="8" cols="40" />
+    <!-- ######################### Social Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Social Settings" label="" description="" />
+    <param menu="hide" name="socialButtonCode" type="textarea" default="" label="Social button code" description="Paste HTML code here to integrate services like 'Add This' or 'Share This' in the item page." rows="8" cols="40" />
+    <param menu="hide" name="twitterUsername" type="text" default="" label="Your Twitter username" description="Enter your Twitter username (account) to enable the Tweet this link in the item page." />
+    <param menu="hide" name="tinyURL" type="radio" default="1" label="Enable TinyURL integration for Tweet this link" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <!-- ######################### RSS Feed Settings ######################### -->
+    <param menu="hide" name="" type="header" default="RSS Feed Settings" label="" description="" />
+    <param menu="hide" name="feedLimit" type="text" size="3" default="10" label="Feed limit" description="" />
+    <param menu="hide" name="feedItemImage" type="radio" default="1" label="Item image" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedImgSize" type="list" default="S" label="Image size for items" description="">
+      <option value="XS">XSmall</option>
+      <option value="S">Small</option>
+      <option value="M">Medium</option>
+      <option value="L">Large</option>
+      <option value="XL">XLarge</option>
+    </param>
+    <param menu="hide" name="feedItemIntroText" type="radio" default="1" label="Item Introtext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedTextWordLimit" type="text" size="4" default="" label="Item Introtext word limit" description="" />
+    <param menu="hide" name="feedItemFullText" type="radio" default="1" label="Item Fulltext" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedItemTags" type="radio" default="0" label="Item Tags" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedItemVideo" type="radio" default="0" label="Item Video" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedItemGallery" type="radio" default="0" label="Item Gallery" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="feedItemAttachments" type="radio" default="0" label="Item Attachments" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <!-- ######################### Content Cleanup Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Content Cleanup Settings" label="" description="" />
+    <param menu="hide" name="introTextCleanup" type="radio" default="0" label="Introtext HTML cleanup (tag strip)" description="Enable this to strip all HTML tags except the ones defined below inside the introtext.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="introTextCleanupExcludeTags" type="text" default="" label="Enter which HTML tags not to strip in introtext" description="Separate valid HTML tags by comma. E.g. 'img,br,p,a,b,span' etc." />
+    <param menu="hide" name="introTextCleanupTagAttr" type="text" default="" label="Enter which HTML tag attributes to strip in introtext" description="Separate valid HTML tag attributes by comma. E.g. 'width,height,border' etc." />
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="fullTextCleanup" type="radio" default="0" label="Fulltext HTML cleanup (tag strip)" description="Enable this to strip all HTML tags except the ones defined below inside the fulltext.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="fullTextCleanupExcludeTags" type="text" default="" label="Enter which HTML tags not to strip in fulltext" description="Separate valid HTML tags by comma. E.g. 'img,br,p,a,b,span' etc." />
+    <param menu="hide" name="fullTextCleanupTagAttr" type="text" default="" label="Enter which HTML tag attributes to strip in fulltext" description="Separate valid HTML tag attributes by comma. E.g. 'width,height,border' etc." />
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="xssFiltering" type="radio" default="0" label="XSS filtering on save" description="Enable this filter to prevent a malicious user to inject client-side script into your site. Disabled by default.">
+      <option value="0">Disabled</option>
+      <option value="1">Enabled</option>
+    </param>
+    <!-- ######################### Extra Fields Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Extra Field Settings" label="" description="" />
+    <param menu="hide" name="linkPopupWidth" type="text" size="4" default="900" label="Popup width for links" description="Used when creating links that open up in lightbox or classic Javascript popups." />
+    <param menu="hide" name="linkPopupHeight" type="text" size="4" default="600" label="Popup height for links" description="Used when creating links that open up in lightbox or classic Javascript popups." />
+    <!-- ######################### Frontend Editing ######################### -->
+    <param menu="hide" name="" type="header" default="Frontend Editing" label="" description="" />
+    <param menu="hide" name="frontendEditing" type="radio" default="1" label="Enable frontend editing (disabled always if Joom!Fish is installed and enabled)" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="@spacer" type="spacer" default="" label="" description="" />
+    <param menu="hide" name="showImageTab" type="radio" default="1" label="Image tab on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="showImageGalleryTab" type="radio" default="1" label="Image gallery tab on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="showVideoTab" type="radio" default="1" label="Video tab on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="showExtraFieldsTab" type="radio" default="1" label="Extra fields tab on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="showAttachmentsTab" type="radio" default="1" label="Attachments tab on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="showK2Plugins" type="radio" default="1" label="K2 plugin fields on edit form" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param menu="hide" name="sideBarDisplayFrontend" type="radio" default="0" label="Default state for the item form sidebar" description="">
+      <option value="0">Hidden</option>
+      <option value="1">Shown</option>
+    </param>
+    <!-- ######################### Advanced Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Advanced Settings" label="" description="" />
+    <param menu="hide" name="mergeEditors" type="radio" default="1" label="Use one editor window for introtext &amp; fulltext" description="">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="sideBarDisplay" type="radio" default="1" label="Default state for the item form sidebar" description="">
+      <option value="0">Hidden</option>
+      <option value="1">Shown</option>
+    </param>
+    <param menu="hide" name="attachmentsFolder" type="text" default="" label="Change root attachments folder" description="Enter the relative path to the folder for storing attachments. Leave this blank to use the default K2 attachments folder (media/k2/attachments). If you change this setting at any point, remember to move your files from the old folder to the newly created one." />
+    <param menu="hide" name="hideImportButton" type="radio" default="0" label="Hide Import buttons" description="Hide 'Import Joomla! content' and 'Import Joomla! users' buttons">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="taggingSystem" type="radio" default="1" label="Tagging system" description="">
+      <option value="0">Selection-based tagging</option>
+      <option value="1">Free tagging (with auto complete)</option>
+    </param>
+    <param menu="hide" name="lockTags" type="radio" default="0" label="Lock tags" description="Switch to selection based tagging for managers and below preventing them from creating new tags.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="googleSearch" type="radio" default="0" label="Google search integration" description="Set this to yes if you want to integrate Google search on your site. Note that this will disable the K2 original search function.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="googleSearchContainer" type="text" default="k2Container" label="Container ID to render the Google search" description="Enter the id of the element you wish to render in the Google search results. Note that you have to enable this on the component params." />
+    <param menu="hide" name="K2UserProfile" type="radio" default="1" label="Enable K2 User Profile" description="Extend the user profile with the K2 template">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="K2UserGroup" type="sql" default="" description="Select the default K2 user group for new registrations" label="Select a K2 User Group" query="SELECT id AS value, name AS K2UserGroup FROM #__k2_user_groups" />
+    <param menu="hide" name="redirect" type="menuitem" default="" label="Profile edit redirect" description="Select a menu item to redirect after user profile edit. Please note that the plugin must be the last one in user group or it will break the execution of other user plugins." />
+    <param menu="hide" name="adminSearch" type="list" default="simple" label="Administration item search" description="">
+      <option value="simple">Simple (Title only)</option>
+      <option value="full">Full (Everything)</option>
+    </param>
+    <!-- ######################### Performance Settings ######################### -->
+    <param menu="hide" name="" type="header" default="Performance Settings" label="" description="" />
+    <param menu="hide" name="showItemsCounterAdmin" type="radio" default="1" label="Item counter next to the category title in the category manager" description="Disabling this will reduce the number of queries in the backend and overall improve performance for sites with thousands of items.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="showChildCatItems" type="radio" default="1" label="Display items from both parent and children categories when filtering items by category" description="Disabling this will reduce the number of queries in the backend and overall improve performance for sites with thousands of items.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <param menu="hide" name="disableCompactOrdering" type="radio" default="0" label="Disable ordering compacting" description="Setting this to yes will reduce the number of queries in the backend and overall improve performance for sites with thousands of items.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+    <!-- ######################### SEO Settings ######################### -->
+    <param menu="hide" name="" type="header" default="SEO Settings" label="" description="" />
+		<param menu="hide" name="SEFReplacements" type="textarea" default="Å |S, Å’|O, Å½|Z, Å¡|s, Å“|oe, Å¾|z, Å¸|Y, Â¥|Y, Âµ|u, Ã€|A, Ã�|A, Ã‚|A, Ãƒ|A, Ã„|A, Ã…|A, Ã†|A, Ã‡|C, Ãˆ|E, Ã‰|E, ÃŠ|E, Ã‹|E, ÃŒ|I, Ã�|I, ÃŽ|I, Ã�|I, Ã�|D, Ã‘|N, Ã’|O, Ã“|O, Ã”|O, Ã•|O, Ã–|O, Ã˜|O, Ã™|U, Ãš|U, Ã›|U, Ãœ|U, Ã�|Y, ÃŸ|s, Ã |a, Ã¡|a, Ã¢|a, Ã£|a, Ã¤|a, Ã¥|a, Ã¦|a, Ã§|c, Ã¨|e, Ã©|e, Ãª|e, Ã«|e, Ã¬|i, Ã­|i, Ã®|i, Ã¯|i, Ã°|o, Ã±|n, Ã²|o, Ã³|o, Ã´|o, Ãµ|o, Ã¶|o, Ã¸|o, Ã¹|u, Ãº|u, Ã»|u, Ã¼|u, Ã½|y, Ã¿|y, ÃŸ|ss" label="SEF URL character replacements" description="" rows="8" cols="40" />
+		<param menu="hide" name="metaDescLimit" type="text" size="4" default="150" label="Character limit for autogenerated meta description tag in items" description="This option applies to items only when there is no meta description tag set by the author." />
+        <param menu="hide" name="sh404SefLabelCat" type="text" default="" label="sh404SEF URL prefix for categories" description="" />
+        <param menu="hide" name="sh404SefLabelUser" type="text" default="blog" label="sh404SEF URL prefix for users/authors" description="" />
+        <param menu="hide" name="sh404SefLabelItem" type="list" default="2" label="sh404SEF URL category prefix for items" description="">
+          <option value="0">No categories</option>
+          <option value="1">Only the last category</option>
+          <option value="2">All categories</option>
+        </param>
+  </params>
+</config>

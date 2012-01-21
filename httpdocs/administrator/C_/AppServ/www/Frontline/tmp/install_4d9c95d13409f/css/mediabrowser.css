@@ -1,0 +1,80 @@
+/**
+ * Stylesheet for the mediabrowser pane.
+ **/
+
+#myblogMediaBrowser td div.imgBrowserItem {
+	cursor: pointer;
+	width: 100%;
+	margin: 0 5px 0 0;
+}
+
+#myblogMediaBrowser td div.imgBrowserItem table {
+	width: 47px;
+	height: 47px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #EEEEEE;
+}
+
+#myblogMediaBrowser td div.imgBrowserItem table td{
+	text-align: center;
+	vertical-align: middle;
+}
+
+#myblogMediaBrowser td div.imgBrowserCaption {
+	width: 47px;
+	overflow: hidden;
+	margin: 0px 0px 10px 0px;
+	text-align: center;
+	font-size: 9px;
+}
+
+table.myAdvanceMediaBrowser{
+	padding: 5px;
+}
+
+table.myAdvanceMediaBrowser #myAdvanceMediaBrowseUploadPath{
+	width: 300px;
+}
+
+td.myAdvanceMediaBrowserList {
+	border: 1px solid rgb(127, 157, 185);
+	padding: 4px;
+	overflow: auto	;
+	background-color: rgb(255, 255, 255);
+	width: 290px;
+	display: block;
+	height: 150px;
+}
+
+td.myAdvanceMediaThumbnail {
+	/*text-align: center;*/
+	border: 1px solid rgb(127, 157, 185);
+	vertical-align: top;
+	/*width: 130px;*/
+}
+
+.myAdvanceMediaPath{
+	border-top:1px solid #7F9DB9;
+	border-bottom:1px solid #7F9DB9;
+	padding:3px;
+}
+
+/**
+#myblogMediaBrowser div.mediaItem{
+	padding: 5px;
+	border:1px solid #EEEEEE;
+	float:left;
+	height:35px;
+	width:33px;
+	margin-bottom:5px;
+	text-align: center;
+	margin:5px;
+	cursor: pointer;
+}
+
+#myblogMediaBrowser span{
+	text-align: center;
+	font-size: 8px;
+}
+**/

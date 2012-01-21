@@ -1,0 +1,32 @@
+<!-- Blog Header -->
+<div id="myBlog-head">
+    <h3><?php echo $title; ?></h3>
+    <div class="desc"><?php echo $summary; ?></div>
+
+    <!-- Blog Toolbar Navigation -->
+    <ul id="myBlog-toolbar">
+        <li class="toolbarHome<?php echo $active['home']; ?>" id="toolbarHome">
+			<a href="<?php echo $toolbar['homeLink']; ?>"><span><?php echo JText::_('TOOLBAR MENU HOME');?></span></a>
+		</li>
+        <li class="toolbarTags<?php echo $active['category']; ?>" id="toolbarTags" >
+			<a href="<?php echo $toolbar['categoryLink']; ?>"><span><?php echo JText::_('TOOLBAR MENU TAGS');?></span></a>
+		</li>
+        <li class="toolbarSearch<?php echo $active['search']; ?>" id="toolbarSearch" >
+			<a href="<?php echo $toolbar['searchLink']; ?>"><span><?php echo JText::_('TOOLBAR MENU SEARCH');?></span></a>
+		</li>
+        <?php if ( $show['feed'] ) { ?>
+        <li class="toolbarFeed"><a href="<?php echo $toolbar['rssFeedLink']; ?>"><span><?php echo JText::_('TOOLBAR MENU FEED');?></span></a></li>
+        <?php } ?>		
+		
+		<?php if(myGetUserCanPost()) { ?>
+        <li class="toolbarBlogger<?php echo $active['account']; ?>"	id="toolbarBloggers">
+			<a href="<?php echo $toolbar['accountLink']; ?>"><span><?php echo JText::_('TOOLBAR MENU MY ACCOUNT');?></span></a>
+		</li>
+		
+		<li id="toolbarWrite" class="toolbarWrite">
+			<a href="javascript:void(0);" onclick="myAzrulShowWindow('<?php echo rtrim( JURI::root() , '/' );?>/index.php?option=com_myblog&tmpl=component&task=write&no_html=1&id=0');"><span><?php echo JText::_('ADMIN MENU NEW ENTRY');?></span></a>
+		</li>
+        <?php } ?>
+    </ul>
+	<div style="clear: left;"></div>		
+</div>

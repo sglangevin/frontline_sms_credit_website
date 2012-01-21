@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+  <name>K2 Comments</name>
+  <author>JoomlaWorks</author>
+  <creationDate>September 23rd, 2010</creationDate>
+  <copyright>Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.</copyright>
+  <authorEmail>contact@joomlaworks.gr</authorEmail>
+  <authorUrl>www.joomlaworks.gr</authorUrl>
+  <version>2.4.1</version>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <description>K2 Comments</description>
+  <files>
+    <filename module="mod_k2_comments">mod_k2_comments.php</filename>
+    <filename>helper.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+  </files>
+  <params addpath="/administrator/components/com_k2/elements/">
+    <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+    <param name="module_usage" type="list" default="" label="Select module functionality" description="">
+      <option value="0">Latest Comments</option>
+      <option value="1">Top Commenters</option>
+    </param>
+    <!-- Latest Comments -->
+    <param name="" type="header" default="Latest Comments" label="" description="" />
+    <param name="catfilter" type="radio" default="0" label="Category filter">
+      <option value="0">All</option>
+      <option value="1">Select</option>
+    </param>
+    <param name="category_id" type="categoriesmultiple" default="" label="Filter comments by selected categories" description="Select one ore more categories from which you want to filter their comments. Select none to fetch comments from all categories."/>
+    <param name="comments_limit" type="text" size="4" default="5" label="Comments List limit" description="" />
+		<param name="comments_word_limit" type="text" size="4" default="10" label="Comment word limit" description="If word limit is enabled, any html tags will be stripped off to prevent the page markup from breaking." />
+    <param name="commenterName" type="radio" default="1" label="Commenter name" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commentAvatar" type="radio" default="1" label="Commenter avatar" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commentAvatarWidthSelect" type="list" default="custom" label="Commenter avatar width" description="">
+      <option value="inherit">Inherit from component parameters</option>
+      <option value="custom">Use custom width</option>
+    </param>
+    <param name="commentAvatarWidth" type="text" default="50" size="4" label="Custom width for commenter avatar (in px)" description="" />
+    <param name="commentDate" type="radio" default="1" label="Comment date" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commentDateFormat" type="list" default="absolute" label="Comment date format" description="">
+      <option value="absolute">Absolute (e.g. posted 12.25 - Thu, July 30th)</option>
+      <option value="relative">Relative (e.g. posted 2 hours ago)</option>
+    </param>
+    <param name="commentLink" type="radio" default="1" label="Comment link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemTitle" type="radio" default="1" label="Item title" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="itemCategory" type="radio" default="1" label="Item category" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+	<param name="feed" type="radio" default="1" label="Feed link" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <!-- Top Commenters -->
+    <param name="" type="header" default="Top Commenters" label="" description="" />
+    <param name="commenters_limit" type="text" size="4" default="5" label="Commenters list limit" description="" />
+    <param name="commenterAvatar" type="radio" default="1" label="Commenter avatar" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commenterAvatarWidthSelect" type="list" default="custom" label="Commenter avatar width" description="">
+      <option value="inherit">Inherit from component parameters</option>
+      <option value="custom">Use custom width</option>
+    </param>
+    <param name="commenterAvatarWidth" type="text" default="50" size="4" label="Custom width for commenter avatar (in px)" description="" />
+    <param name="commenterLink" type="radio" default="1" label="Commenter link to user page" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commenterCommentsCounter" type="radio" default="1" label="Comments counter" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+    <param name="commenterLatestComment" type="radio" default="1" label="Latest comment from each commenter" description="">
+      <option value="0">Hide</option>
+      <option value="1">Show</option>
+    </param>
+  </params>
+  <params group="advanced">
+    <param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+      <option value="1">Use global</option>
+      <option value="0">No caching</option>
+    </param>
+    <param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+  </params>
+</install>

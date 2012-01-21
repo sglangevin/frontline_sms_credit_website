@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Azrul Videobot</name>
+	<author>Azrul</author>
+	<creationDate>Oct 2007</creationDate>
+	<copyright>(C) 2006 - 2007 Azrul Studio</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorUrl>www.azrul.com</authorUrl>
+	<version>0.1</version>
+	<description><![CDATA[
+	<h3>Embed Video players into Myblog.</h3>
+<ol>
+  <li>Set preferred width &amp; height in parameters settings.</li>
+  <li> To insert a YouTube video [youtube:http://www.youtube.com/watch?v=xxxxxxx]</li>
+  <li>To insert a GoogleVideo [google:http://video.google.com/videoplay?docid=xxxxxxxxxxx]</li>
+</ol>
+<p>SUPPORT<br />
+Product Wiki</p>
+<p>Here&rsquo;s where you can find all product documentation's, frequently asked questions (FAQ&rsquo;s) and other product details. This is the best place for quick information on anything related to our products.<br />
+  E-mail</p>
+<p>This is the best way to contact us and obtain support. You can email us at support@azrul.com This email address is being protected from spam bots, you need Javascript enabled to view it . We will try our best to reply within 1 business day. Please write</p>
+<p> * descriptive issues in the subject area<br />
+  * include the address to your website and as much additional details as possible<br />
+</p>
+<p>Forum</p>
+<p>If you cannot find what you&rsquo;re looking for in the Wiki, you can post your questions here. The community will do the best to help you. Keep in mind this forum is community driven and is NOT the best way to obtain fast response from us. Please write to us at the email above.</p>
+<br/>
+	]]></description>
+	<files>
+		<filename plugin="azvideobot">azvideobot.php</filename>
+	</files>
+	<params>
+		<param name="height" type="text" size="20" default="350px" label="Height" description="Preferred Height." />
+		<param name="width" type="text" size="20" default="425px" label="Width" description="Preferred Width." />
+	</params>
+</install>

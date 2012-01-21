@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+	<name>FenerskSoci</name>
+	<author>FenerSK</author>
+	<creationDate>February 2010</creationDate>
+	<copyright>(C) 2010 fenersk.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>dev@fenersk.com</authorEmail>
+	<authorUrl>http://www.fenersk.com</authorUrl>
+	<version>1.0.1</version>
+	<description>FENERSKSOCI_INFO</description>
+	
+	<files>
+		<filename plugin="fenersksoci">fenersksoci.php</filename>
+		<filename>fenersksoci/index.html</filename>
+		<filename>fenersksoci/styles.css</filename>
+		
+		<filename>fenersksoci/16x16/index.html</filename>
+		<filename>fenersksoci/16x16/live.png</filename>
+		<filename>fenersksoci/16x16/newsvine.png</filename>
+		<filename>fenersksoci/16x16/misterwong.png</filename>
+		<filename>fenersksoci/16x16/delicious.png</filename>
+		<filename>fenersksoci/16x16/myspace.png</filename>
+		<filename>fenersksoci/16x16/digg.png</filename>
+		<filename>fenersksoci/16x16/google.png</filename>
+		<filename>fenersksoci/16x16/yahoo.png</filename>
+		<filename>fenersksoci/16x16/reddit.png</filename>
+		<filename>fenersksoci/16x16/facebook.png</filename>
+		<filename>fenersksoci/16x16/twitter.png</filename>
+		<filename>fenersksoci/16x16/google-buzz.png</filename>
+		
+		<filename>fenersksoci/24x24/index.html</filename>
+		<filename>fenersksoci/24x24/live.png</filename>
+		<filename>fenersksoci/24x24/newsvine.png</filename>
+		<filename>fenersksoci/24x24/misterwong.png</filename>
+		<filename>fenersksoci/24x24/delicious.png</filename>
+		<filename>fenersksoci/24x24/myspace.png</filename>
+		<filename>fenersksoci/24x24/digg.png</filename>
+		<filename>fenersksoci/24x24/google.png</filename>
+		<filename>fenersksoci/24x24/yahoo.png</filename>
+		<filename>fenersksoci/24x24/reddit.png</filename>
+		<filename>fenersksoci/24x24/facebook.png</filename>
+		<filename>fenersksoci/24x24/twitter.png</filename>
+		<filename>fenersksoci/24x24/google-buzz.png</filename>
+	</files>
+	
+		<languages folder="language">
+				<language tag="en-GB">en-GB/en-GB.plg_content_fenersksoci.ini</language>
+		</languages>
+		
+	<params>
+    <param name="frontpage" type="radio" default="0" label="FSOCI_FRONTPAGE" description="FSOCI_FRONTPAGE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="section" type="radio" default="0" label="FSOCI_SECTION" description="FSOCI_SECTION_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="category" type="radio" default="0" label="FSOCI_CATEGORY" description="FSOCI_CATEGORY_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="sectionIDList" type="text" size="50" default="" label="FSOCI_SECTION_IDS" description="FSOCI_SECTION_IDS_DESC" />
+    <param name="categoryIDList" type="text" size="50" default="" label="FSOCI_CATEGORY_IDS" description="FSOCI_CATEGORY_IDS_DESC" />
+    <param name="articleIDList" type="text" size="50" default="" label="FSOCI_ARTICLE_IDS" description="FSOCI_ARTICLE_IDS_DESC" />
+    <param name="placement" type="list" default="afterDisplayContent" label="FSOCI_LOCATION" description="FSOCI_LOCATION_DESC">
+           <option value="beforeDisplayContent">FSOCI_BEFORE_CONTENT</option>
+           <option value="afterDisplayContent">FSOCI_AFTER_CONTENT</option>
+    </param>
+	<param name="PluginWidth" type="text" size="6" default="468px" label="FSOCI_PLUDIN_WIDTH" description="FSOCI_PLUDIN_WIDTH_DESC" />	
+	<param name="TextPaylas" type="text" size="50" default="" label="FSOCI_TEXT" description="FSOCI_TEXT_DESC" />
+	<param name="TextPaylasColor" type="text" size="6" default="00008b" label="FSOCI_TEXT_COLOR" description="FSOCI_TEXT_COLOR_DESC" />
+	<param name="StyleBorder" type="text" size="6" default="1px" label="FSOCI_BORDER" description="px" />
+	<param name="StyleBorderColor" type="text" size="6" default="dcdcdc" label="FSOCI_BORDER_COLOR" description="FSOCI_BORDER_COLOR_DESC" />
+	<param name="BackgroundColor" type="text" size="6" default="e0ffff" label="FSOCI_BACKGROUND_COLOR" description="FSOCI_BACKGROUND_COLOR_DESC" />
+    <param name="ImageSize" type="list" default="24x24" label="Image Size" description="FSOCI_IMAGE_DESC">
+           <option value="16x16">16x16</option>
+           <option value="24x24">24x24</option>
+    </param>	
+    <param name="@spacer" type="spacer" default="FSOCI_OPTIONS" label="" description="FSOCI_OPTIONS_DESC" />
+    <param name="useFenerskSoci" type="radio" default="1" label="FSOCI_USE" description="FSOCI_USE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param> 
+	<param name="useLive" type="radio" default="1" label="FSOCI_USE_LIVE" description="FSOCI_USE_LIVE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>	
+	<param name="useNewsvine" type="radio" default="1" label="FSOCI_USE_NEWSVINE" description="FSOCI_USE_NEWSVINE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>	
+	<param name="useMisterwong" type="radio" default="1" label="FSOCI_USE_MISTERWONG" description="FSOCI_USE_MISTERWONG_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>	
+	<param name="useDelicios" type="radio" default="1" label="FSOCI_USE_DELICIOS" description="FSOCI_USE_DELICIOS_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useMySpace" type="radio" default="1" label="FSOCI_USE_MYSPACE" description="FSOCI_USE_MYSPACE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useDigg" type="radio" default="1" label="FSOCI_USE_DIGG" description="FSOCI_USE_DIGG_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useGoogle" type="radio" default="1" label="FSOCI_USE_GOOGLE" description="FSOCI_USE_GOOGLE_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useYahoo" type="radio" default="1" label="FSOCI_USE_YAHOO" description="FSOCI_USE_YAHOO_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useReddit" type="radio" default="1" label="FSOCI_USE_REDDIT" description="FSOCI_USE_REDDIT_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useFacebook" type="radio" default="1" label="FSOCI_USE_FACEBOOK" description="FSOCI_USE_FACEBOOK_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useTwitter" type="radio" default="1" label="FSOCI_USE_TWITTER" description="FSOCI_USE_TWITTER_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>
+    <param name="useGoogleBuzz" type="radio" default="1" label="FSOCI_USE_GOODLE_BUZZ" description="FSOCI_USE_GOODLE_BUZZ_DESC">
+           <option value="1">Yes</option>
+           <option value="0">No</option>
+    </param>		
+  </params>
+</install>

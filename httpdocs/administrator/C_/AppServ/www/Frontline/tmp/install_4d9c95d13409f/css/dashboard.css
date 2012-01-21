@@ -1,0 +1,354 @@
+.myInfo {
+	font-style: italic;
+	margin: 2px 0 5px;
+	color: #7b878f;
+}
+
+.mceEditor {
+	border:0px;
+}
+
+.mceToolbarTop, .mceStatusbarBottom {
+	background:#FFFFFF;
+}
+
+
+
+a.mceButtonNormal img, a.mceButtonSelected img {
+	border:1px solid #FFFFFF !important;
+}
+input#title {
+	background: #DDDDDD;
+	border: 0px;
+	width: 80%;
+	font-size: 18px;
+}
+
+.mceSelectList {
+	display:inline;
+	font-family:'MS Sans Serif',sans-serif,Verdana,Arial;
+	font-weight:normal;
+	margin-top:3px;
+	padding:0pt;
+	height:20px;
+	border:none;
+}
+
+#sidebar1 dt.h3open {
+}
+#sidebar1 dt.h3close {
+}
+#sidebar1 dt {
+	font-size:12px;
+	margin-bottom:6px;
+	margin-top:6px;
+	border-bottom: 1px solid #aca899;
+	cursor: pointer;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+#sidebar1 dd {
+	margin-left:4px;
+}
+#sidebar1 p, #sidebar1 span {
+	font-size:11px;
+	margin-left:4px;
+	margin-bottom:6px;
+	margin-top:6px;
+	padding:0px;
+}
+#sidebar1 div {
+	font-size:11px;
+}
+
+div#saveButton {
+	background-repeat:no-repeat;
+	background-image:url(images/Save_32x32.png);
+	background-position:center middle;
+	display:block;
+	width:34;
+	height:34;
+}
+.greyTitle{
+color:#666666;
+}
+
+#fulltext hr#azrulSystemReadmore{
+	border:1px dashed red;
+}
+
+#fulltext {
+	border:none;
+}
+
+#sidebar1 input.text, select.text{
+	border-color:#7C7C7C rgb(195, 195, 195) rgb(221, 221, 221);
+	border-style:solid;
+	border-width:1px;
+	padding:2px 0pt;
+	background:#FFFFFF url(../images/fieldbg.gif) repeat-x scroll center top;
+}
+
+#sidebar1 select.text{
+	width: 85%;
+}
+
+div.error {
+background-color:#FBE6F2;
+color:#FF0000;
+padding:2px 2px 2px 2px;
+}
+
+div.save-success
+{
+	background-color: #EEE;
+	color: green;
+	padding:2px 2px 2px 2px;
+}
+
+.mceStatusbarPathText{
+color:#666666;
+}
+
+/** Some loading animations **/
+div.white-loading {
+	background:url(../images/white_loader.gif) no-repeat left ;
+	text-indent:20px;
+}
+
+/** minitab **/
+.bold{
+	font-weight:bold;
+}
+
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #E7E3E5;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+fieldset { -moz-border-radius: 5px; border-radius: px; }
+.twoColFixRtHdr,
+.twoColFixRtHdr #formEdit {
+	background: #E4E9EC;
+}
+.twoColFixRtHdr #container {
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 0px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	background: #E4E9EC;
+}
+.twoColFixRtHdr #header {
+	background: #DDDDDD;
+	padding: 4px 10px 4px 20px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+}
+.twoColFixRtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.twoColFixRtHdr #sidebar1 {
+	float: right; /* since this element is floated, a width must be given */
+	width: 200px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #E3EFFF; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 10px;
+}
+
+.twoColFixRtHdr #footer {
+	padding: 8px 10px 0 20px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background: #E7E3E5;
+	font-size: 0.8em;
+}
+.twoColFixRtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+#mceEditorIframe {
+	padding: 0 10px;
+}
+
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+#apDiv1 {
+	position: absolute;
+	left: 50px;
+	top: 0px;
+	width: 438px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	z-index: 1000;
+	visibility: visible;
+}
+
+#tagList fieldset span {
+	display: block;
+	float: left;
+	margin: 0 5px 0 0;
+	line-height: 13px;
+}
+
+#tagList fieldset span a, #selectedTagFieldset span a {
+	background: transparent url(../templates/admin/images/remove.gif) no-repeat scroll -10px 0pt;
+	cursor:pointer;
+	display:block;
+	float:left;
+	height:10px;
+	margin:3px 3px 2px 0px;
+	text-indent:-9999px;
+	width:10px;
+	outline-style: none;
+}
+
+#tagList fieldset span a:hover, #selectedTagFieldset span a:hover {
+	background: transparent url(../templates/admin/images/remove.gif) no-repeat scroll 0 0;
+	text-indent: -9999px;
+}
+
+#selectedTagFieldset {
+	overflow: auto;
+	height: 100px;
+	border: 1px dashed;
+	padding: 4px;
+}
+
+#fullTagList {
+	overflow: auto;
+	height: 100px;
+	border: 1px dashed;
+	padding: 4px;
+}
+
+#fullTagList span, #selectedTagFieldset span {
+	display: block;
+	float: left;
+	margin-left: 6px;
+	margin-bottom: 6px;
+	padding: 3px;
+	background-color: #EEEEEE;
+	border: 1px solid;
+	cursor:pointer;
+}
+
+#selectedTagFieldset span {
+	color: #FFF;
+	background-color: #aeaeae;
+	border: 1px solid #ff9933;
+}
+#fullTagList span a {
+	background: transparent url(../templates/admin/images/add.gif) no-repeat scroll -10px 0pt;
+	cursor:pointer;
+	display:block;
+	float:left;
+	height:10px;
+	margin:3px 3px 2px 0px;
+	text-indent:-9999px;
+	width:10px;
+	outline-style: none;
+}
+
+#fullTagList span a:hover {
+	background: transparent url(../templates/admin/images/add.gif) no-repeat scroll 0 0;
+	text-indent: -9999px;
+}
+.azDialog {
+	/*border-top: solid 1px #f5f5f5;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	border-left: solid 1px #f5f5f5;*/
+	border: solid 7px #666;
+	background: #fff;
+	width: 586px;
+	font-size: 11px;
+	text-align: left;
+}
+.azDialogTitle {
+	padding: 5px;
+	background: #dde2e9;
+	font-weight: 700;
+	color: #666;
+	font-size: 12px;
+}
+.azDialogIconInfo {
+	width: 64px;
+	background: transparent url(../images/dialog/icon_info.jpg) no-repeat top left;
+	height: 64px;
+	float: left;
+	margin: 20px 0 0 20px !important;
+	margin: 20px 0 0 10px;
+}
+.azDialogIconWarning {
+	width: 64px;
+	background: transparent url(../images/dialog/icon_warning.jpg) no-repeat top left;
+	height: 64px;
+	float: left;
+	margin: 20px 0 0 20px !important;
+	margin: 20px 0 0 10px;
+}
+.azDialogIconConfirm {
+	width: 64px;
+	background: transparent url(../images/dialog/icon_confirm.jpg) no-repeat top left;
+	height: 64px;
+	float: left;
+	margin: 20px 0 0 20px !important;
+	margin: 20px 0 0 10px;
+}
+.azDialogText {
+	margin: 2px 5px 0 5px;
+	color: #666;
+}
+.azDialogButton {
+	text-align: center;
+	margin: 10px 0;
+}
+.azDialogButton .button {
+	border-top: solid 1px #f5f5f5;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	border-left: solid 1px #f5f5f5;
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 700;
+	color: #666;
+	background: #f4f4f4;
+	/*padding: 4px 15px;*/
+	width: 80px;
+	height: 25px;
+	margin: 0 2px 0 0 !important;
+	margin: 0 5px 0 0;
+
+}
+.azDialogButton .button:hover {
+	border-top: solid 1px #ccc;
+	border-right: solid 1px #f5f5f5;
+	border-bottom: solid 1px #f5f5f5;
+	border-left: solid 1px #ccc;
+	cursor: pointer;
+}
+
+#metaOption fieldset label {
+	float: left;
+	width: 50px;
+	clear: both;
+}
+
+#metaOption #metakey, #metaOption #metadesc {
+	height: 38px;
+	width: 235px;
+	font-size: 11px;
+	margin-bottom: 5px;
+}

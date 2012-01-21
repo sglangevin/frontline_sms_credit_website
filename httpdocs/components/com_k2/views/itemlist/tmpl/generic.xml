@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Tag">
+		<message><![CDATA[Create a menu item linking to a tag in K2.]]></message>
+	</layout>
+	<state>
+		<name>Tag</name>
+		<description>Create a menu item linking to a tag in K2.</description>
+		<params addpath="/administrator/components/com_k2/elements">
+			<param name="categoriesFilter" type="category" default="" label="Filter categories" description=""/>
+			<param name="tagOrdering" type="list" default="" label="Item ordering" description="">
+				<option value="">Default</option>
+				<option value="date">Oldest first</option>
+				<option value="rdate">Most recent first</option>
+				<option value="alpha">Title Alphabetical</option>
+				<option value="ralpha">Title Reverse-Alphabetical</option>
+				<option value="order">Ordering</option>
+				<option value="rorder">Ordering Reverse</option>
+				<option value="hits">Most popular</option>
+				<option value="best">Highest rated</option>
+				<option value="rand">Random ordering</option>
+			</param>
+			<param name="feedLink" type="radio" default="1" label="RSS feed link" description="">
+				<option value="0">Disable</option>
+				<option value="1">Enable</option>
+			</param>
+		</params>
+		<url addpath="/administrator/components/com_k2/elements" >
+			<param name="tag" type="tag" default="" label="Select tag" description="" />
+			<param name="task" type="hidden" default="tag" />
+		</url>
+	</state>
+</metadata>

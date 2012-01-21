@@ -1,0 +1,54 @@
+/**
+ * INSTALL
+ *
+ * @package     NoNumber!-installer
+ * @version     2.3.1
+ *
+ * @author      Peter van Westen <peter@nonumber.nl>
+ * @link        http://www.nonumber.nl
+ * @copyright   Copyright © 2011 NoNumber! All Rights Reserved
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+
+INSTALLING / UPDATING
+=====================
+This package will install all the extensions in the package.
+Install this package by use of the standard installer in your Joomla! administrator.
+
+If you already have this extension installed, this package will automatically update it.
+So you do not need to uninstall the extension(s) first.
+
+
+INSTALLING / UPDATING MANUALLY
+==============================
+This extension uses the NoNumber! Elements plugin for various thing.
+You may already have this installed. So please first check if the version you have
+is older than the version included in this package.
+If it is not installed or is older:
+1) Place the contents of the 'files/elements' folder in the root of your website.
+
+2) Place the contents of the 'files/forced' folder in the root of your website.
+
+For first INSTALLATION:
+3) Place the contents of the 'files/not_forced' folder in the root of your website (if it exists).
+4) Run the manual_query.sql (if present in package) in your database.
+
+For UPDATING:
+3) You may also copy the contents of the 'files/not_forced' folder to the root of your website (if it exists),
+  but these may contain files you have changed to fit your needs (like stylesheets). So it is up to you.
+4) Run the manual_query_update.sql (if present in package) in your database.
+
+NOTE: The sql queries assume you are using 'jos_' as the prefix.
+      Please change that if you are using another prefix.
+
+
+TROUBLESHOOTING
+===============
+You might get errors during install about not being able to write files or create folders.
+Please make sure your folders have the right read/write permissions.
+You can check this in your Joomla! administrator menu:
+Help >> System Info >> Directory Permissions
+
+If you still get errors, please let me know:
+www.nonumber.nl/forum

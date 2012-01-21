@@ -1,0 +1,130 @@
+<!-- start MyBlog wrapper -->
+<div id="myblog">
+    <div class="componentheading"><?php echo JText::_('ADMIN MY ENTRIES');?></div>
+	<!-- start tab navigation -->
+	<div id="myblogTabNav">
+		<div id="azheadnav">
+			<span><a id="current" href="<?php echo JRoute::_('index.php?option=com_myblog&task=adminhome&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN MY ENTRIES');?></a></span>
+			<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerpref&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU PREFERENCES');?></a></span>
+			<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerstats&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU STATS');?></a></span>
+			<?php
+			global $_MY_CONFIG;
+			if($_MY_CONFIG->get('useComment'))
+			{
+			?>
+			<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=showcomments&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN COMMENTS');?></a></span>
+			<?php
+			}
+			?>
+			<?php
+			if($postingRights)
+			{
+				$link	= rtrim( JURI::root() , '/' ) . '/index.php?option=com_myblog&tmpl=component&task=write&no_html=1&id=0';
+			?>
+			<span class="write"><a href="javascript:void(0);" onclick="myAzrulShowWindow('<?php echo $link;?>');" href="javascript:void(0);"><?php echo JText::_('ADMIN MENU NEW ENTRY');?></a></span>
+			<?php
+			}
+			?>
+		</div>
+	</div>
+	<!-- end tab navigation -->
+	<!-- start New Entry button -->
+	<div id="myblogNewEntryButton" class="myBlogTabBorder"></div>
+	<!-- end New Entry button -->
+	<div id="savestatus" style="background: #006699 none repeat scroll 0 0;color: #FFF; font-weight:700;padding: 5px;display: none;" ></div>
+	<!-- start show all entries -->
+	<div id="myblogEntryList">
+	<table border="0" cellpadding="4" cellspacing="0" width="100%" id="blog-entries">
+		<tbody>
+		<tr class="sectiontableheader">
+			<td>&nbsp;</td>
+			<td><?php echo JText::_('BLOG ADMIN LIST TITLE HEADER');?></td>
+			<td><?php echo JText::_('BLOG ADMIN LIST DATE HEADER');?></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		</tbody>
+		<?php
+		if( $myentries )
+		{
+		    $count = 0;
+			foreach( $myentries as $row )
+			{
+				if($publishRights)
+				{
+				    // User allowed to publish or unpublish.
+					// publish/unpublished icon
+					$onClick = "\"jax.call('myblog', 'myxTogglePublish', {$row->id});\"";
+					if ($row->state == 1)
+						$published = "<a href=\"javascript:void(0);\" onclick=$onClick><img id=\"pubImg{$row->id}\" src=\"". MY_COM_LIVE ."/images/publish_g.png\" border=\"0\" alt=''/></a>";
+					else
+						$published = "<a href=\"javascript:void(0);\" onclick=$onClick><img id=\"pubImg{$row->id}\" src=\"". MY_COM_LIVE ."/images/publish_x.png\" border=\"0\" alt=''/></a>";
+				}
+				else
+				{
+				    // User not allowed to publish or unpublish.
+					if ($row->state == 1)
+						$published = "<img src=\"". MY_COM_LIVE ."/images/publish_g.png\" border=\"0\" alt=''/>";
+					else
+						$published = "<img src=\"". MY_COM_LIVE ."/images/publish_x.png\" border=\"0\" alt=''/>";
+		
+				}
+				// Format the date
+				// PHP strftime format
+				$mainframe	=& JFactory::getApplication();
+				$date		= new JDate( $row->created );
+				
+				$date->setOffset( $mainframe->getCfg('offset') );
+				$row->created	= $date->toFormat( '%Y-%m-%d');
+		?>
+		<tr class="sectiontableentry<?php echo $count % 2 == 0 ? 2 : 1; ?>">
+			<td><?php echo $published;?></td>
+			<td>
+				<div>
+					<?php
+					if( $row->state == 1 )
+					{
+					?>
+					<a href="<?php echo myGetPermalinkURL( $row->id );?>"><?php echo $row->title;?></a>
+					<?php
+					}
+					else
+					{
+					?>
+					<?php echo $row->title; ?>
+					<?php
+					}
+					?>
+				</div>
+				<span class="smallertext">
+					<?php echo JText::sprintf('BLOG ADMIN HITS' , $row->hits );?> | <?php echo JText::sprintf('BLOG ADMIN COMMENTS' , $row->commentCount );?>
+				</span>
+			</td>
+			<td>
+				<?php echo $row->created;?>
+			</td>
+			<td>
+				<a href="javascript:void(0);" onclick="myAzrulShowWindow('<?php echo rtrim( JURI::root() , '/' ) . '/index.php?option=com_myblog&tmpl=component&task=write&no_html=1&id=' . $row->id;?>');"><?php echo JText::_('EDIT BLOG');?></a>
+			</td>
+			<td>
+				<a href="<?php echo JRoute::_('index.php?option=com_myblog&task=delete&id=' . $row->id);?>" onclick="if(!confirm( '<?php echo JText::_('BLOG ADMIN CONFIRM DELETE');?>' ) ) return false;"><?php echo JText::_('DELETE BLOG');?></a>
+			</td>
+		</tr>
+		<?php
+		        $count++;
+			}
+		}
+		else
+		{
+		?>
+		<tr>
+			<td align="center" colspan="5"><?php echo JText::_('BLOG ADMIN NO ENTRIES');?></td>
+		</tr>
+		<?php
+		}
+		?>
+	</table>
+	</div>
+	<!-- end show all entries -->
+</div>
+<!-- end MyBlog wrapper -->

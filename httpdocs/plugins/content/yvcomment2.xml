@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE project>
+<!-- $Id: yvcomment.xml 14 2009-10-25 15:44:20Z yvolk $ -->
+<install type="plugin" group="content" version="1.5.0">
+	<!-- Extension information //-->
+	<name>yvComment2</name>
+	<creationDate>2010-05-19</creationDate>
+	<author>Yuri Volkov</author>
+	<authorEmail>yvolksoft@yurivolkov.com</authorEmail>
+	<authorUrl>http://yurivolkov.com/Joomla/yvComment/index_en.html</authorUrl>
+	<copyright>(c) 2007-2010 yvolk (Yuri Volkov), http://yurivolkov.com.
+		All rights reserved.</copyright>
+	<license>GPL</license>
+	<version>1.25.3</version>
+	<description>
+		This plugin holds parameters for the Comment Type 2 of the
+		yvComment - native Commenting solution for Joomla! 1.5.
+		Enable it to have two Commenting solutions for one Joomla! site.
+		See
+		[url=http://yurivolkov.com/Joomla/yvComment/index_en.html]yvComment's
+		Homepage[/url] for more information.
+	</description>
+
+	<files>
+		<filename plugin="yvcomment2">yvcomment2.php</filename>
+	</files>
+
+	<params addpath="/components/com_yvcomment/elements">
+		<param name="YVCOMMENT_DESCRIPTION" type="yvcommentspacer"
+			default="" label="DESCRIPTION" description="" />
+		<param name="@spacer" type="yvcommentspacer" default=""
+			label="GLOBAL_YVCOMMENT_PARAMETERS" description="" />
+		<param name="usecontenttable" type="list" default="1"
+			label="USE_CONTENT_TABLE" description="USE_CONTENT_TABLE_DESC">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="usedesignatedsection" type="list" default="1"
+			label="USE_DESIGNATED_SECTION" description="USE_DESIGNATED_SECTION_DESC">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="sectionid" type="section" default="0"
+			label="SECTION_FOR_COMMENTS" description="SECTION_FOR_COMMENTS_DESC" />
+		<param name="categoryid" type="category" default="0"
+			label="CATEGORY_FOR_COMMENTS" description="CATEGORY_FOR_COMMENTS_DESC" />
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="articlesectionids" type="textarea" default="" rows="3"
+			cols="22" label="SECTIONS_OF_ARTICLES" description="SECTIONS_OF_ARTICLES_DESC" />
+		<param name="articlecategoryids" type="textarea" default=""
+			rows="3" cols="22" label="CATEGORIES_OF_ARTICLES" description="CATEGORIES_OF_ARTICLES_DESC" />
+		<param name="articleids" type="textarea" default="" rows="3"
+			cols="22" label="IDS_OF_ARTICLES" description="IDS_OF_ARTICLES_DESC" />
+		<param name="articlesectionids_exclude" type="radio" default="0"
+			label="SECTIONS_OF_ARTICLES_EXCLUDE" description="">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="usecss" type="list" default="style003.css" label="USE_CSS_FILE"
+			description="USE_CSS_FILE_DESC">
+			<option value="0">NO</option>
+			<option value="1">style001 (old Joomla! forum)</option>
+			<option value="style003.css">style003 (Gradient)</option>
+			<option value="style002.css">style002 (Blue shock)</option>
+			<option value="style004.css">style004 (Bella)</option>
+			<option value="style005.css">style005 (Blue shock for suffix 2)</option>
+		</param>
+		<param name="moduleclass_sfx" type="text" default=""
+			label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="hide_title" type="list" default="0" label="HIDE_TITLE"
+			description="HIDE_TITLE_DESC">
+			<option value="1">HIDE</option>
+			<option value="0">SHOW</option>
+		</param>
+		<param name="comment_linkable" type="list" default="0"
+			label="COMMENT_LINKABLE" description="COMMENT_LINKABLE_DESC">
+			<option value="0">NO</option>
+			<option value="comment_linkable_title">COMMENT_LINKABLE_TITLE</option>
+		</param>
+		<param name="author_mentioned_by" type="list" default="name"
+			label="AUTHOR_MENTIONED_BY" description="AUTHOR_MENTIONED_BY_DESC">
+			<option value="name">MENTIONED_BY_NAME</option>
+			<option value="username">MENTIONED_BY_USERNAME</option>
+		</param>
+		<param name="author_linkable" type="list" default="0"
+			label="AUTHOR_LINKABLE" description="AUTHOR_LINKABLE_DESC">
+			<option value="0">NO</option>
+			<option value="yes">YES</option>
+			<option value="link_to_the_cb_profile">LINK_TO_THE_CB_PROFILE</option>
+		</param>
+		<param name="execute_content_plugins" type="radio" default="0"
+			label="EXECUTE_CONTENT_PLUGINS" description="EXECUTE_CONTENT_PLUGINS_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="joomla_version_warning" type="radio" default="1"
+			label="JOOMLA_VERSION_WARNING" description="">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="allow_comments_on_comment" type="list" default="0"
+			label="ALLOW_COMMENTS_ON_COMMENT" description="">
+			<option value="0">NO</option>
+			<option value="administrators_reply_only">ADMINISTRATORS_REPLY_ONLY</option>
+			<option value="owners_reply_only">OWNERS_REPLY_ONLY</option>
+			<option value="one_level_deep">ONE_LEVEL_DEEP</option>
+			<option value="threaded_comments">THREADED_COMMENTS</option>
+		</param>
+		<param name="max_level_of_comments" type="text" default="2" size="3" label="MAX_LEVEL_OF_COMMENTS" description="MAX_LEVEL_OF_COMMENTS_DESC"/>
+		<param name="editor_type" type="list" default="0" label="EDITOR"
+			description="EDITOR_DESC">
+			<option value="0">EDITOR_GENERIC</option>
+			<option value="wysiwyg">EDITOR_WYSIWYG</option>
+		</param>
+		<param name="use_smiley_form" type="radio" default="1"
+			label="USE_SMILEY_FORM" description="USE_SMILEY_FORM_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="use_bbcode_form" type="radio" default="1"
+			label="USE_BBCODE_FORM" description="USE_BBCODE_FORM_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="allow_html_edit_text" type="list" default="no"
+			label="ALLOW_HTML_EDIT_TEXT" description="ALLOW_HTML_EDIT_TEXT_DESC">
+			<option value="no">NO</option>
+			<option value="allowhtml">ALLOW_HTML</option>
+			<option value="allowraw">ALLOW_RAW</option>
+		</param>
+		<param name="max_characters_fulltext" type="text" size="9"
+			default="" label="MAX_CHARACTERS_FULLTEXT" description="MAX_CHARACTERS_FULLTEXT_DESC" />
+		<param name="min_post_period_user" type="text" size="9" default="60"
+			label="MIN_POST_PERIOD_USER" description="MIN_POST_PERIOD_USER_DESC" />
+		<param name="auto_close_days" type="text" size="9" default=""
+			label="AUTO_CLOSE_DAYS" description="AUTO_CLOSE_DAYS_DESC" />
+		<param name="add_published" type="list" default="yes_for_registered_users"
+			label="ADD_PUBLISHED" description="ADD_PUBLISHED_DESC">
+			<option value="no">NO</option>
+			<option value="yes_for_everybody">YES_FOR_EVERYBODY</option>
+			<option value="yes_for_registered_users">YES_FOR_REGISTERED_USERS</option>
+		</param>
+		<param name="notify_addedit_usernames" type="text" size="30"
+			default="" label="NOTIFY_ADDEDIT_USERNAMES" description="NOTIFY_ADDEDIT_USERNAMES_DESC" />
+		<param name="notify_addedit_authors" type="list" default="" label="NOTIFY_ADDEDIT_AUTHORS" description="NOTIFY_ADDEDIT_AUTHORS_DESC">
+			<option value="no">NO</option>
+			<option value="one">NOTIFY_ONE</option>
+			<option value="all">NOTIFY_ALL</option>
+		</param>
+		<param name="delete_to_trash" type="radio" default="1"
+			label="DELETE_TO_TRASH" description="DELETE_TO_TRASH_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="allow_guest_add" type="radio" default="0"
+			label="ALLOW_GUEST_ADD" description="ALLOW_GUEST_ADD_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="guest_username" type="text" size="20" default="guest"
+			label="GUEST_USERNAME" description="GUEST_USERNAME_DESC" />
+		<param name="check_guest_alias" type="radio" default="1"
+			label="CHECK_GUEST_ALIAS" description="CHECK_GUEST_ALIAS_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="guest_email_required" type="radio" default="0"
+			label="GUEST_EMAIL_REQUIRED" description="">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="allow_guest_link" type="radio" default="0"
+			label="ALLOW_GUEST_LINK" description="ALLOW_GUEST_LINK_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="min_post_period_guest" type="text" size="9"
+			default="30" label="MIN_POST_PERIOD_GUEST" description="MIN_POST_PERIOD_GUEST_DESC" />
+		<param name="use_captcha" type="radio" default="1" label="USE_CAPTCHA"
+			description="USE_CAPTCHA_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="delay_captcha_image" type="radio" default="0"
+			label="DELAY_CAPTCHA_IMAGE" description="DELAY_CAPTCHA_IMAGE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="use_openid" type="radio" default="0" label="USE_OPENID"
+			description="USE_OPENID_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="debug" type="radio" default="0" label="DEBUG" description="">
+		  <option value="0">NO</option>
+		  <option value="1">YES</option>
+		</param>
+		<param name="debug_sec" type="radio" default="0" label="DEBUG_SEC" description="DEBUG_SEC_DESC">
+		  <option value="0">NO</option>
+		  <option value="1">YES</option>
+		</param>
+		<param name="@spacer" type="yvcommentspacer" default=""
+			label="PLUGIN_YVCOMMENT_PARAMETERS" description="" />
+		<param name="comments_position_article_view" type="list"
+			default="AfterContent" label="POSITION_OF_COMMENTS_ARTICLE_VIEW"
+			description="POSITION_OF_COMMENTS_ARTICLE_VIEW_DESC">
+			<option value="InsideBox">INSIDE_ARTICLE_BOX</option>
+			<option value="AfterContent">BELOW_ARTICLE_BOX</option>
+			<option value="DefinedByArticleTemplate">DEFINED_BY_ARTICLE_TEMPLATE</option>
+			<option value="hide">HIDE</option>
+		</param>
+		<param name="what_to_show_article_view" type="list" default="comment"
+			label="WHAT_TO_SHOW_ARTICLE_VIEW" description="WHAT_TO_SHOW_ARTICLE_VIEW_DESC">
+			<option value="comments_n_text">COMMENTS_N_TEXT</option>
+			<option value="comments_n_link">COMMENTS_N_LINK</option>
+			<option value="comment">TYPE_COMMENT_DESC</option>
+		</param>
+		<param name="comments_position_frontpage" type="list" default="AfterContent"
+			label="POSITION_OF_COMMENTS_FRONTPAGE" description="POSITION_OF_COMMENTS_FRONTPAGE_DESC">
+			<option value="InsideBox">INSIDE_ARTICLE_BOX</option>
+			<option value="AfterContent">BELOW_ARTICLE_BOX</option>
+			<option value="DefinedByArticleTemplate">DEFINED_BY_ARTICLE_TEMPLATE</option>
+			<option value="hide">HIDE</option>
+		</param>
+		<param name="what_to_show_frontpage" type="list" default="comments_n_link"
+			label="WHAT_TO_SHOW_FRONTPAGE" description="WHAT_TO_SHOW_FRONTPAGE_DESC">
+			<option value="comments_n_text">COMMENTS_N_TEXT</option>
+			<option value="comments_n_link">COMMENTS_N_LINK</option>
+			<option value="comment">TYPE_COMMENT_DESC</option>
+		</param>
+		<param name="comments_position" type="list" default="AfterContent"
+			label="POSITION_OF_COMMENTS" description="POSITION_OF_COMMENTS_DESC">
+			<option value="InsideBox">INSIDE_ARTICLE_BOX</option>
+			<option value="AfterContent">BELOW_ARTICLE_BOX</option>
+			<option value="DefinedByArticleTemplate">DEFINED_BY_ARTICLE_TEMPLATE</option>
+			<option value="hide">HIDE</option>
+		</param>
+		<param name="what_to_show" type="list" default="comments_n_link"
+			label="WHAT_TO_SHOW" description="WHAT_TO_SHOW_FRONTPAGE_DESC">
+			<option value="comments_n_text">COMMENTS_N_TEXT</option>
+			<option value="comments_n_link">COMMENTS_N_LINK</option>
+			<option value="comment">TYPE_COMMENT_DESC</option>
+		</param>
+		<param name="show_please_register" type="radio" default="0"
+			label="SHOW_PLEASE_REGISTER" description="SHOW_PLEASE_REGISTER_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="addform_position" type="list" default="below"
+			label="ADDFORM_POSITION" description="ADDFORM_POSITION_DESC">
+			<option value="below">ADDFORM_POSITION_BELOW</option>
+			<option value="above">ADDFORM_POSITION_ABOVE</option>
+			<option value="separate_below">ADDFORM_POSITION_SEPARATE_BELOW</option>
+			<option value="separate_above">ADDFORM_POSITION_SEPARATE_ABOVE</option>
+		</param>
+		<param name="orderby_pri" type="list" default="rdate" label="PRIMARY_ORDER"
+			description="PRIMARY_ORDER_DESC">
+			<option value="date">ORDER_OLDEST_FIRST</option>
+			<option value="rdate">ORDER_MOST_RECENT_FIRST</option>
+		</param>
+		<param name="show_comments_on_comment" type="list" default="1" label="SHOW_COMMENTS_ON_COMMENT" description="SHOW_COMMENTS_ON_COMMENT_DESC">
+		  <option value="0">NO</option>
+		  <option value="1">YES</option>
+		</param>
+		<param name="show_pagination" type="list" default="0"
+			label="SHOW_PAGINATION" description="SHOW_PAGINATION_DESC">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+		</param>
+		<!--
+			<param name="show_pagination_limit" type="radio" default="0"
+			label="SHOW_PAGINATION_LIMIT"
+			description="SHOW_PAGINATION_LIMIT_DESC"> <option
+			value="0">HIDE</option> <option value="1">SHOW</option> </param>
+		-->
+		<param name="layout_name" type="list" default="default" label="LAYOUT_NAME"
+			description="LAYOUT_NAME_DESC">
+			<option value="0">LAYOUT_NAME_CUSTOM</option>
+			<option value="default">default</option>
+		</param>
+		<param name="layout_name_custom" type="text" default=""
+			label="LAYOUT_NAME_CUSTOM" description="" />
+	</params>
+	<!-- 
+	<params group="advanced">
+	</params>
+	 -->
+</install>

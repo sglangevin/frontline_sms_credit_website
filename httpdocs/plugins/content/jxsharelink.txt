@@ -1,0 +1,96 @@
+JX Share Link v1.1
+
+Copyright: Olle Johansson
+License: GNU/GPL v2
+
+Requirements:
+ * Joomla 1.5
+ * Javascript active when viewing page.
+ 
+ 
+Description:
+JX Share Link allows you to add a drop-down box with share links for several different social bookmarking sites.
+
+Main features:
+ * 86 different social bookmarking sites!
+ * Both English and international social bookmarking sites.
+ * Translatable, delivered with English and Swedish
+ * Multiple different Share Icons to choose from, both the Open Share Icon as well as the old Share This Icon.
+ * Links can open in new window or popup.
+ * Multiple placement options: above content, below content, left of content, right of content, in icon list
+ * New sites can be added from the parameter section, without file changes.
+ * Sites to use can be selected from the parameter section.
+ * Bookmark page in Firefox and Internet Explorer
+ * Share Icon can be removed on specific articles.
+ * CSS file to manage the look.
+
+This plugin is designed for Joomla 1.5. To install go to the install/uninstall extensions page of Joomla Administrator and upload the package file. Then go to the Plugin Manager page and activate the plugin. Make sure you also check the parameters.
+
+You can modify some of the looks by changing the css file:
+plugins/content/jxsharelink/jxsharelink.css
+
+
+Changes:
+ * Added a large number of new Social Bookmarking sites.
+ * Made it possible to hide the Share Icon on specific articles.
+ * Made it possible to choose which sites should be used from a list.
+ * It's now possible to select if the share site should open up in a new window, the current window or in a popup.
+ * Added bookmarking function that works in Internet Explorer, Firefox and Opera.
+ * Added option to float list of bookmarking sites to the right or left of the article text.
+ 
+
+Parameters:
+ * Share Icon - Which icon to use for the Share button.
+ * Placement - Where the Share Icon should be placed in relation to the content. The buttonheading placement is template dependant, and places the Share Icon next to the article icons (such as PDF and Print). It uses javascript to add the icon to the correct place after the page has loaded. This has only been tested in the ja_purity template provided with Joomla 1.5. Your results may vary. Note that Float Left and Float Right doesn't work with the Drop-down View Type.
+ * Excluded Articles - If you don't want the Share Icon to show on some articles, place the ID's of those articles here, separated by comma.
+ * View Type - Whether the Share Icon should open a drop down with the links or if the links should be placed directly next to the icon.
+ * Transition - If your are using the drop-down view type, select if the drop-down should open up vertically or horizontally (i.e. down or to the right).
+ * Effect - If your are using the drop-down view type, select which effect to use when opening the drop-down.
+ * Used Sites - Select all sites that should be used in the listing. The names can be found by hovering the mouse pointer over each icon.
+ * Added Sites - This is an advanced field where new sites can be added without modifying the code of the page. See information below on how to write these.
+
+
+How to add sites:
+For each site to add, you need three types of information.
+ * Name of the service.
+ * URL to the share icon for the service.
+ * URL to the service for adding a link. This link needs to be with template code added in the appropriate places.
+ 
+Each addes site should be placed on a line of its own. Separate the information fields with the following character: |
+
+To make the URL to the service work properly, you need to add template code to it.
+Where you want the URL of the current page to be entered, just write %%URL%% instead.
+Where you want the title of the current page to be entered, just write %%TITLE%% instead.
+
+Example:
+Digg | http://www.example.com/digg-icon.png | http://digg.com/submit?phase=2&amp;url=%%URL%%&amp;title=%%TITLE%%
+
+
+Extra information:
+If you want more sites to be added by default to this plugin, please send me the information about it.
+
+
+Icon information:
+
+The icons for the share links are copyrighted by the respective bookmarking site.
+
+
+The Open Share Icons are from the Open Share Icon Project
+http://www.openshareicons.com/
+
+
+The Share Icons are from shareicons.com
+This is a "Share" Icon - to be used to represent generic "sharing" of an item. Please see detailed information here:
+http://shareicons.com
+The Share Icons image is licensed under the following licenses:
+ * GPL - http://opensource.org/licenses/gpl-license.php
+ * LGPL - http://opensource.org/licenses/lgpl-license.php
+ * BSD - http://opensource.org/licenses/bsd-license.php
+ * Creative Commons Attribution 2.5 License - http://creativecommons.org/licenses/by/2.5/
+
+
+Additional icons:
+Mark James
+http://www.famfamfam.com/lab/icons/silk/
+Creative Commons Attribution 2.5 License.
+[ http://creativecommons.org/licenses/by/2.5/ ]

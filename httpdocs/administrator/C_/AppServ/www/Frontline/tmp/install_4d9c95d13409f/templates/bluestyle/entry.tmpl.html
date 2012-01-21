@@ -1,0 +1,67 @@
+<?php
+$date  = strtotime($entry['created']);
+$month = strftime("%b ", $date) . strftime("%d", $date);
+$year  = strftime("%Y", $date);
+$month = i8n_date($month);
+?>
+<br/>
+<div class="entryContent">
+	
+	<div class="entry">
+    	<table class="entryTitle">
+			<tr>
+				<td class="my-dateCell">		
+					<div class="date">
+						<div class="month"><span><?php echo $month; ?></span></div>
+						<div class="year"><span><?php echo $year; ?></span></div>
+					</div>
+				</td>
+				<td class="my-titleCell">
+					<div class="entry-title">
+						<h3><a href="<?php echo $entry['permalink']; ?>"><?php echo $entry['title']; ?></a></h3>
+						<p>_MB_POSTED_BY <a href="<?php echo $entry['authorLink']; ?>" title="View all posts by <?php echo $entry['author']; ?>"><?php echo $entry['author']; ?></a> in <?php echo $entry['categories']; ?></p>
+					</div>
+					<div id="usersLink">
+<?php
+							if($enablePrintLink){
+                          		echo myGetPrintLink($entry['id'],myGetItemId());
+							}
+							echo '&nbsp;';
+					        if($enablePdfLink){
+       							echo myGetPDFLink($entry['id'],myGetItemId());
+						    }
+?>
+                    </div>
+				</td>
+				<td class="my-avatarCell">
+					<div class="userAvatar">
+					<?php echo $entry['avatar']; ?>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<?php 
+		if (!empty($entry['beforeContent']))
+		{ ?>
+		<div class="onBeforePrepareContent">
+			<?php echo $entry['beforeContent'];?>
+		</div>
+		<?php
+		}
+	    ?>
+        <div class="entry-body"> <?php echo $entry['text']; ?> <div class="clear"></div> </div>
+        <?php if ($entry['afterContent'])
+		{ ?>
+		<div class="onAfterPrepareContent">
+			<?php echo $entry['afterContent'];?>
+		</div>
+		<?php
+		}
+	    ?>
+		<div>
+        	<?php echo $entry['comments']; ?>
+        </div>
+        <div class="entry-footer"></div>
+    </div>
+	
+</div>

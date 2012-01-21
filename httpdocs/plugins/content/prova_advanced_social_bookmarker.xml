@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - Prova Advanced Social Bookmarker (with AddThis.com tracking)</name>
+	<author>Prova</author>
+	<creationDate>September 18, 2010</creationDate>
+	<copyright></copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>support@prova.com</authorEmail>
+    <authorUrl>http://prova.com</authorUrl>
+	<version>2.2</version>
+	<description>PROVADESCHELP</description>
+	<files>
+		<filename plugin="prova_advanced_social_bookmarker">prova_advanced_social_bookmarker.php</filename>
+		<filename>pbuttons/widget16.png</filename>
+	</files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_content_prova_advanced_social_bookmarker.ini</language>
+    </languages>
+	<params>
+		<param name="inc_cat" type="text" default="" label="Categories To Include" description="List (comma-seperated) those categories that you want this plugin to display for (example: 1,2,5,9)" />
+		<param name="exc_cat" type="text" default="" label="Categories To Exclude" description="Display this plugin on ALL categories except these (comma-seperated. example: 1,2,5,9).  Any entry here turns the 'Categories to include' option off." />
+		<param name="bot_prec_html" type="text" default="Add this page to your favorite Social Bookmarking websites" label="HTML above buttons" description="Put any HTML or plain text into this box that you want to appear above the AddThis.com buttons" />
+		<param name="bot_fol_html" type="text" default="" label="HTML below buttons" description="Put any HTML or plain text in this box that you want to appear below the AddThis.com buttons" />
+		<param name="add_this_username" type="text" default="" label="AddThis.com Username" description="Your AddThis.com username should go here. It is free and will track your bookmark stats. Go to http://www.addthis.com to get one" />
+        <param name="add_this_word" type="text" default="More..." label="More button label" description="Enter the word(s) you want to appear as the link to the popup window for more social sites" />
+
+		<param name="space" type="spacer" />
+        <param name="badge1" type="list" default="none" label="1st Button" description="Which button would you like to display first">
+			<option value="none">None</option>
+            <option value="digg">Digg</option>
+			<option value="facebook">Facebook</option>
+            <option value="google">Google Buzz</option>
+            <option value="topsy">Topsy</option>
+            <option value="twitter">Twitter</option>
+            <option value="yahoo">Yahoo! Buzz</option>
+		</param>
+        <param name="badge2" type="list" default="none" label="2nd Button" description="Which button would you like to display second">
+			<option value="none">None</option>
+            <option value="digg">Digg</option>
+			<option value="facebook">Facebook</option>
+            <option value="google">Google Buzz</option>
+            <option value="topsy">Topsy</option>
+            <option value="twitter">Twitter</option>
+            <option value="yahoo">Yahoo! Buzz</option>
+		</param>
+        <param name="badge3" type="list" default="none" label="3rd Button" description="Which button would you like to display third">
+			<option value="none">None</option>
+            <option value="digg">Digg</option>
+			<option value="facebook">Facebook</option>
+            <option value="google">Google Buzz</option>
+            <option value="topsy">Topsy</option>
+            <option value="twitter">Twitter</option>
+            <option value="yahoo">Yahoo! Buzz</option>
+		</param>
+        <param name="badge4" type="list" default="none" label="4th Button" description="Which button would you like to display fourth">
+			<option value="none">None</option>
+            <option value="digg">Digg</option>
+			<option value="facebook">Facebook</option>
+            <option value="google">Google Buzz</option>
+            <option value="topsy">Topsy</option>
+            <option value="twitter">Twitter</option>
+            <option value="yahoo">Yahoo! Buzz</option>
+		</param>
+        <param name="badge5" type="list" default="none" label="5th Button" description="Which button would you like to display fifth">
+			<option value="none">None</option>
+            <option value="digg">Digg</option>
+			<option value="facebook">Facebook</option>
+            <option value="google">Google Buzz</option>
+            <option value="topsy">Topsy</option>
+            <option value="twitter">Twitter</option>
+            <option value="yahoo">Yahoo! Buzz</option>
+		</param>
+        <param name="badge_side" type="list" default="right" label="Page Side" description="Select which side of the article you want your buttons to display on">
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="twitteruser1" type="text" default="" label="Twitter Username" description="Enter your twitter username to send all tweets with your @name instead of the button company's @name." />
+		<param name="twitteruser2" type="text" default="" label="Secondary Twitter Username" description="If you're using Twitter's button, you can recommend a second twitter user" />  
+        <param name="twitter2desc" type="text" default="" label="Secondary Twitter Description" description="If you're using Twitter's button and recommend a second twitter user, describe the user" />  
+		<param name="leader" type="text" default="tweet, facebook_like, digg, delicious, technorati, stumbleupon" label="Footer Leader Button" description="If you want buttons for specific social sites to appear BEFORE the default AddThis.com popup button, enter them here.  To add buttons, enter the name of each site, separated by a comma, in the order you want the buttons to appear.  Visit Prova.com for more info." />
+		<param name="addthispill" type="list" default="pill" label="AddThis Counter" description="Do you want to use the new AddThis pill-style counter or the legacy AddThis 'More' Link?">
+			<option value="pill">Pill Counter</option>
+			<option value="legacy">Legacy</option>
+		</param>
+    </params>
+</install>

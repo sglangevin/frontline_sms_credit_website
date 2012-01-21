@@ -1,0 +1,115 @@
+/**
+ * Changelog
+ *
+ * @package     Modalizer
+ * @version     2.3.2
+ *
+ * @author      Peter van Westen <peter@nonumber.nl>
+ * @link        http://www.nonumber.nl
+ * @copyright   Copyright © 2011 NoNumber! All Rights Reserved
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+/**
+ * + Added
+ * ! Removed
+ * ^ Changed
+ * # Fixed
+ */
+
+29-Mar-2011 : v2.3.2
+ # Fixed issue plugin being executed on raw format pages
+ # Fixed some language string issues
+
+17-Mar-2011 : v2.3.1
+ ^ Changed language files to be J1.6 ready
+ ^ Updated ColorBox to v1.3.16
+ # Fixed issue with tags being interpreted in frontend editor fields with very large contents
+
+15-Jan-2011 : v2.3.0
+ ^ Changed extension icon / logo
+ ^ Moved iframe options to main settings (instead of in Advanced Settings)
+ ^ Updated ColorBox to v1.3.15
+ ^ Updated FancyBox to v1.3.4
+ ^ Now removes all close window links/buttons in the modal popup window
+ # Fixed issue with links with onclick actions
+ # Fixed issue with links is popup with ancors
+ # Fixed issue with links is popup with target to _self
+ # Fixed issue with FancyBox failing on some setups
+
+13-Dec-2010 : v2.2.1
+ # Fixed issue with modal scripts also being loaded in popups (causing double modals)
+ # Fixed issues with document being called to early
+ # Fixed some issues with loading of language strings
+ # Cleaned up some code
+
+25-Nov-2010 : v2.2.0
+ + Added checks to see if NoNumber! Elements plugin is installed/enabled
+ ^ Fixed and updated all language strings
+
+16-Nov-2010 : v2.1.0
+ + Added option to define the outside border width for Fancybox
+ # Fixed issue with incompatibility with Mootools Upgrade plugin
+ # Fixed issue with tag not working in 3rd party menus with extra spans in links
+
+18-Oct-2010 : v2.0.0
+ ^ Completely rewritten
+ ^ Changed and updated available modal types
+ + Added ability to modalize by filetypes
+ + Added ability to modalize by url (regex)
+ + Added ability to use syntax tags in menu items
+ + Added ability to disable on selection of components
+ ^ Improved handling of links within modal popup windows.
+ ! Removed a lot of overkill settings making it all simpler
+ ! Dropped the use of own mootools script (less chance of conflicts)
+ ^ Changed the update check
+ + Added Commercial License Code support
+ ^ Changed installation procedure (automatic installer/updater)
+
+29-Oct-2008 : v1.2.3
+ + Added option to turn of the automatic title in tag
+
+28-Oct-2008 : v1.2.2
+ # Fixed issue with FancyBox not working in IE
+
+27-Oct-2008 : v1.2.1
+ # Fixed some descriptions not showing in the Plugin Administrator
+ + Added option to modalize links with certain class names
+ + Added option to turn the modal syntax support off
+
+22-Oct-2008 : v1.2.0
+ ^ Changed name from ModaLinks! to Modalizer
+ ^ Totally recoded for more stability and easier support for other Modal types
+ + Added support for more Modal types, now supports: FancyBox, GreyBox, HighSlide, ShadowBox, SqueezeBox, ThickBox
+ + Added update notification
+ + Added option for overlay opacity and specific options per Modal type
+ ^ Changed Admin parameters (order and names)
+
+28-Jul-2008 : v1.0.6
+ # Fixed issue with more undefined variable
+ # Fixed issue with template not being recognised on first load
+ # Fixed issue with links with a href in single quotes instead of double quotes
+ # Fixed some other minor bugs
+
+31-Mar-2008 : v1.0.5
+ ^ Recoded to make it more stable and more compliant to Joomla!
+ # Fixed baseurl issue with websites not running in root folder
+ + Added support for MoodalBox (with captions)
+ ^ Extended the template feature. Now you can select any Template (and SubTemplate) available
+ # Fixed issue with undefined variable (for PHP4)
+ # Fixed some minor bugs
+
+07-Mar-2008 : v1.0.4
+ # Fixed issue with using multiple Modalinks on one page.
+
+05-Mar-2008 : v1.0.3
+ + Added: Removes the "close window" link in the email-a-friend window, if it is opened in a Modal Window.
+
+05-Mar-2008 : v1.0.2
+Bugfix: The necessary scripts were not included in the head.
+
+04-Mar-2008 : v1.0.1
+ # Fixed baseurl issue with websites not running in root folder
+
+03-Mar-2008 : v1.0.0
+ + First release

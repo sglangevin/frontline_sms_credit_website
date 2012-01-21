@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+  <name>K2</name>
+  <author>JoomlaWorks</author>
+  <creationDate>September 23rd, 2010</creationDate>
+  <copyright>Copyright (c) 2006 - 2010 JoomlaWorks, a business unit of Nuevvo Webware Ltd. All rights reserved.</copyright>
+  <authorEmail>contact@joomlaworks.gr</authorEmail>
+  <authorUrl>www.joomlaworks.gr</authorUrl>
+  <version>2.4.1</version>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <description>Thank you for installing K2 by JoomlaWorks, the powerful content component for Joomla! 1.5.</description>
+  <installfile>install.k2.php</installfile>
+  <uninstallfile>uninstall.k2.php</uninstallfile>
+  <install>
+    <sql>
+      <file driver="mysql" charset="utf8">install.mysql.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+      <file driver="mysql" charset="utf8">uninstall.mysql.sql</file>
+    </sql>
+  </uninstall>
+  <files folder="components/com_k2">
+    <folder>controllers</folder>
+    <folder>css</folder>
+    <folder>helpers</folder>
+    <folder>images</folder>
+    <folder>js</folder>
+    <folder>lib</folder>
+    <folder>models</folder>
+    <folder>sef_ext</folder>
+    <folder>templates</folder>
+    <folder>views</folder>
+    <filename>k2.php</filename>
+    <filename>router.php</filename>
+  </files>
+  <media destination="k2" folder="media/k2">
+    <folder>attachments</folder>
+    <folder>categories</folder>
+    <folder>galleries</folder>
+    <folder>items</folder>
+    <folder>users</folder>
+    <folder>videos</folder>
+  </media>
+  <languages folder="language/en-GB">
+	  <language tag="en-GB">en-GB.com_k2.ini</language>
+		<language tag="en-GB">en-GB.mod_k2_comments.ini</language>
+		<language tag="en-GB">en-GB.mod_k2_content.ini</language>
+		<language tag="en-GB">en-GB.mod_k2_login.ini</language>
+		<language tag="en-GB">en-GB.mod_k2_tools.ini</language>
+		<language tag="en-GB">en-GB.mod_k2_users.ini</language>
+  </languages>
+  <administration>
+    <menu img="components/com_k2/images/system/k2-icon.png">K2</menu>
+    <files folder="administrator/components/com_k2">
+      <folder>controllers</folder>
+      <folder>css</folder>
+      <folder>elements</folder>
+      <folder>images</folder>
+      <folder>js</folder>
+      <folder>lib</folder>
+      <folder>models</folder>
+      <folder>tables</folder>
+      <folder>views</folder>
+      <filename>admin.k2.php</filename>
+      <filename>config.xml</filename>
+      <filename>install.mysql.sql</filename>
+      <filename>uninstall.mysql.sql</filename>
+    </files>
+    <languages folder="administrator/language/en-GB">
+      <language tag="en-GB">en-GB.com_k2.ini</language>
+      <language tag="en-GB">en-GB.mod_k2_quickicons.ini</language>
+	  	<language tag="en-GB">en-GB.plg_search_k2.ini</language>
+	  	<language tag="en-GB">en-GB.plg_system_k2.ini</language>
+	  	<language tag="en-GB">en-GB.plg_user_k2.ini</language>
+    </languages>
+  </administration>
+  <params>
+		<param name="enable_css" default="1" />
+		<param name="imagesQuality" default="100" />
+		<param name="itemImageXS" default="100" />
+		<param name="itemImageS" default="200" />
+		<param name="itemImageM" default="400" />
+		<param name="itemImageL" default="600" />
+		<param name="itemImageXL" default="900" />
+		<param name="itemImageGeneric" default="300" />
+		<param name="catImageWidth" default="100" />
+		<param name="catImageDefault" default="1" />
+		<param name="userImageWidth" default="100" />
+		<param name="userImageDefault" default="1" />
+		<param name="commenterImgWidth" default="48" />
+		<param name="userName" default="1" />
+		<param name="userImage" default="1" />
+		<param name="userDescription" default="1" />
+		<param name="userURL" default="1" />
+		<param name="userEmail" default="0" />
+		<param name="userFeed" default="1" />
+		<param name="userItemCount" default="10" />
+		<param name="userItemTitle" default="1" />
+		<param name="userItemTitleLinked" default="1" />
+		<param name="userItemDateCreated" default="1" />
+		<param name="userItemImage" default="1" />
+		<param name="userItemIntroText" default="1" />
+		<param name="userItemCategory" default="1" />
+		<param name="userItemTags" default="1" />
+		<param name="userItemCommentsAnchor" default="1" />
+		<param name="userItemReadMore" default="1" />
+		<param name="userItemK2Plugins" default="1" />
+		<param name="genericItemCount" default="10" />
+		<param name="genericItemTitle" default="1" />
+		<param name="genericItemTitleLinked" default="1" />
+		<param name="genericItemDateCreated" default="1" />
+		<param name="genericItemImage" default="1" />
+		<param name="genericItemIntroText" default="1" />
+		<param name="genericItemCategory" default="1" />
+		<param name="genericItemReadMore" default="1" />
+		<param name="genericItemExtraFields" default="0" />
+		<param name="tagOrdering" default="" />
+		<param name="comments" default="1" />
+		<param name="commentsOrdering" default="DESC" />
+		<param name="commentsLimit" default="10" />
+		<param name="commentsFormPosition" default="below" />
+		<param name="commentsPublishing" default="1" />
+		<param name="gravatar" default="1" />
+		<param name="recaptcha" default="0" />
+		<param name="recaptcha_public_key" default="" />
+		<param name="recaptcha_private_key" default="" />
+		<param name="recaptcha_theme" default="clean" />
+		<param name="commentsFormNotes" default="1" />
+		<param name="commentsFormNotesText" default="Make sure you enter the (*) required information where indicated.&lt;br /&gt;Basic HTML code is allowed." />
+		<param name="socialButtonCode" default="" />
+		<param name="twitterUsername" default="" />
+		<param name="tinyURL" default="1" />
+		<param name="feedLimit" default="10" />
+		<param name="feedItemImage" default="1" />
+		<param name="feedImgSize" default="S" />
+		<param name="feedItemIntroText" default="1" />
+		<param name="feedTextWordLimit" default="" />
+		<param name="feedItemFullText" default="1" />
+		<param name="introTextCleanup" default="0" />
+		<param name="introTextCleanupExcludeTags" default="" />
+		<param name="introTextCleanupTagAttr" default="" />
+		<param name="fullTextCleanup" default="0" />
+		<param name="fullTextCleanupExcludeTags" default="" />
+		<param name="fullTextCleanupTagAttr" default="" />
+		<param name="xssFiltering" default="0" />
+		<param name="linkPopupWidth" default="900" />
+		<param name="linkPopupHeight" default="600" />
+		<param name="frontendEditing" default="1" />
+		<param name="showImageTab" default="1" />
+		<param name="showImageGalleryTab" default="1" />
+		<param name="showVideoTab" default="1" />
+		<param name="showExtraFieldsTab" default="1" />
+		<param name="showAttachmentsTab" default="1" />
+		<param name="showK2Plugins" default="1" />
+		<param name="sideBarDisplayFrontend" default="0" />
+		<param name="mergeEditors" default="1" />
+		<param name="sideBarDisplay" default="1" />
+		<param name="attachmentsFolder" default="" />
+		<param name="hideImportButton" default="0" />
+		<param name="taggingSystem" default="1" />
+		<param name="lockTags" default="0" />
+		<param name="googleSearch" default="0" />
+		<param name="googleSearchContainer" default="k2Container" />
+		<param name="K2UserProfile" default="1" />
+		<param name="K2UserGroup" default="" />
+		<param name="redirect" default="" />
+		<param name="adminSearch" default="simple" />
+		<param name="showItemsCounterAdmin" default="1" />
+		<param name="showChildCatItems" default="1" />
+		<param name="disableCompactOrdering" default="0" />
+		<param name="SEFReplacements" default="" />
+		<param name="metaDescLimit" default="150" />
+		<param name="sh404SefLabelCat" default="" />
+		<param name="sh404SefLabelUser" default="blog" />
+    <param name="sh404SefLabelItem" default="2" />
+  </params>
+  <modules>
+    <module module="mod_k2_comments"/>
+    <module module="mod_k2_content" />
+    <module module="mod_k2_login" />
+    <module module="mod_k2_tools" />
+	<module module="mod_k2_users" />
+    <module module="mod_k2_quickicons" client="administrator" />
+  </modules>
+  <plugins>
+    <plugin plugin="k2" group="search" />
+    <plugin plugin="k2" group="system" />
+    <plugin plugin="k2" group="user" />
+  </plugins>
+  <joomfish>
+    <file>k2_attachments.xml</file>
+    <file>k2_categories.xml</file>
+    <file>k2_extra_fields.xml</file>
+    <file>k2_items.xml</file>
+    <file>k2_tags.xml</file>
+    <file>k2_users.xml</file>
+  </joomfish>
+</install>

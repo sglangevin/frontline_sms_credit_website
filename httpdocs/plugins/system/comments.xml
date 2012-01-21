@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>System - Comments</name>
+	<author>3DEN Studio</author>
+	<creationDate>Jully 2008</creationDate>
+	<copyright>open source</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorUrl>http://www.3den.org</authorUrl>
+	<version>1.1b3</version>
+	<description><![CDATA[		
+		Install the Comments component to use this plugin. 
+		Just write {comments} make articles comentable.
+	]]></description>
+	<files>
+		<filename plugin="comments">comments.php</filename>
+	</files>
+	<params>
+		<!-- Display -->
+		<param name="form_layout" type="filelist" label="Form Layout" description="The layout to display the comment form" 
+			directory="modules/mod_comments/tmpl" default="form"  filter="^form(.*)\.php$" exclude="" stripext="true" hide_none="true" />
+		<param name="list_layout" type="filelist" label="List Layout" description="The layout to display the list of comments" 
+			directory="modules/mod_comments/tmpl" default="list"  filter="^list(.*)\.php$" exclude="" stripext="true" hide_none="true" />
+		<param name="link_layout" type="filelist" label="Link Layout" description="TThe layout to display the read comments link" 
+			directory="modules/mod_comments/tmpl" default="link_readon"  filter="^link(.*)\.php$" exclude="" stripext="true" hide_none="true" />
+		
+		<!-- Paginate -->
+		<param name="@spacer" type="spacer" label="" default="" /> 		
+		<param name="count" type="text" size="2" default="10" label="Count" description="The number of comments to display (default 10)" />
+		<param name="show_pagination" type="radio" default="1" label="Pagination" description="Show/Hide Pagination support">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		
+		<!-- captcha -->
+		<param name="@spacer" type="spacer" default="" label=""/>	
+		<param name="use_captcha" type="radio" default="0" label="Use Captcha" description="Use bigoCaptcha for comments, add medias and other treads ">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>	
+	</params>
+	<params group="advanced">	
+		<!-- Reviews -->	
+		<param name="edit_title" type="radio" default="0" label="Title" description="Show/Hide Comment Title">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>	
+		<param name="edit_author" type="radio" default="1" label="Author Alias" description="Show/Hide Author Alias">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>		
+		<param name="edit_email" type="radio" default="0" label="Author Email" description="Show/Hide Author Email">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>		
+		<param name="edit_url" type="radio" default="0" label="Author URL" description="Show/Hide Author URL">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+	</params>	
+</install>

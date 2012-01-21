@@ -1,0 +1,18 @@
+Theme Name: Exciter
+Author: Tommaso Baldovino
+Author URI: http://www.tomstardust.com/
+Version: 1.31
+
+-------------
+Using Widgets
+
+On Exciter theme, widgets will appear on the footer. You have 2 footer columns available, just pay attention balancing the content for a better result.
+
+----------------
+Upgrades & Fixes
+
+v1.31: fixed visualization bug on categories
+v1.3: fixed visualization bug on pages
+v1.2: added body_class function
+v1.1: clearer sticky posts
+v1.0: first release

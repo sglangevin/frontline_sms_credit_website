@@ -1,0 +1,313 @@
+<?php (defined('_VALID_MOS') OR defined('_JEXEC')) or die('Direct Access to this location is not allowed.'); ?>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<patTemplate:tmpl name="edit">
+<style type="text/css">
+<!--
+.titleInput {
+	color: #000000;
+	font-weight: bold;
+	font-size: 18px;
+}
+.fulltextcontent, .excerptcontent {
+	border: 1px solid #666666;
+	line-height: 110%;
+}
+
+.excerptcontent {height: 100px;}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+var gImages = "";
+window.onfocus = "alert(gImages);";
+function confirmBrowseAway()
+{
+  return confirm("Are you sure you want to do that?\nIf you leave this page " +
+    "now,\nyour blog entry will NOT be saved!");
+}
+
+function popupWindow(mypage, myname, w, h, scroll) {
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+	win = window.open(mypage, myname, winprops)
+	if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+
+function validateForm(){
+	workIsDone = false;
+	var tm_content = tinyMCE.getContent();
+	
+	if (tm_content)
+		document.getElementById('fulltext').value = tm_content;
+	else
+		tm_content = document.getElementById('fulltext').value;
+
+	var ft_length = tm_content.length;
+	var title = document.getElementById('title').value;
+	var permalink = document.getElementById('permalink').value;
+	var id = document.getElementById('id').value;
+	
+	var error = false;
+	/*
+	document.getElementById('ftErrorMsg').innerHTML = "";
+	document.getElementById('titleErrorMsg').innerHTML = "";
+	if (ft_length == 0)
+	{
+		document.getElementById('ftErrorMsg').innerHTML = "<span style='color:red;'> Blog text cannot be empty!</span>";
+		error = true;
+	}
+	if (title.length == 0)
+	{
+		document.getElementById('titleErrorMsg').innerHTML = "<span style='color:red;'> Title is empty</span>";
+		error = true;
+	} 
+	*/
+	
+	if (!error){
+		//jax.call('myblog', 'myxValidate', ft_length, title, permalink, id); 
+		submitForm();
+	}
+}
+
+function submitForm(){
+	
+	document.formEdit.submit();
+}
+
+function toggleTab(id){
+	el = document.getElementById(id + '_row');
+	style = el.style.display;
+	if (style=='none')
+	{
+		el.style.display = '';
+		document.getElementById(id + '_toggle_img').setAttribute('src', 'components/com_myblog/templates/admin/icons/Remove_16x16.png');
+	}else
+	{
+		el.style.display='none';
+		document.getElementById(id + '_toggle_img').setAttribute('src', 'components/com_myblog/templates/admin/icons/Add_16x16.png');
+	}
+}
+
+function toggleAdvanced(id)
+{
+	el = document.getElementById(id);
+	style = el.style.display;
+	if (style=='none')
+	{
+		el.style.display = '';
+		document.getElementById(id + '_link').innerHTML = '&#171; _MB_ADVANCED';
+	}else
+	{
+		el.style.display='none';
+		document.getElementById(id + '_link').innerHTML = '_MB_ADVANCED &#187;';
+	}
+}
+
+function handleEnter(id, event)
+{
+	var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+	if (keyCode==13)
+	{
+		if (id =='searchposts')
+		{
+			loading('searchResults', 'components/com_myblog/images/ajax_loader.gif');
+			jax.icall('myblog', 'searchPosts', document.getElementById('searchposts').value, '1');
+			return false;
+		}
+		else
+			return true;
+	}
+	else
+		return true;
+
+
+}
+
+function addTag(tag)
+{
+	tag = tag.trim();
+	if (tag=="")
+		return;
+	added_tags = document.getElementById('tags').value;
+	added_tags = added_tags.trim();
+	
+	tags_array = added_tags.split(",");
+	
+	for (i=0; i<tags_array.length; i++){	
+		if (tags_array[i].trim()==tag)
+			return;		
+	}
+		
+	if (added_tags!="")
+	{
+		added_tags = added_tags + ", ";
+	}
+	added_tags = added_tags + tag;
+	
+	document.getElementById('tags').value = added_tags;
+	return;
+}
+
+</script>
+<div id="jscript">{JSCRIPT}</div>
+<!-- action="index2.php?option=com_myblog&admin=1&task=save&no_html=1&id={ID}" -->
+<form name="formEdit"  id="formEdit" method="post" >
+    <table width="100%"  border="0" cellspacing="0" cellpadding="4">
+        <tr>
+            <td width="25%" valign="top"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th style="height:20px;"><div class="float_left"><img src="icons/Event_16x16.png" width="16" height="16" align="absmiddle" />&nbsp;_MB_PUBLISH_STATUS</div><div class="float_right"><a id="published_status_toggle" onclick="toggleTab('published_status');"><img class="toggle_tab" id="published_status_toggle_img" border="0" src="icons/Remove_16x16.png"/></a></div></th>
+                    </tr>
+                    <tr id="published_status_row">
+                        <td><patTemplate:tmpl name="publish" visibility="hidden">
+                            <input name="state" type="radio" value="1" {STATE1} />
+                            _MB_PUBLISHED<br />
+                            <input name="state" type="radio" value="0" {STATE0} />
+                            _MB_DRAFT</patTemplate:tmpl> {PUBLISH_STATUS}
+                            <div id="pub_advanced" style="display:none;"><br/>_MB_PUB_DATE:<br/><input name="pub_date" type="text" id="pub_date" value="{PUB_DATE}" size="16" />
+							<input name="reset" class="button" onclick="return showCalendar('pub_date', 'y-mm-dd ');" value="..." type="reset" /><br/>
+							_MB_PUB_TIME:<br/>
+							<input name="pub_time" type="text" id="pub_time" value="{PUB_TIME}" size="9" /></div>
+							<div id='pub_advanced_link' onclick="toggleAdvanced('pub_advanced');" style="font-weight:bold;font-size:10px;text-align:right;cursor:pointer;cursor:hand;">_MB_ADVANCED &#187;</div>
+						</td>
+                    </tr>
+                </table>
+                <br />
+                <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th style="height:20px;"><div class="float_left"><img src="icons/Star_16x16.png" width="16" height="16" align="absmiddle" />&nbsp;_MB_ENTRY_DATE_TIME</div><div class="float_right"><a onclick="toggleTab('entry_date_time')" id="entry_date_time_toggle"><img class="toggle_tab" id="entry_date_time_toggle_img" src="icons/Remove_16x16.png" border="0"/></a></div></th>
+                    </tr>
+                    <tr id="entry_date_time_row">
+                        <td>_MB_DATE:<br/><input name="created" type="text" id="created" value="{DATE}" size="16" />
+						<input name="reset" class="button" onclick="return showCalendar('created', 'y-mm-dd ');" value="..." type="reset" /><br/>
+						_MB_TIME:<br/>
+						<input name="createdT" type="text" id="createdT" value="{TIME}" size="9" />
+						
+						</td>
+                    </tr>
+                </table>
+                <br />
+                <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th style="height:20px;"><div class="float_left"><img src="icons/page_find.png" width="16" height="16" align="absmiddle" />&nbsp;_MBD_SEARCH_POSTS</div><div class="float_right"><a onclick="toggleTab('search_posts');" id="search_posts_toggle" ><img class="toggle_tab" border="0" id="search_posts_toggle_img" src="icons/Remove_16x16.png"/></a></div></th>
+                    </tr>
+                    <tr id="search_posts_row">
+                        <td><input class="searchbox" type="text" name="searchposts" id="searchposts" onkeypress="handleEnter(this.id,event);">&nbsp;<img id="searchIcon" src="icons/Search_16x16.png" onclick="loading('searchResults', 'components/com_myblog/images/ajax_loader.gif');jax.icall('myblog', 'searchPosts', document.getElementById('searchposts').value, '1');" align="absmiddle"/>
+                        <br/><div id="searchResults"><span style="color:grey;">_MBD_SEARCH_POSTS_INFO</span></div></td>
+                    </tr>
+                </table>
+                <br />
+                <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th style="height:20px;"><div class="float_left"><img src="icons/Folder_16x16.png" width="16" height="16" align="absmiddle" />&nbsp;_MBD_TAGS</div><div class="float_right"><a onclick="toggleTab('tags');" id="tags_toggle"><img class="toggle_tab" id="tags_toggle_img" src="icons/Remove_16x16.png" border="0"/></a></div></th>
+                    </tr>
+                    <tr id="tags_row">
+                        <td><input class="tagbox" type="text" name="tags" id="tags" value="{EXISTING_TAGS}">
+                        <br/><div id="existing_tags"><span style="color:grey;">_MBD_TAGS_INFO</span>
+						<hr/>
+						{TAGS}
+						</div>
+						</td>
+                    </tr>
+                </table>
+                <br>
+                <!-- 
+			<table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                
+			 <tr>
+                    <th height="20px"><img src="icons/Lock_16x16.png" width="16" height="16" align="absmiddle" />&nbsp;Permission</th>
+              </tr>
+                <tr>
+                    <td><input name="radiobutton" type="radio" value="radiobutton">
+                        Public<br>
+                        <input name="radiobutton" type="radio" value="radiobutton">
+                        Registered<br>
+                        <input name="radiobutton" type="radio" value="radiobutton">
+                        Private</td>
+              </tr>
+              
+              </table>
+              --!>
+            <br>
+            <!--
+        <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+          <tr>
+            <th>Trackbacks</th>
+          </tr>
+          <tr>
+            <td><p>
+                <input type="checkbox" name="checkbox" value="checkbox">
+              Accept trackbacks </p>              </td>
+          </tr>
+          <tr>
+            <td><p>Trackbacks uRLS (saperate by comma)</p>
+            <p>
+              <textarea name="trackbacks" id="trackbacks" style="width:100% "></textarea>
+              <br>
+            </p>            </td>
+          </tr>
+        </table>        <p>&nbsp;</p>
+        -->
+                <p>&nbsp;</p></td>
+            <td width="75%" valign="top"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th style="height:20px;" scope="col"><img src="icons/Edit2_16x16.png" width="16" height="16" align="absbottom" />&nbsp;_MB_BLOG_CONTENT </th>
+                    </tr>
+                    <tr>
+                        <td valign="top" ><p><strong>_MB_TITLE</strong><span id="titleErrorMsg">&nbsp;</span><br>
+                                <input name="title" type="text" id="title" value="{TITLE}" style="width:96%;height:25px;" class="CommonTextButtonBig"/>
+                            </p>
+                            <p><strong>_MB_FULLTEXT</strong><span id="ftErrorMsg">&nbsp;</span>	
+								<textarea name="fulltext" rows="8" id="fulltext" style="width:100%;" dojoTypes="Editor" mce_editable="{USE_MCE}"
+items="textGroup;formatBlock;listGroup;justifyGroup;indentGroup;|;createlink;insertimage;">{FULLTEXT}</textarea>
+                                <font size="3" face="Georgia, Times New Roman, Times, serif"><br>
+                                </font><font size="3" face="Georgia, Times New Roman, Times, serif"> </font></p></td>
+                    </tr>
+                </table>
+                <br>
+                {IMAGE_BROWSER}
+                <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mytable">
+                    <tr>
+                        <th  style="height:20px;" colspan="3">_MB_ADDITIONAL </th>
+                    </tr>
+                    <tr>
+                        <td width="19%">_MB_PERMALINK </td>
+                        <td width="5%">:</td>
+                        <td width="76%"><input name="permalink" type="text" id="permalink" value="{PERMALINK}" style="width:410px;"/></td>
+                    </tr>
+                    <tr>
+                        <td width="19%">_MB_TRACKBACK_URLS</td>
+                        <td width="5%">:</td>
+                        <td width="76%"><input name="trackbacks" type="text" id="trackbacks" value="{TRACKBACK_URLS}" style="width:410px;"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan=3 id="permaErrorMsg">&nbsp;</td>
+                    </tr>
+                </table>
+                <p id="error_msg"></p>
+                <p>&nbsp;</p>
+				<div id="loadingDiv" name="loadingDiv"></div>
+			</td>
+        </tr>
+        <tr>
+            <td valign="top">&nbsp;</td>
+            <td valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="4">
+                    <tr>
+                        <td><a href="javascript:void(0);" onClick="validateForm();" class="CommonTextButtonBig"><span>_MB_SAVE </span></a> &nbsp;<a href="#" onclick="if (confirmBrowseAway())window.location.href='index2.php?option=com_myblog&no_html=1&admin=1&task=adminhome';" class="CommonTextButtonBig"><span>_MB_DISCARD</span></a></td>
+                    </tr>
+                </table>
+                <input name="saving" type="hidden" id="saving" value="yes" />
+                <input name="saveact" type="hidden" id="saveact" value="close" />
+                <input name="imageList" type="hidden" id="imageList" value="" />
+                <input name="id" type="hidden" id="id" value="{ID}" />
+                <input name="sectionid" id="sectionid" type="hidden" value="{SECTION_ID}" />
+                <input name="catid" id="catid" type="hidden" value="{CAT_ID}" />
+                <input name="created_by" id="created_by" type="hidden" value="{CREATED_BY}" />
+               {IMAGE_BROWSER_SCRIPT}
+            </td>
+        </tr>
+    </table>
+</form>
+<p> </p>
+<p>&nbsp; </p>
+</patTemplate:tmpl>

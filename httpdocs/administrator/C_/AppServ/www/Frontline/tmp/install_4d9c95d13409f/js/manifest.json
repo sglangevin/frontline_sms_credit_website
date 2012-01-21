@@ -1,0 +1,46 @@
+{
+  "betaManifestVersion": 1,
+  "version": "2.0.1-build-15",
+  "entries": [
+      { "url": "go_offline.js"},
+      { "url": "gears_init.js"},
+      
+      { "url": "jquery-1.2.6.pack.js"},
+      { "url": "jquery.tooltip.pack.js"},
+      { "url": "jquery.accordian.js"},
+      { "url": "dashboard.js"},
+      { "url": "color_select.js"},
+      { "url": "ajaxfileupload.js"},
+      { "url": "dialog.js"},
+      { "url": "autocomplete.js"},
+      
+      { "url": "../images/white_loader.gif"},
+      { "url": "../images/readmore.gif"},
+      { "url": "../images/fieldbg.gif"},
+      { "url": "../templates/admin/icons/Search_16x16.png"},
+      
+      { "url": "../css/dashboard.css"},
+      { "url": "../css/mediabrowser.css"},
+      { "url": "../css/jquery.tooltip.css"},
+      { "url": "../css/jquery.tooltip.css"},
+      
+      
+      { "url": "../../../includes/js/calendar/lang/calendar-en-GB.js"},
+	  { "url": "../../../includes/js/joomla.javascript.js"},
+	  { "url": "../../../includes/js/calendar/calendar_mini.js"},
+      { "url": "../../../includes/js/calendar/lang/calendar-en-GB.js"},      
+      { "url": "../../../includes/js/calendar/calendar-mos.css"},
+      
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php"},
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php?js=true&plugins=style%2Clayer%2Ctable%2Csave%2Cadvhr%2Cadvimage%2Cadvlink%2Cemotions%2Ciespell%2Cinsertdatetime%2Cpreview%2Cmedia%2Csearchreplace%2Cprint%2Ccontextmenu%2Cpaste%2Cdirectionality%2Cfullscreen%2Cnoneditable%2Cvisualchars%2Cnonbreaking%2Cxhtmlxtras&themes=simple%2Cadvanced&languages=en&diskcache=true"},
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/themes/advanced/css/editor_ui.css"},
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/plugins/flash/editor_plugin.js"},
+      
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/buttons.gif"},
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/css/contextmenu.css"}, 
+	  { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/spacer.gif"},
+	  { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/separator.gif"},  
+      { "url": "../../../plugins/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/statusbar_resize.gif"}
+      
+    ]
+}

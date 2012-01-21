@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="User Page (blog)">
+		<message><![CDATA[Create a menu item linking to a user page (blog layout).]]></message>
+	</layout>
+	<state>
+		<name>User Page (blog)</name>
+		<description>Create a menu item linking to a user page (blog).</description>
+		<params>
+			<param name="feedLink" type="radio" default="1" label="RSS feed link" description="">
+				<option value="0">Disable</option>
+				<option value="1">Enable</option>
+			</param>	
+		</params>
+		<url addpath="/administrator/components/com_k2/elements" >
+			<param name="id" type="user" default="" label="Select user" description="" />
+			<param name="task" type="hidden" default="user" />
+		</url>
+	</state>
+</metadata>

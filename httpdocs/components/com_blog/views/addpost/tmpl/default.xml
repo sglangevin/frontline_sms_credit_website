@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Add-Blog-Post-Layout">
+		<message>
+			Add-Blog-Post-Layout
+		</message>
+	</layout>
+	<state>
+		<name>Add-Blog-Post-Layout</name>
+		<description>Add-Blog-Post-Layout.</description>
+	</state>
+</metadata>

@@ -1,0 +1,103 @@
+<!-- some header stuff -->
+<div id="myblog">
+  <link href="<?php echo MY_COM_LIVE; ?>/css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="<?php echo MY_COM_LIVE ?>/css/ui.css" type="text/css" media="screen" />
+<!--[if lte IE 6]>
+<link href="<?php echo MY_COM_LIVE; ?>/css/style.IE6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 7]>
+<link href="<?php echo MY_COM_LIVE; ?>/css/style.IE7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="<?php echo MY_COM_LIVE ?>/js/myblog.js"></script> 
+<div class="componentheading"><?php echo JText::_('ADMIN COMMENTS');?></div>
+<!-- start tab navigation -->
+<div id="myblogTabNav">
+	<div id="azheadnav">
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=adminhome&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN MY ENTRIES');?></a></span>
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerpref&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU PREFERENCES');?></a></span>
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerstats&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU STATS');?></a></span>
+		<?php
+		global $_MY_CONFIG;
+		if($_MY_CONFIG->get('useComment'))
+		{
+		?>
+		<span><a id="current" href="<?php echo JRoute::_('index.php?option=com_myblog&task=showcomments&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN COMMENTS');?></a></span>
+		<?php
+		}
+		?>
+		<?php
+		if($postingRights)
+		{
+			$link	= rtrim( JURI::root() , '/' ) . '/index.php?option=com_myblog&tmpl=component&task=write&no_html=1&id=0';
+		?>
+		<span class="write"><a href="javascript:void(0);" onclick="myAzrulShowWindow('<?php echo $link;?>');" href="javascript:void(0);"><?php echo JText::_('ADMIN MENU NEW ENTRY');?></a></span>
+		<?php
+		}
+		?>
+	</div>
+</div>
+<!-- end tab navigation -->
+<div class="myBlogTabBorder"></div>
+<?php
+if($comments){
+?>
+<div style="margin-top:8px">
+	<a class="azbutton" onclick="jax.call('myblog', 'myxCommentApproveAll');" href="javascript:void(0);"><span><?php echo JText::_('BLOG ADMIN COMMENTS APPROVE ALL');?></span></a>
+	<a class="azbutton" onclick="jax.call('myblog', 'myxCommentRemoveUnpublished');" href="javascript:void(0);"><span><?php echo JText::_('BLOG ADMIN COMMENTS REMOVE UNPUBLISHED');?></span></a>
+</div>
+<div style="clear:both"></div>
+<?php } ?>
+<br />
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+		<tr class="sectiontableheader">
+			<td>&nbsp;</td>
+			<td><?php echo JText::_('BLOG ADMIN COMMENTS NAME HEADER');?></td>
+			<td><?php echo JText::_('BLOG ADMIN COMMENTS HEADER');?></td>
+			<td><?php echo JText::_('BLOG ADMIN COMMENTS DATE HEADER');?></td>
+		</tr>
+		<?php
+		if( $comments )
+		{
+			$count = 0;
+			foreach( $comments as $row )
+			{
+				$onClick = $_MY_CONFIG->get('enableJCDashboard') ? "jax.call('myblog', 'myxToggleCommentPublish', $row->id);" : "void(0)";
+				if ($row->published == 1)
+				{
+					$published = "<a href=\"javascript:void(0);\" onclick=\"$onClick\"><img id=\"pubImg$row->id\" src=\"" . MY_COM_LIVE . "/images/publish_g.png\" border=\"0\" alt=''/></a>";
+				}
+				else
+				{
+					$published = "<a href=\"javascript:void(0);\" onclick=\"$onClick\"><img id=\"pubImg$row->id\" src=\"" . MY_COM_LIVE . "/images/publish_x.png\" border=\"0\" alt=''/></a>";
+				}
+		?>
+		<tr class="sectiontableentry<?php echo $count % 2 == 0 ? 2 : 1; ?>">
+			<td><?php echo $published;?></td>
+			<td>
+				<?php echo $row->name;?>
+			</td>
+			<td>
+				<a href="<?php echo $row->referer;?>"><?php echo JString::substr( $row->comment , 0 , 50 );?></a>
+			</td>
+			<td>
+				<?php echo $row->date;?>
+			</td>
+		</tr>
+		<?php
+		    $count++;
+			}
+		}
+		else
+		{
+		?>
+		<tr>
+			<td colspan="4" align="center"><?php echo JText::_('BLOG ADMIN NO COMMENTS');?></td>
+		</tr>
+		<?php
+		}
+		?>
+	</table>
+	<div>
+	<?php echo $pagination;?>
+	</div>
+</div>

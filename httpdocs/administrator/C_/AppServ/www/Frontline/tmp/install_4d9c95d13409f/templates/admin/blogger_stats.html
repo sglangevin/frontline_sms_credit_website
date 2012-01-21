@@ -1,0 +1,70 @@
+<!-- some header stuff -->
+<div id="myblog">
+<link href="<?php echo MY_COM_LIVE; ?>/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<?php echo MY_COM_LIVE; ?>/css/ui.css" type="text/css" media="screen" />
+<!--[if lte IE 6]>
+<link href="<?php echo MY_COM_LIVE; ?>/css/style.IE6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 7]>
+<link href="<?php echo MY_COM_LIVE; ?>/css/style.IE7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--JavaScript--> 
+<script type="text/javascript" src="<?php echo MY_COM_LIVE; ?>/js/myblog.js"></script>
+<div class="componentheading"><?php echo JText::_('ADMIN MENU STATS');?></div>
+<!-- start tab navigation -->
+<div id="myblogTabNav">
+	<div id="azheadnav">
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=adminhome&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN MY ENTRIES');?></a></span>
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerpref&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU PREFERENCES');?></a></span>
+		<span><a id="current" href="<?php echo JRoute::_('index.php?option=com_myblog&task=bloggerstats&Itemid='.myGetAdminItemId() );?>"><?php echo JText::_('ADMIN MENU STATS');?></a></span>
+		<?php
+		global $_MY_CONFIG;
+		if($_MY_CONFIG->get('useComment'))
+		{
+		?>
+		<span><a href="<?php echo JRoute::_('index.php?option=com_myblog&task=showcomments&Itemid='.myGetAdminItemId());?>"><?php echo JText::_('ADMIN COMMENTS');?></a></span>
+		<?php
+		}
+		?>
+		<?php
+		if($postingRights)
+		{
+			$link	= rtrim( JURI::root() , '/' ) . '/index.php?option=com_myblog&tmpl=component&task=write&no_html=1&id=0';
+		?>
+		<span class="write"><a href="javascript:void(0);" onclick="myAzrulShowWindow('<?php echo $link;?>');" href="javascript:void(0);"><?php echo JText::_('ADMIN MENU NEW ENTRY');?></a></span>
+		<?php
+		}
+		?>
+	</div>
+</div>
+<!-- end tab navigation -->
+<div class="myBlogTabBorder"></div>
+<div>
+<p>
+<?php echo JText::sprintf('BLOG ADMIN STATS TOTAL ENTRIES' , $num_entries );?><br />
+<?php
+if(isset($jomcomment))
+{
+	echo JText::sprintf( 'BLOG ADMIN STATS TOTAL COMMENTS' , $num_comments ) . '<br />';
+}
+?>
+<div><?php echo JText::sprintf( 'BLOG ADMIN STATS TOTAL HITS' , $num_hits ); ?></div>
+<?php
+	$total	= count( $tags );
+	$i		= 1;
+	$html	= '';
+	
+	foreach($tags as $tag)
+	{ 
+		$url	= JRoute::_('index.php?option=com_myblog&category=' . $tag->slug);
+		$html	.= '<span><a href="' . $url . '">' . $tag->name . '</a></span>';
+		$html	.= ( $i == $total ) ? '.' : ',';
+		
+		$i++;
+	}
+?>
+<div><?php echo JText::sprintf( 'BLOG ADMIN STATS TAGS USED' , $html );?></div>
+</p>
+</div>
+
+</div>

@@ -1,0 +1,163 @@
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+.smallertext {
+	font-size:87%;
+}
+
+#myblog div {
+
+}
+#myblog #azheadnav {
+	line-height: normal;
+	width: 100%;
+	display: block;
+	height: 24px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	overflow: hidden;
+}
+#myblog #azheadnav span a:link,
+#myblog #azheadnav span a:visited {
+	font-size: 11px;
+	letter-spacing: 0;
+	line-height: normal;
+	display: block;
+	float: left;
+	width: 65px;
+	text-decoration: none;
+	padding: 5px 15px;
+	margin: 2px 5px -5px 0;
+	text-align: center;
+	background: #d8dfea;
+	border: none;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+#myblog #azheadnav span.write a:link,
+#myblog #azheadnav span.write a:visited {
+	font-size: 11px;
+	letter-spacing: 0;
+	line-height: normal;
+	display: block;
+	float: right;
+	width: auto;
+	text-decoration: none;
+	padding: 5px 15px;
+	margin: 2px 20px -5px 0;
+	text-align: center;
+	background: #99cc33;
+	border: none;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+#myblog #azheadnav span a:hover {
+	background: #e8ecf2;
+}
+#myblog #azheadnav span a#current:link,
+#myblog #azheadnav span a#current:visited,
+#myblog #azheadnav span a#current:hover {
+    background: #3b5998;
+    color: #fff;
+}
+#myblogNewEntryButton {
+	display: block;
+	padding: 10px 0 10px 0;
+	border-top: solid 1px #3b5998;
+	font-size: 93%;
+	height: 1px;
+}
+#myblogEntryList {
+
+}
+
+a.azbutton {
+    background: transparent url('../images/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    font-family: arial, sans-serif;
+    float: left;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+    border:none;
+}
+
+a.azbutton span {
+    background: transparent url('../images/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+    border:none;
+}
+
+
+a.azbutton:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+    border:none;
+}
+
+a.azbutton:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+    outline: none; /* hide dotted outline in Firefox */
+    border:none;
+}
+
+a.azbutton:hover {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+    border:none;
+}
+
+a.azbutton:hover span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+    outline: none; /* hide dotted outline in Firefox */
+    border:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** MyBlog editor */
+.mceSelectList {
+background-color:#F0F0EE;
+display:inline;
+font-family:'MS Sans Serif',sans-serif,Verdana,Arial;
+font-size:7pt !important;
+font-weight:normal;
+margin-top:3px;
+padding:0pt;
+vertical-align:top;
+border:none;
+}
+
+#myblog fieldset {
+	border:1px solid #CFCFCF;
+	padding:5px;
+}
+
+#myblog fieldset legend {
+	color: #808080;
+}
