@@ -702,7 +702,7 @@ img.wp-smiley {
   margin: 0px;
 }
 /*** Forms ***/
-#author, #email, #url, #cName, #cMail, #cWeb {
+#author, #email, #url, #cName, #cMail, #cWeb, input.inputfield {
   background: #F9F9F9 !important;
   width: 200px;
   font-weight: normal;
@@ -816,6 +816,25 @@ img.wp-smiley {
   border-bottom: 1px solid #222;
   border-right: 1px solid #222;
 }
+ul.form, ul.form li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+  ul.form li {
+    margin-top: 15px;
+  }
+  ul.form li input.error {
+    border: 1px solid red;
+    color: red;
+    text-align: left;
+  }
+ul.errors {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
 #cForm {
   width: 400px;
   padding: 10px;

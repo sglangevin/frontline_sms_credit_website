@@ -7,7 +7,7 @@
             <div class="postcontent_in">
 
                 <div class="post">
-			    <h2><?php the_title(); ?></h2>
+			            <h2><?php the_title(); ?></h2>
 
                     <div class="post">
                         <?php the_content(__('Read more'));?>

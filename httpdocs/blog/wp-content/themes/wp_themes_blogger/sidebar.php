@@ -69,7 +69,7 @@
                 <div class="widget">
                     <h2>Recent Posts</h2>
                         <ul>
-                            <?php get_archives('postbypost', 10); ?>
+                            <?php wp_get_archives('postbypost', 10); ?>
                         </ul>
                 </div>
 
@@ -95,7 +95,7 @@
                 <div class="widget">
                     <h2>Links</h2>
                         <ul>
-                            <?php get_links(-1, '<li>', '</li>', ' - '); ?>
+                            <?php get_bookmarks(-1, '<li>', '</li>', ' - '); ?>
                         </ul>
                 </div>
 
