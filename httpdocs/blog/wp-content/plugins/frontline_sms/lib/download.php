@@ -42,9 +42,40 @@ class Download {
         $this->id = self::db()->insert_id;
         return !$this->new_record();
       }else{
-        return self::db()->update(self::$table_name, $this->attributes, array("id" => $this->id));
+        return self::db()->update(
+          self::$table_name, 
+          $this->attributes, 
+          array("id" => $this->id)
+        );
       }
     }
+  }
+  public function send_email(){
+    $path = preg_match("/\?/",$_SERVER['REQUEST_URI']) ?
+      $_SERVER['REQUEST_URI'] . "&key={$this->unique_link}" : 
+      $_SERVER['REQUEST_URI'] . "?key={$this->unique_link}";
+    
+    $body = <<<EOD
+    <p>Dear {$this->name},</p>
+
+    <p>Congratulations on becoming one of the first users of PaymentView! 
+      Thank you for providing your organization's contact information. We hope 
+      to learn from our beta user community, so stay tuned for updates from   
+      the FrontlineSMS:Credit team.</p>
+      
+    <p><a href="http://{$_SERVER['SERVER_NAME']}{$path}">
+      CLICK HERE TO DOWNLOAD PAYMENTVIEW</a></p>
+
+    <p>Once FrontlineSMS + PaymentView has finished downloading, double-click 
+      on the file to run the installer. See the User Guide for more 
+      information on how to get started with PaymentView. If you have any 
+      questions or problems, please visit our user forum to request support. 
+      We'd also love to hear your feedback! Email us at   
+      info@credit.frontlinesms.com with comments or suggestions.</p>
+
+    <p>-The FrontlineSMS:Credit Team</p>
+EOD;
+    mail($this->email, "Your FrontlineSMS:Credit Download", $body);
   }
   public function valid(){
     $this->errors = array();
@@ -60,10 +91,14 @@ class Download {
       FrontlineSMS::RECAPTHCA_PRIVATE_KEY,
       $_SERVER["REMOTE_ADDR"],
       $_POST["recaptcha_challenge_field"],
-      $_POST["recaptcha_response_field"]);
+      $_POST["recaptcha_response_field"]
+    );
     // if(!$resp->is_valid){
-    //       $this->add_error("recaptcha", "You did not correctly enter the RECAPTCHA.");
-    //     }
+    //   $this->add_error(
+    //     "recaptcha", 
+    //     "You did not correctly enter the RECAPTCHA."
+    //   );
+    // }
     return count($this->errors) == 0;
   }
   protected function add_error($field, $error){
@@ -94,7 +129,10 @@ class Download {
     if(in_array($key, self::column_names())){
       return $this->attributes[$key] = $val;
     }
-    throw new Exception("{$key} is not a valid attribute, valid attributes are " . join(self::column_names(), ", "));
+    throw new Exception(
+      "{$key} is not a valid attribute, valid attributes are " . 
+        join(self::column_names(), ", ")
+    );
   }
   public function __get($key){
     if(in_array($key, self::column_names())){
@@ -103,7 +141,9 @@ class Download {
       }
       return $this->attributes[$key];
     }
-    throw new Exception("{$key} is not a valid attribute" . join(self::column_names(), ", "));
+    throw new Exception(
+      "{$key} is not a valid attribute" . join(self::column_names(), ", ")
+    );
   }
   
   protected function set_timestamps(){

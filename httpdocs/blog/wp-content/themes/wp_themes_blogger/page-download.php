@@ -6,10 +6,13 @@ if(isset($_GET['key'])){
     // expires two days from creation
     $expires = strtotime($row[0]->created_at) + (2 * 24 * 60 * 60);
     if($expires < time()){
-      $file_download_error = "Your link has expired.  Please submit the form below to complete your download";
+      $file_download_error = "Your link has expired.  Please submit the " .
+        "form below to complete your download";
     }else{
       ob_clean();
-      $file = dirname(__FILE__) . "/../../plugins/frontline_sms/frontline.txt";
+      $file = dirname(__FILE__) . 
+        "/../../plugins/frontline_sms/frontline.txt";
+        
       header('Content-Description: File Transfer');
       header('Content-Type: application/octet-stream');
       header('Content-Disposition: attachment; filename='.basename($file));
@@ -32,6 +35,7 @@ if(isset($_GET['key'])){
 if(sizeof($_POST) > 0){
   $download = new Download($_POST['download']);
   if($download->save()){
+    $download->send_email();
     header("Location: {$_SERVER['REQUEST_URI']}&success=1");
     exit(0);
   }
@@ -57,42 +61,42 @@ if(sizeof($_POST) > 0){
                     </p>
                   <?php else :?>                    
                     <h1>Download FrontlineSMS</h1>
-  			            <form method="POST">
-  			              <?php if(count($download->errors) > 0 || isset($file_download_error)) : ?>
-  			                <ul class="errors">
-  			                  <?php if(isset($file_download_error)) : ?>
-  			                    <li><?php echo $file_download_error ?>;
-  			                  <?php endif; ?>
-  			                  <?php foreach($download->errors as $field => $errors) : ?>
-  			                    <?php foreach($errors as $error) : ?>
-  			                      <li><?php echo $error; ?></li>
-  			                    <?php endforeach; ?>
-  			                  <?php endforeach; ?>
-  			                </ul>
-  			              <?php endif; ?>
-  			              
-  			              <ul class="form">
-  			                <?php 
-  			                  $fields = array(
-  			                    "name", "organization", "title", "email", "location", "category_of_work",
-  			                    "payment_view_use", "focus_of_work"
-  			                  );
-  			                  foreach($fields as $field) : ?>
-  			                  <li>
-    			                  <?php echo FrontlineSMS::get_instance()->label($download, $field); ?>
-    			                  <br/>
-    			                  <?php echo FrontlineSMS::get_instance()->text_field($download, $field); ?>
-    			                </li>
-			                
-  			                <?php endforeach;?>
-  			                <li>
-  			                  <?php echo recaptcha_get_html(FrontlineSMS::RECAPTHCA_PUBLIC_KEY); ?>
-  			                <li>
-  			                  <button id="submit">Submit</button>
-  			                </li>
-  			              </div>
-  			            </form>
-  			          <?php endif; ?>
+                    <form method="POST">
+                      <?php if(count($download->errors) > 0 || isset($file_download_error)) : ?>
+                        <ul class="errors">
+                          <?php if(isset($file_download_error)) : ?>
+                            <li><?php echo $file_download_error ?>;
+                          <?php endif; ?>
+                          <?php foreach($download->errors as $field => $errors) : ?>
+                            <?php foreach($errors as $error) : ?>
+                              <li><?php echo $error; ?></li>
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                        </ul>
+                      <?php endif; ?>
+              
+                      <ul class="form">
+                        <?php 
+                          $fields = array(
+                            "name", "organization", "title", "email", "location", "category_of_work",
+                            "payment_view_use", "focus_of_work"
+                          );
+                          foreach($fields as $field) : ?>
+                          <li>
+                            <?php echo FrontlineSMS::get_instance()->label($download, $field); ?>
+                            <br/>
+                            <?php echo FrontlineSMS::get_instance()->text_field($download, $field); ?>
+                          </li>
+              
+                        <?php endforeach;?>
+                        <li>
+                          <?php echo recaptcha_get_html(FrontlineSMS::RECAPTHCA_PUBLIC_KEY); ?>
+                        <li>
+                          <button id="submit">Submit</button>
+                        </li>
+                      </div>
+                    </form>
+                  <?php endif; ?>
                   <div class="clear"></div>
                 </div>
                 </div>
