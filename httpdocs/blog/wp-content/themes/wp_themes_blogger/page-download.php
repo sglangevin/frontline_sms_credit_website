@@ -41,7 +41,7 @@ if(sizeof($_POST) > 0){
     exit(0);
   }
 }else{
-  $download = new Download();
+  $download = new Download(array('newsletter' => 1, 'user_map' => 1, 'feedback' => 1));
 }
 
 ?>
@@ -81,21 +81,76 @@ if(sizeof($_POST) > 0){
                           "name", "organization", "title", "email", 
                           "location", "category_of_work",
                           "payment_view_use", "focus_of_work"
-                        ); -->
-                      
+                        ); -->						
                         <li>
-                          <?php echo FrontlineSMS::get_instance()->label($download, "name"); ?>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "name", "Name *"); ?>
                           <br/>
                           <?php echo FrontlineSMS::get_instance()->text_field($download, "name"); ?>
                         </li>
                         <li>
-                          <?php echo FrontlineSMS::get_instance()->label($download, "organization"); ?>
-                          <br/>
-                          <span class="small">A description</span>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "organization", "Organization *"); ?>
                           <br/>
                           <?php echo FrontlineSMS::get_instance()->text_field($download, "organization"); ?>
                         </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "title", "Title"); ?>
+                          <br/>
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "title"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "email", "Email *"); ?>
+                          <br/>
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "email"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "location", "Location *"); ?>
+                          <br/>
+                          <span class="small">City, Country</span>
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "location"); ?>
+                        </li>
                         <li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "category_of_work", "Category of Work *"); ?>
+                          <br/>
+                          <span class="small">Please choose from the following list of sectors to describe the kind of work that your organization does.</span>
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "category_of_work"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "payment_view_use", "PaymentView Use *"); ?>
+                          <br/>
+                          <span class="small">How do you plan to use FrontlineSMS and PaymentView? We appreciate it if you can share as much detail as possible.</span>
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "payment_view_use"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "hear_about_us", "How did you hear about us?"); ?>                          
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "hear_about_us"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "user_map", "Map *"); ?>
+                          <br/>
+                          <span class="small">Can we add you to the Who Uses it map?</span>
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "user_map"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "feedback", "Feedback *"); ?>
+                          <br/>
+                          <span class="small">Can we count on you for bug reports and feedback?</span>
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "feedback"); ?>
+                        </li>
+						<li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "newsletter", "Would you like to sign up for our newsletter?"); ?>                          
+						  <br/>						  
+                          <?php echo FrontlineSMS::get_instance()->radio_button($download, "newsletter", 1); ?>
+						  Yes
+						  <?php echo FrontlineSMS::get_instance()->radio_button($download, "newsletter", 0); ?>
+						  No
+                        </li>
+						<li>
                           <?php echo recaptcha_get_html(FrontlineSMS::RECAPTCHA_PUBLIC_KEY); ?>
                         <li>
                           <button id="submit">Submit</button>

@@ -71,6 +71,12 @@ class FrontlineSMS {
     return "<input type='text' id='{$model_name}_{$field_name}' name='{$model_name}[{$field_name}]' value='{$model->{$field_name}}' class='inputfield{$error_class}' size=30/>";
   }
   
+  public function radio_button ($model, $field_name, $value){
+	$model_name = strtolower(get_class($model));
+	$error_class = isset($model) && isset ($model->errors[$field_name]) ? " error" : "";
+	$checked = $model->{$field_name} == $value ? "checked" : "";
+	return "<input type='radio' id='{$model_name}_{$field_name}' name='{$model_name}[{$field_name}]' value='{$value}' class='radio{$errorclass}' checked='{$checked}'/>
+  
   /*
    * Accessor for DB
    */
@@ -137,8 +143,9 @@ class FrontlineSMS {
       focus_of_work mediumtext,
       payment_view_use mediumtext,
       name varchar(255),
-      feedback mediumtext,
-      use_map tinyint(1),
+      feedback tinyint(1),
+      user_map tinyint(1),
+	  newsletter tinyint(1),
       how_heard_about_us mediumtext
     )";
     $this->db()->query($sql);
