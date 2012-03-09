@@ -835,6 +835,10 @@ ul.errors {
   font-weight: bold;
 }
 
+span.small {
+  font-size: 11px;
+}
+
 #cForm {
   width: 400px;
   padding: 10px;

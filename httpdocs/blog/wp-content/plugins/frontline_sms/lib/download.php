@@ -88,17 +88,17 @@ EOD;
     }
     # recaptcha
     $resp = recaptcha_check_answer (
-      FrontlineSMS::RECAPTHCA_PRIVATE_KEY,
+      FrontlineSMS::RECAPTCHA_PRIVATE_KEY,
       $_SERVER["REMOTE_ADDR"],
       $_POST["recaptcha_challenge_field"],
       $_POST["recaptcha_response_field"]
     );
-    // if(!$resp->is_valid){
-    //   $this->add_error(
-    //     "recaptcha", 
-    //     "You did not correctly enter the RECAPTCHA."
-    //   );
-    // }
+    if(!$resp->is_valid){
+      $this->add_error(
+        "recaptcha", 
+        "You did not correctly enter the RECAPTCHA."
+      );
+    }
     return count($this->errors) == 0;
   }
   protected function add_error($field, $error){

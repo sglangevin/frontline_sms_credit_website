@@ -27,7 +27,8 @@ if(isset($_GET['key'])){
       exit;
     }
   }else{
-    $file_download_error = "We were unable to find a unique link by that name.  Please submit the form below to complete your download.";
+    $file_download_error = "We were unable to find a unique link by that ".
+      "name.  Please submit the form below to complete your download.";
   }
 }
 
@@ -65,7 +66,7 @@ if(sizeof($_POST) > 0){
                       <?php if(count($download->errors) > 0 || isset($file_download_error)) : ?>
                         <ul class="errors">
                           <?php if(isset($file_download_error)) : ?>
-                            <li><?php echo $file_download_error ?>;
+                            <li><?php echo $file_download_error ?>
                           <?php endif; ?>
                           <?php foreach($download->errors as $field => $errors) : ?>
                             <?php foreach($errors as $error) : ?>
@@ -76,21 +77,26 @@ if(sizeof($_POST) > 0){
                       <?php endif; ?>
               
                       <ul class="form">
-                        <?php 
-                          $fields = array(
-                            "name", "organization", "title", "email", "location", "category_of_work",
-                            "payment_view_use", "focus_of_work"
-                          );
-                          foreach($fields as $field) : ?>
-                          <li>
-                            <?php echo FrontlineSMS::get_instance()->label($download, $field); ?>
-                            <br/>
-                            <?php echo FrontlineSMS::get_instance()->text_field($download, $field); ?>
-                          </li>
-              
-                        <?php endforeach;?>
+<!--                        $fields = array(
+                          "name", "organization", "title", "email", 
+                          "location", "category_of_work",
+                          "payment_view_use", "focus_of_work"
+                        ); -->
+                      
                         <li>
-                          <?php echo recaptcha_get_html(FrontlineSMS::RECAPTHCA_PUBLIC_KEY); ?>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "name"); ?>
+                          <br/>
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "name"); ?>
+                        </li>
+                        <li>
+                          <?php echo FrontlineSMS::get_instance()->label($download, "organization"); ?>
+                          <br/>
+                          <span class="small">A description</span>
+                          <br/>
+                          <?php echo FrontlineSMS::get_instance()->text_field($download, "organization"); ?>
+                        </li>
+                        <li>
+                          <?php echo recaptcha_get_html(FrontlineSMS::RECAPTCHA_PUBLIC_KEY); ?>
                         <li>
                           <button id="submit">Submit</button>
                         </li>

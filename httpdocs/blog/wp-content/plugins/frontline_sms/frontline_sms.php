@@ -33,8 +33,8 @@ require_once dirname(__FILE__) . '/lib/download.php';
 
 class FrontlineSMS {
   
-  const RECAPTHCA_PUBLIC_KEY = "6LfTjM0SAAAAAKlixrrcwjkAgsuz6ttqIj9nxCB9";
-  const RECAPTHCA_PRIVATE_KEY = "6LfTjM0SAAAAADXi9HLyehqGKE1yN5ptiwH7ZiYf";
+  const RECAPTCHA_PUBLIC_KEY = "6LfTjM0SAAAAAKlixrrcwjkAgsuz6ttqIj9nxCB9";
+  const RECAPTCHA_PRIVATE_KEY = "6LfTjM0SAAAAADXi9HLyehqGKE1yN5ptiwH7ZiYf";
   
   
   private static $instance;
